@@ -9,7 +9,7 @@ const HeroSection = () => {
   // Check for mobile view
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 992);
     };
     
     checkMobile();
@@ -47,11 +47,7 @@ const HeroSection = () => {
                     wrapper.innerHTML = `
                       <div class="image-fallback">
                         <div class="fallback-content">
-                          <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#22D3EE"/>
-                            <path d="M2 17L12 22L22 17" stroke="#22D3EE" strokeWidth="2"/>
-                            <path d="M2 12L12 17L22 12" stroke="#22D3EE" strokeWidth="2"/>
-                          </svg>
+                          <span class="fallback-icon">🤖</span>
                           <span class="fallback-text">KI-AUTOMATISIERUNG</span>
                         </div>
                       </div>
@@ -82,7 +78,7 @@ const HeroSection = () => {
               
               {/* Floating AI Elements */}
               <div className="floating-elements">
-                {[1, 2, 3, 4].map((i) => (
+                {['⚡', '🤖', '🔧', '📊'].map((icon, i) => (
                   <div 
                     key={i}
                     className="floating-element"
@@ -92,20 +88,7 @@ const HeroSection = () => {
                       animationDelay: `${i * 0.3}s`
                     }}
                   >
-                    <svg className="element-icon" width="32" height="32" viewBox="0 0 24 24" fill="none">
-                      {i === 1 && (
-                        <path d="M13 10V3L4 14H11L11 21L20 10H13Z" fill="#22D3EE"/>
-                      )}
-                      {i === 2 && (
-                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="#22D3EE"/>
-                      )}
-                      {i === 3 && (
-                        <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM7 10H9V17H7V10ZM15 10H17V17H15V10ZM11 7H13V17H11V7Z" fill="#22D3EE"/>
-                      )}
-                      {i === 4 && (
-                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM15 9H9V15H15V9Z" fill="#22D3EE"/>
-                      )}
-                    </svg>
+                    <span className="element-icon">{icon}</span>
                   </div>
                 ))}
               </div>
@@ -140,13 +123,13 @@ const HeroSection = () => {
                     onMouseEnter={(e) => {
                       if (!isMobile) {
                         e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.boxShadow = '0 12px 30px rgba(239, 68, 68, 0.4)';
+                        e.currentTarget.style.boxShadow = '0 15px 40px rgba(37, 99, 235, 0.4)';
                       }
                     }}
                     onMouseLeave={(e) => {
                       if (!isMobile) {
                         e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 8px 20px rgba(239, 68, 68, 0.3)';
+                        e.currentTarget.style.boxShadow = '0 10px 30px rgba(37, 99, 235, 0.3)';
                       }
                     }}
                   >
@@ -160,21 +143,21 @@ const HeroSection = () => {
                     onMouseEnter={(e) => {
                       if (!isMobile) {
                         e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.background = 'rgba(34, 211, 238, 0.15)';
-                        e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.5)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
                       }
                     }}
                     onMouseLeave={(e) => {
                       if (!isMobile) {
                         e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.background = 'transparent';
-                        e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.3)';
+                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
                       }
                     }}
                   >
                     <span className="button-text">{t('hero.viewReferences')}</span>
                   </a>
                 </div>
+
+                {/* Trust Indicators - REMOVED as requested */}
               </div>
             </div>
           </div>
@@ -223,7 +206,7 @@ const HeroSection = () => {
           grid-template-columns: 1fr 1fr; /* Image | Content */
           gap: 0;
           height: 100vh;
-          padding: 0 100px;
+          padding: 0;
         }
 
         /* Left Side - Image */
@@ -231,7 +214,7 @@ const HeroSection = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 40px;
+          padding: 80px 0px 40px 50px;;
           position: relative;
           overflow: hidden;
         }
@@ -239,12 +222,10 @@ const HeroSection = () => {
         .image-wrapper {
           width: 100%;
           height: 80%;
-          max-height: 600px;
           position: relative;
           border-radius: 20px;
           overflow: hidden;
           background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-          border: 1px solid rgba(34, 211, 238, 0.2);
         }
 
         .hero-image {
@@ -311,8 +292,13 @@ const HeroSection = () => {
           gap: 20px;
         }
 
+        .fallback-icon {
+          font-size: 80px;
+          animation: floatIcon 6s ease-in-out infinite;
+        }
+
         .fallback-text {
-          font-size: 18px;
+          font-size: 24px;
           font-weight: 600;
           color: #22D3EE;
           text-transform: uppercase;
@@ -388,6 +374,7 @@ const HeroSection = () => {
         }
 
         .element-icon {
+          font-size: 32px;
           filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.5));
         }
 
@@ -396,15 +383,15 @@ const HeroSection = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0 40px;
+          padding: 0 60px;
         }
 
         .content-wrapper {
-          max-width: 550px;
+          max-width: 600px;
           width: 100%;
           display: flex;
           flex-direction: column;
-          gap: 32px;
+          gap: 40px;
         }
 
         /* Company Badge */
@@ -432,19 +419,19 @@ const HeroSection = () => {
 
         /* Headlines */
         .main-headline {
-          font-size: 48px;
+          font-size: 52px;
           font-weight: 700;
-          line-height: 1.15;
+          line-height: 1.1;
           color: #FFFFFF;
           margin: 0;
           letter-spacing: -0.02em;
         }
 
         .sub-headline {
-          font-size: 18px;
+          font-size: 20px;
           font-weight: 400;
           line-height: 1.6;
-          color: rgba(255, 255, 255, 0.85);
+          color: rgba(255, 255, 255, 0.9);
           margin: 0;
         }
 
@@ -452,66 +439,63 @@ const HeroSection = () => {
         .cta-section {
           display: flex;
           flex-direction: column;
-          gap: 24px;
+          gap: 40px;
         }
 
         .button-group {
           display: flex;
-          gap: 16px;
+          gap: 20px;
           flex-wrap: wrap;
         }
 
-        /* PRIMARY BUTTON - Changed color to red and made smaller */
+        /* PRIMARY BUTTON - Only color changed to #2563EB */
         .primary-button {
           display: inline-flex;
           align-items: center;
-          gap: 10px;
-          padding: 12px 24px; /* Smaller padding */
-          background: linear-gradient(135deg, #2563EB 0%, #2563EB 100%); /* Red gradient */
+          gap: 12px;
+          padding: 8px 24px;
+          background: #2563EB; /* Changed from gradient to solid #2563EB */
           color: white;
-          font-size: 14px; /* Smaller font */
+          font-size: 16px;
           font-weight: 600;
           text-decoration: none;
-          border-radius: 25px;
+          border-radius: 50px;
           border: none;
           cursor: pointer;
           transition: all 0.3s ease;
-          box-shadow: 0 8px 20px #2563EB; /* Red shadow */
-          height: 42px; /* Smaller height */
+          box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
         }
 
-        /* SECONDARY BUTTON - Changed color to TOLERO cyan and made smaller */
         .secondary-button {
           display: inline-flex;
           align-items: center;
-          padding: 12px 24px; /* Smaller padding */
-          background: transparent;
-          color: #22D3EE; /* TOLERO cyan color */
-          font-size: 14px; /* Smaller font */
+          padding: 8px 24px;
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
+          font-size: 16px;
           font-weight: 600;
           text-decoration: none;
-          border-radius: 25px;
-          border: 1px solid rgba(34, 211, 238, 0.3); /* TOLERO cyan border */
+          border-radius: 50px;
+          border: 1px solid rgba(255, 255, 255, 0.3);
           cursor: pointer;
           transition: all 0.3s ease;
           backdrop-filter: blur(10px);
-          height: 42px; /* Smaller height */
         }
 
         .button-arrow svg {
-          width: 16px;
-          height: 16px;
+          width: 18px;
+          height: 18px;
           transition: transform 0.3s ease;
         }
 
         .primary-button:hover .button-arrow svg {
-          transform: translateX(4px);
+          transform: translateX(5px);
         }
 
         /* Scroll Indicator */
         .scroll-indicator {
           position: absolute;
-          bottom: 30px;
+          bottom: 40px;
           left: 50%;
           transform: translateX(-50%);
           z-index: 3;
@@ -525,7 +509,7 @@ const HeroSection = () => {
 
         .scroll-line {
           width: 1px;
-          height: 50px;
+          height: 60px;
           background: linear-gradient(to bottom, #22D3EE, transparent);
           position: relative;
         }
@@ -535,8 +519,8 @@ const HeroSection = () => {
           top: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: 5px;
-          height: 5px;
+          width: 6px;
+          height: 6px;
           background: #22D3EE;
           border-radius: 50%;
           animation: scrollDot 2s infinite;
@@ -548,9 +532,14 @@ const HeroSection = () => {
           100% { transform: rotate(360deg); }
         }
 
+        @keyframes floatIcon {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
         @keyframes floatElement {
           0%, 100% { transform: translateY(0) rotate(0deg); }
-          50% { transform: translateY(-20px) rotate(180deg); }
+          50% { transform: translateY(-30px) rotate(180deg); }
         }
 
         @keyframes fadeIn {
@@ -595,11 +584,11 @@ const HeroSection = () => {
         /* Responsive Design */
         @media (max-width: 1200px) {
           .hero-container {
-            padding: 0 60px;
+            max-width: 1200px;
           }
           
           .content-side {
-            padding: 0 30px;
+            padding: 0 40px;
           }
           
           .image-side {
@@ -607,36 +596,11 @@ const HeroSection = () => {
           }
           
           .main-headline {
-            font-size: 42px;
+            font-size: 44px;
           }
           
           .sub-headline {
-            font-size: 17px;
-          }
-          
-          .content-wrapper {
-            max-width: 500px;
-          }
-        }
-
-        @media (max-width: 1024px) {
-          .hero-container {
-            padding: 0 40px;
-          }
-          
-          .main-headline {
-            font-size: 38px;
-          }
-          
-          .sub-headline {
-            font-size: 16px;
-          }
-          
-          .primary-button,
-          .secondary-button {
-            padding: 11px 24px; /* Even smaller on tablet */
-            font-size: 13px;
-            height: 40px;
+            font-size: 18px;
           }
         }
 
@@ -645,14 +609,13 @@ const HeroSection = () => {
             grid-template-columns: 1fr;
             height: auto;
             min-height: 100vh;
-            padding: 80px 40px 60px;
-            gap: 50px;
+            padding: 80px 20px 60px;
+            gap: 60px;
           }
           
           .image-side {
-            height: 350px;
-            padding: 0;
-            order: 1;
+            height: 400px;
+            padding: 0 20px;
           }
           
           .content-side {
@@ -660,81 +623,61 @@ const HeroSection = () => {
             order: 2;
           }
           
+          .image-side {
+            order: 1;
+          }
+          
           .content-wrapper {
             max-width: 100%;
-            text-align: center;
-            align-items: center;
           }
           
           .image-wrapper {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
-            height: 350px;
-          }
-          
-          .button-group {
-            justify-content: center;
           }
         }
 
         @media (max-width: 768px) {
-          .hero-container {
-            padding: 60px 30px 40px;
-            gap: 40px;
-          }
-          
           .main-headline {
-            font-size: 32px;
+            font-size: 36px;
           }
           
           .sub-headline {
-            font-size: 16px;
+            font-size: 17px;
           }
           
           .button-group {
             flex-direction: column;
-            align-items: center;
           }
           
           .primary-button,
           .secondary-button {
             width: 100%;
-            max-width: 280px;
+            max-width: 300px;
             justify-content: center;
-            padding: 10px 20px; /* Smaller on mobile */
-            font-size: 13px;
-            height: 38px;
           }
           
           .image-side {
-            height: 300px;
+            height: 350px;
           }
           
-          .image-wrapper {
-            height: 300px;
-          }
-          
-          .fallback-text {
-            font-size: 16px;
+          .hero-container {
+            padding: 60px 20px 40px;
+            gap: 40px;
           }
         }
 
         @media (max-width: 480px) {
-          .hero-container {
-            padding: 50px 20px 30px;
-            gap: 30px;
-          }
-          
           .main-headline {
             font-size: 28px;
           }
           
           .sub-headline {
-            font-size: 15px;
+            font-size: 16px;
           }
           
           .content-wrapper {
-            gap: 24px;
+            gap: 30px;
           }
           
           .company-logo {
@@ -743,41 +686,20 @@ const HeroSection = () => {
           
           .primary-button,
           .secondary-button {
-            padding: 9px 18px; /* Smallest on mobile */
-            font-size: 12px;
-            height: 36px;
-            max-width: 250px;
+            padding: 16px 24px;
+            font-size: 15px;
           }
           
           .image-side {
             height: 250px;
           }
           
-          .image-wrapper {
-            height: 250px;
-          }
-        }
-
-        /* Small Phones */
-        @media (max-width: 350px) {
-          .hero-container {
-            padding: 40px 15px 20px;
+          .fallback-icon {
+            font-size: 60px;
           }
           
-          .main-headline {
-            font-size: 24px;
-          }
-          
-          .sub-headline {
-            font-size: 14px;
-          }
-          
-          .primary-button,
-          .secondary-button {
-            padding: 8px 16px;
-            font-size: 11px;
-            height: 34px;
-            max-width: 220px;
+          .fallback-text {
+            font-size: 20px;
           }
         }
       `}</style>
