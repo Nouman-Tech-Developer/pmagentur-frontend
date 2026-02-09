@@ -1,627 +1,410 @@
-// components/ContactForm.jsx
 import React from 'react';
 
-const ContactForm = () => {
+const ContactSection = () => {
   return (
     <>
-      <section className="organism-contact-form _organism-contact-form_1a2b3c_31">
-        <div className="_container_1a2b3c_53">
-          <div className="_form-wrapper_1a2b3c_59">
-            <div data-hs-island="true" id="hs-form-island-hs_form_target_widget_1762510008293">
-              <div id="hs_form_target_widget_1762510008293-r" data-hsfc-id="Renderer" className="hsfc-Renderer">
-                <div data-hsfc-id="FormWrapper" className="hsfc-FormWrapper">
-                  <form 
-                    data-hsfc-id="Form" 
-                    id="hs_form_target_widget_1762510008293-c88a9e87-6502-4857-9268-01d309c7c5d7" 
-                    method="POST" 
-                    acceptCharset="UTF-8" 
-                    encType="multipart/form-data" 
-                    noValidate 
-                    lang="EN" 
-                    aria-label="HubSpot Form"
-                    action="https://forms-eu1.hsforms.com/submissions/v3/public/submit/formsnext/multipart/49192415/c88a9e87-6502-4857-9268-01d309c7c5d7"
-                    target="submission_handler_hs_form_target_widget_1762510008293-c88a9e87-6502-4857-9268-01d309c7c5d7"
-                    className="hsfc-Form"
-                  >
-                    <div data-hsfc-id="Step" id="hs_form_target_widget_1762510008293-23" className="hsfc-Step">
-                      <div className="hsfc-Step__Content">
-                        
-                        {/* Heading Row */}
-                        <div data-hsfc-id="Row" id="hs_form_target_widget_1762510008293-2591644189726" className="hsfc-Row">
-                          <h1 
-                            data-hsfc-id="Heading" 
-                            id="hs_form_target_widget_1762510008293-2541259221459" 
-                            style={{alignSelf: 'start', justifySelf: 'center'}}
-                            aria-level="1" 
-                            className="hsfc-Heading"
-                          >
-                            Let's get started!
-                          </h1>
-                        </div>
-
-                        {/* Description Row */}
-                        <div data-hsfc-id="Row" id="hs_form_target_widget_1762510008293-2" className="hsfc-Row">
-                          <div data-hsfc-id="RichText" id="hs_form_target_widget_1762510008293-1" className="hsfc-RichText">
-                            <p>Every project begins with a decision. Let's discuss your goals and requirements without obligation.&nbsp;</p>
-                          </div>
-                        </div>
-
-                        {/* Name and Company Row */}
-                        <div data-hsfc-id="Row" id="hs_form_target_widget_1762510008293-20" className="hsfc-Row">
-                          <div data-hsfc-id="TextField" className="hsfc-TextField" id="hs_form_target_widget_1762510008293-6">
-                            <label 
-                              data-hsfc-id="FieldLabel" 
-                              id="hs_form_target_widget_1762510008293-6-label" 
-                              htmlFor="hs_form_target_widget_1762510008293-6-input" 
-                              lang="EN" 
-                              className="hsfc-FieldLabel"
-                            >
-                              <span></span>
-                            </label>
-                            <input 
-                              data-hsfc-id="TextInput" 
-                              type="text" 
-                              id="hs_form_target_widget_1762510008293-6-input" 
-                              name="0-1/firstname" 
-                              placeholder="*First and last name*" 
-                              required 
-                              aria-invalid="false" 
-                              aria-required="true" 
-                              aria-labelledby="hs_form_target_widget_1762510008293-6-label" 
-                              autoComplete="given-name" 
-                              className="hsfc-TextInput" 
-                              defaultValue=""
-                            />
-                          </div>
-                          
-                          <div data-hsfc-id="TextField" className="hsfc-TextField" id="hs_form_target_widget_1762510008293-5">
-                            <label 
-                              data-hsfc-id="FieldLabel" 
-                              id="hs_form_target_widget_1762510008293-5-label" 
-                              htmlFor="hs_form_target_widget_1762510008293-5-input" 
-                              lang="EN" 
-                              className="hsfc-FieldLabel"
-                            >
-                              <span></span>
-                            </label>
-                            <input 
-                              data-hsfc-id="TextInput" 
-                              type="text" 
-                              id="hs_form_target_widget_1762510008293-5-input" 
-                              name="0-1/lastname" 
-                              placeholder="*Company*" 
-                              required 
-                              aria-invalid="false" 
-                              aria-required="true" 
-                              aria-labelledby="hs_form_target_widget_1762510008293-5-label" 
-                              autoComplete="family-name" 
-                              className="hsfc-TextInput" 
-                              defaultValue=""
-                            />
-                          </div>
-                        </div>
-
-                        {/* Phone and Email Row */}
-                        <div data-hsfc-id="Row" id="hs_form_target_widget_1762510008293-21" className="hsfc-Row">
-                          <div data-hsfc-id="TextField" className="hsfc-TextField" id="hs_form_target_widget_1762510008293-2493133450350">
-                            <label 
-                              data-hsfc-id="FieldLabel" 
-                              id="hs_form_target_widget_1762510008293-2493133450350-label" 
-                              htmlFor="hs_form_target_widget_1762510008293-2493133450350-input" 
-                              lang="EN" 
-                              className="hsfc-FieldLabel"
-                            >
-                              <span></span>
-                            </label>
-                            <input 
-                              data-hsfc-id="TextInput" 
-                              type="text" 
-                              id="hs_form_target_widget_1762510008293-2493133450350-input" 
-                              name="0-1/contact_form_telephone" 
-                              placeholder="*Phone number*" 
-                              aria-invalid="false" 
-                              aria-required="false" 
-                              aria-labelledby="hs_form_target_widget_1762510008293-2493133450350-label" 
-                              className="hsfc-TextInput" 
-                              defaultValue=""
-                            />
-                          </div>
-                          
-                          <div data-hsfc-id="EmailField" className="hsfc-EmailField" id="hs_form_target_widget_1762510008293-3">
-                            <label 
-                              data-hsfc-id="FieldLabel" 
-                              id="hs_form_target_widget_1762510008293-3-label" 
-                              htmlFor="hs_form_target_widget_1762510008293-3-input" 
-                              lang="EN" 
-                              className="hsfc-FieldLabel"
-                            >
-                              <span></span>
-                            </label>
-                            <input 
-                              data-hsfc-id="TextInput" 
-                              type="email" 
-                              inputMode="email" 
-                              id="hs_form_target_widget_1762510008293-3-input" 
-                              name="0-1/email" 
-                              placeholder="*E-Mail*" 
-                              aria-invalid="false" 
-                              aria-required="true" 
-                              aria-labelledby="hs_form_target_widget_1762510008293-3-label" 
-                              autoComplete="email" 
-                              className="hsfc-TextInput" 
-                              defaultValue=""
-                            />
-                          </div>
-                        </div>
-
-                        {/* Message Textarea Row */}
-                        <div data-hsfc-id="Row" id="hs_form_target_widget_1762510008293-2034542751417" className="hsfc-Row">
-                          <div data-hsfc-id="TextareaField" className="hsfc-TextareaField" id="hs_form_target_widget_1762510008293-2642758909100">
-                            <label 
-                              data-hsfc-id="FieldLabel" 
-                              id="hs_form_target_widget_1762510008293-2642758909100-label" 
-                              htmlFor="hs_form_target_widget_1762510008293-2642758909100-input" 
-                              lang="EN" 
-                              className="hsfc-FieldLabel"
-                            >
-                              <span></span>
-                            </label>
-                            <textarea 
-                              data-hsfc-id="TextareaInput" 
-                              inputMode="text" 
-                              id="hs_form_target_widget_1762510008293-2642758909100-input" 
-                              name="0-1/contact_form_description" 
-                              placeholder="*Your message*" 
-                              aria-invalid="true" 
-                              aria-required="true" 
-                              aria-labelledby="hs_form_target_widget_1762510008293-2642758909100-label" 
-                              className="hsfc-TextareaInput"
-                              aria-describedby="hs_form_target_widget_1762510008293-2642758909100-error"
-                              defaultValue=""
-                            ></textarea>
-                            <div 
-                              data-hsfc-id="ErrorAlert" 
-                              id="hs_form_target_widget_1762510008293-2642758909100-error" 
-                              lang="EN" 
-                              aria-live="polite" 
-                              className="hsfc-ErrorAlert"
-                            >
-                              Please complete this required field.
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Privacy Policy Checkbox Row */}
-                        <div data-hsfc-id="Row" id="hs_form_target_widget_1762510008293-2094531852367" className="hsfc-Row">
-                          <div data-hsfc-id="CheckboxField" className="hsfc-CheckboxField" id="hs_form_target_widget_1762510008293-2371333648556">
-                            <label 
-                              data-hsfc-id="FieldLabel" 
-                              id="hs_form_target_widget_1762510008293-2371333648556-label" 
-                              htmlFor="hs_form_target_widget_1762510008293-2371333648556-input" 
-                              lang="EN" 
-                              className="hsfc-FieldLabel"
-                            >
-                              <input 
-                                type="checkbox" 
-                                data-hsfc-id="CheckboxInput" 
-                                id="hs_form_target_widget_1762510008293-2371333648556-input" 
-                                name="0-1/contact_form_legal_consent" 
-                                aria-invalid="false" 
-                                aria-required="true" 
-                                aria-labelledby="hs_form_target_widget_1762510008293-2371333648556-label" 
-                                className="hsfc-CheckboxInput" 
-                                defaultValue="false"
-                              />
-                              <span>
-                                <span>I accept the <a href="https://www.pmagentur.com/en/datenschutz" target="_blank" rel="noopener noreferrer">privacy policy</a>.</span>
-                                <span className="hsfc-FieldLabel__RequiredIndicator">*</span>
-                              </span>
-                            </label>
-                          </div>
-                        </div>
-
-                        {/* reCAPTCHA Row - NOW INCLUDED */}
-                        <div data-hsfc-id="Row" id="hs_form_target_widget_1762510008293-3137428177434" className="hsfc-Row">
-                          <div data-hsfc-id="ReCaptchaV2" id="hs_form_target_widget_1762510008293-2990591225404" className="hsfc-ReCaptchaV2">
-                            <div>
-                              <div className="grecaptcha-badge" data-style="inline" style={{width: '256px', height: '60px', boxShadow: 'gray 0px 0px 5px'}}>
-                                <div className="grecaptcha-logo">
-                                  <iframe 
-                                    title="reCAPTCHA" 
-                                    width="256" 
-                                    height="60" 
-                                    role="presentation" 
-                                    name="a-nu3c3463a30o" 
-                                    frameBorder="0" 
-                                    scrolling="no" 
-                                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" 
-                                    src="https://google.com/recaptcha/enterprise/anchor?ar=1&amp;k=6Ld_ad8ZAAAAAAqr0ePo1dUfAi0m4KPkCMQYwPPm&amp;co=aHR0cHM6Ly93d3cucG1hZ2VudHVyLmNvbTo0NDM.&amp;hl=en&amp;v=gYdqkxiddE5aXrugNbBbKgtN&amp;size=invisible&amp;badge=inline&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=dk3rfuavfvky" 
-                                    data-lf-form-tracking-inspected="true" 
-                                    data-lf-yt-playback-inspected="true" 
-                                    data-lf-vimeo-playback-inspected="true"
-                                  ></iframe>
-                                </div>
-                                <div className="grecaptcha-error"></div>
-                                <textarea 
-                                  id="g-recaptcha-response" 
-                                  name="g-recaptcha-response" 
-                                  className="g-recaptcha-response" 
-                                  style={{
-                                    width: '250px', 
-                                    height: '40px', 
-                                    border: '1px solid rgb(193, 193, 193)', 
-                                    margin: '10px 25px', 
-                                    padding: '0px', 
-                                    resize: 'none', 
-                                    display: 'none'
-                                  }}
-                                ></textarea>
-                              </div>
-                              <iframe 
-                                data-lf-form-tracking-inspected="true" 
-                                data-lf-yt-playback-inspected="true" 
-                                data-lf-vimeo-playback-inspected="true" 
-                                style={{display: 'none'}}
-                              ></iframe>
-                            </div>
-                            <input type="hidden" name="g-recaptcha-response" id="hs-recaptcha-response" defaultValue="" />
-                          </div>
-                        </div>
-
-                        {/* Submit Button Row */}
-                        <div id="hs_form_target_widget_1762510008293-22" data-hsfc-id="NavigationRow" className="hsfc-NavigationRow">
-                          <div id="hs_form_target_widget_1762510008293-22-a" className="hsfc-NavigationRow__Alerts"></div>
-                          <div id="hs_form_target_widget_1762510008293-22-b" className="hsfc-NavigationRow__Buttons">
-                            <button 
-                              type="submit" 
-                              data-hsfc-id="Button" 
-                              id="hs_form_target_widget_1762510008293-15" 
-                              lang="EN" 
-                              aria-busy="false" 
-                              className="hsfc-Button"
-                            >
-                              Send
-                            </button>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                    <input 
-                      type="hidden" 
-                      name="hs_context" 
-                      defaultValue='{"source":"forms-embed-static","sourceName":"forms-embed","sourceVersion":"1.0","sourceVersionMajor":"1","sourceVersionMinor":"0","referrer":"https://www.pmagentur.com/de/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36","urlParams":{},"__hstc":"164012960.b976c1d56d99f1a32da500609967bdb0.1770457645002.1770537572577.1770539439126.12","isHubSpotCmsGeneratedPage":true,"isCMSEditor":false,"canonicalUrl":"https://www.pmagentur.com/en/","contentType":"standard-page","locale":"en","formDefinitionUpdatedAt":1769596203440,"pageUrl":"https://www.pmagentur.com/en/","pageTitle":"Agency for software development, AI, B2B e-commerce & digital platforms","pageId":"352746287313","allPageIds":{"analyticsPageId":"352746287313","contentAnalyticsPageId":"352746287313","contentPageId":352746287313},"hutk":"b976c1d56d99f1a32da500609967bdb0","fieldValues":{"0-1/firstname":"","0-1/contact_form_legal_consent":false},"emailResubscribeStatus":"NOT_APPLICABLE","captchaStatus":"LOADED","renderedFieldsIds":["0-1/firstname","0-1/lastname","0-1/contact_form_telephone","0-1/email","0-1/contact_form_description","0-1/contact_form_legal_consent"],"boolCheckBoxFields":"0-1/contact_form_legal_consent","__INTERNAL_PERFORMANCE__":{"formDomInteractive":6520.4,"formPageLoad":0,"formRendered":8147.7,"formReady":9153.3,"formSsrRequestLoadingStart":6468.5,"formSsrRequestLoadingEnd":7533,"formIslandRuntimeLoadingStart":3645.5,"formIslandRuntimeLoadingEnd":5911.4,"formServerRendererLoadingStart":8147.7,"formServerRendererLoadingEnd":8996.8,"effectiveNetworkType":"4g","inferredFormType":"ssr"},"recaptchaVersion":"v2"}'
-                    />
-                    
-                    <iframe 
-                      name="submission_handler_hs_form_target_widget_1762510008293-c88a9e87-6502-4857-9268-01d309c7c5d7" 
-                      style={{display: 'none'}} 
-                      title="submission frame"
-                    ></iframe>
-                    
-                    <div 
-                      data-hsfc-id="LiveRegionContent" 
-                      aria-live="polite" 
-                      id="hs_form_target_widget_1762510008293-c88a9e87-6502-4857-9268-01d309c7c5d7-live-region-content" 
-                      className="hsfc-LiveRegionContent"
-                    ></div>
-                  </form>
+      <section className="contact-section">
+        <div className="contact-container">
+          <div className="contact-content">
+            <div className="contact-header">
+              <h2 className="contact-title">Free Consultation</h2>
+              <p className="contact-subtitle">
+                Get a free, no-obligation consultation and discover how AI automation can transform your business.
+              </p>
+            </div>
+            
+            <div className="contact-info">
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#0071E3"/>
+                  </svg>
                 </div>
+                <div className="contact-details">
+                  <div className="contact-label">Email</div>
+                  <a href="mailto:info@tolero.com" className="contact-value">info@tolero.com</a>
+                </div>
+              </div>
+              
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 15.5C18.75 15.5 17.55 15.3 16.43 14.93C16.08 14.82 15.69 14.9 15.41 15.17L13.21 17.37C10.38 15.93 8.06 13.62 6.62 10.78L8.82 8.57C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.5C21 15.95 20.55 15.5 20 15.5Z" fill="#0071E3"/>
+                  </svg>
+                </div>
+                <div className="contact-details">
+                  <div className="contact-label">Phone</div>
+                  <a href="tel:+491234567890" className="contact-value">+49 123 456 7890</a>
+                </div>
+              </div>
+              
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#0071E3"/>
+                  </svg>
+                </div>
+                <div className="contact-details">
+                  <div className="contact-label">Location</div>
+                  <div className="contact-value">Sample Street 123, 10115 Berlin</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="contact-form">
+              <div className="contact-form-fields">
+                <div className="contact-field-row">
+                  <input 
+                    type="text" 
+                    placeholder="Your Name *" 
+                    className="contact-input"
+                  />
+                  <input 
+                    type="text" 
+                    placeholder="Company" 
+                    className="contact-input"
+                  />
+                </div>
+                
+                <div className="contact-field-row">
+                  <input 
+                    type="email" 
+                    placeholder="Email Address *" 
+                    className="contact-input"
+                  />
+                  <input 
+                    type="tel" 
+                    placeholder="Phone Number" 
+                    className="contact-input"
+                  />
+                </div>
+                
+                <textarea 
+                  placeholder="Your Message *" 
+                  rows="4" 
+                  className="contact-textarea"
+                ></textarea>
+                
+                <div className="contact-checkbox">
+                  <input type="checkbox" id="privacy" className="contact-checkbox-input" />
+                  <label htmlFor="privacy" className="contact-checkbox-label">
+                    I agree to the <a href="#">privacy policy</a> *
+                  </label>
+                </div>
+                
+                <button type="submit" className="contact-btn contact-submit">
+                  Send Message
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <style jsx global>{`
-        /* Contact Form Component */
-        ._organism-contact-form_1a2b3c_31 {
-          display: block;
+      <style jsx="true">{`
+        /* Contact Section */
+        .contact-section {
           width: 100%;
-          background-color: #fff;
-          padding: 0 1.5rem 2.1875rem;
+          padding: 35px 100px; /* 35px top-bottom, 100px left-right */
+          background: #FFFFFF;
+          box-sizing: border-box;
         }
-
-        @media only screen and (min-width: 768px) {
-          ._organism-contact-form_1a2b3c_31 {
-            padding: 0 3.75rem 2.1875rem;
+        
+        @media only screen and (max-width: 1200px) {
+          .contact-section {
+            padding: 35px 60px; /* Tablet: 35px top-bottom, 60px left-right */
           }
         }
-
-        @media only screen and (min-width: 1024px) {
-          ._organism-contact-form_1a2b3c_31 {
-            padding: 0 3.75rem 2.1875rem;
+        
+        @media only screen and (max-width: 768px) {
+          .contact-section {
+            padding: 35px 40px; /* Mobile: 35px top-bottom, 40px left-right */
           }
         }
-
-        @media only screen and (min-width: 1440px) {
-          ._organism-contact-form_1a2b3c_31 {
-            padding: 0 0rem 2.1875rem;
+        
+        @media only screen and (max-width: 480px) {
+          .contact-section {
+            padding: 35px 24px; /* Small mobile: 35px top-bottom, 24px left-right */
           }
         }
-
-        /* Container */
-        ._container_1a2b3c_53 {
-          width: 100%;
-          max-width: 75rem;
+        
+        .contact-container {
+          max-width: 1400px;
           margin: 0 auto;
         }
-
-        /* Form Wrapper */
-        ._form-wrapper_1a2b3c_59 {
-          width: 100%;
-        }
-
-        /* HubSpot Form Styles - Applied directly as per your CSS */
-        .hsfc-Form .hsfc-Step {
-          display: flex;
+        
+        .contact-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+          align-items: start;
         }
         
-        .hsfc-Form .hsfc-Step .hsfc-Step__Content {
-          width: 100%;
-          max-width: calc(1200 / 16 * 1rem);
-          margin: 0 auto;
-          padding: calc(35 / 16 * 1rem) calc(24 / 16 * 1rem);
-        }
-        
-        @media only screen and (min-width: 768px) {
-          .hsfc-Form .hsfc-Step .hsfc-Step__Content {
-            padding: calc(35 / 16 * 1rem) calc(60 / 16 * 1rem);
+        @media only screen and (max-width: 1024px) {
+          .contact-content {
+            grid-template-columns: 1fr;
+            gap: 60px;
           }
         }
         
-        @media only screen and (min-width: 1024px) {
-          .hsfc-Form .hsfc-Step .hsfc-Step__Content {
-            padding: calc(35 / 16 * 1rem) calc(60 / 16 * 1rem);
-          }
-        }
-        
-        @media only screen and (min-width: 1440px) {
-          .hsfc-Form .hsfc-Step .hsfc-Step__Content {
-            padding: calc(35 / 16 * 1rem) calc(0 / 16 * 1rem);
-          }
-        }
-        
-        /* Form Layout */
-        .hsfc-Row {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1.5rem;
-          margin-bottom: 1.5rem;
-        }
-        
-        /* Form Fields - Two columns on desktop */
-        .hsfc-TextField,
-        .hsfc-EmailField,
-        .hsfc-TextareaField {
-          flex: 1 1 100%;
-        }
-        
-        @media only screen and (min-width: 768px) {
-          .hsfc-TextField,
-          .hsfc-EmailField {
-            flex: 1 1 calc(50% - 0.75rem);
-          }
-        }
-        
-        /* Heading - Your exact CSS */
-        .hsfc-Renderer .hsfc-Row .hsfc-Heading {
-          font-family: var(--font-h2-primary-font-family);
-          font-size: var(--font-h2-primary-font-size-mobile);
-          line-height: var(--font-h2-primary-line-height-mobile);
-          font-weight: var(--font-h2-primary-font-weight);
-          letter-spacing: var(--font-h2-primary-letter-spacing);
-          text-transform: var(--font-h2-primary-text-transform);
-          color: var(--font-h2-primary-color);
-          background: var(--font-h2-primary-background);
-          padding-bottom: calc(16 / 16 * 1rem);
-          width: 100%;
+        /* Header */
+        .contact-header {
+          grid-column: 1 / -1;
           text-align: center;
+          margin-bottom: 24px;
         }
         
-        /* Input and Textarea Styles - Your exact CSS */
-        .hsfc-Renderer .hsfc-Row input,
-        .hsfc-Renderer .hsfc-Row textarea {
-          font-family: var(--font-text-input-font-family);
-          font-size: var(--font-text-input-font-size-mobile);
-          line-height: var(--font-text-input-line-height-mobile);
-          line-height: 140%;
-          font-weight: var(--font-text-input-font-weight);
-          letter-spacing: var(--font-text-input-letter-spacing);
-          text-transform: var(--font-text-input-text-transform);
-          color: var(--font-text-input-color);
-          background: var(--font-text-input-background);
-          background-color: #FFFFFF;
-          border-radius: calc(6 / 16 * 1rem);
-          border: calc(1 / 16 * 1rem) solid #CCCCCC;
-          padding: calc(10 / 16 * 1rem) calc(16 / 16 * 1rem);
+        .contact-title {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 40px;
+          line-height: 48px;
+          font-weight: 600;
+          color: #E10600;
+          margin: 0 0 16px 0;
+        }
+        
+        .contact-subtitle {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 18px;
+          line-height: 28px;
+          font-weight: 400;
+          color: #0071E3;
+          margin: 0;
+          max-width: 700px;
+          margin: 0 auto;
+        }
+        
+        @media only screen and (max-width: 768px) {
+          .contact-title {
+            font-size: 32px;
+            line-height: 40px;
+          }
+          
+          .contact-subtitle {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        
+        /* Contact Info */
+        .contact-info {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+        }
+        
+        /* Contact Item */
+        .contact-item {
+          display: flex;
+          gap: 20px;
+          align-items: flex-start;
+        }
+        
+        /* Contact Icon */
+        .contact-icon {
+          flex-shrink: 0;
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #F5F5F7;
+          border-radius: 12px;
+        }
+        
+        /* Contact Details */
+        .contact-details {
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .contact-label {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 500;
+          color: #6B7280;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 4px;
+        }
+        
+        .contact-value {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 18px;
+          line-height: 24px;
+          font-weight: 600;
+          color: #000000;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        
+        .contact-value:hover {
+          color: #0071E3;
+        }
+        
+        /* Form */
+        .contact-form-fields {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        
+        /* Field Row */
+        .contact-field-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+        
+        @media only screen and (max-width: 768px) {
+          .contact-field-row {
+            grid-template-columns: 1fr;
+          }
+        }
+        
+        /* Input Styles */
+        .contact-input,
+        .contact-textarea {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          color: #000000;
+          padding: 12px 16px;
+          border: 1px solid #E5E5E7;
+          border-radius: 8px;
+          background: #FFFFFF;
           outline: none;
+          transition: all 0.2s ease;
           width: 100%;
           box-sizing: border-box;
         }
         
-        /* Focus and Hover States */
-        .hsfc-Renderer .hsfc-Row input:hover,
-        .hsfc-Renderer .hsfc-Row input:focus,
-        .hsfc-Renderer .hsfc-Row textarea:hover,
-        .hsfc-Renderer .hsfc-Row textarea:focus {
-          border-color: #FE5631 !important;
+        .contact-input:focus,
+        .contact-textarea:focus {
+          border-color: #0071E3;
+          box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
         }
         
-        /* Textarea specific */
-        .hsfc-TextareaInput {
-          min-height: calc(160 / 16 * 1rem);
+        .contact-input::placeholder,
+        .contact-textarea::placeholder {
+          color: #6B7280;
+          opacity: 0.7;
+        }
+        
+        /* Textarea */
+        .contact-textarea {
           resize: vertical;
+          min-height: 120px;
         }
         
-        /* Labels - Hidden */
-        .hsfc-Renderer .hsfc-Row .hsfc-FieldLabel {
-          display: none;
-        }
-        
-        /* Checkbox Field - Show label */
-        .hsfc-CheckboxField .hsfc-FieldLabel {
-          display: flex !important;
+        /* Checkbox */
+        .contact-checkbox {
+          display: flex;
           align-items: flex-start;
-          gap: 0.75rem;
-          width: 100%;
-          cursor: pointer;
+          gap: 12px;
+          margin-top: 8px;
         }
         
-        /* Checkbox input styling */
-        .hsfc-CheckboxField .hsfc-FieldLabel input[type="checkbox"] {
-          appearance: none;
-          width: calc(22 / 16 * 1rem);
-          height: calc(22 / 16 * 1rem);
-          padding: calc(5 / 16 * 1rem);
-          border: calc(1 / 16 * 1rem) solid #CCCCCC;
-          border-radius: calc(4 / 16 * 1rem);
-          background-color: #FFFFFF;
-          cursor: pointer;
-          position: relative;
-          flex-shrink: 0;
-          margin-top: 0.125rem;
+        .contact-checkbox-input {
+          width: 20px;
+          height: 20px;
+          margin-top: 2px;
+          accent-color: #0071E3;
         }
         
-        .hsfc-CheckboxField .hsfc-FieldLabel input[type="checkbox"]:hover {
-          border-color: #FE5631;
+        .contact-checkbox-label {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 400;
+          color: #6B7280;
+          flex: 1;
         }
         
-        .hsfc-CheckboxField .hsfc-FieldLabel input[type="checkbox"]:checked {
-          background-color: #FE5631;
-          border-color: #FE5631;
-        }
-        
-        .hsfc-CheckboxField .hsfc-FieldLabel input[type="checkbox"]:checked::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) rotate(45deg);
-          width: calc(6 / 16 * 1rem);
-          height: calc(10 / 16 * 1rem);
-          border: solid #FFFFFF;
-          border-width: 0 calc(2 / 16 * 1rem) calc(2 / 16 * 1rem) 0;
-          background-color: transparent;
-        }
-        
-        /* Checkbox label text */
-        .hsfc-CheckboxField .hsfc-FieldLabel span {
-          font-family: var(--font-copy-s-quaternary-font-family);
-          font-size: var(--font-copy-s-quaternary-font-size-mobile);
-          line-height: var(--font-copy-s-quaternary-line-height-mobile);
-          color: var(--font-copy-s-quaternary-color);
-        }
-        
-        /* Privacy policy link */
-        .hsfc-CheckboxField .hsfc-FieldLabel a {
-          color: #FE5631;
+        .contact-checkbox-label a {
+          color: #0071E3;
           text-decoration: none;
         }
         
-        .hsfc-CheckboxField .hsfc-FieldLabel a:hover {
+        .contact-checkbox-label a:hover {
           text-decoration: underline;
         }
         
-        /* Required indicator */
-        .hsfc-FieldLabel__RequiredIndicator {
-          color: #FE5631;
-          margin-left: 0.25rem;
-        }
-        
-        /* Error Message */
-        .hsfc-ErrorAlert {
-          font-family: var(--font-copy-s-quaternary-font-family);
-          font-size: var(--font-copy-s-quaternary-font-size-mobile);
-          line-height: var(--font-copy-s-quaternary-line-height-mobile);
-          color: #FF0000;
-          margin-top: 0.5rem;
-        }
-        
-        /* Submit Button Row */
-        .hsfc-NavigationRow {
-          width: 100%;
-          margin-top: 1rem;
-        }
-        
-        .hsfc-NavigationRow__Buttons {
-          display: flex;
-          justify-content: center;
-          width: 100%;
-        }
-        
         /* Submit Button */
-        .hsfc-Button {
-          font-family: var(--font-tagline-secondary-font-family);
-          font-size: var(--font-tagline-secondary-font-size-mobile);
-          line-height: var(--font-tagline-secondary-line-height-mobile);
-          font-weight: var(--font-tagline-secondary-font-weight);
-          letter-spacing: var(--font-tagline-secondary-letter-spacing);
-          text-transform: var(--font-tagline-secondary-text-transform);
-          color: var(--font-tagline-secondary-color);
-          background: var(--font-tagline-secondary-background);
-          border-radius: calc(28 / 16 * 1rem);
-          padding: calc(8 / 16 * 1rem) calc(24 / 16 * 1rem);
-          background-color: #FE5631;
-          color: #FFFFFF;
-          min-width: calc(120 / 16 * 1rem);
-          border: none;
-          cursor: pointer;
-          transition: background-color 0.2s ease;
-        }
-        
-        .hsfc-Button:hover {
-          color: var(--font-tagline-secondary-color-hover);
-          background-color: #D64B2C;
-        }
-        
-        /* reCAPTCHA Styling */
-        .hsfc-ReCaptchaV2 {
+        .contact-submit {
+          margin-top: 16px;
           width: 100%;
-          margin: 1rem 0;
         }
         
-        .grecaptcha-badge {
-          width: 256px !important;
-          height: 60px !important;
-          box-shadow: gray 0px 0px 5px !important;
+        /* Button Styles - Blue button */
+        .contact-btn {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-weight: 500;
+          font-size: 16px;
+          padding: 12px 32px;
+          border-radius: 25px;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          height: 48px;
+          min-width: 200px;
+          outline: none;
+          border: none;
+          box-sizing: border-box;
+          letter-spacing: 0.01em;
+          background-color: #2563EB;
+          color: #FFFFFF;
         }
         
-        .grecaptcha-logo iframe {
-          width: 256px !important;
-          height: 60px !important;
+        .contact-btn:hover {
+          background-color: #1D4ED8;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
         }
         
-        .g-recaptcha-response {
-          width: 250px !important;
-          height: 40px !important;
-          border: 1px solid rgb(193, 193, 193) !important;
-          margin: 10px 25px !important;
-          padding: 0px !important;
-          resize: none !important;
-          display: none !important;
-        }
-        
-        /* Desktop media query for font sizes */
-        @media only screen and (min-width: 1024px) {
-          .hsfc-Renderer .hsfc-Row .hsfc-Heading {
-            font-size: var(--font-h2-primary-font-size-desktop);
-            line-height: var(--font-h2-primary-line-height-desktop);
-            letter-spacing: var(--font-h2-primary-letter-spacing-desktop);
+        /* Responsive */
+        @media only screen and (max-width: 1024px) {
+          .contact-content {
+            gap: 48px;
           }
           
-          .hsfc-Renderer .hsfc-Row input,
-          .hsfc-Renderer .hsfc-Row textarea {
-            font-size: var(--font-text-input-font-size-desktop);
-            line-height: var(--font-text-input-line-height-desktop);
-            letter-spacing: var(--font-text-input-letter-spacing-desktop);
+          .contact-item {
+            gap: 16px;
           }
           
-          .hsfc-Button {
-            font-size: var(--font-tagline-secondary-font-size-desktop);
-            line-height: var(--font-tagline-secondary-line-height-desktop);
-            letter-spacing: var(--font-tagline-secondary-letter-spacing-desktop);
+          .contact-icon {
+            width: 40px;
+            height: 40px;
+          }
+          
+          .contact-value {
+            font-size: 16px;
+          }
+          
+          .contact-btn {
+            padding: 10px 24px;
+            font-size: 15px;
+            height: 44px;
+            min-width: 180px;
+          }
+        }
+        
+        @media only screen and (max-width: 768px) {
+          .contact-info {
+            gap: 24px;
+          }
+          
+          .contact-form-fields {
+            gap: 16px;
+          }
+          
+          .contact-field-row {
+            gap: 16px;
           }
         }
       `}</style>
@@ -629,4 +412,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default ContactSection;

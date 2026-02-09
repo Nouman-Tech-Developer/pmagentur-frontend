@@ -1,346 +1,339 @@
-// components/ServiceSection.jsx
 import React from 'react';
 
-const ServiceSection = () => {
+const ServicesSection = () => {
   const services = [
     {
       id: 1,
-      title: "AI & Data",
-      description: "Integration of artificial intelligence for automation, data analysis and intelligent business processes.",
-      imageSrc: "/images/AI.png",
-      buttonText: "Learn more",
-      buttonLink: "https://www.pmagentur.com/de/services/ki-integration/ki-agentur/?hsLang=en"
+      title: "AI Phone Assistant",
+      description: "Automates calls, appointment scheduling, and customer inquiries – reliably, professionally, and available 24/7. Customizable for your brand.",
+      imageSrc: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=400&h=300&fit=crop",
+      buttonText: "Learn More",
+      buttonLink: "https://www.tolero.com/ai-phone-assistant"
     },
     {
       id: 2,
-      title: "E-Commerce",
-      description: "Digital B2B e-commerce solutions that efficiently combine sales, marketing and purchasing.",
-      imageSrc: "/images/E-Commerce.png",
-      buttonText: "Learn more",
-      buttonLink: "https://www.pmagentur.com/de/services/b2b-ecommerce-entwicklung/b2b-ecommerce-agentur/?hsLang=en"
+      title: "Chatbots & Digital Assistants",
+      description: "Intelligent chatbots for websites, social media, or internal processes. Automatically answer inquiries and relieve your team.",
+      imageSrc: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w-400&h=300&fit=crop",
+      buttonText: "Learn More",
+      buttonLink: "https://www.tolero.com/chatbots"
     },
     {
       id: 3,
-      title: "Software",
-      description: "Individual software development that is geared towards your processes and creates future viability.",
-      imageSrc: "/images/Software.png",
-      buttonText: "Learn more",
-      buttonLink: "https://www.pmagentur.com/de/services/softwareentwicklung/agentur/?hsLang=en"
+      title: "Email Automation",
+      description: "Automate customer communication, appointment confirmations, and internal processes – fast, error-free, and efficient.",
+      imageSrc: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop",
+      buttonText: "Learn More",
+      buttonLink: "https://www.tolero.com/email-automation"
     },
     {
       id: 4,
-      title: "Digital Platforms",
-      description: "Digital platforms for seamless customer experiences - from corporate websites to modern intranets.",
-      imageSrc: "/images/Digital.png",
-      buttonText: "Learn more",
-      buttonLink: "https://www.pmagentur.com/de/services/plattformentwicklung/agentur/?hsLang=en"
+      title: "Workflow Optimization",
+      description: "Custom AI solutions for data processing and industry-specific tasks – tailored to your business.",
+      imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+      buttonText: "Learn More",
+      buttonLink: "https://www.tolero.com/workflow-optimization"
     }
   ];
 
   return (
     <>
-      <section className="module-service-card-list _module-service-card-list_cmi6t_736">
-        <div className="organism-service-card-list _organism-service-card-list_1sdq3_31">
-          {services.map((service) => (
-            <div key={service.id} className="molecule-service-card _molecule-service-card_o4lcf_31">
-              <div className="_image_o4lcf_53">
-                <img 
-                  src={service.imageSrc} 
-                  alt={service.title}
-                  loading="lazy"
-                />
-              </div>
-              <div className="_textContainer_o4lcf_82">
-                <div className="_title_o4lcf_91">{service.title}</div>
-                <div className="_description_o4lcf_115">
-                  <div className="safe-html">
+      <section className="services-grid">
+        <div className="services-container">
+          <div className="services-header">
+            <h2 className="services-title">Our AI Solutions in Detail</h2>
+            <p className="services-subtitle">Each solution is individually adapted to your business processes and integrated.</p>
+          </div>
+          
+          <div className="services-grid-cards">
+            {services.map((service) => (
+              <div key={service.id} className="service-card">
+                <div className="service-image">
+                  <img 
+                    src={service.imageSrc} 
+                    alt={service.title}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="service-content">
+                  <h3 className="service-title">{service.title}</h3>
+                  <div className="service-description">
                     <p>{service.description}</p>
                   </div>
                 </div>
+                <div className="service-action">
+                  <a 
+                    className="service-btn" 
+                    href={service.buttonLink}
+                    tabIndex="0"
+                    aria-disabled="false"
+                  >
+                    {service.buttonText}
+                  </a>
+                </div>
               </div>
-              <div className="_buttonWrapper_o4lcf_150">
-                <a 
-                  className="atom-button" 
-                  href={service.buttonLink}
-                  tabIndex="0"
-                  aria-disabled="false"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {service.buttonText}
-                </a>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       <style jsx="true">{`
-        /* Import fonts */
-        @font-face {
-          font-family: Okima;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Okima-Ink-130-C6F5kR7g.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-        
-        @font-face {
-          font-family: Satoshi Bold;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Bold-Bd5kKQ_U.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-        
-        @font-face {
-          font-family: Satoshi Medium;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Medium-ByP-Zb-9.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-        
-        @font-face {
-          font-family: Satoshi Regular;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Regular-CPM9dct4.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-        
-        @font-face {
-          font-family: Satoshi Light;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Light-IqwJ_ZjS.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-
-        /* Module Container */
-        .module-service-card-list {
-          padding: 2.1875rem 1.5rem; /* 35px top-bottom, 24px left-right */
+        /* Services Grid Section */
+        .services-grid {
           width: 100%;
-          max-width: 75rem; /* 1200px */
-          margin: 0 auto;
-          background-color: #fff;
+          padding: 35px 100px; /* Changed: 35px top-bottom, 100px left-right */
+          background: #FFFFFF;
           box-sizing: border-box;
         }
         
-        /* Tablet */
-        @media only screen and (min-width: 768px) {
-          .module-service-card-list {
-            padding: 2.1875rem 3.75rem; /* 35px top-bottom, 60px left-right */
+        @media only screen and (max-width: 1200px) {
+          .services-grid {
+            padding: 35px 60px; /* Tablet: 35px top-bottom, 60px left-right */
           }
         }
         
-        /* Desktop */
-        @media only screen and (min-width: 1024px) {
-          .module-service-card-list {
-            padding: 2.1875rem 3.75rem; /* 35px top-bottom, 60px left-right */
+        @media only screen and (max-width: 768px) {
+          .services-grid {
+            padding: 35px 40px; /* Mobile: 35px top-bottom, 40px left-right */
           }
         }
         
-        /* Large Desktop */
-        @media only screen and (min-width: 1440px) {
-          .module-service-card-list {
-            padding: 2.1875rem 0rem; /* 35px top-bottom, 0 left-right */
-            max-width: 75rem; /* Center with max-width */
+        @media only screen and (max-width: 480px) {
+          .services-grid {
+            padding: 35px 24px; /* Small mobile: 35px top-bottom, 24px left-right */
           }
         }
         
-        /* Organism Container */
-        .organism-service-card-list {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          align-items: stretch;
+        .services-container {
+          width: 100%;
+          max-width: 1600px; /* Increased max-width */
+          margin: 0 auto;
+        }
+        
+        /* Header */
+        .services-header {
+          margin-bottom: 64px;
+          text-align: center;
+        }
+        
+        .services-title {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 40px;
+          line-height: 48px;
+          font-weight: 600;
+          letter-spacing: -0.02em;
+          color: #E10600;
+          margin: 0 0 16px 0;
+        }
+        
+        .services-subtitle {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 18px;
+          line-height: 28px;
+          font-weight: 400;
+          color: #0071E3;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+        
+        @media only screen and (max-width: 768px) {
+          .services-title {
+            font-size: 32px;
+            line-height: 40px;
+          }
+          
+          .services-subtitle {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+        
+        /* Grid - 4 cards in 1 row */
+        .services-grid-cards {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 30px;
           width: 100%;
         }
         
-        /* Tablet - Gap between cards */
-        @media only screen and (min-width: 768px) {
-          .organism-service-card-list {
-            gap: 1.5rem; /* 24px gap */
+        @media only screen and (max-width: 1400px) {
+          .services-grid-cards {
+            grid-template-columns: repeat(3, 1fr); /* 3 cards on medium screens */
           }
         }
         
-        /* Individual Card - Full width on mobile */
-        .organism-service-card-list .molecule-service-card {
-          width: 100%;
-          margin-bottom: 2rem; /* Space between stacked cards on mobile */
-        }
-        
-        /* Tablet - 2 cards per row */
-        @media only screen and (min-width: 768px) {
-          .organism-service-card-list .molecule-service-card {
-            width: calc(50% - 0.75rem); /* 50% minus half of gap */
-            margin-bottom: 0;
+        @media only screen and (max-width: 1100px) {
+          .services-grid-cards {
+            grid-template-columns: repeat(2, 1fr); /* 2 cards on tablets */
           }
         }
         
-        /* Desktop - 4 cards per row */
-        @media only screen and (min-width: 1024px) {
-          .organism-service-card-list .molecule-service-card {
-            width: calc(25% - 1.125rem); /* 25% minus three-quarters of gap */
+        @media only screen and (max-width: 768px) {
+          .services-grid-cards {
+            grid-template-columns: 1fr; /* 1 card on mobile */
+            gap: 24px;
           }
         }
         
-        /* Individual Card Styling */
-        .molecule-service-card {
+        /* Service Card */
+        .service-card {
+          background: #FFFFFF;
+          border-radius: 20px;
+          overflow: hidden;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          background: #fff;
-          border-radius: 0;
-          box-shadow: none;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .service-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Image */
+        .service-image {
           width: 100%;
-          padding: 0;
+          height: 180px;
           overflow: hidden;
+          border-radius: 20px 20px 0 0;
         }
         
-        /* Image Container */
-        ._image_o4lcf_53 {
-          width: 100%;
-          height: 20.4375rem; /* ~327px */
-          object-fit: cover;
-          border-radius: 1.5rem; /* 24px */
-          overflow: hidden;
-          background: #eee;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        
-        /* Tablet Image Height */
-        @media only screen and (min-width: 768px) {
-          ._image_o4lcf_53 {
-            height: 19.5rem; /* ~312px */
-          }
-        }
-        
-        /* Desktop Image Height */
-        @media only screen and (min-width: 1024px) {
-          ._image_o4lcf_53 {
-            height: 17.5rem; /* ~280px */
-          }
-        }
-        
-        /* Image Styling */
-        ._image_o4lcf_53 img {
+        .service-image img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          display: block;
-          border-radius: 1.5rem; /* 24px */
+          transition: transform 0.3s ease;
         }
         
-        /* Text Container */
-        ._textContainer_o4lcf_82 {
+        .service-card:hover .service-image img {
+          transform: scale(1.05);
+        }
+        
+        /* Content */
+        .service-content {
+          padding: 28px 24px 24px 24px;
+          flex: 1;
           display: flex;
           flex-direction: column;
-          width: 100%;
-          padding: 0;
-          flex: 1;
-          min-height: 0;
         }
         
-        /* Title Styling */
-        ._title_o4lcf_91 {
-          margin: 0;
-          padding-top: 2rem; /* 32px */
-          width: 100%;
-          font-family: Satoshi Medium;
-          font-size: 1.625rem; /* 26px */
-          line-height: 1.2; /* 120% */
+        .service-title {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 22px;
+          line-height: 30px;
           font-weight: 500;
-          color: #000000;
-          text-transform: none;
-          letter-spacing: 0%;
+          color: #0071E3;
+          margin: 0 0 16px 0;
         }
         
-        /* Desktop Title */
-        @media only screen and (min-width: 1024px) {
-          ._title_o4lcf_91 {
-            font-size: 1.875rem; /* 30px */
-            line-height: 1.4; /* 140% */
-          }
-        }
-        
-        /* Description Styling */
-        ._description_o4lcf_115 {
-          font-family: Satoshi Regular;
-          font-size: 1rem; /* 16px */
-          line-height: 1.4; /* 140% */
+        .service-description {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 16px;
+          line-height: 24px;
           font-weight: 400;
-          color: #444444;
-          max-width: 40em !important;
+          color: #6B7280;
+          flex: 1;
+        }
+        
+        .service-description p {
           margin: 0;
-          width: 100%;
-          padding-top: 1rem; /* 16px */
         }
         
-        /* Desktop Description */
-        @media only screen and (min-width: 1024px) {
-          ._description_o4lcf_115 {
-            font-size: 1.125rem; /* 18px */
-            line-height: 1.4; /* 140% */
-            max-width: 42em !important;
-          }
+        /* Action */
+        .service-action {
+          padding: 0 24px 28px 24px;
         }
         
-        /* Button Wrapper - FULL WIDTH */
-        ._buttonWrapper_o4lcf_150 {
-          margin-top: auto;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          flex-shrink: 0;
-          padding-top: 2rem; /* 32px */
-          padding-bottom: 2rem; /* 32px */
-        }
-        
-        /* Tablet Button Spacing */
-        @media only screen and (min-width: 768px) {
-          ._buttonWrapper_o4lcf_150 {
-            padding-bottom: 1.5rem; /* 24px */
-          }
-        }
-        
-        /* Button Styles - FULL WIDTH of card */
-        .atom-button {
-          display: block; /* Block element for full width */
-          width: 100%; /* Full width of container */
-          padding: 8px 24px; /* Vertical 14px, horizontal 24px */
-          font-family: Satoshi Regular;
-          font-size: 1rem; /* 16px */
-          line-height: 1.4; /* 140% */
-          font-weight: 400;
-          text-align: center;
-          text-decoration: none;
+        /* Button */
+        .service-btn {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-weight: 500;
+          font-size: 16px;
+          padding: 10px 20px;
           border-radius: 25px;
-         
-          background-color: #FFFFFF; /* White background */
-          color: #FE5631; /* Orange text */
           cursor: pointer;
-          transition: all 0.3s ease;
-          box-sizing: border-box; /* Include padding in width calculation */
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          height: 42px;
+          min-width: 140px;
+          outline: none;
+          box-sizing: border-box;
+          width: 100%;
+          letter-spacing: 0.01em;
+          background-color: transparent;
+          color: #0071E3;
+          border: 2px solid #E5E5E7;
         }
         
-        /* Button Hover - Orange Background, White Text */
-        .atom-button:hover {
-          background-color: #FE5631; /* Orange background */
-          color: #FFFFFF; /* White text */
-          transform: translateY(-2px);
-          box-shadow: 0 6px 15px rgba(254, 86, 49, 0.2);
+        .service-btn:hover {
+          background-color: #0071E3;
+          color: #FFFFFF;
+          border-color: #0071E3;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
         }
         
-        /* Safe HTML */
-        .safe-html {
-          display: block;
+        /* Responsive */
+        @media only screen and (max-width: 1024px) {
+          .services-grid-cards {
+            gap: 24px;
+          }
+          
+          .service-content {
+            padding: 24px 20px 20px 20px;
+          }
+          
+          .service-title {
+            font-size: 20px;
+            line-height: 28px;
+          }
+          
+          .service-description {
+            font-size: 15px;
+            line-height: 22px;
+          }
+          
+          .service-action {
+            padding: 0 20px 24px 20px;
+          }
+          
+          .service-btn {
+            padding: 8px 18px;
+            font-size: 15px;
+            height: 40px;
+            min-width: 130px;
+          }
         }
         
-        .safe-html p {
-          margin: 0;
+        @media only screen and (max-width: 768px) {
+          .service-image {
+            height: 160px;
+          }
+          
+          .service-title {
+            font-size: 18px;
+            line-height: 26px;
+          }
+          
+          .service-btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            height: 38px;
+          }
+        }
+        
+        @media only screen and (max-width: 480px) {
+          .service-image {
+            height: 150px;
+          }
         }
       `}</style>
     </>
   );
 };
 
-export default ServiceSection;
+export default ServicesSection;

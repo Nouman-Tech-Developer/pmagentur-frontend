@@ -1,415 +1,184 @@
-// components/FeatureSection.jsx
 import React from 'react';
+import { Clock, TrendingUp, Link } from 'lucide-react';
 
 const FeatureSection = () => {
   const features = [
     {
       id: 1,
-      title: "Close cooperation",
-      description: "We develop with you, not past you. Regular coordination results in solutions that really fit your requirements.",
-      icon: "https://www.pmagentur.com/hubfs/User-Collaborate-Group--Streamline-Flex-Neon.png"
+      title: "24/7 Availability",
+      description: "Your AI assistant works around the clock – even outside business hours and on holidays.",
+      icon: <Clock className="feature-icon" size={40} />
     },
     {
       id: 2,
-      title: "Plannable processes",
-      description: "Transparent processes and agile methods give you security. You always have an overview of progress, budget and next steps.",
-      icon: "https://www.pmagentur.com/hubfs/Notepad-Text--Streamline-Flex-Neon.png"
+      title: "Scalable Performance",
+      description: "Handles thousands of calls simultaneously – whether startup or enterprise.",
+      icon: <TrendingUp className="feature-icon" size={40} />
     },
     {
       id: 3,
-      title: "Lasting effect",
-      description: "Our software is designed for the long term. It grows with your company and remains expandable and stable in the future.",
-      icon: "https://www.pmagentur.com/hubfs/Decent-Work-And-Economic-Growth--Streamline-Flex-Neon.png"
+      title: "Seamless Integration",
+      description: "Easy connection to existing CRM, ERP and communication systems.",
+      icon: <Link className="feature-icon" size={40} />
     }
   ];
 
   return (
     <>
-      <section className="organism-feature-list _organism-feature-list_1fmb2_31">
-        <div className="feature-content-wrapper">
-          <div className="_sectionTitle_1fmb2_128">
-            {/* ✅ Heading Container */}
-            <div className="heading-container">
-              <h2 className="_heading_1fmb2_78">
-                {/* Responsive line breaks with span elements */}
-                <span className="heading-line heading-line-1">Your agency for</span>
-                <span className="heading-line heading-line-2">software development, AI integration,</span>
-                <span className="heading-line heading-line-3">B2B e-commerce & digital platforms</span>
-              </h2>
-            </div>
-            
-            {/* ✅ Description */}
-            <div className="_description_1fmb2_81">
-              <div className="description-content">
-                <div className="safe-html">
-                  <span>Technology is not an end in itself. It must solve problems, improve processes and have a real impact. P&M stands for strategic development, technological precision and partnership-based implementation.</span>
-                </div>
-              </div>
-            </div>
+      <section className="features-section">
+        <div className="features-container">
+          <div className="features-header">
+            <h2 className="features-title">Why Tolero AI Automation?</h2>
+            <p className="features-subtitle">Our AI solutions offer more than just automation – they create sustainable competitive advantages.</p>
           </div>
           
-          {/* Feature Grid */}
-          <div className="feature-grid-wrapper">
-            <div className="_featureGrid_1fmb2_202">
-              {features.map((feature) => (
-                <div key={feature.id} className="molecule-feature-card _molecule-feature-card_1nmyk_31">
-                  <picture className="atom-content-image _atom-content-image_17ysp_31">
-                    <img 
-                      src={feature.icon} 
-                      alt={feature.title}
-                      style={{ width: '48px', height: '48px' }}
-                    />
-                  </picture>
-                  <h3 className="_heading_1nmyk_48">{feature.title}</h3>
-                  <div className="_description_1nmyk_51">
-                    <div className="safe-html">
-                      <span>{feature.description}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="features-grid">
+            {features.map((feature) => (
+              <div key={feature.id} className="feature-card">
+                <div className="feature-icon-wrapper">{feature.icon}</div>
+                <h3 className="feature-card-title">{feature.title}</h3>
+                <p className="feature-card-description">{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <style jsx="true">{`
-        /* Import fonts */
-        @font-face {
-          font-family: Okima;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Okima-Ink-130-C6F5kR7g.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-        
-        @font-face {
-          font-family: Satoshi Regular;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Regular-CPM9dct4.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-        
-        /* Feature Section - Updated Padding: 35px top-bottom, 60px left-right */
-        .organism-feature-list {
+        /* Features Section - Same padding as Services */
+        .features-section {
           width: 100%;
-          padding: 35px 60px;
-          background: #ffffff;
-          box-sizing: border-box;
+          padding: 80px 60px;
+          background: #FFFFFF;
         }
         
-        .feature-content-wrapper {
-          width: 100%;
-          max-width: 100%;
-          margin: 0 auto;
+        @media only screen and (max-width: 768px) {
+          .features-section {
+            padding: 60px 24px;
+          }
         }
         
-        /* Section Title Container */
-        ._sectionTitle_1fmb2_128 {
-          margin-bottom: 60px;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-        
-        /* ✅ Heading Container */
-        .heading-container {
-          display: flex;
-          justify-content: center;
-          width: 100%;
-          margin-bottom: 24px;
-        }
-        
-        /* ✅ Main Heading */
-        ._heading_1fmb2_78 {
-          font-family: Okima;
-          font-size: 45px;
-          font-weight: 500;
-          line-height: 1.2;
-          color: #000000;
-          text-transform: none;
-          letter-spacing: 0;
-          text-align: center;
-          width: 100%;
-          max-width: 100%;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 0;
-        }
-        
-        /* ✅ Individual Heading Lines */
-        .heading-line {
-          display: block;
-          width: 100%;
-          text-align: center;
-          line-height: 1.1;
-          margin-bottom: 8px;
-        }
-        
-        /* Last line has no bottom margin */
-        .heading-line-3 {
-          margin-bottom: 0;
-        }
-        
-        /* ✅ Description Container */
-        ._description_1fmb2_81 {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        
-        /* ✅ Description Content */
-        .description-content {
-          font-family: Satoshi Regular;
-          font-size: 16px;
-          line-height: 1.6;
-          color: #666666;
-          text-align: center;
-          max-width: 700px;
-          margin: 0 auto;
-        }
-        
-        /* Feature Grid Wrapper */
-        .feature-grid-wrapper {
-          width: 100%;
-        }
-        
-        /* Feature Grid */
-        ._featureGrid_1fmb2_202 {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 40px;
-          margin-top: 60px;
-          width: 100%;
+        .features-container {
           max-width: 1200px;
+          margin: 0 auto;
+        }
+        
+        /* Header */
+        .features-header {
+          text-align: center;
+          margin-bottom: 64px;
+          max-width: 800px;
           margin-left: auto;
           margin-right: auto;
         }
         
-        /* Feature Card */
-        .molecule-feature-card {
-          background: #ffffff;
-          border-radius: 12px;
-          padding: 40px 30px;
-          text-align: center;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Title - RED (headline) */
+        .features-title {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 40px;
+          line-height: 48px;
+          font-weight: 600;
+          color: #E10600;
+          margin: 0 0 16px 0;
         }
         
-        .molecule-feature-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        /* Feature Icon */
-        .atom-content-image {
-          margin-bottom: 24px;
-          display: inline-block;
-        }
-        
-        .atom-content-image img {
-          width: 48px;
-          height: 48px;
-          object-fit: contain;
-        }
-        
-        /* Feature Card Heading */
-        ._heading_1nmyk_48 {
-          font-family: Satoshi Regular;
-          font-size: 30px;
-          font-weight: 500;
-          line-height: 1.3;
-          color: #000000;
-          margin-bottom: 16px;
-          text-align: center;
-        }
-        
-        /* Feature Card Description */
-        ._description_1nmyk_51 {
-          font-family: Satoshi Regular;
+        /* Subtitle - BLUE (subheadline) */
+        .features-subtitle {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-size: 18px;
-          line-height: 1.6;
-          color: #666666;
-          text-align: center;
+          line-height: 28px;
+          font-weight: 400;
+          color: #0071E3;
+          margin: 0;
         }
         
-        /* Safe HTML */
-        .safe-html {
-          display: block;
+        /* Grid - 3 items */
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
         }
         
-        /* =========== RESPONSIVE STYLES =========== */
-        
-        /* Large Tablets */
-        @media (max-width: 1024px) {
-          ._heading_1fmb2_78 {
-            font-size: 42px;
-          }
-        }
-        
-        /* Tablets */
-        @media (max-width: 900px) {
-          ._heading_1fmb2_78 {
-            font-size: 38px;
-          }
-          
-          .organism-feature-list {
-            padding: 30px 40px;
-          }
-          
-          .description-content {
-            max-width: 650px;
+        @media only screen and (max-width: 900px) {
+          .features-grid {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
         
-        /* Medium Tablets and Large Phones */
-        @media (max-width: 768px) {
-          .organism-feature-list {
-            padding: 25px 30px;
-          }
-          
-          ._heading_1fmb2_78 {
-            font-size: 34px;
-          }
-          
-          ._sectionTitle_1fmb2_128 {
-            margin-bottom: 40px;
-          }
-          
-          .description-content {
-            max-width: 600px;
-            font-size: 15px;
-          }
-          
-          ._featureGrid_1fmb2_202 {
-            gap: 30px;
-            margin-top: 40px;
-          }
-          
-          .molecule-feature-card {
-            padding: 30px 20px;
-          }
-          
-          ._heading_1nmyk_48 {
-            font-size: 26px;
-          }
-          
-          ._description_1nmyk_51 {
-            font-size: 16px;
-          }
-        }
-        
-        /* Small Tablets and Large Phones */
-        @media (max-width: 650px) {
-          ._heading_1fmb2_78 {
-            font-size: 32px;
-          }
-          
-          .organism-feature-list {
-            padding: 20px 25px;
-          }
-          
-          .description-content {
-            max-width: 550px;
-          }
-        }
-        
-        /* Phones */
-        @media (max-width: 550px) {
-          ._heading_1fmb2_78 {
-            font-size: 28px;
-          }
-          
-          .organism-feature-list {
-            padding: 15px 20px;
-          }
-          
-          .description-content {
-            max-width: 480px;
-            font-size: 14px;
-          }
-          
-          ._featureGrid_1fmb2_202 {
+        @media only screen and (max-width: 600px) {
+          .features-grid {
             grid-template-columns: 1fr;
-            gap: 25px;
           }
         }
         
-        /* Small Phones */
-        @media (max-width: 480px) {
-          ._heading_1fmb2_78 {
-            font-size: 26px;
-          }
-          
-          .organism-feature-list {
-            padding: 15px 15px;
-          }
-          
-          .description-content {
-            max-width: 100%;
-            font-size: 14px;
-          }
-          
-          ._heading_1nmyk_48 {
-            font-size: 24px;
-          }
-          
-          ._description_1nmyk_51 {
-            font-size: 15px;
-          }
+        /* Feature Card */
+        .feature-card {
+          text-align: center;
+          padding: 40px 20px;
+          transition: transform 0.3s ease;
         }
         
-        /* Very Small Phones */
-        @media (max-width: 400px) {
-          ._heading_1fmb2_78 {
-            font-size: 24px;
-          }
-          
-          .organism-feature-list {
-            padding: 10px 12px;
-          }
+        .feature-card:hover {
+          transform: translateY(-8px);
         }
         
-        /* Extra Small Phones */
-        @media (max-width: 350px) {
-          ._heading_1fmb2_78 {
-            font-size: 22px;
-          }
-          
-          .organism-feature-list {
-            padding: 8px 10px;
-          }
+        /* Icon Wrapper */
+        .feature-icon-wrapper {
+          margin-bottom: 24px;
+          height: 64px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         
-        /* For very wide screens */
-        @media (min-width: 1200px) {
-          .organism-feature-list {
-            padding: 35px 60px;
-          }
-          
-          ._heading_1fmb2_78 {
-            font-size: 45px;
-          }
-          
-          .description-content {
-            max-width: 700px;
-          }
-          
-          ._featureGrid_1fmb2_202 {
-            max-width: 1200px;
-          }
+        /* Icon Styling */
+        .feature-icon {
+          color: #0071E3; /* Blue color for icons */
         }
         
-        /* Extra wide screens */
-        @media (min-width: 1600px) {
-          ._heading_1fmb2_78 {
-            font-size: 48px;
+        /* Feature Title - RED (headline) */
+        .feature-card-title {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 22px;
+          line-height: 30px;
+          font-weight: 500;
+          color: #E10600;
+          margin: 0 0 16px 0;
+        }
+        
+        /* Feature Description */
+        .feature-card-description {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          color: #6B7280;
+          margin: 0;
+        }
+        
+        /* Responsive */
+        @media only screen and (max-width: 768px) {
+          .features-title {
+            font-size: 32px;
+            line-height: 40px;
           }
           
-          .organism-feature-list {
-            padding: 35px 80px;
+          .features-subtitle {
+            font-size: 16px;
+            line-height: 24px;
+          }
+          
+          .feature-card {
+            padding: 32px 16px;
+          }
+          
+          .feature-icon {
+            size: 32px;
+          }
+          
+          .feature-card-title {
+            font-size: 20px;
+            line-height: 28px;
           }
         }
       `}</style>

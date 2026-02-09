@@ -3,39 +3,49 @@ import React from 'react';
 const HeroSection = () => {
   return (
     <>
-      <section className="organism-hero _organism-hero_1iktr_31 _bg-gradient_1iktr_52 _align-center_1iktr_101 _fullHeight_1iktr_49 colored">
-        <div className="_container_1iktr_64">
-          <div className="_content_1iktr_74">
-            <div className="_headingSection_1iktr_119">
-              <p className="_heading_1iktr_119">Progress Made</p>
+      <section className="hero hero--dark hero--center hero--full-height">
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="hero-heading-section">
+              <h1 className="hero-main-headline">Tolero – AI Automation for Companies</h1>
+              <h2 className="hero-subheadline">We automate processes, telephony and communication with AI</h2>
             </div>
             
-            <div className="_contentSection_1iktr_127">
+            <div className="hero-content-section">
               <div>
-                <div className="_description_1iktr_136">
-                  <div className="safe-html">
-                    <p>With individual development as our foundation, we realize leading solutions in AI, B2B e-commerce and digital platforms that move brands and markets.</p>
+                <div className="hero-description">
+                  <div className="hero-text">
+                    <p>So your company works more efficiently, reduces costs and grows faster.</p>
+                  </div>
+                  
+                  <div className="hero-benefits">
+                    <ul className="hero-benefits-list">
+                      <li className="hero-benefit-item">24/7 availability for customers</li>
+                      <li className="hero-benefit-item">Relief for your team</li>
+                      <li className="hero-benefit-item">Automatic appointment scheduling</li>
+                      <li className="hero-benefit-item">Pre-qualification of leads</li>
+                      <li className="hero-benefit-item">Scalable with high call volume</li>
+                    </ul>
                   </div>
                 </div>
                 
-                <div className="_buttonGroup_1iktr_144">
+                <div className="hero-button-group">
                   <a 
-                    className="atom-button _atom-button_ilbwb_76 _primary_ilbwb_112" 
-                    href="https://www.pmagentur.com/de/kontakt?hsLang=en" 
+                    className="hero-btn hero-btn--primary" 
+                    href="https://www.tolero.com/demo" 
                     tabIndex="0" 
                     aria-disabled="false"
                   >
-                    Contact us
+                    Request Demo
                   </a>
                   
                   <a 
-                    className="atom-button _atom-button_ilbwb_76 _secondary_ilbwb_125" 
-                    href="https://www.pmagentur.com/de/cases/?hsLang=en" 
+                    className="hero-btn hero-btn--secondary" 
+                    href="https://www.tolero.com/references" 
                     tabIndex="0" 
-                    aria-disabled="false" 
-                    data-on-dark-bg="true"
+                    aria-disabled="false"
                   >
-                    Our references
+                    View References
                   </a>
                 </div>
               </div>
@@ -45,457 +55,372 @@ const HeroSection = () => {
       </section>
 
       <style jsx="true">{`
-        @font-face {
-          font-family: Okima;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Okima-Ink-130-C6F5kR7g.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-
-        @font-face {
-          font-family: Satoshi Bold;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Bold-Bd5kKQ_U.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-
-        @font-face {
-          font-family: Satoshi Medium;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Medium-ByP-Zb-9.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-
-        @font-face {
-          font-family: Satoshi Regular;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Regular-CPM9dct4.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-
-        @font-face {
-          font-family: Satoshi Light;
-          src: url(https://49192415.fs1.hubspotusercontent-eu1.net/hubfs/49192415/raw_assets/pm-agentur-website/408/js_client_assets/assets/Satoshi-Light-IqwJ_ZjS.woff2) format("woff2");
-          font-weight: 400;
-          font-style: normal;
-        }
-
-        /* Your CSS Variables */
-        :root {
-          --font-p-hero-secondary-font-size-mobile: 3.4375rem;
-          --font-p-hero-secondary-font-size-desktop: 6.25rem;
-          --font-p-hero-secondary-line-height-mobile: 120%;
-          --font-p-hero-secondary-line-height-desktop: 120%;
-          --font-p-hero-secondary-font-family: Okima;
-          --font-p-hero-secondary-font-weight: 500;
-          --font-p-hero-secondary-color: #FFFFFF;
-          --font-p-hero-secondary-color-hover: #FFFFFF;
-          
-          --font-copy-m-tertiary-font-family: Satoshi Medium;
-          --font-copy-m-tertiary-font-size-mobile: 1.125rem;
-          --font-copy-m-tertiary-font-size-desktop: 1.25rem;
-          --font-copy-m-tertiary-line-height-mobile: 140%;
-          --font-copy-m-tertiary-line-height-desktop: 140%;
-          --font-copy-m-tertiary-font-weight: 500;
-          --font-copy-m-tertiary-color: #FFFFFF;
-          --font-copy-m-tertiary-color-hover: #FFFFFF;
-        }
-
-        /* Apply your exact CSS */
-        ._organism-hero_1iktr_31 {
+        /* Hero Base Styles */
+        .hero {
           width: 100%;
           min-height: 50vh;
           display: flex;
-          align-items: flex-end;
+          align-items: center;
           justify-content: center;
-          padding: 6.25rem 1.5rem 2.625rem;
+          padding: 35px 60px; /* 35px top-bottom, 60px left-right */
+          position: relative;
+          background: #000000;
+        }
+
+        @media only screen and (max-width: 768px) {
+          .hero {
+            padding: 35px 24px; /* Mobile: 35px top-bottom, 24px left-right */
+          }
+        }
+
+        @media only screen and (max-width: 480px) {
+          .hero {
+            padding: 35px 20px; /* Small mobile: 35px top-bottom, 20px left-right */
+          }
+        }
+
+        /* Dark Background */
+        .hero--dark {
+          background: #000000;
+          color: #FFFFFF;
           position: relative;
         }
 
-        @media only screen and (min-width: 768px) {
-          ._organism-hero_1iktr_31 {
-            padding: 3.75rem;
-          }
+        .hero--dark::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: radial-gradient(circle at 30% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 60%),
+                    radial-gradient(circle at 70% 30%, rgba(34, 211, 238, 0.1) 0%, transparent 60%);
+          pointer-events: none;
         }
 
-        @media only screen and (min-width: 1024px) {
-          ._organism-hero_1iktr_31 {
-            padding: 5rem 3.75rem;
-          }
-        }
-
-        ._organism-hero_1iktr_31._fullHeight_1iktr_49 {
+        /* Full Height */
+        .hero--full-height {
           min-height: 100vh;
         }
 
-        ._organism-hero_1iktr_31._bg-gradient_1iktr_52 {
-          background: linear-gradient(30.019deg,#080808 9.455%,#1a41a2e6 44.237%,#50a3e7 75.07%,#6dd1ea 94.292%);
-        }
-
-        ._container_1iktr_64 {
-          max-width: 75rem;
-          margin: 0 auto;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: flex-end;
-        }
-
-        ._content_1iktr_74 {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          text-align: left;
-          gap: 3rem;
-        }
-
-        @media only screen and (min-width: 768px) {
-          ._content_1iktr_74 {
-            gap: 3rem;
-          }
-        }
-
-        @media only screen and (min-width: 1024px) {
-          ._content_1iktr_74 {
-            flex-direction: row;
-            gap: 3.75rem;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-          }
-        }
-
-        @media only screen and (min-width: 1440px) {
-          ._content_1iktr_74 {
-            gap: 5rem;
-          }
-        }
-
-        ._align-center_1iktr_101 {
-          padding-bottom: 9.375rem;
-        }
-
-        ._align-center_1iktr_101 ._container_1iktr_64 {
+        /* Center Alignment */
+        .hero--center .hero-container {
           align-items: center;
           justify-content: center;
         }
 
-        ._align-center_1iktr_101 ._content_1iktr_74 {
+        .hero--center .hero-content {
           align-items: center;
           text-align: center;
           gap: 0;
         }
 
-        @media only screen and (min-width: 768px) {
-          ._align-center_1iktr_101 ._content_1iktr_74 {
-            flex-direction: column;
-            justify-content: center;
-          }
-        }
-
-        ._align-center_1iktr_101 ._headingSection_1iktr_119 {
+        /* Container */
+        .hero-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+          display: flex;
           align-items: center;
+          position: relative;
+          z-index: 2;
         }
 
-        @media only screen and (min-width: 1024px) {
-          ._align-center_1iktr_101 ._headingSection_1iktr_119 {
-            max-width: 100%;
-          }
-        }
-
-        ._align-center_1iktr_101 ._contentSection_1iktr_127 {
-          max-width: 38em!important;
-          align-items: center;
-        }
-
-        @media only screen and (min-width: 1024px) {
-          ._align-center_1iktr_101 ._contentSection_1iktr_127 {
-            max-width: 41em!important;
-          }
-        }
-
-        ._align-center_1iktr_101 ._description_1iktr_136 {
-          padding-top: 2rem;
-        }
-
-        @media only screen and (min-width: 768px) {
-          ._align-center_1iktr_101 ._description_1iktr_136 {
-            padding-top: 2.625rem;
-          }
-        }
-
-        ._align-center_1iktr_101 ._buttonGroup_1iktr_144 {
-          align-items: center;
-          justify-content: center;
-        }
-
-        ._headingSection_1iktr_119 {
+        /* Content Layout */
+        .hero-content {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          gap: 1rem;
+          align-items: center;
+          text-align: center;
+          gap: 48px;
           width: 100%;
         }
 
-        @media only screen and (min-width: 1024px) {
-          ._headingSection_1iktr_119 {
-            flex: 1;
-            max-width: 50%;
-          }
-        }
-
-        ._contentSection_1iktr_127 {
+        /* Heading Section */
+        .hero-heading-section {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          gap: 1.5rem;
+          align-items: center;
+          gap: 24px;
           width: 100%;
+          margin-bottom: 40px;
         }
 
-        @media only screen and (min-width: 1024px) {
-          ._contentSection_1iktr_127 {
-            flex: 1;
-            max-width: 50%;
-          }
-        }
-
-        ._heading_1iktr_119 {
-          font-family: var(--font-p-hero-secondary-font-family);
-          font-size: var(--font-p-hero-secondary-font-size-mobile);
-          line-height: var(--font-p-hero-secondary-line-height-mobile);
-          font-weight: var(--font-p-hero-secondary-font-weight);
-          letter-spacing: var(--font-p-hero-secondary-letter-spacing);
-          text-transform: var(--font-p-hero-secondary-text-transform);
-          color: var(--font-p-hero-secondary-color);
-          background: var(--font-p-hero-secondary-background);
+        /* Main Headline - RED (48px, 600 weight) */
+        .hero-main-headline {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 48px;
+          line-height: 56px;
+          font-weight: 600;
+          letter-spacing: -0.02em;
+          color: #E10600; /* Red for headlines */
           margin: 0;
-          word-break: break-word;
-          word-wrap: break-word;
-          -webkit-hyphens: auto;
-          hyphens: auto;
-        }
-
-        ._heading_1iktr_119:hover {
-          color: var(--font-p-hero-secondary-color-hover);
-        }
-
-        @media only screen and (min-width: 1024px) {
-          ._heading_1iktr_119 {
-            font-size: var(--font-p-hero-secondary-font-size-desktop);
-            line-height: var(--font-p-hero-secondary-line-height-desktop);
-            letter-spacing: var(--font-p-hero-secondary-letter-spacing-desktop);
-          }
-        }
-
-        /* Custom 100px font size for Progress Made */
-        ._organism-hero_1iktr_31 ._heading_1iktr_119 {
-          font-size: 100px !important;
-          line-height: 1 !important;
+          max-width: 900px;
         }
 
         @media only screen and (max-width: 1024px) {
-          ._organism-hero_1iktr_31 ._heading_1iktr_119 {
-            font-size: 70px !important;
+          .hero-main-headline {
+            font-size: 40px;
+            line-height: 48px;
           }
         }
 
         @media only screen and (max-width: 768px) {
-          ._organism-hero_1iktr_31 ._heading_1iktr_119 {
-            font-size: 50px !important;
+          .hero-main-headline {
+            font-size: 32px;
+            line-height: 40px;
           }
         }
 
         @media only screen and (max-width: 480px) {
-          ._organism-hero_1iktr_31 ._heading_1iktr_119 {
-            font-size: 40px !important;
+          .hero-main-headline {
+            font-size: 28px;
+            line-height: 36px;
           }
         }
 
-        ._description_1iktr_136 {
-          font-family: var(--font-copy-m-tertiary-font-family);
-          font-size: var(--font-copy-m-tertiary-font-size-mobile);
-          line-height: var(--font-copy-m-tertiary-line-height-mobile);
-          font-weight: var(--font-copy-m-tertiary-font-weight);
-          letter-spacing: var(--font-copy-m-tertiary-letter-spacing);
-          text-transform: var(--font-copy-m-tertiary-text-transform);
-          color: var(--font-copy-m-tertiary-color);
-          background: var(--font-copy-m-tertiary-background);
-          max-width: 38em!important;
-          max-width: 100%;
-          padding-bottom: 2rem;
+        /* Subheadline - BLUE (22px, 500 weight) */
+        .hero-subheadline {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 22px;
+          line-height: 30px;
+          font-weight: 500;
+          color: #0071E3; /* Blue for subheadlines */
+          margin: 0;
+          max-width: 800px;
+          opacity: 0.9;
         }
 
-        ._description_1iktr_136:hover {
-          color: var(--font-copy-m-tertiary-color-hover);
-        }
-
-        @media only screen and (min-width: 1024px) {
-          ._description_1iktr_136 {
-            font-size: var(--font-copy-m-tertiary-font-size-desktop);
-            line-height: var(--font-copy-m-tertiary-line-height-desktop);
-            letter-spacing: var(--font-copy-m-tertiary-letter-spacing-desktop);
+        @media only screen and (max-width: 768px) {
+          .hero-subheadline {
+            font-size: 20px;
+            line-height: 28px;
           }
         }
 
-        @media only screen and (min-width: 1024px) {
-          ._description_1iktr_136 {
-            max-width: 41em!important;
+        @media only screen and (max-width: 480px) {
+          .hero-subheadline {
+            font-size: 18px;
+            line-height: 26px;
           }
         }
 
-        @media only screen and (min-width: 768px) {
-          ._description_1iktr_136 {
-            max-width: 37.5rem;
-          }
-        }
-
-        @media only screen and (min-width: 1024px) {
-          ._description_1iktr_136 {
-            max-width: none;
-            max-width: initial;
-            padding-top: 4.6875rem;
-          }
-        }
-
-        /* Button Group - FIXED WIDTH ISSUE */
-        ._buttonGroup_1iktr_144 {
+        /* Content Section */
+        .hero-content-section {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
-          width: auto; /* Changed from 100% to auto */
-          align-items: flex-start;
+          align-items: center;
+          gap: 32px;
+          width: 100%;
+          max-width: 800px;
+        }
+
+        /* Description */
+        .hero-description {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-size: 18px;
+          line-height: 28px;
+          font-weight: 400;
+          color: #8E8E93;
+          width: 100%;
+        }
+
+        .hero-text p {
+          margin: 0 0 24px 0;
+          padding: 0;
+          line-height: 1.6;
+          font-size: inherit;
+          color: inherit;
+        }
+
+        /* Benefits List */
+        .hero-benefits {
+          margin-top: 32px;
+        }
+
+        .hero-benefits-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 12px;
+          text-align: center;
+        }
+
+        @media only screen and (min-width: 640px) {
+          .hero-benefits-list {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
 
         @media only screen and (min-width: 768px) {
-          ._buttonGroup_1iktr_144 {
-            flex-direction: row;
-            gap: 1.25rem;
-            width: auto; /* Keep auto for tablet */
+          .hero-benefits-list {
+            grid-template-columns: repeat(3, 1fr);
           }
         }
 
-        @media only screen and (min-width: 1024px) {
-          ._buttonGroup_1iktr_144 {
-            gap: 1.5rem;
-            width: auto; /* Keep auto for desktop */
-          }
-        }
-
-        /* For center alignment */
-        ._align-center_1iktr_101 ._buttonGroup_1iktr_144 {
-          align-items: center;
-          justify-content: center;
-          width: auto; /* Center aligned should also be auto */
-        }
-
-        /* Button Base Styles */
-        .atom-button {
-          font-family: 'Satoshi Regular', sans-serif;
-          font-weight: 400;
+        .hero-benefit-item {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-size: 16px;
-          padding: 12px 24px;
-          border-radius: 25px;
+          line-height: 24px;
+          font-weight: 400;
+          color: #8E8E93;
+          padding-left: 24px;
+          position: relative;
+          text-align: left;
+        }
+
+        .hero-benefit-item::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: #0071E3;
+          font-weight: 600;
+          font-size: 14px;
+        }
+
+        /* Button Group */
+        .hero-button-group {
+          display: flex;
+          flex-direction: row;
+          gap: 16px;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin-top: 40px;
+          flex-wrap: wrap;
+        }
+
+        @media only screen and (max-width: 640px) {
+          .hero-button-group {
+            flex-direction: row;
+            gap: 12px;
+            justify-content: center;
+          }
+        }
+
+        @media only screen and (max-width: 480px) {
+          .hero-button-group {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+
+        /* Button Styles - INCREASED WIDTH: 180x40 with 8px 24px padding */
+        .hero-btn {
+          font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-weight: 500;
+          font-size: 16px;
+          padding: 8px 24px; /* 8px vertical, 24px horizontal */
+          border-radius: 25px; /* Pill shape */
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           text-decoration: none;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          height: 48px;
-          min-width: 160px;
+          height: 40px; /* Total height 40px */
+          width: 180px; /* INCREASED: Total width 180px (from 157px) */
+          min-width: 180px; /* Ensure minimum width */
           outline: none;
           border: none;
           box-sizing: border-box;
-          width: auto !important; /* Force auto width */
-          flex-shrink: 0; /* Prevent shrinking */
+          letter-spacing: 0.01em;
+          flex-shrink: 0;
         }
 
-        /* Primary Button Styles */
-        ._primary_ilbwb_112 {
-          background-color: #fe5631 !important;
-          color: white !important;
-          border: 2px solid #fe5631 !important;
-        }
-
-        ._primary_ilbwb_112:hover {
-          background-color: #e64a19 !important;
-          border-color: #e64a19 !important;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(254, 86, 49, 0.3);
-        }
-
-        /* Secondary Button Styles */
-        ._secondary_ilbwb_125 {
-          background-color: transparent !important;
-          color: white !important;
-          border: 2px solid rgba(255, 255, 255, 0.5) !important;
-        }
-
-        ._secondary_ilbwb_125:hover {
-          background-color: rgba(255, 255, 255, 0.1) !important;
-          border-color: rgba(255, 255, 255, 0.8) !important;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
-        }
-
-        /* Mobile responsive adjustments */
-        @media only screen and (max-width: 767px) {
-          .atom-button {
-            width: auto !important; /* Not full width on mobile */
-            max-width: none !important;
+        /* Center buttons in mobile */
+        @media only screen and (max-width: 640px) {
+          .hero-btn {
+            width: 180px;
+            height: 40px;
             margin: 0;
           }
-          
-          ._buttonGroup_1iktr_144 {
-            align-items: center;
-            width: auto !important;
-          }
-          
-          /* Optional: Make buttons stack vertically on mobile */
-          ._buttonGroup_1iktr_144 {
-            flex-direction: column;
-            gap: 1rem;
-          }
-          
-          .atom-button {
-            width: auto !important;
-            padding: 12px 32px;
+        }
+
+        @media only screen and (max-width: 480px) {
+          .hero-btn {
+            width: 180px;
+            height: 40px;
           }
         }
 
-        /* Safe HTML styles */
-        .safe-html p {
-          margin: 0;
-          padding: 0;
-          line-height: 1.6;
-          font-size: 1.125rem;
+        /* Primary Button - Solid blue */
+        .hero-btn--primary {
+          background-color: #2563EB;
+          color: #FFFFFF;
+          border: 1px solid #2563EB;
         }
 
-        @media only screen and (min-width: 768px) {
-          .safe-html p {
-            font-size: 1.25rem;
+        .hero-btn--primary:hover {
+          background-color: #1D4ED8;
+          border-color: #1D4ED8;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        .hero-btn--primary:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Secondary Button - Outline style */
+        .hero-btn--secondary {
+          background-color: transparent;
+          color: #FFFFFF;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-btn--secondary:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          border-color: rgba(255, 255, 255, 0.3);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-btn--secondary:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Focus states for accessibility */
+        .hero-btn:focus-visible {
+          outline: 2px solid #0071E3;
+          outline-offset: 2px;
+        }
+
+        /* Animation for content */
+        .hero-main-headline {
+          animation: heroFadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        }
+
+        .hero-subheadline {
+          animation: heroFadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s both;
+        }
+
+        .hero-description {
+          animation: heroFadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;
+        }
+
+        .hero-benefits {
+          animation: heroFadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+        }
+
+        .hero-button-group {
+          animation: heroFadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s both;
+        }
+
+        @keyframes heroFadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
           }
-        }
-
-        /* Ensure buttons are visible and not stretched */
-        ._buttonGroup_1iktr_144 * {
-          opacity: 1 !important;
-          visibility: visible !important;
-          display: inline-flex !important;
-          flex-shrink: 0 !important;
-        }
-
-        /* Prevent any full-width styling */
-        .atom-button,
-        ._atom-button_ilbwb_76 {
-          width: auto !important;
-          max-width: none !important;
-        }
-
-        /* Specifically target center alignment buttons */
-        ._align-center_1iktr_101 .atom-button {
-          width: auto !important;
-          flex-shrink: 0;
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
     </>

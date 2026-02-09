@@ -1,15 +1,14 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import LogoSlider from '../components/LogoSlider';
+// import LogoSlider from '../components/LogoSlider';
 import FeatureSection from '../components/FeatureSection';
 import ServiceSection from '../components/ServiceSection';
 import TestimonialCard from '../components/TestimonialCard';
 import CaseStudies from '../components/CaseStudies';
-import TextHalfImage from '../components/TextHalfImage';
-import VideoText from '../components/VideoText';
-import TextWithButtons from '../components/TextWithButtons';
-import Highlight from '../components/Highlight';
+import AboutSection from '../components/AboutSection';
+// import VideoText from '../components/VideoText';
+import StatsSection from '../components/StatsSection';
 import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 
@@ -18,15 +17,14 @@ const LandingPage = () => {
     <div className="landing-page">
       <Navbar />
       <HeroSection />
-      <LogoSlider />
+      {/* <LogoSlider /> */}
       <FeatureSection />
       <ServiceSection />
       <TestimonialCard />
       <CaseStudies />
-      <TextHalfImage />
-      <VideoText />
-      <TextWithButtons />
-      <Highlight />
+      <AboutSection />
+      {/* <VideoText /> */}
+      <StatsSection />
       <ContactForm />
       <Footer />
       
