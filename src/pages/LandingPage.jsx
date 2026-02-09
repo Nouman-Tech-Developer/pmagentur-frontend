@@ -6,7 +6,7 @@ import FeatureSection from '../components/FeatureSection';
 import ServiceSection from '../components/ServiceSection';
 import TestimonialCard from '../components/TestimonialCard';
 import CaseStudies from '../components/CaseStudies';
-import AboutSection from '../components/AboutSection';
+import TextHalfImage from '../components/TextHalfImage';
 // import VideoText from '../components/VideoText';
 import StatsSection from '../components/StatsSection';
 import ContactForm from '../components/ContactForm';
@@ -22,7 +22,7 @@ const LandingPage = () => {
       <ServiceSection />
       <TestimonialCard />
       <CaseStudies />
-      <AboutSection />
+      <TextHalfImage />
       {/* <VideoText /> */}
       <StatsSection />
       <ContactForm />

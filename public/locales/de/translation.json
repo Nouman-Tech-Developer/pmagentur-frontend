@@ -1,0 +1,263 @@
+{
+  "nav": {
+    "solutions": "Lösungen",
+    "products": "Produkte",
+    "caseStudies": "Fallstudien",
+    "about": "Über uns",
+    "careers": "Karriere",
+    "resources": "Ressourcen",
+    "requestDemo": "Demo anfordern",
+    "selectLanguage": "Sprache auswählen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "hero": {
+  "title": "Tolero – KI-Automatisierung für Unternehmen",
+  "subtitle": "Wir automatisieren Prozesse, Telefonie und Kommunikation mit KI",
+  "description": "Damit Ihr Unternehmen effizienter arbeitet, Kosten senkt und schneller wächst.",
+  "benefit1": "24/7 Verfügbarkeit für Kunden",
+  "benefit2": "Entlastung für Ihr Team",
+  "benefit3": "Automatische Terminvereinbarung",
+  "benefit4": "Vorqualifizierung von Leads",
+  "benefit5": "Skalierbar bei hohem Anrufaufkommen",
+  "requestDemo": "Demo anfordern",
+  "viewReferences": "Referenzen ansehen"
+},
+
+  "features": {
+    "heading": {
+      "line1": "Ihr Partner für",
+      "line2": "KI-gestützte Automatisierung,",
+      "line3": "Business-Transformation & digitale Innovation"
+    },
+    "description": "Technologie sollte echte Geschäftswirkung erzielen. TOLERO kombiniert KI-Expertise mit strategischer Implementierung, um Ihre Prozesse zu transformieren und Wachstum zu beschleunigen.",
+    "cooperation": {
+      "title": "Strategische Partnerschaft",
+      "description": "Wir arbeiten mit Ihrem Team zusammen, nicht isoliert. Regelmäßige Abstimmung sorgt für perfekt auf Ihre Geschäftsanforderungen zugeschnittene Lösungen."
+    },
+    "processes": {
+      "title": "Skalierbare Lösungen",
+      "description": "Unsere KI-Implementierungen sind für Wachstum ausgelegt. Starten Sie klein, skalieren Sie schnell und behalten Sie stets die Kontrolle über Ihre Automatisierungsreise."
+    },
+    "impact": {
+      "title": "Messbare Wirkung",
+      "description": "Verfolgen Sie ab dem ersten Tag echte ROI. Unsere Lösungen liefern greifbare Ergebnisse, die mit Ihrem Unternehmen mitwachsen."
+    }
+  
+},
+
+  "services": {
+    "heading": "Unsere KI-Lösungen im Detail",
+    "subheading": "Jede Lösung wird individuell an Ihre Geschäftsprozesse angepasst und integriert.",
+    "learnMore": "Mehr erfahren",
+    "aiPhone": {
+      "title": "KI-Telefon-Assistent",
+      "description": "Automatisiert Anrufe, Terminvereinbarungen und Kundenanfragen – zuverlässig, professionell und 24/7 verfügbar. Anpassbar für Ihre Marke."
+    },
+    "chatbots": {
+      "title": "Chatbots & Digitale Assistenten",
+      "description": "Intelligente Chatbots für Websites, Social Media oder interne Prozesse. Beantworten automatisch Anfragen und entlasten Ihr Team."
+    },
+    "emailAutomation": {
+      "title": "E-Mail-Automatisierung",
+      "description": "Automatisieren Sie Kundenkommunikation, Terminbestätigungen und interne Prozesse – schnell, fehlerfrei und effizient."
+    },
+    "workflow": {
+      "title": "Workflow-Optimierung",
+      "description": "Maßgeschneiderte KI-Lösungen für Datenverarbeitung und branchenspezifische Aufgaben – auf Ihr Unternehmen zugeschnitten."
+    }
+  },
+  
+  "testimonials": {
+    "title": "Kundenstimmen",
+    "subtitle": "Was Unternehmen über unsere KI-Automatisierung sagen",
+    "testimonial1": {
+      "quote": "Mit dem KI-Telefon-Assistenten von Tolero haben wir unsere Kundenhotline entlastet und gleichzeitig die Kundenzufriedenheit erhöht. Die Lösung arbeitet 24/7 und versteht selbst komplexe Anfragen.",
+      "author": "Markus Weber",
+      "role": "Geschäftsführer",
+      "company": "TransLog Logistics"
+    },
+    "testimonial2": {
+      "quote": "Die Chatbot-Integration hat unser Support-Team um 60% entlastet. Kunden erhalten sofort Antworten, während sich unser Team auf komplexe Fälle konzentrieren kann. Eine Win-win-Situation.",
+      "author": "Dr. Sarah Klein",
+      "role": "CTO",
+      "company": "ShopPlus E-Commerce"
+    },
+    "testimonial3": {
+      "quote": "Die E-Mail-Automatisierung hat unsere Kundenkommunikation revolutioniert. Was früher Stunden dauerte, passiert jetzt automatisch. Die Integration war nahtlos.",
+      "author": "Thomas Richter",
+      "role": "Leiter Operations",
+      "company": "ServicePro GmbH"
+    },
+    "testimonial4": {
+      "quote": "Die Workflow-Optimierung hat unsere Produktivität um 40% gesteigert. Komplexe Datenverarbeitung, die früher Tage dauerte, ist jetzt in Stunden erledigt.",
+      "author": "Anna Hoffmann",
+      "role": "CEO",
+      "company": "DataFlow Analytics"
+    }
+  },
+  
+  "caseStudies": {
+    "heading": "Erfolgsgeschichten",
+    "subheading": "Wie Unternehmen ihre Prozesse mit Tolero KI-Automatisierung optimieren",
+    "viewCase": "Fallstudie ansehen",
+    "viewAll": "Alle Fallstudien ansehen",
+    "case1": {
+      "title": "KI-Telefon-Assistent für Logistikunternehmen",
+      "description": "Automatisierte Kundenhotline mit 24/7-Verfügbarkeit reduzierte Wartezeiten um 80% und erhöhte die Kundenzufriedenheit.",
+      "category": "KI-Automatisierung",
+      "result": "80% schnellere Verarbeitung"
+    },
+    "case2": {
+      "title": "Chatbot-Integration für E-Commerce",
+      "description": "Intelligenter Shop-Assistent beantwortet automatisch Kundenanfragen und erhöhte die Conversion-Rate um 35%.",
+      "category": "KI-Chatbots",
+      "result": "35% mehr Conversions"
+    },
+    "case3": {
+      "title": "E-Mail-Automatisierung für SaaS-Anbieter",
+      "description": "Automatisiertes Onboarding und Support-Kommunikation reduziert manuellen Aufwand um 60 Stunden pro Woche.",
+      "category": "Workflow-Optimierung",
+      "result": "60h/Woche gespart"
+    },
+    "case4": {
+      "title": "Komplette KI-Transformation für mittelständisches Unternehmen",
+      "description": "Umfassende Automatisierung von Telefonie, E-Mail und internen Prozessen steigerte die Effizienz um 200%.",
+      "category": "KI-Integration",
+      "result": "200% effizienter"
+    }
+  },
+
+
+  "textHalfImage": {
+    "badge": "Über Tolero",
+    "heading": "Technologie wird von Menschen geschaffen",
+    "description": "Gegründet mit der Vision, Unternehmen durch intelligente Automatisierung zu transformieren, kombiniert Tolero menschliche Expertise mit modernster KI-Technologie. Unser Team von Spezialisten entwickelt maßgeschneiderte Lösungen, die Prozesse optimieren, Kosten senken und Wachstum für Unternehmen aller Branchen beschleunigen.",
+    "stats": {
+      "team": "KI-Experten",
+      "projects": "Erfolgreiche Projekte",
+      "years": "Jahre Erfahrung"
+    },
+    "button": "Mehr über Tolero",
+    "buttonAria": "Mehr über das Unternehmen Tolero erfahren",
+    "imageAlt": "Tolero KI-Automatisierungsteam arbeitet an innovativen Lösungen"
+  },
+
+  
+    
+   
+    
+
+  
+  
+  "stats": {
+    "why": "Warum TOLERO?",
+    "headingLine1": "Erfolg wird durch",
+    "headingLine2": "Partnerschaft geschaffen",
+    "description": "Erfolg entsteht durch enge Zusammenarbeit, klare Kommunikation und agile KI-Implementierung. Gemeinsam mit unseren Kunden entwickeln wir intelligente Automatisierungslösungen, die technisch robust, skalierbar und langfristig wertvoll sind.",
+    "projects": "KI-Projekte",
+    "projectsDesc": "Automatisierte Lösungen implementiert",
+    "customers": "Zufriedene Kunden",
+    "customersDesc": "Erfolgreiche Partnerschaften",
+    "satisfaction": "Kundenzufriedenheit",
+    "satisfactionDesc": "Basierend auf Kundenfeedback",
+    "support": "KI-Support",
+    "supportDesc": "24/7 intelligente Unterstützung"
+  }
+
+
+,
+  "contact": {
+    "title": "Kostenlose Beratung",
+    "subtitle": "Erhalten Sie eine kostenlose, unverbindliche Beratung und entdecken Sie, wie KI-Automatisierung Ihr Unternehmen transformieren kann.",
+    "email": {
+      "label": "E-Mail",
+      "value": "info@tolero.com"
+    },
+    "phone": {
+      "label": "Telefon",
+      "value": "+49 123 456 7890"
+    },
+    "location": {
+      "label": "Standort",
+      "value": "Musterstraße 123, 10115 Berlin"
+    },
+    "form": {
+      "name": "Ihr Name *",
+      "company": "Unternehmen",
+      "email": "E-Mail-Adresse *",
+      "phone": "Telefonnummer",
+      "message": "Ihre Nachricht *",
+      "privacy": {
+        "part1": "Ich stimme der",
+        "part2": "Datenschutzerklärung",
+        "part3": "zu *"
+      },
+      "submit": "Nachricht senden"
+    }
+  },
+
+  "footer": {
+    "tagline": "KI-Automatisierung für Unternehmen",
+    "location": "Musterstraße 123, 10115 Berlin",
+    "services": {
+      "title": "Services",
+      "aiPhone": "KI-Telefon-Assistent",
+      "chatbots": "Chatbots & Assistenten",
+      "emailAutomation": "E-Mail-Automatisierung",
+      "workflow": "Workflow-Optimierung"
+    },
+    "company": {
+      "title": "Unternehmen",
+      "about": "Über Tolero",
+      "careers": "Karriere",
+      "references": "Referenzen",
+      "blog": "Blog"
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "caseStudies": "Fallstudien",
+      "whitepapers": "Whitepapers",
+      "faq": "FAQ",
+      "support": "Support"
+    },
+    "copyright": "Tolero GmbH. Alle Rechte vorbehalten.",
+    "legal": {
+      "privacy": "Datenschutz",
+      "notice": "Impressum",
+      "terms": "AGB"
+    }
+  },
+  
+  "footer": {
+    "tagline": "KI-Automatisierung für Unternehmen",
+    "location": "Musterstraße 123, 10115 Berlin",
+    "services": {
+      "title": "Services",
+      "aiPhone": "KI-Telefon-Assistent",
+      "chatbots": "Chatbots & Assistenten",
+      "emailAutomation": "E-Mail-Automatisierung",
+      "workflow": "Workflow-Optimierung"
+    },
+    "company": {
+      "title": "Unternehmen",
+      "about": "Über Tolero",
+      "careers": "Karriere",
+      "references": "Referenzen",
+      "blog": "Blog"
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "caseStudies": "Fallstudien",
+      "whitepapers": "Whitepapers",
+      "faq": "FAQ",
+      "support": "Support"
+    },
+    "copyright": "Tolero GmbH. Alle Rechte vorbehalten.",
+    "legal": {
+      "privacy": "Datenschutz",
+      "notice": "Impressum",
+      "terms": "AGB"
+    }
+  }
+}

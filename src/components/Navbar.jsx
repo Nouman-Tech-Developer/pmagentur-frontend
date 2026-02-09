@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import WhiteLogo from '../assets/white-logo.png';
 import BlackLogo from '../assets/black-logo.png';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState('EN');
+  const [selectedLang, setSelectedLang] = useState('DE'); // Default German
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,17 +19,17 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Solutions', hasDropdown: true, href: '#' },
-    { label: 'Products', hasDropdown: true, href: '#' },
-    { label: 'Case Studies', hasDropdown: false, href: 'https://www.tolero.com/case-studies' },
-    { label: 'About', hasDropdown: false, href: 'https://www.tolero.com/about' },
-    { label: 'Careers', hasDropdown: false, href: 'https://www.tolero.com/careers' },
-    { label: 'Resources', hasDropdown: false, href: 'https://www.tolero.com/resources' },
+    { label: t('nav.solutions'), hasDropdown: true, href: '#' },
+    { label: t('nav.products'), hasDropdown: true, href: '#' },
+    { label: t('nav.caseStudies'), hasDropdown: false, href: 'https://www.tolero.com/case-studies' },
+    { label: t('nav.about'), hasDropdown: false, href: 'https://www.tolero.com/about' },
+    { label: t('nav.careers'), hasDropdown: false, href: 'https://www.tolero.com/careers' },
+    { label: t('nav.resources'), hasDropdown: false, href: 'https://www.tolero.com/resources' },
   ];
 
   const languages = [
-    { code: 'EN', label: 'EN' },
-    { code: 'DE', label: 'DE' },
+    { code: 'de', label: 'DE' },
+    { code: 'en', label: 'EN' },
   ];
 
   const getHeaderClass = () => {
@@ -42,8 +44,11 @@ const Navbar = () => {
   };
 
   const handleLangSelect = (langCode) => {
-    setSelectedLang(langCode);
+    i18n.changeLanguage(langCode);
+    setSelectedLang(langCode.toUpperCase());
     setIsLangOpen(false);
+    // Close mobile menu if open
+    setIsMenuOpen(false);
   };
 
   return (
@@ -93,7 +98,7 @@ const Navbar = () => {
                     className="tolero-header__lang-button" 
                     aria-haspopup="true" 
                     aria-expanded={isLangOpen}
-                    aria-label="Select language"
+                    aria-label={t('nav.selectLanguage')}
                     onClick={() => setIsLangOpen(!isLangOpen)}
                   >
                     {selectedLang}
@@ -105,7 +110,7 @@ const Navbar = () => {
                       {languages.map((lang) => (
                         <button
                           key={lang.code}
-                          className={`tolero-header__lang-option ${selectedLang === lang.code ? 'tolero-header__lang-option--active' : ''}`}
+                          className={`tolero-header__lang-option ${selectedLang === lang.label ? 'tolero-header__lang-option--active' : ''}`}
                           onClick={() => handleLangSelect(lang.code)}
                         >
                           {lang.label}
@@ -120,14 +125,14 @@ const Navbar = () => {
                   href="https://www.tolero.com/demo" 
                   tabIndex="0" 
                 >
-                  Request Demo
+                  {t('nav.requestDemo')}
                 </a>
               </div>
 
               {/* Mobile Menu Button - ALWAYS visible on mobile/tablet */}
               <button 
                 className="tolero-header__burger" 
-                aria-label="Open menu"
+                aria-label={t('nav.openMenu')}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <span className="tolero-header__burger-line"></span>
@@ -147,7 +152,7 @@ const Navbar = () => {
               </a>
               <button 
                 className="tolero-header__mobile-close" 
-                aria-label="Close menu"
+                aria-label={t('nav.closeMenu')}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="tolero-header__mobile-close-icon"></span>
@@ -184,10 +189,9 @@ const Navbar = () => {
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
-                        className={`tolero-header__mobile-lang-option ${selectedLang === lang.code ? 'tolero-header__mobile-lang-option--active' : ''}`}
+                        className={`tolero-header__mobile-lang-option ${selectedLang === lang.label ? 'tolero-header__mobile-lang-option--active' : ''}`}
                         onClick={() => {
                           handleLangSelect(lang.code);
-                          setIsMenuOpen(false);
                         }}
                       >
                         {lang.label}
@@ -204,7 +208,7 @@ const Navbar = () => {
                 href="https://www.tolero.com/demo"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Request Demo
+                {t('nav.requestDemo')}
               </a>
             </div>
           </div>
@@ -372,7 +376,7 @@ const Navbar = () => {
           display: flex;
           align-items: center;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 0.875rem;
+          font-size: 1rem; /* Increased from 0.875rem */
           font-weight: 400;
           transition: all 0.2s ease;
           letter-spacing: 0.01em;
@@ -457,7 +461,7 @@ const Navbar = () => {
           padding: 0.375rem 0.75rem;
           cursor: pointer;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 0.875rem;
+          font-size: 1rem; /* Increased from 0.875rem */
           font-weight: 500;
           transition: all 0.2s ease;
           display: flex;
@@ -522,7 +526,7 @@ const Navbar = () => {
           border: 0;
           cursor: pointer;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 0.875rem;
+          font-size: 1rem; /* Increased from 0.875rem */
           font-weight: 400;
           color: #000000;
           transition: all 0.2s ease;
@@ -563,7 +567,7 @@ const Navbar = () => {
         .tolero-button {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-weight: 500;
-          font-size: 0.875rem;
+          font-size: 1rem; /* Increased from 0.875rem */
           padding: 8px 24px;
           border-radius: 25px;
           cursor: pointer;
@@ -597,7 +601,7 @@ const Navbar = () => {
         .tolero-header__mobile-cta .tolero-button {
           width: 100%;
           height: 44px;
-          font-size: 1rem;
+          font-size: 1.125rem; /* Increased */
           padding: 12px 24px;
         }
 
@@ -766,7 +770,7 @@ const Navbar = () => {
           display: block;
           padding: 1rem 0;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 1.125rem;
+          font-size: 1.25rem; /* Increased from 1.125rem */
           font-weight: 500;
           color: #000000;
           text-decoration: none;
@@ -791,7 +795,7 @@ const Navbar = () => {
           border: 0;
           cursor: pointer;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 1.125rem;
+          font-size: 1.25rem; /* Increased from 1.125rem */
           font-weight: 500;
           color: #000000;
           text-align: left;
@@ -826,7 +830,7 @@ const Navbar = () => {
           border: 0;
           cursor: pointer;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 1rem;
+          font-size: 1.125rem; /* Increased from 1rem */
           font-weight: 400;
           color: #000000;
           transition: all 0.2s ease;

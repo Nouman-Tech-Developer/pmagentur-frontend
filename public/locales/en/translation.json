@@ -1,0 +1,259 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "products": "Products",
+    "caseStudies": "Case Studies",
+    "about": "About",
+    "careers": "Careers",
+    "resources": "Resources",
+    "requestDemo": "Request Demo",
+    "selectLanguage": "Select language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+  "title": "Tolero – AI Automation for Companies",
+  "subtitle": "We automate processes, telephony and communication with AI",
+  "description": "So your company works more efficiently, reduces costs and grows faster.",
+  "benefit1": "24/7 availability for customers",
+  "benefit2": "Relief for your team",
+  "benefit3": "Automatic appointment scheduling",
+  "benefit4": "Pre-qualification of leads",
+  "benefit5": "Scalable with high call volume",
+   "requestDemo": "Request Demo",
+  "viewReferences": "View References"
+},
+
+  "features": {
+    "heading": {
+      "line1": "Your partner for",
+      "line2": "AI-powered automation,",
+      "line3": "business transformation & digital innovation"
+    },
+    "description": "Technology should drive real business impact. TOLERO combines AI expertise with strategic implementation to transform your operations and accelerate growth.",
+    "cooperation": {
+      "title": "Strategic Partnership",
+      "description": "We work alongside your team, not in isolation. Regular alignment ensures solutions are perfectly tailored to your business needs."
+    },
+    "processes": {
+      "title": "Scalable Solutions",
+      "description": "Our AI implementations are built for growth. Start small, scale fast, and always maintain control over your automation journey."
+    },
+    "impact": {
+      "title": "Measurable Impact",
+      "description": "Track real ROI from day one. Our solutions deliver tangible results that grow with your business over time."
+    }
+  },
+  
+  "services": {
+    "heading": "Our AI Solutions in Detail",
+    "subheading": "Each solution is individually adapted to your business processes and integrated.",
+    "learnMore": "Learn More",
+    "aiPhone": {
+      "title": "AI Phone Assistant",
+      "description": "Automates calls, appointment scheduling, and customer inquiries – reliably, professionally, and available 24/7. Customizable for your brand."
+    },
+    "chatbots": {
+      "title": "Chatbots & Digital Assistants",
+      "description": "Intelligent chatbots for websites, social media, or internal processes. Automatically answer inquiries and relieve your team."
+    },
+    "emailAutomation": {
+      "title": "Email Automation",
+      "description": "Automate customer communication, appointment confirmations, and internal processes – fast, error-free, and efficient."
+    },
+    "workflow": {
+      "title": "Workflow Optimization",
+      "description": "Custom AI solutions for data processing and industry-specific tasks – tailored to your business."
+    }
+  }
+  ,
+  "testimonials": {
+    "title": "Customer Voices",
+    "subtitle": "What companies say about our AI automation",
+    "testimonial1": {
+      "quote": "With Tolero's AI phone assistant, we've relieved our customer hotline while increasing customer satisfaction. The solution works 24/7 and even understands complex inquiries.",
+      "author": "Markus Weber",
+      "role": "Managing Director",
+      "company": "TransLog Logistics"
+    },
+    "testimonial2": {
+      "quote": "The chatbot integration has relieved our support team by 60%. Customers get immediate answers, while our team can focus on complex cases. A win-win situation.",
+      "author": "Dr. Sarah Klein",
+      "role": "CTO",
+      "company": "ShopPlus E-Commerce"
+    },
+    "testimonial3": {
+      "quote": "Email automation has revolutionized our customer communication. What previously took hours now happens automatically. The integration was seamless.",
+      "author": "Thomas Richter",
+      "role": "Head of Operations",
+      "company": "ServicePro GmbH"
+    },
+    "testimonial4": {
+      "quote": "The workflow optimization has increased our productivity by 40%. Complex data processing that previously took days is now completed in hours.",
+      "author": "Anna Hoffmann",
+      "role": "CEO",
+      "company": "DataFlow Analytics"
+    }
+  },
+  
+  "caseStudies": {
+    "heading": "Success Stories",
+    "subheading": "How companies optimize their processes with Tolero AI automation",
+    "viewCase": "View Case Study",
+    "viewAll": "View All Case Studies",
+    "case1": {
+      "title": "AI Phone Assistant for Logistics Company",
+      "description": "Automated customer hotline with 24/7 availability reduced wait times by 80% and increased customer satisfaction.",
+      "category": "AI Automation",
+      "result": "80% faster processing"
+    },
+    "case2": {
+      "title": "Chatbot Integration for E-Commerce",
+      "description": "Intelligent shop assistant automatically answers customer inquiries and increased conversion rate by 35%.",
+      "category": "AI Chatbots",
+      "result": "35% more conversions"
+    },
+    "case3": {
+      "title": "Email Automation for SaaS Provider",
+      "description": "Automated onboarding and support communication reduces manual effort by 60 hours per week.",
+      "category": "Workflow Optimization",
+      "result": "60h/week saved"
+    },
+    "case4": {
+      "title": "Complete AI Transformation for Mid-Sized Business",
+      "description": "Comprehensive automation of telephony, email and internal processes increased efficiency by 200%.",
+      "category": "AI Integration",
+      "result": "200% more efficient"
+    }
+  },
+  
+  "textHalfImage": {
+    "badge": "About Tolero",
+    "heading": "Technology is created by people",
+    "description": "Founded with a vision to transform business through intelligent automation, Tolero combines human expertise with cutting-edge AI technology. Our team of specialists develops customized solutions that streamline processes, reduce costs, and accelerate growth for companies across industries.",
+    "stats": {
+      "team": "AI Experts",
+      "projects": "Successful Projects",
+      "years": "Years Experience"
+    },
+    "button": "More about Tolero",
+    "buttonAria": "Learn more about Tolero company",
+    "imageAlt": "Tolero AI automation team working on innovative solutions"
+  },
+  
+  
+  "stats": {
+    "why": "Why TOLERO?",
+    "headingLine1": "Success is created",
+    "headingLine2": "through partnership",
+    "description": "Success comes from close collaboration, clear communication and agile AI implementation. Together with our clients, we develop intelligent automation solutions that are technically robust, scalable, and deliver long-term value.",
+    "projects": "AI Projects",
+    "projectsDesc": "Automated solutions deployed",
+    "customers": "Satisfied Clients",
+    "customersDesc": "Successful partnerships",
+    "satisfaction": "Client Satisfaction",
+    "satisfactionDesc": "Based on customer feedback",
+    "support": "AI Support",
+    "supportDesc": "24/7 intelligent assistance"
+  }
+,
+  "contact": {
+    "title": "Free Consultation",
+    "subtitle": "Get a free, no-obligation consultation and discover how AI automation can transform your business.",
+    "email": {
+      "label": "Email",
+      "value": "info@tolero.com"
+    },
+    "phone": {
+      "label": "Phone",
+      "value": "+49 123 456 7890"
+    },
+    "location": {
+      "label": "Location",
+      "value": "Sample Street 123, 10115 Berlin"
+    },
+    "form": {
+      "name": "Your Name *",
+      "company": "Company",
+      "email": "Email Address *",
+      "phone": "Phone Number",
+      "message": "Your Message *",
+      "privacy": {
+        "part1": "I agree to the",
+        "part2": "privacy policy",
+        "part3": "*"
+      },
+      "submit": "Send Message"
+    }
+  
+  },
+  
+  "footer": {
+    "tagline": "AI Automation for Companies",
+    "location": "Sample Street 123, 10115 Berlin",
+    "services": {
+      "title": "Services",
+      "aiPhone": "AI Phone Assistant",
+      "chatbots": "Chatbots & Assistants",
+      "emailAutomation": "Email Automation",
+      "workflow": "Workflow Optimization"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Tolero",
+      "careers": "Careers",
+      "references": "References",
+      "blog": "Blog"
+    },
+    "resources": {
+      "title": "Resources",
+      "caseStudies": "Case Studies",
+      "whitepapers": "Whitepapers",
+      "faq": "FAQ",
+      "support": "Support"
+    },
+    "copyright": "Tolero GmbH. All rights reserved.",
+    "legal": {
+      "privacy": "Privacy",
+      "notice": "Legal Notice",
+      "terms": "Terms & Conditions"
+    }
+  },
+  
+  "footer": {
+    "tagline": "AI Automation for Companies",
+    "location": "Sample Street 123, 10115 Berlin",
+    "services": {
+      "title": "Services",
+      "aiPhone": "AI Phone Assistant",
+      "chatbots": "Chatbots & Assistants",
+      "emailAutomation": "Email Automation",
+      "workflow": "Workflow Optimization"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Tolero",
+      "careers": "Careers",
+      "references": "References",
+      "blog": "Blog"
+    },
+    "resources": {
+      "title": "Resources",
+      "caseStudies": "Case Studies",
+      "whitepapers": "Whitepapers",
+      "faq": "FAQ",
+      "support": "Support"
+    },
+    "copyright": "Tolero GmbH. All rights reserved.",
+    "legal": {
+      "privacy": "Privacy",
+      "notice": "Legal Notice",
+      "terms": "Terms & Conditions"
+    }
+  }
+
+
+}
+
+
+  
