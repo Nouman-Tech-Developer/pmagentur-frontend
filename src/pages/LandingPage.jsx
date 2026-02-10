@@ -5,7 +5,7 @@ import HeroSection from '../components/HeroSection';
 import FeatureSection from '../components/FeatureSection';
 import ServiceSection from '../components/ServiceSection';
 import TestimonialCard from '../components/TestimonialCard';
-import CaseStudies from '../components/CaseStudies';
+// import CaseStudies from '../components/CaseStudies';
 import TextHalfImage from '../components/TextHalfImage';
 // import VideoText from '../components/VideoText';
 import StatsSection from '../components/StatsSection';
@@ -21,7 +21,7 @@ const LandingPage = () => {
       <FeatureSection />
       <ServiceSection />
       <TestimonialCard />
-      <CaseStudies />
+      {/* <CaseStudies /> */}
       <TextHalfImage />
       {/* <VideoText /> */}
       <StatsSection />

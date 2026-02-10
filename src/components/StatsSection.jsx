@@ -74,65 +74,27 @@ const StatsSection = () => {
       </section>
 
       <style jsx="true">{`
-        /* Success Section */
+        /* Success Section - 35px 100px padding */
         .tolero-success-section {
           width: 100%;
-          padding: 35px 100px 25px 100px;
+          padding: 35px 100px;
           background: #FFFFFF;
           box-sizing: border-box;
           position: relative;
-          overflow: hidden;
         }
         
-        .tolero-success-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: 
-            radial-gradient(circle at 15% 25%, rgba(34, 211, 238, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 85% 75%, rgba(37, 99, 235, 0.03) 0%, transparent 50%);
-          z-index: 1;
-        }
-        
-        @media (max-width: 1200px) {
-          .tolero-success-section {
-            padding: 30px 80px 20px 80px;
-          }
-        }
-        
-        @media (max-width: 1024px) {
-          .tolero-success-section {
-            padding: 25px 60px 15px 60px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .tolero-success-section {
-            padding: 20px 40px 15px 40px;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .tolero-success-section {
-            padding: 20px 20px 15px 20px;
-          }
-        }
-        
+        /* Clean background, remove patterns */
         .success-container {
           max-width: 1400px;
           margin: 0 auto;
           position: relative;
-          z-index: 2;
         }
         
         /* Corner Badge - LEFT SIDE POSITION */
         .success-corner-badge {
           position: absolute;
           top: -15px;
-          background: rgba(34, 211, 238, 0.1);
+          background: rgba(0, 102, 255, 0.1); /* Brand blue with opacity */
           padding: 10px 25px;
           z-index: 10;
         }
@@ -140,52 +102,22 @@ const StatsSection = () => {
         /* LEFT BADGE STYLING */
         .left-badge {
           left: 0;
-          border-radius: 0 0 25px 0; /* Top-left corner normal, bottom-right rounded */
+          border-radius: 0 0 25px 0;
         }
         
         .badge-text {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 14px;
           font-weight: 600;
-          color: #22D3EE;
+          color: #0066FF; /* Brand blue */
           text-transform: uppercase;
           letter-spacing: 1.5px;
         }
         
-        @media (max-width: 1200px) {
-          .success-corner-badge {
-            top: -12px;
-            padding: 8px 20px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .success-corner-badge {
-            top: -10px;
-            padding: 6px 16px;
-          }
-          
-          .badge-text {
-            font-size: 12px;
-            letter-spacing: 1px;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .success-corner-badge {
-            top: -8px;
-            padding: 5px 14px;
-          }
-          
-          .badge-text {
-            font-size: 11px;
-          }
-        }
-        
         /* Row 1: Heading & Description (2 columns) */
         .row-1 {
-          margin-bottom: 80px;
-          margin-top: 40px; /* Added space for badge */
+          margin-bottom: 60px;
+          margin-top: 40px;
         }
         
         .row-1-content {
@@ -193,36 +125,6 @@ const StatsSection = () => {
           grid-template-columns: 1fr 1fr;
           gap: 80px;
           align-items: start;
-        }
-        
-        @media (max-width: 1024px) {
-          .row-1-content {
-            gap: 60px;
-          }
-          
-          .row-1 {
-            margin-bottom: 60px;
-            margin-top: 30px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .row-1-content {
-            grid-template-columns: 1fr;
-            gap: 30px;
-          }
-          
-          .row-1 {
-            margin-bottom: 50px;
-            margin-top: 25px;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .row-1 {
-            margin-bottom: 40px;
-            margin-top: 20px;
-          }
         }
         
         /* Heading Side */
@@ -244,7 +146,7 @@ const StatsSection = () => {
         }
         
         .heading-line.highlight {
-          color: #22D3EE;
+          color: #0066FF; /* Brand blue */
           position: relative;
           display: inline-block;
         }
@@ -256,20 +158,85 @@ const StatsSection = () => {
           left: 0;
           width: 120px;
           height: 2px;
-          background: #22D3EE;
+          background: #0066FF; /* Brand blue */
         }
         
-        /* Description Side */
+        /* Description Side - Anthracite color */
         .success-description p {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
           line-height: 1.8;
           font-weight: 400;
-          color: #666666;
+          color: #374151; /* Anthracite */
           margin: 0;
         }
         
+        /* Row 2: Stats Cards - 4 columns */
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 30px;
+        }
+        
+        /* Stat Card - NO BORDER, NO OUTLINE */
+        .stat-card {
+          background: #FFFFFF;
+          border-radius: 20px;
+          padding: 40px 30px;
+          text-align: center;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+          position: relative;
+          overflow: hidden;
+          /* NO BORDER */
+        }
+        
+        /* Remove gradient overlay */
+        .stat-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 
+            0 15px 30px rgba(0, 102, 255, 0.1), /* Brand blue shadow */
+            0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Stat Value - Brand blue */
+        .stat-value {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+          font-size: 48px;
+          font-weight: 700;
+          color: #0066FF; /* Brand blue */
+          margin-bottom: 12px;
+          line-height: 1;
+        }
+        
+        /* Stat Label - Black */
+        .stat-label {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+          font-size: 20px;
+          font-weight: 600;
+          color: #000000;
+          margin: 0 0 8px 0;
+          line-height: 1.3;
+        }
+        
+        /* Stat Description - Anthracite */
+        .stat-desc {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+          font-size: 15px;
+          line-height: 1.6;
+          font-weight: 400;
+          color: #374151; /* Anthracite */
+          margin: 0;
+        }
+        
+        /* =========== RESPONSIVE STYLES =========== */
+        
+        /* Desktop: 1200px */
         @media (max-width: 1200px) {
+          .tolero-success-section {
+            padding: 35px 60px;
+          }
+          
           .success-heading {
             font-size: 44px;
           }
@@ -277,9 +244,27 @@ const StatsSection = () => {
           .success-description p {
             font-size: 17px;
           }
+          
+          .stats-grid {
+            gap: 25px;
+          }
+          
+          .row-1-content {
+            gap: 60px;
+          }
+          
+          .row-1 {
+            margin-bottom: 50px;
+            margin-top: 30px;
+          }
         }
         
+        /* Tablet: 1024px */
         @media (max-width: 1024px) {
+          .tolero-success-section {
+            padding: 35px 40px;
+          }
+          
           .success-heading {
             font-size: 38px;
           }
@@ -287,9 +272,44 @@ const StatsSection = () => {
           .success-description p {
             font-size: 16px;
           }
+          
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+          }
+          
+          .row-1-content {
+            gap: 50px;
+          }
+          
+          .row-1 {
+            margin-bottom: 45px;
+            margin-top: 25px;
+          }
+          
+          .stat-card {
+            padding: 35px 25px;
+          }
+          
+          .stat-value {
+            font-size: 42px;
+          }
+          
+          .stat-label {
+            font-size: 18px;
+          }
+          
+          .stat-desc {
+            font-size: 14px;
+          }
         }
         
+        /* Tablet Portrait: 768px */
         @media (max-width: 768px) {
+          .tolero-success-section {
+            padding: 35px 40px;
+          }
+          
           .success-heading {
             font-size: 32px;
           }
@@ -302,19 +322,76 @@ const StatsSection = () => {
             font-size: 15px;
             line-height: 1.7;
           }
+          
+          .row-1-content {
+            grid-template-columns: 1fr;
+            gap: 30px;
+          }
+          
+          .row-1 {
+            margin-bottom: 40px;
+            margin-top: 25px;
+          }
+          
+          .stats-grid {
+            gap: 20px;
+          }
+          
+          .stat-card {
+            padding: 30px 20px;
+          }
+          
+          .stat-value {
+            font-size: 36px;
+            margin-bottom: 10px;
+          }
+          
+          .stat-label {
+            font-size: 17px;
+          }
+          
+          .stat-desc {
+            font-size: 13px;
+          }
+          
+          .success-corner-badge {
+            top: -10px;
+            padding: 6px 16px;
+          }
+          
+          .badge-text {
+            font-size: 12px;
+            letter-spacing: 1px;
+          }
         }
         
-        @media (max-width: 550px) {
+        /* Mobile: 576px */
+        @media (max-width: 576px) {
+          .tolero-success-section {
+            padding: 35px 25px;
+          }
+          
           .success-heading {
             font-size: 28px;
           }
           
           .success-description p {
             font-size: 14px;
+            max-width: 480px;
+          }
+          
+          .row-1 {
+            margin-bottom: 35px;
+            margin-top: 20px;
           }
         }
         
+        /* Small Phones: 480px */
         @media (max-width: 480px) {
+          .tolero-success-section {
+            padding: 35px 20px;
+          }
+          
           .success-heading {
             font-size: 24px;
           }
@@ -322,160 +399,106 @@ const StatsSection = () => {
           .success-description p {
             font-size: 13px;
           }
-        }
-        
-        /* Row 2: Stats Cards - 4 columns */
-        .stats-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 30px;
-        }
-        
-        @media (max-width: 1200px) {
-          .stats-grid {
-            gap: 25px;
-          }
-        }
-        
-        @media (max-width: 1024px) {
-          .stats-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .stats-grid {
-            gap: 20px;
-          }
-        }
-        
-        @media (max-width: 550px) {
+          
           .stats-grid {
             grid-template-columns: 1fr;
             gap: 25px;
             max-width: 300px;
             margin: 0 auto;
           }
-        }
-        
-        /* Stat Card - Without Border */
-        .stat-card {
-          background: #FFFFFF;
-          border-radius: 20px;
-          padding: 40px 30px;
-          text-align: center;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-          position: relative;
-          overflow: hidden;
-          border: none;
-        }
-        
-        .stat-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, rgba(34, 211, 238, 0.03) 0%, transparent 100%);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-        
-        .stat-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(34, 211, 238, 0.12);
-          border: 1px solid rgba(34, 211, 238, 0.2);
-        }
-        
-        .stat-card:hover::before {
-          opacity: 1;
-        }
-        
-        @media (max-width: 768px) {
+          
           .stat-card {
-            padding: 35px 25px;
+            padding: 25px 20px;
           }
-        }
-        
-        @media (max-width: 550px) {
-          .stat-card {
-            padding: 30px 20px;
-          }
-        }
-        
-        /* Stat Value */
-        .stat-value {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-          font-size: 48px;
-          font-weight: 700;
-          color: #2563EB;
-          margin-bottom: 12px;
-          line-height: 1;
-        }
-        
-        @media (max-width: 1200px) {
-          .stat-value {
-            font-size: 42px;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .stat-value {
-            font-size: 36px;
-            margin-bottom: 10px;
-          }
-        }
-        
-        @media (max-width: 550px) {
+          
           .stat-value {
             font-size: 32px;
           }
-        }
-        
-        /* Stat Label */
-        .stat-label {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-          font-size: 20px;
-          font-weight: 600;
-          color: #000000;
-          margin: 0 0 8px 0;
-          line-height: 1.3;
-        }
-        
-        @media (max-width: 768px) {
-          .stat-label {
-            font-size: 18px;
-          }
-        }
-        
-        @media (max-width: 550px) {
+          
           .stat-label {
             font-size: 16px;
           }
-        }
-        
-        /* Stat Description */
-        .stat-desc {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-          font-size: 15px;
-          line-height: 1.6;
-          font-weight: 400;
-          color: #666666;
-          margin: 0;
-        }
-        
-        @media (max-width: 768px) {
-          .stat-desc {
-            font-size: 14px;
+          
+          .success-corner-badge {
+            top: -8px;
+            padding: 5px 14px;
+          }
+          
+          .badge-text {
+            font-size: 11px;
           }
         }
         
-        @media (max-width: 550px) {
+        /* Extra Small Phones: 360px */
+        @media (max-width: 360px) {
+          .tolero-success-section {
+            padding: 35px 15px;
+          }
+          
+          .success-heading {
+            font-size: 22px;
+          }
+          
+          .success-description p {
+            font-size: 12px;
+          }
+          
+          .stat-card {
+            padding: 20px 15px;
+          }
+          
+          .stat-value {
+            font-size: 28px;
+          }
+          
+          .stat-label {
+            font-size: 15px;
+          }
+          
           .stat-desc {
-            font-size: 13px;
+            font-size: 12px;
+          }
+        }
+        
+        /* Wide Screens: 1600px+ */
+        @media (min-width: 1600px) {
+          .tolero-success-section {
+            padding: 35px 150px;
+          }
+          
+          .success-heading {
+            font-size: 56px;
+          }
+          
+          .success-description p {
+            font-size: 20px;
+            max-width: 800px;
+          }
+          
+          .stats-grid {
+            gap: 40px;
+          }
+          
+          .stat-value {
+            font-size: 52px;
+          }
+          
+          .stat-label {
+            font-size: 22px;
+          }
+          
+          .stat-desc {
+            font-size: 16px;
+          }
+          
+          .row-1 {
+            margin-bottom: 70px;
+            margin-top: 50px;
+          }
+          
+          .success-corner-badge {
+            top: -20px;
+            padding: 12px 30px;
           }
         }
         
@@ -521,43 +544,6 @@ const StatsSection = () => {
           to {
             opacity: 1;
             transform: translateY(0);
-          }
-        }
-        
-        /* For very wide screens */
-        @media (min-width: 1600px) {
-          .tolero-success-section {
-            padding: 40px 150px 30px 150px;
-          }
-          
-          .success-corner-badge {
-            top: -20px;
-            padding: 12px 30px;
-          }
-          
-          .success-heading {
-            font-size: 56px;
-          }
-          
-          .success-description p {
-            font-size: 20px;
-          }
-          
-          .stat-value {
-            font-size: 52px;
-          }
-          
-          .stat-label {
-            font-size: 22px;
-          }
-          
-          .stat-desc {
-            font-size: 16px;
-          }
-          
-          .row-1 {
-            margin-bottom: 100px;
-            margin-top: 50px;
           }
         }
       `}</style>

@@ -18,21 +18,21 @@ const Footer = () => {
               <div className="footer-contact">
                 <div className="footer-contact-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#22D3EE"/>
+                    <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#0066FF"/> {/* CHANGED: #0066FF */}
                   </svg>
                   <a href="mailto:info@tolero.com">info@tolero.com</a>
                 </div>
                 
                 <div className="footer-contact-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 15.5C18.75 15.5 17.55 15.3 16.43 14.93C16.08 14.82 15.69 14.9 15.41 15.17L13.21 17.37C10.38 15.93 8.06 13.62 6.62 10.78L8.82 8.57C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.5C21 15.95 20.55 15.5 20 15.5Z" fill="#22D3EE"/>
+                    <path d="M20 15.5C18.75 15.5 17.55 15.3 16.43 14.93C16.08 14.82 15.69 14.9 15.41 15.17L13.21 17.37C10.38 15.93 8.06 13.62 6.62 10.78L8.82 8.57C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.5C21 15.95 20.55 15.5 20 15.5Z" fill="#0066FF"/> {/* CHANGED: #0066FF */}
                   </svg>
                   <a href="tel:+491234567890">+49 123 456 7890</a>
                 </div>
                 
                 <div className="footer-contact-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#22D3EE"/>
+                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#0066FF"/> {/* CHANGED: #0066FF */}
                   </svg>
                   <span>{t('footer.location')}</span>
                 </div>
@@ -116,8 +116,8 @@ const Footer = () => {
           width: 100%;
           height: 100%;
           background-image: 
-            radial-gradient(circle at 20% 30%, rgba(34, 211, 238, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+            radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.05) 0%, transparent 50%), /* CHANGED: #0066FF */
+            radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.05) 0%, transparent 50%); /* CHANGED: #0066FF */
           z-index: 1;
         }
         
@@ -225,7 +225,7 @@ const Footer = () => {
         }
         
         .footer-contact-item a:hover {
-          color: #22D3EE;
+          color: #0066FF; /* CHANGED: #0066FF */
           transform: translateX(4px);
         }
         
@@ -249,11 +249,11 @@ const Footer = () => {
         }
         
         .footer-social-link:hover {
-          background: #22D3EE;
-          border-color: #22D3EE;
+          background: #0066FF; /* CHANGED: #0066FF */
+          border-color: #0066FF; /* CHANGED: #0066FF */
           color: #FFFFFF;
           transform: translateY(-4px) scale(1.1);
-          box-shadow: 0 8px 20px rgba(34, 211, 238, 0.3);
+          box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3); /* CHANGED: #0066FF */
         }
         
         /* Column Title */
@@ -275,7 +275,7 @@ const Footer = () => {
           left: 0;
           width: 40px;
           height: 2px;
-          background: linear-gradient(90deg, #22D3EE, #2563EB);
+          background: #0066FF; /* CHANGED: #0066FF (removed gradient) */
         }
         
         /* Links */
@@ -300,7 +300,7 @@ const Footer = () => {
         }
         
         .footer-links li a:hover {
-          color: #22D3EE;
+          color: #0066FF; /* CHANGED: #0066FF */
           transform: translateX(4px);
         }
         
@@ -360,7 +360,7 @@ const Footer = () => {
         }
         
         .footer-legal a:hover {
-          color: #22D3EE;
+          color: #0066FF; /* CHANGED: #0066FF */
           transform: translateY(-2px);
         }
         

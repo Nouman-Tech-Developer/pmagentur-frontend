@@ -10,7 +10,7 @@ const FeatureSection = () => {
       title: t('features.cooperation.title'),
       description: t('features.cooperation.description'),
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
           <circle cx="9" cy="7" r="4"></circle>
           <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -23,7 +23,7 @@ const FeatureSection = () => {
       title: t('features.processes.title'),
       description: t('features.processes.description'),
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
           <line x1="8" y1="21" x2="16" y2="21"></line>
           <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -35,7 +35,7 @@ const FeatureSection = () => {
       title: t('features.impact.title'),
       description: t('features.impact.description'),
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
@@ -45,676 +45,483 @@ const FeatureSection = () => {
 
   return (
     <>
-      <section className="organism-feature-list">
-        <div className="feature-content-wrapper">
-          <div className="section-title">
-            <div className="heading-container">
-              <h2 className="main-heading">
-                <span className="heading-line heading-line-1">{t('features.heading.line1')}</span>
-                <span className="heading-line heading-line-2">{t('features.heading.line2')}</span>
-                <span className="heading-line heading-line-3">{t('features.heading.line3')}</span>
-              </h2>
-            </div>
+      <section className="features-minimal">
+        <div className="features-container">
+          <div className="features-header">
+            <h2 className="features-title">
+              <span className="title-line title-line-1">{t('features.heading.line1')}</span>
+              <span className="title-line title-line-2">{t('features.heading.line2')}</span>
+              <span className="title-line title-line-3">{t('features.heading.line3')}</span>
+            </h2>
             
-            <div className="description-container">
-              <div className="description-content">
-                <p>{t('features.description')}</p>
-              </div>
+            <div className="features-description">
+              <p>{t('features.description')}</p>
             </div>
           </div>
           
-          <div className="feature-grid-wrapper">
-            <div className="feature-grid">
-              {features.map((feature) => (
-                <div key={feature.id} className="feature-card">
-                  <div className="feature-icon">
-                    <div className="icon-wrapper">
-                      {feature.icon}
-                    </div>
-                  </div>
-                  <h3 className="feature-title">{feature.title}</h3>
-                  <div className="feature-description">
-                    <p>{feature.description}</p>
-                  </div>
+          <div className="features-grid">
+            {features.map((feature) => (
+              <div key={feature.id} className="feature-item">
+                <div className="feature-icon-wrapper">
+                  {feature.icon}
                 </div>
-              ))}
-            </div>
+                <h3 className="feature-heading">{feature.title}</h3>
+                <div className="feature-text">
+                  <p>{feature.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <style jsx="true">{`
-        /* Feature Section - TOLERO Brand Style */
-        .organism-feature-list {
+        /* Features Section - Clean Minimal - UPDATED PADDING: 35px 100px */
+        .features-minimal {
           width: 100%;
-          padding: 35px 100px 25px 100px;
+          padding: 35px 100px; /* UPDATED: Changed from 80px 100px to 35px 100px */
           background: #FFFFFF;
-          box-sizing: border-box;
           position: relative;
-          overflow: hidden;
         }
         
-        /* Background Pattern - Subtle */
-        .organism-feature-list::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: 
-            radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.02) 0%, transparent 50%),
-            radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
-          z-index: 1;
-        }
-        
-        .feature-content-wrapper {
+        .features-container {
           width: 100%;
           max-width: 1400px;
           margin: 0 auto;
-          position: relative;
-          z-index: 2;
         }
         
-        /* Section Title Container - Reduced spacing */
-        .section-title {
-          margin-bottom: 50px;
-          margin-top: 10px;
+        /* Header Section */
+        .features-header {
+          text-align: center;
+          margin-bottom: 60px; /* Reduced from 80px */
           width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
         }
         
-        /* ✅ Heading Container */
-        .heading-container {
-          display: flex;
-          justify-content: center;
-          width: 100%;
-          margin-bottom: 25px;
-          position: relative;
-        }
-        
-        /* ✅ Main Heading - Using Hero Section Font */
-        .main-heading {
+        /* Title - Modern Typography */
+        .features-title {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 52px;
           font-weight: 700;
           line-height: 1.1;
           color: #000000;
           letter-spacing: -0.02em;
-          text-align: center;
-          width: 100%;
-          max-width: 900px;
-          margin: 0;
+          margin: 0 0 25px 0; /* Reduced from 30px */
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 8px;
+          gap: 6px; /* Reduced from 8px */
         }
         
-        /* ✅ Individual Heading Lines */
-        .heading-line {
+        .title-line {
           display: block;
           width: 100%;
           text-align: center;
-          line-height: 1.1;
+        }
+        
+        /* Second line with accent color */
+        .title-line-2 {
+          color: #0066FF; /* Using our main brand color */
           position: relative;
         }
         
-        .heading-line-2 {
-          color: #22D3EE;
-          position: relative;
-          display: inline-block;
-        }
-        
-        .heading-line-2::after {
+        .title-line-2::after {
           content: '';
           position: absolute;
-          bottom: -5px;
+          bottom: -6px; /* Reduced from -8px */
           left: 50%;
           transform: translateX(-50%);
-          width: 200px;
+          width: 180px;
           height: 2px;
-          background: linear-gradient(90deg, transparent, #22D3EE, transparent);
+          background: linear-gradient(90deg, transparent, #0066FF, transparent);
         }
         
-        /* ✅ Description Container */
-        .description-container {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        
-        /* ✅ Description Content */
-        .description-content {
+        /* Description - UPDATED COLOR: Anthracite (#374151) */
+        .features-description {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
           line-height: 1.8;
-          color: #666666;
+          color: #374151; /* UPDATED: Changed from #666666 to #374151 (Anthracite) */
           text-align: center;
           max-width: 700px;
           margin: 0 auto;
-          font-weight: 400;
         }
         
-        .description-content p {
+        .features-description p {
           margin: 0;
         }
         
-        /* Feature Grid Wrapper */
-        .feature-grid-wrapper {
-          width: 100%;
-          margin-bottom: 40px;
-        }
-        
-        /* Feature Grid - 3 cards with larger width */
-        .feature-grid {
+        /* Features Grid */
+        .features-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 40px;
+          gap: 50px; /* Reduced from 60px */
           width: 100%;
-          max-width: 1400px;
-          margin: 0 auto;
         }
         
-        /* Feature Card - Increased Width */
-        .feature-card {
-          background: #FFFFFF;
-          border-radius: 20px;
-          padding: 50px 40px;
+        /* Feature Item - NO BORDER, NO OUTLINE, CLEAN */
+        .feature-item {
           text-align: center;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          border: 2px solid rgba(0, 0, 0, 0.08);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-          position: relative;
-          overflow: hidden;
+          padding: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
-          min-height: 420px;
-          width: 100%;
-        }
-        
-        .feature-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, rgba(34, 211, 238, 0.03) 0%, transparent 100%);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-        
-        .feature-card:hover {
-          transform: translateY(-10px);
-          border-color: #22D3EE;
-          box-shadow: 
-            0 20px 40px rgba(34, 211, 238, 0.12),
-            0 8px 16px rgba(0, 0, 0, 0.05);
-        }
-        
-        .feature-card:hover::before {
-          opacity: 1;
-        }
-        
-        /* Feature Icon - Solid Color */
-        .feature-icon {
-          margin-bottom: 35px;
-          display: inline-block;
-          position: relative;
-          z-index: 2;
-        }
-        
-        .icon-wrapper {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 90px;
-          height: 90px;
-          background: transparent;
-          border-radius: 50%;
-          border: 2px solid #22D3EE;
-          color: #22D3EE;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          box-shadow: 0 4px 12px rgba(34, 211, 238, 0.15);
-        }
-        
-        .icon-wrapper svg {
-          stroke: #22D3EE;
-          width: 36px;
-          height: 36px;
           transition: all 0.3s ease;
         }
         
-        .feature-card:hover .icon-wrapper {
-          transform: scale(1.1);
-          background: #22D3EE;
-          border-color: #22D3EE;
-          box-shadow: 0 12px 30px rgba(34, 211, 238, 0.3);
+        /* Icon Wrapper - NO CIRCLE, NO BACKGROUND */
+        .feature-icon-wrapper {
+          margin-bottom: 25px; /* Reduced from 30px */
+          color: #0066FF; /* Icon color */
+          transition: all 0.3s ease;
         }
         
-        .feature-card:hover .icon-wrapper svg {
-          stroke: #FFFFFF;
-          transform: scale(1.05);
+        .feature-icon-wrapper svg {
+          stroke: #0066FF;
+          width: 48px;
+          height: 48px;
+          transition: all 0.3s ease;
         }
         
-        /* Feature Card Heading */
-        .feature-title {
+        /* Hover effect only on icon */
+        .feature-item:hover .feature-icon-wrapper {
+          color: #0052CC; /* Slightly darker blue on hover */
+        }
+        
+        .feature-item:hover .feature-icon-wrapper svg {
+          stroke: #0052CC;
+          transform: translateY(-5px);
+        }
+        
+        /* Feature Heading - UPDATED COLOR: Black (#000000) */
+        .feature-heading {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 26px;
           font-weight: 700;
           line-height: 1.3;
-          color: #000000;
-          margin-bottom: 25px;
-          text-align: center;
-          position: relative;
-          z-index: 2;
-          flex-grow: 0;
+          color: #000000; /* UPDATED: Kept black color */
+          margin: 0 0 15px 0; /* Reduced from 20px */
         }
         
-        /* Feature Card Description */
-        .feature-description {
+        /* Feature Text - UPDATED COLOR: Anthracite (#374151) */
+        .feature-text {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 17px;
           line-height: 1.7;
-          color: #666666;
-          text-align: center;
-          position: relative;
-          z-index: 2;
-          flex-grow: 1;
-          display: flex;
-          align-items: center;
-          width: 100%;
+          color: #374151; /* UPDATED: Changed from #666666 to #374151 (Anthracite) */
         }
         
-        .feature-description p {
+        .feature-text p {
           margin: 0;
-          width: 100%;
         }
         
-        /* =========== RESPONSIVE STYLES =========== */
+        /* ===== RESPONSIVE DESIGN ===== */
         
-        /* Large Tablets */
+        /* Large Desktop: 1440px+ */
+        @media (max-width: 1440px) {
+          .features-minimal {
+            padding: 35px 80px;
+          }
+        }
+        
+        /* Desktop: 1200px - Navbar padding align */
         @media (max-width: 1200px) {
-          .organism-feature-list {
-            padding: 30px 80px 20px 80px;
+          .features-minimal {
+            padding: 35px 60px; /* Navbar: 12px 60px */
           }
           
-          .main-heading {
+          .features-title {
             font-size: 44px;
           }
           
-          .feature-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+          .features-grid {
+            gap: 40px; /* Reduced from 50px */
           }
           
-          .feature-card {
-            min-height: 400px;
-            padding: 40px 30px;
+          .features-header {
+            margin-bottom: 50px; /* Reduced from 60px */
           }
           
-          .icon-wrapper {
-            width: 80px;
-            height: 80px;
-          }
-          
-          .icon-wrapper svg {
-            width: 32px;
-            height: 32px;
-          }
-          
-          .feature-title {
-            font-size: 24px;
-          }
-          
-          .feature-description {
-            font-size: 16px;
+          .features-description {
+            font-size: 17px;
           }
         }
         
-        /* Tablets */
+        /* Tablet Landscape: 1024px - Navbar padding align */
         @media (max-width: 1024px) {
-          .organism-feature-list {
-            padding: 25px 60px 15px 60px;
+          .features-minimal {
+            padding: 35px 40px; /* Navbar: 12px 40px */
           }
           
-          .main-heading {
+          .features-title {
             font-size: 38px;
           }
           
-          .description-content {
-            max-width: 650px;
+          .features-description {
             font-size: 17px;
+            max-width: 650px;
           }
           
-          .feature-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+          .features-grid {
+            gap: 35px; /* Reduced from 40px */
           }
           
-          .section-title {
-            margin-bottom: 40px;
+          .feature-heading {
+            font-size: 24px;
           }
           
-          .feature-grid-wrapper {
-            margin-bottom: 30px;
-          }
-          
-          .feature-card {
-            padding: 35px 25px;
-            min-height: 380px;
-          }
-        }
-        
-        /* Medium Tablets and Large Phones */
-        @media (max-width: 900px) {
-          .organism-feature-list {
-            padding: 20px 50px 15px 50px;
-          }
-          
-          .main-heading {
-            font-size: 34px;
-          }
-          
-          .description-content {
-            max-width: 600px;
+          .feature-text {
             font-size: 16px;
           }
           
-          .feature-grid {
+          .features-header {
+            margin-bottom: 45px; /* Reduced from 50px */
+          }
+        }
+        
+        /* Medium Tablets: 900px */
+        @media (max-width: 900px) {
+          .features-minimal {
+            padding: 35px 50px;
+          }
+          
+          .features-title {
+            font-size: 34px;
+          }
+          
+          .features-grid {
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-          }
-          
-          .feature-card {
-            padding: 30px 20px;
-            min-height: 350px;
-            border-width: 1.5px;
-          }
-          
-          .feature-title {
-            font-size: 22px;
-          }
-          
-          .feature-description {
-            font-size: 15px;
-          }
-          
-          .icon-wrapper {
-            width: 70px;
-            height: 70px;
-          }
-          
-          .icon-wrapper svg {
-            width: 28px;
-            height: 28px;
-          }
-        }
-        
-        /* Small Tablets and Large Phones - Switch to 2 columns */
-        @media (max-width: 768px) {
-          .organism-feature-list {
-            padding: 20px 40px 15px 40px;
-          }
-          
-          .main-heading {
-            font-size: 32px;
-          }
-          
-          .description-content {
-            max-width: 550px;
-          }
-          
-          .feature-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            max-width: 700px;
-          }
-          
-          .feature-card {
-            min-height: 360px;
-            padding: 35px 25px;
-          }
-        }
-        
-        /* Phones - Switch to 1 column */
-        @media (max-width: 650px) {
-          .organism-feature-list {
-            padding: 15px 30px 10px 30px;
-          }
-          
-          .main-heading {
-            font-size: 28px;
-          }
-          
-          .feature-grid {
-            grid-template-columns: 1fr;
-            max-width: 500px;
             gap: 30px;
           }
           
-          .feature-card {
-            min-height: 320px;
-            padding: 40px 30px;
+          .feature-icon-wrapper svg {
+            width: 42px;
+            height: 42px;
           }
           
-          .heading-line-2::after {
+          .title-line-2::after {
             width: 150px;
           }
         }
         
-        /* Medium Phones */
-        @media (max-width: 550px) {
-          .organism-feature-list {
-            padding: 15px 25px 10px 25px;
+        /* Tablet Portrait: 768px - Switch to 2 columns */
+        @media (max-width: 768px) {
+          .features-minimal {
+            padding: 35px 40px; /* Navbar: 12px 40px */
           }
           
-          .main-heading {
-            font-size: 26px;
+          .features-title {
+            font-size: 32px;
           }
           
-          .description-content {
-            max-width: 480px;
-            font-size: 15px;
+          .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
           }
           
-          .feature-grid {
-            gap: 25px;
+          .features-description {
+            max-width: 550px;
           }
           
-          .feature-card {
-            padding: 35px 25px;
-            min-height: 300px;
-          }
-          
-          .icon-wrapper {
-            width: 70px;
-            height: 70px;
-          }
-          
-          .icon-wrapper svg {
-            width: 28px;
-            height: 28px;
+          .features-header {
+            margin-bottom: 40px; /* Reduced from 45px */
           }
         }
         
-        /* Small Phones */
-        @media (max-width: 480px) {
-          .organism-feature-list {
-            padding: 15px 20px 10px 20px;
+        /* Large Phones: 650px */
+        @media (max-width: 650px) {
+          .features-minimal {
+            padding: 35px 30px;
           }
           
-          .main-heading {
-            font-size: 24px;
+          .features-title {
+            font-size: 28px;
           }
           
-          .description-content {
-            max-width: 100%;
-            font-size: 14px;
+          .features-header {
+            margin-bottom: 35px; /* Reduced from 40px */
           }
           
-          .feature-title {
-            font-size: 22px;
+          .features-grid {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 40px; /* Reduced from 50px */
           }
           
-          .feature-description {
-            font-size: 15px;
+          .feature-icon-wrapper svg {
+            width: 48px;
+            height: 48px;
           }
           
-          .heading-line-2::after {
+          .title-line-2::after {
             width: 120px;
           }
           
-          .icon-wrapper {
-            width: 65px;
-            height: 65px;
-          }
-          
-          .icon-wrapper svg {
-            width: 26px;
-            height: 26px;
+          .feature-icon-wrapper {
+            margin-bottom: 20px; /* Reduced from 25px */
           }
         }
         
-        /* Very Small Phones */
-        @media (max-width: 400px) {
-          .organism-feature-list {
-            padding: 15px 15px 10px 15px;
+        /* Mobile: 576px */
+        @media (max-width: 576px) {
+          .features-minimal {
+            padding: 35px 25px;
           }
           
-          .main-heading {
+          .features-title {
+            font-size: 26px;
+          }
+          
+          .features-description {
+            font-size: 16px;
+            max-width: 480px;
+          }
+          
+          .feature-heading {
+            font-size: 22px;
+            margin-bottom: 12px; /* Reduced from 15px */
+          }
+          
+          .feature-text {
+            font-size: 16px;
+          }
+          
+          .features-header {
+            margin-bottom: 30px; /* Reduced from 35px */
+          }
+        }
+        
+        /* Small Phones: 480px */
+        @media (max-width: 480px) {
+          .features-minimal {
+            padding: 35px 20px; /* Maintain 35px vertical padding */
+          }
+          
+          .features-title {
+            font-size: 24px;
+          }
+          
+          .features-description {
+            font-size: 15px;
+          }
+          
+          .feature-heading {
+            font-size: 20px;
+            margin-bottom: 10px; /* Reduced from 12px */
+          }
+          
+          .feature-text {
+            font-size: 15px;
+          }
+          
+          .feature-icon-wrapper {
+            margin-bottom: 18px; /* Reduced from 20px */
+          }
+          
+          .feature-icon-wrapper svg {
+            width: 42px;
+            height: 42px;
+          }
+          
+          .title-line-2::after {
+            width: 100px;
+            bottom: -4px; /* Reduced from -6px */
+          }
+          
+          .features-grid {
+            gap: 35px; /* Reduced from 40px */
+          }
+        }
+        
+        /* Extra Small Phones: 360px */
+        @media (max-width: 360px) {
+          .features-minimal {
+            padding: 35px 15px; /* Maintain 35px vertical padding */
+          }
+          
+          .features-title {
             font-size: 22px;
           }
           
-          .feature-title {
-            font-size: 20px;
+          .features-description {
+            font-size: 14px;
           }
           
-          .feature-card {
-            padding: 30px 20px;
-            min-height: 280px;
-          }
-          
-          .icon-wrapper {
-            width: 60px;
-            height: 60px;
-          }
-          
-          .icon-wrapper svg {
-            width: 24px;
-            height: 24px;
-          }
-        }
-        
-        /* Extra Small Phones */
-        @media (max-width: 350px) {
-          .organism-feature-list {
-            padding: 12px 12px 8px 12px;
-          }
-          
-          .main-heading {
-            font-size: 20px;
-          }
-          
-          .description-content {
-            font-size: 13px;
-          }
-          
-          .feature-card {
-            padding: 25px 20px;
-            min-height: 260px;
-          }
-        }
-        
-        /* For very wide screens */
-        @media (min-width: 1600px) {
-          .organism-feature-list {
-            padding: 40px 150px 30px 150px;
-          }
-          
-          .main-heading {
-            font-size: 56px;
-          }
-          
-          .description-content {
-            max-width: 800px;
-            font-size: 20px;
-          }
-          
-          .feature-grid {
-            max-width: 1600px;
-            gap: 50px;
-          }
-          
-          .feature-card {
-            padding: 60px 50px;
-            min-height: 480px;
-          }
-          
-          .icon-wrapper {
-            width: 100px;
-            height: 100px;
-          }
-          
-          .icon-wrapper svg {
-            width: 40px;
-            height: 40px;
-          }
-          
-          .feature-title {
-            font-size: 30px;
-          }
-          
-          .feature-description {
+          .feature-heading {
             font-size: 19px;
           }
           
-          .section-title {
-            margin-bottom: 70px;
-            margin-top: 20px;
+          .feature-text {
+            font-size: 14px;
           }
           
-          .feature-grid-wrapper {
-            margin-bottom: 50px;
+          .feature-icon-wrapper svg {
+            width: 38px;
+            height: 38px;
+          }
+          
+          .features-grid {
+            gap: 30px; /* Reduced from 35px */
           }
         }
         
-        /* Extra wide screens */
-        @media (min-width: 2000px) {
-          .organism-feature-list {
-            padding: 50px 200px 40px 200px;
+        /* Wide Screens: 1600px+ */
+        @media (min-width: 1600px) {
+          .features-minimal {
+            padding: 35px 150px; /* Maintain 35px vertical padding */
           }
           
-          .main-heading {
-            font-size: 60px;
+          .features-title {
+            font-size: 56px;
+          }
+          
+          .features-description {
+            font-size: 20px;
+            max-width: 800px;
+          }
+          
+          .features-grid {
+            gap: 60px; /* Reduced from 80px */
+          }
+          
+          .feature-icon-wrapper svg {
+            width: 56px;
+            height: 56px;
+          }
+          
+          .feature-heading {
+            font-size: 30px;
+          }
+          
+          .feature-text {
+            font-size: 19px;
+          }
+          
+          .features-header {
+            margin-bottom: 70px; /* Reduced from 100px */
           }
         }
         
-        /* Animations */
+        /* Animation */
+        .feature-item {
+          animation: fadeInUp 0.6s ease forwards;
+          opacity: 0;
+        }
+        
+        .feature-item:nth-child(1) { animation-delay: 0.1s; }
+        .feature-item:nth-child(2) { animation-delay: 0.2s; }
+        .feature-item:nth-child(3) { animation-delay: 0.3s; }
+        
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
           }
           to {
             opacity: 1;
             transform: translateY(0);
           }
         }
-        
-        .feature-card {
-          animation: fadeInUp 0.6s ease forwards;
-          opacity: 0;
-        }
-        
-        .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3) { animation-delay: 0.3s; }
       `}</style>
     </>
   );

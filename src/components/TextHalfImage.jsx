@@ -80,8 +80,8 @@ const TextHalfImage = () => {
           width: 100%;
           height: 100%;
           background-image: 
-            radial-gradient(circle at 20% 30%, rgba(34, 211, 238, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.03) 0%, transparent 50%);
+            radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
           z-index: 1;
         }
         
@@ -204,18 +204,18 @@ const TextHalfImage = () => {
           }
         }
         
-        /* Badge */
+        /* Badge - UPDATED: #0066FF color */
         .section-badge {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 13px;
           font-weight: 600;
-          color: #22D3EE;
+          color: #0066FF; /* CHANGED: #0066FF instead of #22D3EE */
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin-bottom: 16px;
           display: inline-block;
           padding: 5px 12px;
-          background: rgba(34, 211, 238, 0.1);
+          background: rgba(0, 102, 255, 0.1); /* CHANGED: #0066FF with opacity */
           border-radius: 20px;
           align-self: flex-start;
         }
@@ -397,7 +397,7 @@ const TextHalfImage = () => {
           }
         }
         
-        /* Consistent Button Styles */
+        /* Consistent Button Styles - UPDATED: #0066FF color */
         .tolero-button {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-weight: 500;
@@ -421,15 +421,15 @@ const TextHalfImage = () => {
         
         .tolero-button--secondary {
           background-color: transparent;
-          color: #22D3EE;
-          border: 2px solid #22D3EE;
+          color: #0066FF; /* CHANGED: #0066FF instead of #22D3EE */
+          border: 2px solid #0066FF; /* CHANGED: #0066FF instead of #22D3EE */
         }
         
         .tolero-button--secondary:hover {
-          background-color: #22D3EE;
+          background-color: #0066FF; /* CHANGED: #0066FF instead of #22D3EE */
           color: #FFFFFF;
           transform: translateY(-1px);
-          box-shadow: 0 4px 16px rgba(34, 211, 238, 0.3);
+          box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3); /* CHANGED: #0066FF instead of #22D3EE */
         }
         
         @media only screen and (max-width: 1024px) {
@@ -439,7 +439,7 @@ const TextHalfImage = () => {
           }
         }
         
-        /* Image Side */
+        /* Image Side - UPDATED: Removed border outline */
         .image-side {
           position: relative;
           display: flex;
@@ -484,6 +484,7 @@ const TextHalfImage = () => {
           }
         }
         
+        /* UPDATED: Removed border from image-frame */
         .image-frame {
           width: 100%;
           max-width: 550px;
@@ -491,16 +492,16 @@ const TextHalfImage = () => {
           border-radius: 20px;
           overflow: hidden;
           box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-          border: 1px solid rgba(0, 0, 0, 0.08);
+          /* REMOVED: border: 1px solid rgba(0, 0, 0, 0.08); */
           position: relative;
-          background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+          background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%); /* CHANGED: Lighter background */
           transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         .image-frame:hover {
           transform: translateY(-6px);
           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-          border-color: rgba(34, 211, 238, 0.3);
+          /* REMOVED: border-color: rgba(34, 211, 238, 0.3); */
         }
         
         @media only screen and (max-width: 1200px) {
@@ -568,7 +569,7 @@ const TextHalfImage = () => {
           transform: scale(1.05);
         }
         
-        /* Image overlay gradient */
+        /* Image overlay gradient - UPDATED: #0066FF color */
         .image-overlay {
           position: absolute;
           top: 0;
@@ -577,14 +578,14 @@ const TextHalfImage = () => {
           height: 100%;
           background: linear-gradient(
             135deg,
-            rgba(34, 211, 238, 0.1) 0%,
-            rgba(37, 99, 235, 0.05) 100%
+            rgba(0, 102, 255, 0.1) 0%, /* CHANGED: #0066FF instead of #22D3EE */
+            rgba(0, 102, 255, 0.05) 100% /* CHANGED: #0066FF instead of #2563EB */
           );
           pointer-events: none;
           z-index: 2;
         }
         
-        /* Fallback when image fails to load */
+        /* Fallback when image fails to load - UPDATED: #0066FF color */
         .image-fallback {
           position: absolute;
           top: 0;
@@ -594,7 +595,7 @@ const TextHalfImage = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+          background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%); /* CHANGED: Lighter background */
           z-index: 1;
         }
         
@@ -608,14 +609,14 @@ const TextHalfImage = () => {
         .fallback-icon {
           font-size: 50px;
           animation: floatIcon 6s ease-in-out infinite;
-          color: #22D3EE;
+          color: #0066FF; /* CHANGED: #0066FF instead of #22D3EE */
         }
         
         .fallback-text {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
           font-weight: 600;
-          color: #22D3EE;
+          color: #0066FF; /* CHANGED: #0066FF instead of #22D3EE */
           text-transform: uppercase;
           letter-spacing: 1.5px;
         }

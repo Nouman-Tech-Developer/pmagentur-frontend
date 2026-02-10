@@ -66,7 +66,7 @@ const ServicesSection = () => {
                 </div>
                 <div className="service-action">
                   <a 
-                    className="tolero-button tolero-button--secondary" 
+                    className="service-button" 
                     href={service.buttonLink}
                     tabIndex="0"
                     aria-disabled="false"
@@ -81,42 +81,24 @@ const ServicesSection = () => {
       </section>
 
       <style jsx="true">{`
-        /* Services Section - Consistent with FeatureSection */
+        /* Services Section - Consistent 35px 100px padding */
         .services-section {
           width: 100%;
-          padding: 15px 100px 35px 100px;
+          padding: 35px 100px;
           background: #FFFFFF;
           box-sizing: border-box;
           position: relative;
-          overflow: hidden;
-        }
-        
-        /* Background Pattern - Subtle */
-        .services-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: 
-            radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.02) 0%, transparent 50%),
-            radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
-          z-index: 1;
         }
         
         .services-container {
           width: 100%;
           max-width: 1400px;
           margin: 0 auto;
-          position: relative;
-          z-index: 2;
         }
         
-        /* Header - Reduced top margin */
+        /* Header - Centered */
         .services-header {
-          margin-bottom: 50px;
-          margin-top: 10px;
+          margin-bottom: 60px;
           text-align: center;
           width: 100%;
           display: flex;
@@ -124,6 +106,7 @@ const ServicesSection = () => {
           align-items: center;
         }
         
+        /* Title - Black */
         .services-title {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 52px;
@@ -131,97 +114,83 @@ const ServicesSection = () => {
           line-height: 1.1;
           letter-spacing: -0.02em;
           color: #000000;
-          margin: 0 0 24px 0;
+          margin: 0 0 20px 0;
         }
         
+        /* Subtitle - Anthracite */
         .services-subtitle {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
           line-height: 1.8;
           font-weight: 400;
-          color: #666666;
+          color: #374151; /* Anthracite */
           max-width: 700px;
           margin: 0 auto;
         }
         
-        /* Grid - 4 cards in 1 row */
+        /* Grid - 4 cards visible */
         .services-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 30px;
           width: 100%;
-          margin-bottom: 40px;
         }
         
-        /* Service Card - Outline Design like FeatureSection */
+        /* Service Card - NO OUTLINE */
         .service-card {
           background: #FFFFFF;
           border-radius: 20px;
           overflow: hidden;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           display: flex;
           flex-direction: column;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-          border: 2px solid rgba(0, 0, 0, 0.08);
+          /* NO BORDER */
           position: relative;
           height: 100%;
-        }
-        
-        .service-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, rgba(34, 211, 238, 0.03) 0%, transparent 100%);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-          z-index: 1;
+          opacity: 1;
+          visibility: visible;
         }
         
         .service-card:hover {
-          transform: translateY(-10px);
-          border-color: #22D3EE;
+          transform: translateY(-8px);
           box-shadow: 
-            0 20px 40px rgba(34, 211, 238, 0.12),
-            0 8px 16px rgba(0, 0, 0, 0.05);
+            0 15px 30px rgba(0, 102, 255, 0.1),
+            0 5px 15px rgba(0, 0, 0, 0.08);
         }
         
-        .service-card:hover::before {
-          opacity: 1;
-        }
-        
-        /* Image */
+        /* Image with ALL corners rounded */
         .service-image {
           width: 100%;
-          height: 220px;
+          height: 240px;
           overflow: hidden;
           position: relative;
-          z-index: 2;
+          background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+          border-radius: 20px; /* ALL CORNERS ROUNDED */
+          margin: 0 0 20px 0;
         }
         
         .service-image img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 20px; /* Ensure image also has rounded corners */
         }
         
         .service-card:hover .service-image img {
-          transform: scale(1.08);
+          transform: scale(1.05);
         }
         
         /* Content */
         .service-content {
-          padding: 30px 25px;
+          padding: 0 25px;
           flex: 1;
           display: flex;
           flex-direction: column;
-          position: relative;
-          z-index: 2;
         }
         
+        /* Title - Black */
         .service-title {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 24px;
@@ -231,12 +200,13 @@ const ServicesSection = () => {
           margin: 0 0 16px 0;
         }
         
+        /* Description - Anthracite */
         .service-description {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 16px;
           line-height: 1.7;
           font-weight: 400;
-          color: #666666;
+          color: #374151; /* Anthracite */
           flex: 1;
         }
         
@@ -246,13 +216,11 @@ const ServicesSection = () => {
         
         /* Action */
         .service-action {
-          padding: 0 25px 30px 25px;
-          position: relative;
-          z-index: 2;
+          padding: 25px 25px 30px 25px;
         }
         
-        /* Consistent Button Styles - Match Navbar and Hero */
-        .tolero-button {
+        /* Button - Blue outline, blue fill on hover */
+        .service-button {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-weight: 500;
           font-size: 1rem;
@@ -266,32 +234,28 @@ const ServicesSection = () => {
           justify-content: center;
           height: 40px;
           width: 157px;
-          border: none;
+          border: 2px solid #0066FF; /* Blue outline */
+          background-color: transparent;
+          color: #0066FF; /* Blue text */
           white-space: nowrap;
           letter-spacing: 0.01em;
           box-sizing: border-box;
           text-align: center;
         }
         
-        .tolero-button--secondary {
-          background-color: transparent;
-          color: #22D3EE;
-          border: 2px solid #22D3EE;
-        }
-        
-        .tolero-button--secondary:hover {
-          background-color: #22D3EE;
+        .service-button:hover {
+          background-color: #0066FF; /* Blue fill on hover */
           color: #FFFFFF;
-          transform: translateY(-1px);
-          box-shadow: 0 4px 16px rgba(34, 211, 238, 0.3);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
         }
         
         /* =========== RESPONSIVE STYLES =========== */
         
-        /* Large Tablets */
+        /* Desktop: 1200px */
         @media (max-width: 1200px) {
           .services-section {
-            padding: 10px 80px 25px 80px;
+            padding: 35px 60px;
           }
           
           .services-title {
@@ -303,19 +267,19 @@ const ServicesSection = () => {
             gap: 30px;
           }
           
-          .service-card {
-            max-width: 100%;
+          .service-image {
+            height: 220px;
           }
           
           .services-header {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
           }
         }
         
-        /* Tablets */
+        /* Tablet: 1024px */
         @media (max-width: 1024px) {
           .services-section {
-            padding: 10px 60px 20px 60px;
+            padding: 35px 40px;
           }
           
           .services-title {
@@ -327,53 +291,22 @@ const ServicesSection = () => {
           }
           
           .services-header {
-            margin-bottom: 35px;
-          }
-        }
-        
-        /* Medium Tablets and Large Phones */
-        @media (max-width: 900px) {
-          .services-section {
-            padding: 10px 50px 15px 50px;
-          }
-          
-          .services-title {
-            font-size: 34px;
-          }
-          
-          .services-subtitle {
-            font-size: 16px;
-          }
-          
-          .services-grid {
-            gap: 25px;
-          }
-          
-          .service-image {
-            height: 200px;
+            margin-bottom: 45px;
           }
           
           .service-content {
-            padding: 25px 20px;
-          }
-          
-          .service-title {
-            font-size: 22px;
-          }
-          
-          .service-description {
-            font-size: 15px;
+            padding: 0 20px;
           }
           
           .service-action {
-            padding: 0 20px 25px 20px;
+            padding: 20px 20px 25px 20px;
           }
         }
         
-        /* Small Tablets and Large Phones */
+        /* Tablet Portrait: 768px */
         @media (max-width: 768px) {
           .services-section {
-            padding: 10px 40px 15px 40px;
+            padding: 35px 40px;
           }
           
           .services-title {
@@ -383,43 +316,23 @@ const ServicesSection = () => {
           .services-grid {
             grid-template-columns: 1fr;
             max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             gap: 30px;
           }
           
           .service-image {
-            height: 220px;
+            height: 240px;
+          }
+          
+          .services-header {
+            margin-bottom: 40px;
           }
         }
         
-        /* Phones */
-        @media (max-width: 650px) {
+        /* Mobile: 576px */
+        @media (max-width: 576px) {
           .services-section {
-            padding: 10px 30px 15px 30px;
-          }
-          
-          .services-title {
-            font-size: 28px;
-          }
-          
-          .service-image {
-            height: 200px;
-          }
-          
-          .service-content {
-            padding: 25px 20px;
-          }
-          
-          .service-action {
-            padding: 0 20px 25px 20px;
-          }
-        }
-        
-        /* Medium Phones */
-        @media (max-width: 550px) {
-          .services-section {
-            padding: 10px 25px 15px 25px;
+            padding: 35px 25px;
           }
           
           .services-title {
@@ -427,16 +340,22 @@ const ServicesSection = () => {
           }
           
           .services-subtitle {
+            font-size: 16px;
             max-width: 480px;
-            font-size: 15px;
           }
           
           .service-image {
-            height: 180px;
+            height: 200px;
+            border-radius: 15px; /* Slightly smaller radius on mobile */
+            margin-bottom: 15px;
+          }
+          
+          .service-image img {
+            border-radius: 15px;
           }
           
           .service-content {
-            padding: 22px 18px;
+            padding: 0 18px;
           }
           
           .service-title {
@@ -444,18 +363,24 @@ const ServicesSection = () => {
           }
           
           .service-description {
-            font-size: 14px;
+            font-size: 15px;
           }
           
           .service-action {
-            padding: 0 18px 22px 18px;
+            padding: 18px 18px 22px 18px;
+          }
+          
+          .service-button {
+            width: 140px;
+            height: 36px;
+            font-size: 0.95rem;
           }
         }
         
-        /* Small Phones */
+        /* Small Phones: 480px */
         @media (max-width: 480px) {
           .services-section {
-            padding: 10px 20px 15px 20px;
+            padding: 35px 20px;
           }
           
           .services-title {
@@ -463,77 +388,78 @@ const ServicesSection = () => {
           }
           
           .services-subtitle {
-            max-width: 100%;
-            font-size: 14px;
+            font-size: 15px;
           }
           
           .service-image {
-            height: 160px;
+            height: 180px;
+            border-radius: 15px;
+          }
+          
+          .service-image img {
+            border-radius: 15px;
           }
           
           .service-content {
-            padding: 20px 16px;
+            padding: 0 16px;
           }
           
           .service-action {
-            padding: 0 16px 20px 16px;
+            padding: 16px 16px 20px 16px;
           }
         }
         
-        /* Very Small Phones */
-        @media (max-width: 400px) {
+        /* Extra Small Phones: 360px */
+        @media (max-width: 360px) {
           .services-section {
-            padding: 10px 15px 12px 15px;
+            padding: 35px 15px;
           }
           
           .services-title {
             font-size: 22px;
           }
           
+          .services-subtitle {
+            font-size: 14px;
+          }
+          
           .service-image {
-            height: 140px;
+            height: 160px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+          }
+          
+          .service-image img {
+            border-radius: 12px;
           }
           
           .service-content {
-            padding: 18px 14px;
+            padding: 0 14px;
           }
           
           .service-title {
             font-size: 18px;
           }
           
-          .service-action {
-            padding: 0 14px 18px 14px;
-          }
-        }
-        
-        /* Extra Small Phones */
-        @media (max-width: 350px) {
-          .services-section {
-            padding: 10px 12px 12px 12px;
-          }
-          
-          .services-title {
-            font-size: 20px;
-          }
-          
-          .services-subtitle {
-            font-size: 13px;
-          }
-          
-          .service-content {
-            padding: 16px 12px;
+          .service-description {
+            font-size: 14px;
           }
           
           .service-action {
-            padding: 0 12px 16px 12px;
+            padding: 14px 14px 18px 14px;
+          }
+          
+          .service-button {
+            width: 130px;
+            height: 34px;
+            font-size: 0.9rem;
           }
         }
         
-        /* For very wide screens */
+        /* Wide Screens: 1600px+ */
         @media (min-width: 1600px) {
           .services-section {
-            padding: 20px 150px 40px 150px;
+            padding: 35px 150px;
           }
           
           .services-title {
@@ -546,28 +472,15 @@ const ServicesSection = () => {
           }
           
           .services-grid {
-            max-width: 1600px;
             gap: 40px;
           }
           
           .service-image {
-            height: 250px;
+            height: 280px;
           }
           
           .services-header {
-            margin-bottom: 60px;
-            margin-top: 20px;
-          }
-        }
-        
-        /* Extra wide screens */
-        @media (min-width: 2000px) {
-          .services-section {
-            padding: 30px 200px 50px 200px;
-          }
-          
-          .services-title {
-            font-size: 60px;
+            margin-bottom: 70px;
           }
         }
         
@@ -575,7 +488,7 @@ const ServicesSection = () => {
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
           }
           to {
             opacity: 1;
