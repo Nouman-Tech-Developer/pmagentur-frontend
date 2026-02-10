@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 // import LogoSlider from '../components/LogoSlider';
 import FeatureSection from '../components/FeatureSection';
@@ -10,12 +9,10 @@ import TextHalfImage from '../components/TextHalfImage';
 // import VideoText from '../components/VideoText';
 import StatsSection from '../components/StatsSection';
 import ContactForm from '../components/ContactForm';
-import Footer from '../components/Footer';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <Navbar />
       <HeroSection />
       {/* <LogoSlider /> */}
       <FeatureSection />
@@ -26,7 +23,6 @@ const LandingPage = () => {
       {/* <VideoText /> */}
       <StatsSection />
       <ContactForm />
-      <Footer />
       
       {/* CSS for LandingPage specific styles */}
       <style jsx="true">{`
