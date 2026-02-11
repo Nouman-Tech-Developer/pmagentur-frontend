@@ -3,7 +3,6 @@ import AboutHero from '../components/AboutHero';
 import AboutStory from '../components/AboutStory';
 import ValuesSection from '../components/ValuesSection';
 import ManagementSection from '../components/ManagementSection';
-
 import TeamGrid from '../components/TeamGrid';
 
 const AboutPage = () => {
@@ -12,10 +11,8 @@ const AboutPage = () => {
       <AboutHero />
       <AboutStory />
       <ValuesSection />
-       <ManagementSection />
-
-        <TeamGrid />
-
+      <ManagementSection />
+      <TeamGrid />
     </>
   );
 };
