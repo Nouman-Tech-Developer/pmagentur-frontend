@@ -93,7 +93,7 @@ const AboutHero = () => {
 
               {/* Sub Headline */}
               <h2 className="about-sub-headline">
-                Intelligente Prozess- & Kommunikationsautomatisierung mit KI
+                Intelligente Prozess & Kommunikationsautomatisierung mit KI
               </h2>
 
               {/* Features List */}
@@ -845,5 +845,4 @@ const AboutHero = () => {
     </>
   );
 };
-
 export default AboutHero;
