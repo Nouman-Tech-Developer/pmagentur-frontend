@@ -58,7 +58,7 @@ const ContactSection = () => {
                 </div>
                 
                 <div className="submit-button-container">
-                  <button type="submit" className="tolero-button tolero-button--primary contact-submit-button">
+                  <button type="submit" className="contact-submit-button">
                     {t('contact.form.submit')}
                   </button>
                 </div>
@@ -72,14 +72,12 @@ const ContactSection = () => {
         /* Contact Section - Full width with consistent padding */
         .contact-section {
           width: 100%;
-          padding: 35px 100px; /* UPDATED: Consistent 35px 100px padding */
+          padding: 35px 100px;
           background: #FFFFFF;
           box-sizing: border-box;
           position: relative;
           overflow: hidden;
         }
-        
-        /* REMOVED: Gradient background pattern */
         
         .contact-container {
           width: 100%;
@@ -92,7 +90,7 @@ const ContactSection = () => {
         .contact-content {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 60px; /* Increased gap for better spacing */
+          gap: 60px;
           align-items: start;
           width: 100%;
         }
@@ -104,24 +102,24 @@ const ContactSection = () => {
           width: 100%;
         }
         
-        /* Title - Updated colors: Black */
+        /* Title - Black */
         .contact-title {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 52px;
           font-weight: 700;
           line-height: 1.1;
-          color: #000000; /* Updated: Black */
+          color: #000000;
           margin: 0 0 24px 0;
           letter-spacing: -0.02em;
         }
         
-        /* Subtitle - Updated colors: Anthracite (#374151) */
+        /* Subtitle - Light Gray */
         .contact-subtitle {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
           line-height: 1.8;
           font-weight: 400;
-          color: #374151; /* Updated: Anthracite */
+          color: #6B7280;
           margin: 0;
           max-width: 700px;
           margin: 0 auto;
@@ -136,11 +134,11 @@ const ContactSection = () => {
         .contact-form-fields {
           display: flex;
           flex-direction: column;
-          gap: 24px; /* Increased gap for better spacing */
+          gap: 24px;
           background: #FFFFFF;
-          padding: 40px; /* Increased padding */
+          padding: 40px;
           border-radius: 20px;
-          border: 1px solid rgba(0, 0, 0, 0.08);
+          border: 1px solid #E5E7EB;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
           width: 100%;
           box-sizing: border-box;
@@ -150,7 +148,7 @@ const ContactSection = () => {
         .contact-field-row {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 24px; /* Increased gap */
+          gap: 24px;
           width: 100%;
         }
         
@@ -163,7 +161,7 @@ const ContactSection = () => {
           font-weight: 400;
           color: #000000;
           padding: 16px 20px;
-          border: 1px solid rgba(0, 0, 0, 0.1);
+          border: 1px solid #E5E7EB;
           border-radius: 12px;
           background: #FFFFFF;
           outline: none;
@@ -174,15 +172,15 @@ const ContactSection = () => {
         
         .contact-input:focus,
         .contact-textarea:focus {
-          border-color: #0066FF; /* Updated: Blue focus color */
-          box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+          border-color: #000000;
+          box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
           transform: translateY(-2px);
         }
         
         .contact-input::placeholder,
         .contact-textarea::placeholder {
-          color: #666666;
-          opacity: 0.7;
+          color: #9CA3AF;
+          opacity: 1;
         }
         
         /* Textarea */
@@ -205,10 +203,11 @@ const ContactSection = () => {
           width: 20px;
           height: 20px;
           margin-top: 2px;
-          accent-color: #0066FF; /* Updated: Blue checkbox */
+          accent-color: #000000;
           border-radius: 4px;
           cursor: pointer;
           flex-shrink: 0;
+          border: 1px solid #E5E7EB;
         }
         
         .contact-checkbox-label {
@@ -216,37 +215,38 @@ const ContactSection = () => {
           font-size: 14px;
           line-height: 1.5;
           font-weight: 400;
-          color: #374151; /* Updated: Anthracite */
+          color: #6B7280;
           flex: 1;
           cursor: pointer;
         }
         
         .contact-checkbox-label a {
-          color: #0066FF; /* UPDATED: Same as button color */
+          color: #000000;
           text-decoration: none;
           font-weight: 600;
           transition: color 0.3s ease;
+          border-bottom: 1px solid transparent;
         }
         
         .contact-checkbox-label a:hover {
-          color: #0052CC;
-          text-decoration: underline;
+          color: #374151;
+          border-bottom-color: #374151;
         }
         
         /* Submit Button Container */
         .submit-button-container {
           display: flex;
-          justify-content: flex-end; /* Align button to the right */
+          justify-content: flex-end;
           width: 100%;
           margin-top: 16px;
         }
         
-        /* Send Button - Smaller size */
+        /* Send Button - Black */
         .contact-submit-button {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-weight: 500;
-          font-size: 15px; /* Smaller font */
-          padding: 10px 30px; /* Adjusted padding */
+          font-size: 15px;
+          padding: 10px 30px;
           border-radius: 25px;
           cursor: pointer;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -254,22 +254,22 @@ const ContactSection = () => {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          height: 42px; /* Smaller height */
-          width: auto; /* Auto width based on content */
-          min-width: 140px; /* Minimum width */
+          height: 42px;
+          width: auto;
+          min-width: 140px;
           border: none;
           white-space: nowrap;
           letter-spacing: 0.01em;
           box-sizing: border-box;
           text-align: center;
-          background-color: #0066FF; /* Blue button color */
+          background-color: #000000;
           color: #FFFFFF;
         }
         
         .contact-submit-button:hover {
-          background-color: #0052CC; /* Darker blue on hover */
+          background-color: #374151;
           transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         /* Animation */

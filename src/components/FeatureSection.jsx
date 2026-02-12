@@ -76,10 +76,10 @@ const FeatureSection = () => {
       </section>
 
       <style jsx="true">{`
-        /* Features Section - Clean Minimal - UPDATED PADDING: 35px 100px */
+        /* Features Section - Clean Minimal */
         .features-minimal {
           width: 100%;
-          padding: 35px 100px; /* UPDATED: Changed from 80px 100px to 35px 100px */
+          padding: 35px 100px;
           background: #FFFFFF;
           position: relative;
         }
@@ -93,7 +93,7 @@ const FeatureSection = () => {
         /* Header Section */
         .features-header {
           text-align: center;
-          margin-bottom: 60px; /* Reduced from 80px */
+          margin-bottom: 60px;
           width: 100%;
         }
         
@@ -105,11 +105,11 @@ const FeatureSection = () => {
           line-height: 1.1;
           color: #000000;
           letter-spacing: -0.02em;
-          margin: 0 0 25px 0; /* Reduced from 30px */
+          margin: 0 0 25px 0;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 6px; /* Reduced from 8px */
+          gap: 6px;
         }
         
         .title-line {
@@ -118,29 +118,29 @@ const FeatureSection = () => {
           text-align: center;
         }
         
-        /* Second line with accent color */
+        /* Second line with black color - removed accent color */
         .title-line-2 {
-          color: #0066FF; /* Using our main brand color */
+          color: #000000;
           position: relative;
         }
         
         .title-line-2::after {
           content: '';
           position: absolute;
-          bottom: -6px; /* Reduced from -8px */
+          bottom: -6px;
           left: 50%;
           transform: translateX(-50%);
           width: 180px;
           height: 2px;
-          background: linear-gradient(90deg, transparent, #0066FF, transparent);
+          background: linear-gradient(90deg, transparent, #000000, transparent);
         }
         
-        /* Description - UPDATED COLOR: Anthracite (#374151) */
+        /* Description - Light Gray (#6B7280) */
         .features-description {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
           line-height: 1.8;
-          color: #374151; /* UPDATED: Changed from #666666 to #374151 (Anthracite) */
+          color: #6B7280;
           text-align: center;
           max-width: 700px;
           margin: 0 auto;
@@ -154,7 +154,7 @@ const FeatureSection = () => {
         .features-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 50px; /* Reduced from 60px */
+          gap: 50px;
           width: 100%;
         }
         
@@ -168,46 +168,46 @@ const FeatureSection = () => {
           transition: all 0.3s ease;
         }
         
-        /* Icon Wrapper - NO CIRCLE, NO BACKGROUND */
+        /* Icon Wrapper - NO CIRCLE, NO BACKGROUND - BLACK ICONS */
         .feature-icon-wrapper {
-          margin-bottom: 25px; /* Reduced from 30px */
-          color: #0066FF; /* Icon color */
+          margin-bottom: 25px;
+          color: #000000; /* BLACK icon color */
           transition: all 0.3s ease;
         }
         
         .feature-icon-wrapper svg {
-          stroke: #0066FF;
+          stroke: #000000; /* BLACK stroke */
           width: 48px;
           height: 48px;
           transition: all 0.3s ease;
         }
         
-        /* Hover effect only on icon */
+        /* Hover effect - DARK GRAY (#374151) */
         .feature-item:hover .feature-icon-wrapper {
-          color: #0052CC; /* Slightly darker blue on hover */
+          color: #374151;
         }
         
         .feature-item:hover .feature-icon-wrapper svg {
-          stroke: #0052CC;
+          stroke: #374151;
           transform: translateY(-5px);
         }
         
-        /* Feature Heading - UPDATED COLOR: Black (#000000) */
+        /* Feature Heading - BLACK */
         .feature-heading {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 26px;
           font-weight: 700;
           line-height: 1.3;
-          color: #000000; /* UPDATED: Kept black color */
-          margin: 0 0 15px 0; /* Reduced from 20px */
+          color: #000000;
+          margin: 0 0 15px 0;
         }
         
-        /* Feature Text - UPDATED COLOR: Anthracite (#374151) */
+        /* Feature Text - LIGHT GRAY (#6B7280) */
         .feature-text {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 17px;
           line-height: 1.7;
-          color: #374151; /* UPDATED: Changed from #666666 to #374151 (Anthracite) */
+          color: #6B7280;
         }
         
         .feature-text p {
@@ -226,7 +226,7 @@ const FeatureSection = () => {
         /* Desktop: 1200px - Navbar padding align */
         @media (max-width: 1200px) {
           .features-minimal {
-            padding: 35px 60px; /* Navbar: 12px 60px */
+            padding: 35px 60px;
           }
           
           .features-title {
@@ -234,11 +234,11 @@ const FeatureSection = () => {
           }
           
           .features-grid {
-            gap: 40px; /* Reduced from 50px */
+            gap: 40px;
           }
           
           .features-header {
-            margin-bottom: 50px; /* Reduced from 60px */
+            margin-bottom: 50px;
           }
           
           .features-description {
@@ -249,7 +249,7 @@ const FeatureSection = () => {
         /* Tablet Landscape: 1024px - Navbar padding align */
         @media (max-width: 1024px) {
           .features-minimal {
-            padding: 35px 40px; /* Navbar: 12px 40px */
+            padding: 35px 40px;
           }
           
           .features-title {
@@ -262,7 +262,7 @@ const FeatureSection = () => {
           }
           
           .features-grid {
-            gap: 35px; /* Reduced from 40px */
+            gap: 35px;
           }
           
           .feature-heading {
@@ -274,7 +274,7 @@ const FeatureSection = () => {
           }
           
           .features-header {
-            margin-bottom: 45px; /* Reduced from 50px */
+            margin-bottom: 45px;
           }
         }
         
@@ -306,7 +306,7 @@ const FeatureSection = () => {
         /* Tablet Portrait: 768px - Switch to 2 columns */
         @media (max-width: 768px) {
           .features-minimal {
-            padding: 35px 40px; /* Navbar: 12px 40px */
+            padding: 35px 40px;
           }
           
           .features-title {
@@ -323,7 +323,7 @@ const FeatureSection = () => {
           }
           
           .features-header {
-            margin-bottom: 40px; /* Reduced from 45px */
+            margin-bottom: 40px;
           }
         }
         
@@ -338,14 +338,14 @@ const FeatureSection = () => {
           }
           
           .features-header {
-            margin-bottom: 35px; /* Reduced from 40px */
+            margin-bottom: 35px;
           }
           
           .features-grid {
             grid-template-columns: 1fr;
             max-width: 500px;
             margin: 0 auto;
-            gap: 40px; /* Reduced from 50px */
+            gap: 40px;
           }
           
           .feature-icon-wrapper svg {
@@ -358,7 +358,7 @@ const FeatureSection = () => {
           }
           
           .feature-icon-wrapper {
-            margin-bottom: 20px; /* Reduced from 25px */
+            margin-bottom: 20px;
           }
         }
         
@@ -379,7 +379,7 @@ const FeatureSection = () => {
           
           .feature-heading {
             font-size: 22px;
-            margin-bottom: 12px; /* Reduced from 15px */
+            margin-bottom: 12px;
           }
           
           .feature-text {
@@ -387,14 +387,14 @@ const FeatureSection = () => {
           }
           
           .features-header {
-            margin-bottom: 30px; /* Reduced from 35px */
+            margin-bottom: 30px;
           }
         }
         
         /* Small Phones: 480px */
         @media (max-width: 480px) {
           .features-minimal {
-            padding: 35px 20px; /* Maintain 35px vertical padding */
+            padding: 35px 20px;
           }
           
           .features-title {
@@ -407,7 +407,7 @@ const FeatureSection = () => {
           
           .feature-heading {
             font-size: 20px;
-            margin-bottom: 10px; /* Reduced from 12px */
+            margin-bottom: 10px;
           }
           
           .feature-text {
@@ -415,7 +415,7 @@ const FeatureSection = () => {
           }
           
           .feature-icon-wrapper {
-            margin-bottom: 18px; /* Reduced from 20px */
+            margin-bottom: 18px;
           }
           
           .feature-icon-wrapper svg {
@@ -425,18 +425,18 @@ const FeatureSection = () => {
           
           .title-line-2::after {
             width: 100px;
-            bottom: -4px; /* Reduced from -6px */
+            bottom: -4px;
           }
           
           .features-grid {
-            gap: 35px; /* Reduced from 40px */
+            gap: 35px;
           }
         }
         
         /* Extra Small Phones: 360px */
         @media (max-width: 360px) {
           .features-minimal {
-            padding: 35px 15px; /* Maintain 35px vertical padding */
+            padding: 35px 15px;
           }
           
           .features-title {
@@ -461,14 +461,14 @@ const FeatureSection = () => {
           }
           
           .features-grid {
-            gap: 30px; /* Reduced from 35px */
+            gap: 30px;
           }
         }
         
         /* Wide Screens: 1600px+ */
         @media (min-width: 1600px) {
           .features-minimal {
-            padding: 35px 150px; /* Maintain 35px vertical padding */
+            padding: 35px 150px;
           }
           
           .features-title {
@@ -481,7 +481,7 @@ const FeatureSection = () => {
           }
           
           .features-grid {
-            gap: 60px; /* Reduced from 80px */
+            gap: 60px;
           }
           
           .feature-icon-wrapper svg {
@@ -498,7 +498,7 @@ const FeatureSection = () => {
           }
           
           .features-header {
-            margin-bottom: 70px; /* Reduced from 100px */
+            margin-bottom: 70px;
           }
         }
         

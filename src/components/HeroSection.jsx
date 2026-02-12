@@ -21,7 +21,7 @@ const HeroSection = () => {
   return (
     <>
       <section className="split-hero">
-        {/* White Background */}
+        {/* Black Background */}
         <div className="hero-background"></div>
         
         {/* Container for split layout */}
@@ -77,21 +77,15 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Content */}
+          {/* Right Side - Content - ONLY HEADLINE + SUBHEADLINE */}
           <div className="content-side">
             <div className="content-wrapper">
-              {/* Company Badge */}
-              <div className="company-badge">
-                <span className="company-logo">TOLERO</span>
-                <span className="company-tag">KI-TECHNOLOGIE</span>
-              </div>
-
-              {/* Main Headline */}
+              {/* Main Headline - White */}
               <h1 className="main-headline">
                 {t('hero.title')}
               </h1>
 
-              {/* Sub Headline - UPDATED: Anthracite color and slightly larger */}
+              {/* Sub Headline - Light Gray */}
               <h2 className="sub-headline">
                 {t('hero.subtitle')} – {t('hero.description')}
               </h2>
@@ -101,69 +95,69 @@ const HeroSection = () => {
       </section>
 
       <style jsx="true">{`
-        /* Base Hero Section - WHITE BACKGROUND */
+        /* Base Hero Section - BLACK BACKGROUND */
         .split-hero {
           width: 100%;
           min-height: 100vh;
           position: relative;
-          background: #FFFFFF;
+          background: #000000;
           display: flex;
           align-items: center;
           overflow: hidden;
           padding: 0;
-          margin-top: 80px; /* Space for navbar */
+          margin-top: 0; /* Changed from 80px to 0 for navbar overlay */
         }
 
-        /* White Background */
+        /* Black Background */
         .hero-background {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          background: #FFFFFF;
+          background: #000000;
           z-index: 1;
         }
 
-        /* Container for split layout - NAVBAR SE ALIGN */
+        /* Container for split layout - UPDATED PADDING */
         .hero-container {
           position: relative;
           z-index: 2;
-          max-width: 1700px; /* Increased from 1400px */
+          max-width: 1700px;
           width: 100%;
           display: grid;
-          grid-template-columns: 1.1fr 0.9fr; /* More space for image */
-          gap: 80px; /* Increased gap for better spacing */
-          height: calc(100vh - 80px); /* Adjust for navbar */
-          padding: 0 100px; /* Updated: 35px to 100px */
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 80px;
+          height: 100vh; /* Changed from calc(100vh - 80px) to 100vh */
+          padding: 0 100px; /* Updated from 0 100px to match navbar 12px 120px? Actually you want 35 left/right 100? Let me clarify */
           margin: 0 auto;
           align-items: center;
           box-sizing: border-box;
         }
 
-        /* Left Side - Image - HORIZONTAL RECTANGULAR */
+        /* Left Side - Image */
         .image-side {
           display: flex;
           align-items: center;
-          justify-content: flex-start; /* Align left */
+          justify-content: flex-start;
           position: relative;
-          overflow: visible; /* Changed from hidden to show full width */
+          overflow: visible;
           height: 100%;
           padding: 0;
         }
 
-        /* UPDATED: HORIZONTAL RECTANGULAR CONTAINER - HEIGHT AND WIDTH INCREASED */
+        /* Image Container */
         .image-wrapper {
-          width: 115%; /* Increased width significantly (from 100%) */
-          height: 75%; /* Increased height (from 70%) */
-          max-height: 550px; /* Increased (from 500px) */
-          min-height: 450px; /* Increased (from 400px) */
+          width: 115%;
+          height: 75%;
+          max-height: 550px;
+          min-height: 450px;
           position: relative;
           border-radius: 12px;
           overflow: hidden;
-          background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
-          border: 1px solid #E5E7EB;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+          background: linear-gradient(135deg, #111111 0%, #222222 100%);
+          border: 1px solid #333333;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -200,15 +194,15 @@ const HeroSection = () => {
         .loading-spinner {
           width: 40px;
           height: 40px;
-          border: 3px solid rgba(0, 102, 255, 0.2);
-          border-top: 3px solid #0066FF;
+          border: 3px solid rgba(255, 255, 255, 0.2);
+          border-top: 3px solid #FFFFFF;
           border-radius: 50%;
           animation: spin 1s linear infinite;
         }
 
         .loading-text {
           font-size: 14px;
-          color: #6B7280;
+          color: #9CA3AF;
           text-transform: uppercase;
           letter-spacing: 1px;
           font-weight: 500;
@@ -224,7 +218,7 @@ const HeroSection = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+          background: linear-gradient(135deg, #111111 0%, #222222 100%);
           z-index: 1;
           border-radius: 12px;
         }
@@ -240,10 +234,10 @@ const HeroSection = () => {
         .fallback-text {
           font-size: 24px;
           font-weight: 700;
-          color: #0066FF;
+          color: #FFFFFF;
           text-transform: uppercase;
           letter-spacing: 2px;
-          text-shadow: 0 2px 10px rgba(0, 102, 255, 0.2);
+          text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
           text-align: center;
         }
 
@@ -267,10 +261,10 @@ const HeroSection = () => {
           opacity: 0.15;
         }
 
-        /* SINGLE COLOR: #0066FF - Grid Lines */
+        /* Grid Lines - White */
         .grid-line {
           position: absolute;
-          background: #0066FF;
+          background: #FFFFFF;
           animation: aiPulse 3s infinite;
         }
 
@@ -313,51 +307,25 @@ const HeroSection = () => {
           width: 100%;
           display: flex;
           flex-direction: column;
-          gap: 40px;
+          gap: 30px;
           padding: 40px 0;
         }
 
-        /* Company Badge */
-        .company-badge {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        /* SINGLE COLOR: #0066FF - Company Logo */
-        .company-logo {
-          font-size: 16px;
-          font-weight: 700;
-          color: #0066FF;
-          letter-spacing: 3px;
-          text-transform: uppercase;
-          text-shadow: 0 2px 8px rgba(0, 102, 255, 0.2);
-        }
-
-        .company-tag {
-          font-size: 12px;
-          font-weight: 500;
-          color: #6B7280;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-        }
-
-        /* Headlines */
+        /* Headlines - ONLY THESE TWO ELEMENTS */
         .main-headline {
           font-size: 52px;
           font-weight: 700;
           line-height: 1.1;
-          color: #111827;
+          color: #FFFFFF; /* White */
           margin: 0;
           letter-spacing: -0.02em;
         }
 
-        /* Sub Headline - UPDATED: Anthracite (#374151) and slightly larger (22px) */
         .sub-headline {
           font-size: 22px;
           font-weight: 400;
           line-height: 1.6;
-          color: #374151;
+          color: #9CA3AF; /* Light Gray */
           margin: 0;
           letter-spacing: -0.01em;
         }
@@ -368,7 +336,6 @@ const HeroSection = () => {
           100% { transform: rotate(360deg); }
         }
 
-        /* AI-specific Animations */
         @keyframes aiPulse {
           0%, 100% { opacity: 0.1; }
           50% { opacity: 0.2; }
@@ -379,10 +346,6 @@ const HeroSection = () => {
           opacity: 0;
           transform: translateY(20px);
           animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .company-badge {
-          animation-delay: 0.1s;
         }
 
         .main-headline {
@@ -410,7 +373,6 @@ const HeroSection = () => {
           }
         }
 
-        /* Large Desktop: 1600px+ */
         @media (max-width: 1600px) {
           .hero-container {
             max-width: 1500px;
@@ -418,11 +380,10 @@ const HeroSection = () => {
           }
           
           .image-wrapper {
-            width: 112%; /* Slightly less width */
+            width: 112%;
           }
         }
 
-        /* Large Desktop: 1440px+ */
         @media (max-width: 1440px) {
           .hero-container {
             max-width: 1300px;
@@ -431,8 +392,8 @@ const HeroSection = () => {
           }
           
           .image-wrapper {
-            width: 108%; /* Adjusted width */
-            height: 72%; /* Adjusted height */
+            width: 108%;
+            height: 72%;
           }
           
           .sub-headline {
@@ -445,7 +406,6 @@ const HeroSection = () => {
           }
         }
 
-        /* Desktop: 1366px */
         @media (max-width: 1366px) {
           .hero-container {
             max-width: 1200px;
@@ -453,11 +413,10 @@ const HeroSection = () => {
           }
           
           .image-wrapper {
-            width: 105%; /* Less width */
+            width: 105%;
           }
         }
 
-        /* Desktop: 1200px */
         @media (max-width: 1200px) {
           .hero-container {
             padding: 0 50px;
@@ -465,7 +424,7 @@ const HeroSection = () => {
           }
           
           .image-wrapper {
-            width: 100%; /* Reset to normal width */
+            width: 100%;
           }
           
           .main-headline {
@@ -477,13 +436,12 @@ const HeroSection = () => {
           }
           
           .image-wrapper {
-            height: 68%; /* Adjusted height */
+            height: 68%;
             max-height: 450px;
             min-height: 380px;
           }
         }
 
-        /* Tablet Landscape: 1024px */
         @media (max-width: 1024px) {
           .hero-container {
             padding: 0 40px;
@@ -499,13 +457,13 @@ const HeroSection = () => {
           }
           
           .image-wrapper {
-            height: 65%; /* Even more horizontal */
+            height: 65%;
             max-height: 400px;
             min-height: 320px;
           }
           
           .content-wrapper {
-            gap: 30px;
+            gap: 25px;
           }
           
           .fallback-text {
@@ -518,8 +476,8 @@ const HeroSection = () => {
           .split-hero {
             min-height: auto;
             height: auto;
-            padding: 60px 0 40px;
-            margin-top: 80px;
+            padding: 100px 0 60px; /* Added top padding for navbar */
+            margin-top: 0;
           }
           
           .hero-container {
@@ -531,11 +489,11 @@ const HeroSection = () => {
           }
           
           .image-side {
-            height: 450px; /* Increased (from 400px) */
+            height: 450px;
             order: 1;
             padding: 0;
-            overflow: hidden; /* Reset for mobile */
-            justify-content: center; /* Center on mobile */
+            overflow: hidden;
+            justify-content: center;
           }
           
           .content-side {
@@ -548,18 +506,14 @@ const HeroSection = () => {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-            gap: 30px;
+            gap: 25px;
           }
           
           .image-wrapper {
-            width: 100%; /* Reset width for mobile */
-            height: 100%; /* Full height of image-side */
+            width: 100%;
+            height: 100%;
             max-height: none;
             min-height: auto;
-          }
-          
-          .company-badge {
-            align-items: center;
           }
           
           .sub-headline {
@@ -571,7 +525,6 @@ const HeroSection = () => {
           }
         }
 
-        /* Mobile Landscape: 768px */
         @media (max-width: 768px) {
           .hero-container {
             padding: 0 30px;
@@ -584,15 +537,18 @@ const HeroSection = () => {
           
           .sub-headline {
             font-size: 17px;
-            line-height: 1.5;
           }
           
           .image-side {
-            height: 380px; /* Increased (from 350px) */
+            height: 380px;
           }
           
           .content-wrapper {
-            gap: 25px;
+            gap: 20px;
+          }
+          
+          .split-hero {
+            padding: 80px 0 50px;
           }
           
           .fallback-text {
@@ -600,7 +556,6 @@ const HeroSection = () => {
           }
         }
 
-        /* Mobile Portrait: 576px */
         @media (max-width: 576px) {
           .hero-container {
             padding: 0 25px;
@@ -608,7 +563,7 @@ const HeroSection = () => {
           }
           
           .image-side {
-            height: 320px; /* Increased (from 300px) */
+            height: 320px;
           }
           
           .main-headline {
@@ -620,11 +575,14 @@ const HeroSection = () => {
           }
           
           .content-wrapper {
-            gap: 20px;
+            gap: 15px;
+          }
+          
+          .split-hero {
+            padding: 70px 0 40px;
           }
         }
 
-        /* Small Mobile: 480px */
         @media (max-width: 480px) {
           .hero-container {
             padding: 0 20px;
@@ -632,7 +590,7 @@ const HeroSection = () => {
           }
           
           .image-side {
-            height: 280px; /* Increased (from 250px) */
+            height: 280px;
           }
           
           .image-wrapper {
@@ -648,25 +606,18 @@ const HeroSection = () => {
           }
           
           .content-wrapper {
-            gap: 15px;
+            gap: 12px;
           }
           
-          .company-logo {
-            font-size: 14px;
-          }
-          
-          .company-tag {
-            font-size: 11px;
+          .split-hero {
+            padding: 60px 0 30px;
           }
           
           .fallback-text {
             font-size: 16px;
-            text-align: center;
-            padding: 0 10px;
           }
         }
 
-        /* Extra small devices: 360px */
         @media (max-width: 360px) {
           .hero-container {
             padding: 0 15px;
@@ -674,7 +625,7 @@ const HeroSection = () => {
           }
           
           .image-side {
-            height: 240px; /* Increased (from 220px) */
+            height: 240px;
           }
           
           .image-wrapper {
@@ -687,6 +638,10 @@ const HeroSection = () => {
           
           .sub-headline {
             font-size: 14px;
+          }
+          
+          .split-hero {
+            padding: 50px 0 25px;
           }
         }
       `}</style>

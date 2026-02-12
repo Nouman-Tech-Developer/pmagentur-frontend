@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import WhiteLogo from '../assets/white-logo.png';
-import BlackLogo from '../assets/black-logo.png';
+import WhiteLogo from '../assets/black-logo.png'; // White logo for transparent bg
+import BlackLogo from '../assets/white-logo.png';  // Black logo for white bg
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -11,8 +11,8 @@ const Navbar = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isNavHovered, setIsNavHovered] = useState(false);
   const [selectedLang, setSelectedLang] = useState('DE');
-  const [activeMegaMenu, setActiveMegaMenu] = useState(null); // 'solutions' or 'products'
-  const [activeCategory, setActiveCategory] = useState(1); // Default to first category
+  const [activeMegaMenu, setActiveMegaMenu] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(1);
 
   const megaMenuRef = useRef(null);
   const navItemRefs = useRef({});
@@ -53,7 +53,7 @@ const Navbar = () => {
     },
   ];
 
-  // Mega Menu Data for Solutions - Clickable Title & Description
+  // Mega Menu Data for Solutions
   const solutionsData = {
     categories: [
       { id: 1, title: 'KI & Daten' },
@@ -223,7 +223,7 @@ const Navbar = () => {
     }
   };
 
-  // Mega Menu Data for Products - Clickable Title & Description
+  // Mega Menu Data for Products
   const productsData = {
     categories: [
       { id: 1, title: 'AI Platform' },
@@ -353,10 +353,10 @@ const Navbar = () => {
   };
 
   const getLogo = () => {
-    if (isMenuOpen) return BlackLogo;
-    if (scrolled) return WhiteLogo;
-    if (isNavHovered) return BlackLogo;
-    return BlackLogo;
+    if (isMenuOpen) return BlackLogo;     // Menu open - white bg, black logo
+    if (scrolled) return BlackLogo;        // Scrolled - white bg, black logo
+    if (isNavHovered) return BlackLogo;    // Hover - white bg, black logo
+    return WhiteLogo;                      // Default - transparent bg, white logo
   };
 
   const handleLangSelect = (langCode) => {
@@ -394,7 +394,6 @@ const Navbar = () => {
     setActiveCategory(categoryId);
   };
 
-  // Get items for active category
   const getCategoryItems = () => {
     if (activeMegaMenu === 'solutions') {
       return solutionsData.services[activeCategory] || [];
@@ -404,7 +403,6 @@ const Navbar = () => {
     return [];
   };
 
-  // Get current categories
   const getCurrentCategories = () => {
     if (activeMegaMenu === 'solutions') {
       return solutionsData.categories;
@@ -414,7 +412,6 @@ const Navbar = () => {
     return [];
   };
 
-  // Handle mouse enter on nav item with delay for smoother transition
   const handleNavItemMouseEnter = (linkKey) => {
     if (linkKey === 'solutions' || linkKey === 'products') {
       setActiveMegaMenu(linkKey);
@@ -422,7 +419,6 @@ const Navbar = () => {
     }
   };
 
-  // Handle mouse leave from nav item
   const handleNavItemMouseLeave = (e) => {
     if (megaMenuRef.current && !megaMenuRef.current.contains(e.relatedTarget)) {
       setActiveMegaMenu(null);
@@ -430,11 +426,9 @@ const Navbar = () => {
     }
   };
 
-  // Handle item click (for clickable title and description)
   const handleItemClick = (link, e) => {
     e.preventDefault();
     console.log(`Clicked on: ${link.title}`);
-    // You can add navigation logic here
     window.location.href = link.link;
   };
 
@@ -505,7 +499,7 @@ const Navbar = () => {
                 </ul>
               </nav>
 
-              {/* Right Side - Language & CTA */}
+              {/* Right Side - Language Only */}
               <div className="tolero-header__right-group">
                 <div className={`tolero-header__lang-switcher ${isLangOpen ? 'tolero-header__lang-switcher--active' : ''}`}>
                   <button 
@@ -535,14 +529,6 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-                
-                <a 
-                  className="tolero-button tolero-button--primary tolero-header__cta" 
-                  href="https://www.tolero.com/demo" 
-                  tabIndex="0" 
-                >
-                  {t('nav.requestDemo')}
-                </a>
               </div>
 
               {/* Mobile Menu Button */}
@@ -587,7 +573,7 @@ const Navbar = () => {
                     </ul>
                   </div>
 
-                  {/* Right Side - Items in 2x2 grid with clickable title & description */}
+                  {/* Right Side - Items in 2x2 grid */}
                   <div className="tolero-mega-menu__services">
                     <div className="tolero-mega-menu__services-grid">
                       {getCategoryItems().map((item) => (
@@ -691,17 +677,6 @@ const Navbar = () => {
                 )}
               </div>
             </div>
-            
-            <div className="tolero-header__mobile-cta">
-              <a 
-                className="tolero-button tolero-button--primary" 
-                href="https://www.tolero.com/demo"
-                onClick={() => setIsMenuOpen(false)}
-                tabIndex="0"
-              >
-                {t('nav.requestDemo')}
-              </a>
-            </div>
           </div>
         )}
       </div>
@@ -724,18 +699,18 @@ const Navbar = () => {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* 🎯 TOP STATE: Transparent with BLACK Text (NO HOVER) */
+        /* 🎯 TOP STATE: Transparent with WHITE Text (DEFAULT) */
         .tolero-header__wrapper.tolero-header--top {
           background-color: transparent !important;
         }
 
         .tolero-header__wrapper.tolero-header--top .tolero-header__nav-button,
         .tolero-header__wrapper.tolero-header--top .tolero-header__lang-button {
-          color: #000000 !important;
+          color: #FFFFFF !important;
         }
 
         .tolero-header__wrapper.tolero-header--top .tolero-header__burger-line {
-          background-color: #000000 !important;
+          background-color: #FFFFFF !important;
         }
 
         /* 🎯 TOP STATE WITH HOVER: White Background when cursor enters */
@@ -754,20 +729,20 @@ const Navbar = () => {
           background-color: #000000 !important;
         }
 
-        /* 🎯 SCROLLED STATE: Black Background with WHITE Text */
+        /* 🎯 SCROLLED STATE: White Background with BLACK Text */
         .tolero-header__wrapper.tolero-header--scrolled {
-          background-color: #000000 !important;
-          box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          background-color: #FFFFFF !important;
+          box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid #E5E5E7;
         }
 
         .tolero-header__wrapper.tolero-header--scrolled .tolero-header__nav-button,
         .tolero-header__wrapper.tolero-header--scrolled .tolero-header__lang-button {
-          color: #FFFFFF !important;
+          color: #000000 !important;
         }
 
         .tolero-header__wrapper.tolero-header--scrolled .tolero-header__burger-line {
-          background-color: #FFFFFF !important;
+          background-color: #000000 !important;
         }
 
         /* 🎯 MENU OPEN STATE: White Background with BLACK Text */
@@ -787,14 +762,14 @@ const Navbar = () => {
 
         /* Active nav item */
         .tolero-header__nav-item--active .tolero-header__nav-button {
-          color: #0066FF !important;
+          color: #000000 !important;
         }
 
         .tolero-header__nav-item--active .tolero-header__nav-button::after {
           width: 100% !important;
         }
 
-        /* Header Bar Layout - UPDATED: 12px 120px padding */
+        /* Header Bar Layout */
         .tolero-header__bar {
           padding: 12px 120px;
         }
@@ -824,7 +799,7 @@ const Navbar = () => {
           width: 100%;
         }
 
-        /* Brand/Logo - UPDATED: 3rem logo size */
+        /* Brand/Logo */
         .tolero-header__brand {
           display: inline-flex;
           align-items: center;
@@ -886,7 +861,7 @@ const Navbar = () => {
           text-decoration: none;
           background: transparent;
           border: 0;
-          padding: 0.5rem 0;
+          padding: 8px 24px;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -900,9 +875,8 @@ const Navbar = () => {
           outline: none;
         }
 
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
         .tolero-header__nav-button:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
@@ -922,7 +896,6 @@ const Navbar = () => {
           transform: rotate(180deg);
         }
 
-        /* 🎯 UNDERLINE COLOR: Always #0066FF */
         .tolero-header__nav-button::after {
           content: '';
           position: absolute;
@@ -930,7 +903,7 @@ const Navbar = () => {
           left: 0;
           width: 0;
           height: 2px;
-          background-color: #0066FF !important;
+          background-color: #000000 !important;
           transition: width 0.3s ease;
         }
 
@@ -942,21 +915,21 @@ const Navbar = () => {
           display: none;
         }
 
-        /* 🎯 HOVER COLORS: Always #0066FF regardless of state */
+        /* Hover Colors */
         .tolero-header--top .tolero-header__nav-button:hover {
-          color: #0066FF !important;
+          color: #000000 !important;
         }
 
         .tolero-header--top.tolero-header--hovered .tolero-header__nav-button:hover {
-          color: #0066FF !important;
+          color: #000000 !important;
         }
 
         .tolero-header--scrolled .tolero-header__nav-button:hover {
-          color: #0066FF !important;
+          color: #000000 !important;
         }
 
         .tolero-header--menu-open .tolero-header__nav-button:hover {
-          color: #0066FF !important;
+          color: #000000 !important;
         }
 
         /* Right Group */
@@ -988,7 +961,7 @@ const Navbar = () => {
         .tolero-header__lang-button {
           background: transparent;
           border: none;
-          padding: 0.375rem 0.75rem;
+          padding: 8px 24px;
           cursor: pointer;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-size: 1rem;
@@ -1000,9 +973,8 @@ const Navbar = () => {
           outline: none;
         }
 
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
         .tolero-header__lang-button:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
@@ -1024,7 +996,7 @@ const Navbar = () => {
 
         /* Language button colors */
         .tolero-header--top .tolero-header__lang-button {
-          color: #000000 !important;
+          color: #FFFFFF !important;
         }
 
         .tolero-header--top.tolero-header--hovered .tolero-header__lang-button {
@@ -1032,15 +1004,15 @@ const Navbar = () => {
         }
 
         .tolero-header--top .tolero-header__lang-button:hover {
-          color: #0066FF !important;
+          color: #000000 !important;
         }
 
         .tolero-header--scrolled .tolero-header__lang-button {
-          color: #FFFFFF !important;
+          color: #000000 !important;
         }
 
         .tolero-header--scrolled .tolero-header__lang-button:hover {
-          color: #0066FF !important;
+          color: #000000 !important;
         }
 
         .tolero-header--menu-open .tolero-header__lang-button {
@@ -1048,7 +1020,7 @@ const Navbar = () => {
         }
 
         .tolero-header--menu-open .tolero-header__lang-button:hover {
-          color: #0066FF !important;
+          color: #000000 !important;
         }
 
         .tolero-header__lang-dropdown {
@@ -1082,87 +1054,20 @@ const Navbar = () => {
           outline: none;
         }
 
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
         .tolero-header__lang-option:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 2px;
         }
 
         .tolero-header__lang-option:hover {
-          background: rgba(0, 102, 255, 0.1);
-          color: #0066FF !important;
+          background: rgba(0, 0, 0, 0.1);
+          color: #000000 !important;
         }
 
         .tolero-header__lang-option--active {
           font-weight: 500;
-          color: #0066FF !important;
-          background: rgba(0, 102, 255, 0.1);
-        }
-
-        /* Contact Button */
-        .tolero-header__cta {
-          display: none;
-        }
-
-        @media only screen and (min-width: 1200px) {
-          .tolero-header__cta {
-            display: inline-flex;
-          }
-        }
-
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
-          .tolero-header__cta {
-            display: none !important;
-          }
-        }
-
-        /* Button Component - SINGLE COLOR #0066FF */
-        .tolero-button {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-weight: 500;
-          font-size: 1rem;
-          padding: 8px 24px;
-          border-radius: 25px;
-          cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          height: 40px;
-          width: 157px;
-          border: none;
-          background-color: #0066FF;
-          color: #FFFFFF;
-          white-space: nowrap;
-          letter-spacing: 0.01em;
-          box-sizing: border-box;
-          outline: none;
-        }
-
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
-        .tolero-button:focus {
-          outline: 2px solid #0066FF;
-          outline-offset: 2px;
-        }
-
-        .tolero-button--primary:hover {
-          background-color: #0052CC;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
-        }
-
-        .tolero-button--primary:active {
-          transform: translateY(0);
-          box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
-        }
-
-        /* Mobile CTA button */
-        .tolero-header__mobile-cta .tolero-button {
-          width: 100%;
-          height: 44px;
-          font-size: 1.125rem;
-          padding: 8px 24px;
+          color: #000000 !important;
+          background: rgba(0, 0, 0, 0.1);
         }
 
         /* Burger Button */
@@ -1182,9 +1087,8 @@ const Navbar = () => {
           outline: none;
         }
 
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
         .tolero-header__burger:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
@@ -1220,7 +1124,7 @@ const Navbar = () => {
           transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        /* MEGA MENU STYLES - UPDATED WITH CLICKABLE TITLE & DESCRIPTION */
+        /* MEGA MENU STYLES */
         .tolero-mega-menu {
           position: absolute;
           top: 100%;
@@ -1312,7 +1216,7 @@ const Navbar = () => {
 
         .tolero-mega-menu__category-button {
           width: 100%;
-          padding: 12px 16px;
+          padding: 12px 24px;
           background: transparent;
           border: none;
           border-radius: 8px;
@@ -1330,18 +1234,18 @@ const Navbar = () => {
         }
 
         .tolero-mega-menu__category-button:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 2px;
         }
 
         .tolero-mega-menu__category-button:hover {
-          background: rgba(0, 102, 255, 0.1);
-          color: #0066FF;
+          background: rgba(0, 0, 0, 0.1);
+          color: #000000;
         }
 
         .tolero-mega-menu__category-button--active {
-          background: rgba(0, 102, 255, 0.1) !important;
-          color: #0066FF !important;
+          background: rgba(0, 0, 0, 0.1) !important;
+          color: #000000 !important;
         }
 
         .tolero-mega-menu__category-arrow {
@@ -1361,7 +1265,7 @@ const Navbar = () => {
           transform: rotate(-90deg) scale(1.2);
         }
 
-        /* Services/Products (Right Side) - CLICKABLE TITLE & DESCRIPTION */
+        /* Services/Products (Right Side) */
         .tolero-mega-menu__services {
           overflow: hidden;
         }
@@ -1393,7 +1297,6 @@ const Navbar = () => {
           flex-direction: column;
         }
 
-        /* Clickable wrapper for entire item */
         .tolero-mega-menu__service-link-wrapper {
           text-decoration: none;
           color: inherit;
@@ -1407,14 +1310,14 @@ const Navbar = () => {
         }
 
         .tolero-mega-menu__service-link-wrapper:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 2px;
           border-radius: 8px;
         }
 
         .tolero-mega-menu__service-link-wrapper:hover {
-          background: rgba(0, 102, 255, 0.05);
-          border-color: rgba(0, 102, 255, 0.2);
+          background: rgba(0, 0, 0, 0.05);
+          border-color: rgba(0, 0, 0, 0.2);
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
@@ -1438,12 +1341,12 @@ const Navbar = () => {
         }
 
         .tolero-mega-menu__service-link-wrapper:hover .tolero-mega-menu__service-title {
-          color: #0066FF;
+          color: #000000;
         }
 
         .tolero-mega-menu__service-badge {
-          background: rgba(0, 102, 255, 0.1);
-          color: #0066FF;
+          background: rgba(0, 0, 0, 0.1);
+          color: #000000;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-size: 0.75rem;
           font-weight: 600;
@@ -1525,9 +1428,8 @@ const Navbar = () => {
           outline: none;
         }
 
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
         .tolero-header__mobile-close:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
@@ -1598,15 +1500,14 @@ const Navbar = () => {
           outline: none;
         }
 
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
         .tolero-header__mobile-link:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
 
         .tolero-header__mobile-link:hover {
-          color: #0066FF;
+          color: #000000;
         }
 
         /* Mobile Language Switcher */
@@ -1633,9 +1534,8 @@ const Navbar = () => {
           outline: none;
         }
 
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
         .tolero-header__mobile-lang-button:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
@@ -1674,34 +1574,20 @@ const Navbar = () => {
           outline: none;
         }
 
-        /* 🎯 BUTTON FOCUS OUTLINE: Same color as button (#0066FF) */
         .tolero-header__mobile-lang-option:focus {
-          outline: 2px solid #0066FF;
+          outline: 2px solid #000000;
           outline-offset: 2px;
         }
 
         .tolero-header__mobile-lang-option:hover {
-          background: rgba(0, 102, 255, 0.1);
-          color: #0066FF;
+          background: rgba(0, 0, 0, 0.1);
+          color: #000000;
         }
 
         .tolero-header__mobile-lang-option--active {
           font-weight: 500;
-          color: #0066FF;
-          background: rgba(0, 102, 255, 0.1);
-        }
-
-        /* Mobile CTA */
-        .tolero-header__mobile-cta {
-          padding: 1.5rem;
-          background: #FFFFFF;
-          border-top: 1px solid #E5E5E7;
-        }
-
-        @media only screen and (min-width: 768px) {
-          .tolero-header__mobile-cta {
-            padding: 2rem;
-          }
+          color: #000000;
+          background: rgba(0, 0, 0, 0.1);
         }
       `}</style>
     </>

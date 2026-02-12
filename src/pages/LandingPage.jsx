@@ -3,11 +3,11 @@ import HeroSection from '../components/HeroSection';
 // import LogoSlider from '../components/LogoSlider';
 import FeatureSection from '../components/FeatureSection';
 import ServiceSection from '../components/ServiceSection';
-import TestimonialCard from '../components/TestimonialCard';
+// import TestimonialCard from '../components/TestimonialCard';
 // import CaseStudies from '../components/CaseStudies';
 import TextHalfImage from '../components/TextHalfImage';
 // import VideoText from '../components/VideoText';
-import StatsSection from '../components/StatsSection';
+// import StatsSection from '../components/StatsSection';
 import ContactForm from '../components/ContactForm';
 
 const LandingPage = () => {
@@ -17,11 +17,11 @@ const LandingPage = () => {
       {/* <LogoSlider /> */}
       <FeatureSection />
       <ServiceSection />
-      <TestimonialCard />
+      {/* <TestimonialCard /> */}
       {/* <CaseStudies /> */}
       <TextHalfImage />
       {/* <VideoText /> */}
-      <StatsSection />
+      {/* <StatsSection /> */}
       <ContactForm />
       
       {/* CSS for LandingPage specific styles */}
