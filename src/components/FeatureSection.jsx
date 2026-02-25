@@ -76,7 +76,6 @@ const FeatureSection = () => {
       </section>
 
       <style jsx="true">{`
-        /* Features Section - Clean Minimal */
         .features-minimal {
           width: 100%;
           padding: 35px 100px;
@@ -90,14 +89,12 @@ const FeatureSection = () => {
           margin: 0 auto;
         }
         
-        /* Header Section */
         .features-header {
           text-align: center;
           margin-bottom: 60px;
           width: 100%;
         }
         
-        /* Title - Modern Typography */
         .features-title {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 52px;
@@ -118,7 +115,6 @@ const FeatureSection = () => {
           text-align: center;
         }
         
-        /* Second line with black color - removed accent color */
         .title-line-2 {
           color: #000000;
           position: relative;
@@ -135,7 +131,6 @@ const FeatureSection = () => {
           background: linear-gradient(90deg, transparent, #000000, transparent);
         }
         
-        /* Description - Light Gray (#6B7280) */
         .features-description {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
@@ -150,7 +145,6 @@ const FeatureSection = () => {
           margin: 0;
         }
         
-        /* Features Grid */
         .features-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -158,7 +152,6 @@ const FeatureSection = () => {
           width: 100%;
         }
         
-        /* Feature Item - NO BORDER, NO OUTLINE, CLEAN */
         .feature-item {
           text-align: center;
           padding: 0;
@@ -168,21 +161,19 @@ const FeatureSection = () => {
           transition: all 0.3s ease;
         }
         
-        /* Icon Wrapper - NO CIRCLE, NO BACKGROUND - BLACK ICONS */
         .feature-icon-wrapper {
           margin-bottom: 25px;
-          color: #000000; /* BLACK icon color */
+          color: #000000;
           transition: all 0.3s ease;
         }
         
         .feature-icon-wrapper svg {
-          stroke: #000000; /* BLACK stroke */
+          stroke: #000000;
           width: 48px;
           height: 48px;
           transition: all 0.3s ease;
         }
         
-        /* Hover effect - DARK GRAY (#374151) */
         .feature-item:hover .feature-icon-wrapper {
           color: #374151;
         }
@@ -192,7 +183,6 @@ const FeatureSection = () => {
           transform: translateY(-5px);
         }
         
-        /* Feature Heading - BLACK */
         .feature-heading {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 26px;
@@ -202,7 +192,6 @@ const FeatureSection = () => {
           margin: 0 0 15px 0;
         }
         
-        /* Feature Text - LIGHT GRAY (#6B7280) */
         .feature-text {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 17px;
@@ -214,16 +203,32 @@ const FeatureSection = () => {
           margin: 0;
         }
         
-        /* ===== RESPONSIVE DESIGN ===== */
+        .feature-item {
+          animation: fadeInUp 0.6s ease forwards;
+          opacity: 0;
+        }
         
-        /* Large Desktop: 1440px+ */
+        .feature-item:nth-child(1) { animation-delay: 0.1s; }
+        .feature-item:nth-child(2) { animation-delay: 0.2s; }
+        .feature-item:nth-child(3) { animation-delay: 0.3s; }
+        
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
         @media (max-width: 1440px) {
           .features-minimal {
             padding: 35px 80px;
           }
         }
         
-        /* Desktop: 1200px - Navbar padding align */
         @media (max-width: 1200px) {
           .features-minimal {
             padding: 35px 60px;
@@ -246,7 +251,6 @@ const FeatureSection = () => {
           }
         }
         
-        /* Tablet Landscape: 1024px - Navbar padding align */
         @media (max-width: 1024px) {
           .features-minimal {
             padding: 35px 40px;
@@ -278,7 +282,6 @@ const FeatureSection = () => {
           }
         }
         
-        /* Medium Tablets: 900px */
         @media (max-width: 900px) {
           .features-minimal {
             padding: 35px 50px;
@@ -303,7 +306,6 @@ const FeatureSection = () => {
           }
         }
         
-        /* Tablet Portrait: 768px - Switch to 2 columns */
         @media (max-width: 768px) {
           .features-minimal {
             padding: 35px 40px;
@@ -327,7 +329,6 @@ const FeatureSection = () => {
           }
         }
         
-        /* Large Phones: 650px */
         @media (max-width: 650px) {
           .features-minimal {
             padding: 35px 30px;
@@ -362,7 +363,6 @@ const FeatureSection = () => {
           }
         }
         
-        /* Mobile: 576px */
         @media (max-width: 576px) {
           .features-minimal {
             padding: 35px 25px;
@@ -391,7 +391,6 @@ const FeatureSection = () => {
           }
         }
         
-        /* Small Phones: 480px */
         @media (max-width: 480px) {
           .features-minimal {
             padding: 35px 20px;
@@ -433,7 +432,6 @@ const FeatureSection = () => {
           }
         }
         
-        /* Extra Small Phones: 360px */
         @media (max-width: 360px) {
           .features-minimal {
             padding: 35px 15px;
@@ -465,7 +463,6 @@ const FeatureSection = () => {
           }
         }
         
-        /* Wide Screens: 1600px+ */
         @media (min-width: 1600px) {
           .features-minimal {
             padding: 35px 150px;
@@ -499,27 +496,6 @@ const FeatureSection = () => {
           
           .features-header {
             margin-bottom: 70px;
-          }
-        }
-        
-        /* Animation */
-        .feature-item {
-          animation: fadeInUp 0.6s ease forwards;
-          opacity: 0;
-        }
-        
-        .feature-item:nth-child(1) { animation-delay: 0.1s; }
-        .feature-item:nth-child(2) { animation-delay: 0.2s; }
-        .feature-item:nth-child(3) { animation-delay: 0.3s; }
-        
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
           }
         }
       `}</style>

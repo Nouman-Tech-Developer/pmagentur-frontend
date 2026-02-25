@@ -4,7 +4,6 @@ const AboutStory = () => {
   return (
     <>
       <section className="about-story-section">
-        {/* Single combined section */}
         <div className="about-story-container">
           
           {/* First part: We are Tolero */}
@@ -27,25 +26,24 @@ const AboutStory = () => {
             </div>
           </div>
 
-          {/* Second part: How we work - NO GAP */}
+          {/* Second part: How we work */}
           <div className="about-story-content second-part">
             <div className="about-story-wrapper">
               <div className="about-story-top">
                 <p className="about-story-tagline">Our way of working</p>
-                <h1 className="about-story-headline">How we work</h1>
+                <h2 className="about-story-headline">How we work</h2>
               </div>
               <div className="about-story-text">
                 <div className="about-story-paragraphs">
                   <p>
                     We look at every project from two perspectives: from the depth of the technology 
-                    and with an eye on the big picture.<br />
-                    Our way of working is characterized by clarity, pragmatism and responsibility.
+                    and with an eye on the big picture. Our way of working is characterized by clarity, 
+                    pragmatism and responsibility.
                   </p>
                   <p>
                     We provide honest advice, make well-founded decisions and implement them - 
-                    with a focus on what really helps the customer.<br />
-                    Quick decisions, short paths and a consistently solution-oriented approach 
-                    are part of our everyday work.
+                    with a focus on what really helps the customer. Quick decisions, short paths 
+                    and a consistently solution-oriented approach are part of our everyday work.
                   </p>
                   <p>
                     We work with modern tools and agile methods and focus on collaboration, 
@@ -60,26 +58,20 @@ const AboutStory = () => {
       </section>
 
       <style jsx="true">{`
-        /* ========== BASE STYLES ========== */
-        .about-story-section * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
-        
-        /* Main section - NO EXTRA MARGIN */
         .about-story-section {
           width: 100%;
           background: #FFFFFF;
-          /* margin-top: 80px; ❌ REMOVE THIS LINE */
+          position: relative;
         }
         
-        /* Container - ONLY 100px top/bottom, 35px sides padding */
         .about-story-container {
           max-width: 1400px;
           width: 100%;
           margin: 0 auto;
-          padding: 100px 35px; /* ✅ Top padding hi sufficient hai */
+          padding: 100px 35px;
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
         }
         
         @media only screen and (max-width: 1024px) {
@@ -96,65 +88,69 @@ const AboutStory = () => {
         
         @media only screen and (max-width: 480px) {
           .about-story-container {
-            padding: 40px 35px;
+            padding: 40px 25px;
           }
         }
         
-        /* Content sections */
         .about-story-content {
           width: 100%;
           display: flex;
           flex-direction: column;
+          max-width: 900px;
         }
         
-        /* NO GAP between parts */
-        .about-story-content.second-part {
-          margin-top: 0;
-          padding-top: 0;
-        }
-        
-        /* Add internal spacing between sections */
         .about-story-content + .about-story-content.second-part {
-          margin-top: 50px;
+          margin-top: 80px;
         }
         
         @media only screen and (max-width: 768px) {
           .about-story-content + .about-story-content.second-part {
-            margin-top: 40px;
+            margin-top: 60px;
           }
         }
         
         @media only screen and (max-width: 480px) {
           .about-story-content + .about-story-content.second-part {
-            margin-top: 30px;
+            margin-top: 50px;
           }
         }
         
         .about-story-wrapper {
-          max-width: 1200px;
           width: 100%;
-          margin: 0 auto;
         }
         
         .about-story-top {
-          margin-bottom: 20px;
+          margin-bottom: 24px;
+          position: relative;
         }
         
-        /* Tagline - BLUE COLOR */
         .about-story-tagline {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-          font-size: 12px;
-          font-weight: 500;
+          font-size: 14px;
+          font-weight: 600;
           color: #0066FF;
-          letter-spacing: 2px;
+          letter-spacing: 2.5px;
           text-transform: uppercase;
-          margin-bottom: 8px;
+          margin-bottom: 12px;
+          display: inline-block;
+          position: relative;
+          padding-left: 0;
         }
         
-        /* Headline */
+        .about-story-tagline::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 40px;
+          height: 2px;
+          background: #0066FF;
+          opacity: 0.3;
+        }
+        
         .about-story-headline {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-          font-size: 42px;
+          font-size: 48px;
           font-weight: 700;
           line-height: 1.1;
           color: #111827;
@@ -162,25 +158,23 @@ const AboutStory = () => {
           letter-spacing: -0.02em;
         }
         
-        /* Text content */
         .about-story-text {
-          max-width: 700px;
+          max-width: 800px;
           width: 100%;
         }
         
         .about-story-paragraphs {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
           font-size: 18px;
-          line-height: 1.5;
+          line-height: 1.7;
           font-weight: 400;
           color: #374151;
         }
         
-        /* Paragraphs */
         .about-story-paragraphs p {
-          margin-bottom: 16px;
+          margin-bottom: 24px;
           font-size: 18px;
-          line-height: 1.5;
+          line-height: 1.7;
           color: #374151;
         }
         
@@ -188,34 +182,75 @@ const AboutStory = () => {
           margin-bottom: 0;
         }
         
-        /* ===== RESPONSIVE DESIGN ===== */
+        .about-story-paragraphs p:first-of-type {
+          font-size: 20px;
+          color: #111827;
+          font-weight: 450;
+        }
         
-        /* Large Desktop: 1440px+ */
-        @media (max-width: 1440px) {
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @media (max-width: 1400px) {
           .about-story-headline {
-            font-size: 38px;
+            font-size: 44px;
           }
           
           .about-story-paragraphs,
           .about-story-paragraphs p {
             font-size: 17px;
           }
+          
+          .about-story-paragraphs p:first-of-type {
+            font-size: 19px;
+          }
         }
         
-        /* Desktop: 1200px */
         @media (max-width: 1200px) {
           .about-story-headline {
-            font-size: 36px;
+            font-size: 40px;
+          }
+        }
+        
+        @media (max-width: 1024px) {
+          .about-story-headline {
+            font-size: 38px;
           }
           
           .about-story-paragraphs,
           .about-story-paragraphs p {
             font-size: 16px;
+            line-height: 1.6;
+          }
+          
+          .about-story-paragraphs p:first-of-type {
+            font-size: 18px;
           }
         }
         
-        /* Tablet: 1024px */
-        @media (max-width: 1024px) {
+        @media (max-width: 992px) {
+          .about-story-container {
+            padding: 70px 35px;
+          }
+          
+          .about-story-content + .about-story-content.second-part {
+            margin-top: 70px;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .about-story-container {
+            padding: 60px 30px;
+          }
+          
           .about-story-headline {
             font-size: 34px;
           }
@@ -224,49 +259,28 @@ const AboutStory = () => {
           .about-story-paragraphs p {
             font-size: 15px;
           }
-        }
-        
-        /* Tablet Portrait: 992px */
-        @media (max-width: 992px) {
-          .about-story-container {
-            padding: 40px 35px 30px;
+          
+          .about-story-paragraphs p:first-of-type {
+            font-size: 17px;
           }
           
-          .about-story-headline {
-            font-size: 36px;
+          .about-story-top {
+            margin-bottom: 20px;
           }
           
-          .about-story-paragraphs,
-          .about-story-paragraphs p {
-            font-size: 16px;
+          .about-story-tagline {
+            font-size: 13px;
+            margin-bottom: 10px;
           }
         }
         
-        /* Mobile Landscape: 768px */
-        @media (max-width: 768px) {
-          .about-story-container {
-            padding: 0 30px;
-          }
-          
-          .about-story-headline {
-            font-size: 32px;
-          }
-          
-          .about-story-paragraphs,
-          .about-story-paragraphs p {
-            font-size: 15px;
-            line-height: 1.4;
-          }
-        }
-        
-        /* Mobile Portrait: 576px */
         @media (max-width: 576px) {
           .about-story-container {
-            padding: 0 25px;
+            padding: 50px 25px;
           }
           
           .about-story-headline {
-            font-size: 28px;
+            font-size: 30px;
           }
           
           .about-story-paragraphs,
@@ -274,55 +288,41 @@ const AboutStory = () => {
             font-size: 14px;
           }
           
-          .about-story-tagline {
-            font-size: 11px;
+          .about-story-paragraphs p:first-of-type {
+            font-size: 16px;
+          }
+          
+          .about-story-content + .about-story-content.second-part {
+            margin-top: 50px;
           }
         }
         
-        /* Small Mobile: 480px */
         @media (max-width: 480px) {
           .about-story-container {
-            padding: 0 20px;
+            padding: 40px 20px;
+          }
+          
+          .about-story-headline {
+            font-size: 26px;
+          }
+          
+          .about-story-paragraphs p {
+            margin-bottom: 20px;
+          }
+          
+          .about-story-tagline {
+            font-size: 12px;
+            letter-spacing: 2px;
+          }
+        }
+        
+        @media (max-width: 360px) {
+          .about-story-container {
+            padding: 30px 15px;
           }
           
           .about-story-headline {
             font-size: 24px;
-          }
-          
-          .about-story-paragraphs,
-          .about-story-paragraphs p {
-            font-size: 13px;
-          }
-        }
-        
-        /* Extra small devices: 360px */
-        @media (max-width: 360px) {
-          .about-story-container {
-            padding: 0 15px;
-          }
-          
-          .about-story-headline {
-            font-size: 22px;
-          }
-          
-          .about-story-paragraphs,
-          .about-story-paragraphs p {
-            font-size: 12px;
-          }
-        }
-        
-        /* Animation for fade in */
-        .about-story-container {
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 0.6s ease forwards;
-          animation-delay: 0.1s;
-        }
-        
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
           }
         }
       `}</style>

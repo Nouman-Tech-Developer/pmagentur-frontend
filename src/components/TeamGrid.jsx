@@ -96,195 +96,45 @@ const TeamGrid = () => {
 
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  // Styles
-  const styles = {
-    container: {
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-      padding: '80px 100px',
-      maxWidth: '1700px',
-      margin: '0 auto',
-      backgroundColor: '#FFFFFF',
-    },
-    header: {
-      textAlign: 'center',
-      marginBottom: '40px',
-    },
-    tagline: {
-      color: '#0066FF',
-      fontSize: '14px',
-      fontWeight: '600',
-      letterSpacing: '2px',
-      textTransform: 'uppercase',
-      marginBottom: '12px',
-    },
-    title: {
-      fontSize: '42px',
-      fontWeight: '700',
-      color: '#111827',
-      marginBottom: '16px',
-      lineHeight: '1.1',
-      letterSpacing: '-0.02em',
-    },
-    subtitle: {
-      fontSize: '18px',
-      color: '#374151',
-      maxWidth: '600px',
-      margin: '0 auto',
-      lineHeight: '1.5',
-      fontWeight: '400',
-    },
-    grid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(4, 1fr)',
-      gap: '30px',
-      padding: '20px 0',
-    },
-    card: {
-      position: 'relative',
-      borderRadius: '12px',
-      overflow: 'hidden',
-      backgroundColor: '#FFFFFF',
-      border: '1px solid #E5E7EB',
-      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-      transition: 'all 0.3s ease',
-    },
-    cardHovered: {
-      transform: 'translateY(-8px)',
-      boxShadow: '0 20px 40px rgba(0, 102, 255, 0.15)',
-      borderColor: '#0066FF',
-    },
-    imageContainer: {
-      position: 'relative',
-      width: '100%',
-      paddingTop: '100%',
-      overflow: 'hidden',
-      backgroundColor: '#F8FAFC',
-    },
-    image: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      transition: 'transform 0.5s ease',
-    },
-    imageHovered: {
-      transform: 'scale(1.05)',
-    },
-    overlay: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: 'linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3))',
-      display: 'flex',
-      alignItems: 'flex-end',
-      padding: '24px',
-      opacity: 0,
-      transition: 'opacity 0.3s ease',
-    },
-    overlayVisible: {
-      opacity: 1,
-    },
-    overlayContent: {
-      color: 'white',
-      width: '100%',
-    },
-    overlayName: {
-      fontSize: '18px',
-      fontWeight: '600',
-      margin: '0 0 6px 0',
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-    },
-    overlayPosition: {
-      fontSize: '14px',
-      opacity: 0.9,
-      margin: '0 0 16px 0',
-      fontWeight: '400',
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif",
-    },
-    overlayInfo: {
-      fontSize: '13px',
-      display: 'flex',
-      justifyContent: 'space-between',
-      marginBottom: '6px',
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif",
-    },
-    overlayLabel: {
-      opacity: 0.7,
-    },
-    caption: {
-      padding: '24px 20px',
-      textAlign: 'center',
-    },
-    name: {
-      fontSize: '17px',
-      fontWeight: '600',
-      color: '#111827',
-      margin: '0 0 6px 0',
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-    },
-    position: {
-      fontSize: '14px',
-      color: '#6B7280',
-      margin: 0,
-      fontWeight: '400',
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif",
-    },
-  };
-
   return (
-    <div style={styles.container}>
+    <div className="team-grid-container">
       {/* Header */}
-      <header style={styles.header}>
-        <div style={styles.tagline}>OUR TEAM</div>
-        <h1 style={styles.title}>Meet Our Experts</h1>
-        <p style={styles.subtitle}>
+      <header className="team-header">
+        <div className="team-tagline">OUR TEAM</div>
+        <h1 className="team-title">Meet Our Experts</h1>
+        <p className="team-subtitle">
           A diverse team of passionate professionals dedicated to delivering exceptional results.
         </p>
       </header>
 
       {/* Team Grid */}
-      <div style={styles.grid}>
+      <div className="team-grid">
         {teamMembers.map(member => (
           <div
             key={member.id}
-            style={{
-              ...styles.card,
-              ...(hoveredCard === member.id ? styles.cardHovered : {}),
-            }}
+            className={`team-card ${hoveredCard === member.id ? 'team-card-hovered' : ''}`}
             onMouseEnter={() => setHoveredCard(member.id)}
             onMouseLeave={() => setHoveredCard(null)}
           >
             {/* Image Container */}
-            <div style={styles.imageContainer}>
+            <div className="team-image-container">
               <img
                 src={member.image}
                 alt={member.alt}
-                style={{
-                  ...styles.image,
-                  ...(hoveredCard === member.id ? styles.imageHovered : {}),
-                }}
+                className={`team-image ${hoveredCard === member.id ? 'team-image-hovered' : ''}`}
               />
               
               {/* Overlay on Hover */}
-              <div 
-                style={{
-                  ...styles.overlay,
-                  ...(hoveredCard === member.id ? styles.overlayVisible : {}),
-                }}
-              >
-                <div style={styles.overlayContent}>
-                  <h3 style={styles.overlayName}>{member.name}</h3>
-                  <p style={styles.overlayPosition}>{member.position}</p>
-                  <div style={styles.overlayInfo}>
-                    <span style={styles.overlayLabel}>Department:</span>
+              <div className={`team-overlay ${hoveredCard === member.id ? 'team-overlay-visible' : ''}`}>
+                <div className="team-overlay-content">
+                  <h3 className="team-overlay-name">{member.name}</h3>
+                  <p className="team-overlay-position">{member.position}</p>
+                  <div className="team-overlay-info">
+                    <span className="team-overlay-label">Department:</span>
                     <span>{member.department}</span>
                   </div>
-                  <div style={styles.overlayInfo}>
-                    <span style={styles.overlayLabel}>Experience:</span>
+                  <div className="team-overlay-info">
+                    <span className="team-overlay-label">Experience:</span>
                     <span>{member.experience}</span>
                   </div>
                 </div>
@@ -292,27 +142,181 @@ const TeamGrid = () => {
             </div>
 
             {/* Card Caption */}
-            <div style={styles.caption}>
-              <h3 style={styles.name}>{member.name}</h3>
-              <p style={styles.position}>{member.position}</p>
+            <div className="team-caption">
+              <h3 className="team-name">{member.name}</h3>
+              <p className="team-position">{member.position}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Footer Note */}
-      <div style={{ 
-        textAlign: 'center', 
-        marginTop: '50px', 
-        color: '#6B7280', 
-        fontSize: '14px',
-        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif",
-      }}>
+      <div className="team-footer">
         <p>Our team is constantly growing. Interested in joining us?</p>
       </div>
 
-      {/* Global Styles */}
-      <style>{`
+      <style jsx="true">{`
+        .team-grid-container {
+          font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+          padding: 80px 100px;
+          max-width: 1700px;
+          margin: 0 auto;
+          background-color: #FFFFFF;
+          position: relative;
+          z-index: 2;
+        }
+        
+        .team-header {
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        
+        .team-tagline {
+          color: #000000;
+          opacity: 0.7;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin-bottom: 12px;
+        }
+        
+        .team-title {
+          font-size: 42px;
+          font-weight: 700;
+          color: #000000;
+          margin-bottom: 16px;
+          line-height: 1.1;
+          letter-spacing: -0.02em;
+        }
+        
+        .team-subtitle {
+          font-size: 18px;
+          color: #4B5563;
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.5;
+          font-weight: 400;
+        }
+        
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 30px;
+          padding: 20px 0;
+        }
+        
+        .team-card {
+          position: relative;
+          border-radius: 12px;
+          overflow: hidden;
+          background-color: #FFFFFF;
+          border: 1px solid #E5E7EB;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          transition: all 0.3s ease;
+        }
+        
+        .team-card-hovered {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+          border-color: #000000;
+        }
+        
+        .team-image-container {
+          position: relative;
+          width: 100%;
+          padding-top: 100%;
+          overflow: hidden;
+          background-color: #F8FAFC;
+        }
+        
+        .team-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+        
+        .team-image-hovered {
+          transform: scale(1.05);
+        }
+        
+        .team-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.5));
+          display: flex;
+          align-items: flex-end;
+          padding: 24px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        
+        .team-overlay-visible {
+          opacity: 1;
+        }
+        
+        .team-overlay-content {
+          color: white;
+          width: 100%;
+        }
+        
+        .team-overlay-name {
+          font-size: 18px;
+          font-weight: 600;
+          margin: 0 0 6px 0;
+        }
+        
+        .team-overlay-position {
+          font-size: 14px;
+          opacity: 0.9;
+          margin: 0 0 16px 0;
+          font-weight: 400;
+        }
+        
+        .team-overlay-info {
+          font-size: 13px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 6px;
+        }
+        
+        .team-overlay-label {
+          opacity: 0.7;
+        }
+        
+        .team-caption {
+          padding: 24px 20px;
+          text-align: center;
+        }
+        
+        .team-name {
+          font-size: 17px;
+          font-weight: 600;
+          color: #000000;
+          margin: 0 0 6px 0;
+        }
+        
+        .team-position {
+          font-size: 14px;
+          color: #6B7280;
+          margin: 0;
+          font-weight: 400;
+        }
+        
+        .team-footer {
+          text-align: center;
+          margin-top: 50px;
+          color: #6B7280;
+          font-size: 14px;
+        }
+        
         @media (max-width: 1440px) {
           .team-grid-container {
             padding: 60px 70px;
@@ -375,11 +379,15 @@ const TeamGrid = () => {
           .team-title {
             font-size: 28px;
           }
-        }
-        
-        /* Smooth transitions */
-        .card, .image {
-          transition: all 0.3s ease;
+          .team-tagline {
+            font-size: 12px;
+          }
+          .team-name {
+            font-size: 16px;
+          }
+          .team-position {
+            font-size: 13px;
+          }
         }
       `}</style>
     </div>

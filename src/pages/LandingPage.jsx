@@ -3,6 +3,8 @@ import HeroSection from '../components/HeroSection';
 // import LogoSlider from '../components/LogoSlider';
 import FeatureSection from '../components/FeatureSection';
 import ServiceSection from '../components/ServiceSection';
+import SavingsCalculator from '../components/SavingsCalculator';
+
 // import TestimonialCard from '../components/TestimonialCard';
 // import CaseStudies from '../components/CaseStudies';
 import TextHalfImage from '../components/TextHalfImage';
@@ -17,6 +19,7 @@ const LandingPage = () => {
       {/* <LogoSlider /> */}
       <FeatureSection />
       <ServiceSection />
+      <SavingsCalculator/>
       {/* <TestimonialCard /> */}
       {/* <CaseStudies /> */}
       <TextHalfImage />

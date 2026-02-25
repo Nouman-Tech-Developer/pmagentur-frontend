@@ -71,7 +71,6 @@ const ServicesSection = () => {
                     className="service-button" 
                     href={service.buttonLink}
                     tabIndex="0"
-                    aria-disabled="false"
                   >
                     {service.buttonText}
                   </a>
@@ -83,7 +82,6 @@ const ServicesSection = () => {
       </section>
 
       <style jsx="true">{`
-        /* Services Section - Consistent padding */
         .services-section {
           width: 100%;
           padding: 35px 100px;
@@ -98,7 +96,6 @@ const ServicesSection = () => {
           margin: 0 auto;
         }
         
-        /* Header - Centered */
         .services-header {
           margin-bottom: 60px;
           text-align: center;
@@ -108,7 +105,6 @@ const ServicesSection = () => {
           align-items: center;
         }
         
-        /* Title - Black */
         .services-title {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 52px;
@@ -119,7 +115,6 @@ const ServicesSection = () => {
           margin: 0 0 20px 0;
         }
         
-        /* Subtitle - Anthracite */
         .services-subtitle {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
@@ -130,7 +125,6 @@ const ServicesSection = () => {
           margin: 0 auto;
         }
         
-        /* Grid - 4 cards in 1 row */
         .services-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -138,7 +132,6 @@ const ServicesSection = () => {
           width: 100%;
         }
         
-        /* Service Card */
         .service-card {
           background: #FFFFFF;
           border-radius: 24px;
@@ -149,8 +142,6 @@ const ServicesSection = () => {
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
           position: relative;
           height: 100%;
-          opacity: 1;
-          visibility: visible;
           border: 1px solid #F0F0F0;
         }
         
@@ -162,7 +153,6 @@ const ServicesSection = () => {
           border-color: transparent;
         }
         
-        /* Image Wrapper - Full width, no padding */
         .service-image-wrapper {
           width: 100%;
           padding: 0;
@@ -170,7 +160,6 @@ const ServicesSection = () => {
           line-height: 0;
         }
         
-        /* Image - Full width, full height, no cropping */
         .service-image {
           width: 100%;
           height: auto;
@@ -199,7 +188,6 @@ const ServicesSection = () => {
           transform: scale(1.08);
         }
         
-        /* Content */
         .service-content {
           padding: 24px 24px 0 24px;
           flex: 1;
@@ -207,7 +195,6 @@ const ServicesSection = () => {
           flex-direction: column;
         }
         
-        /* Title - Black */
         .service-title {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 22px;
@@ -217,7 +204,6 @@ const ServicesSection = () => {
           margin: 0 0 12px 0;
         }
         
-        /* Description - Anthracite */
         .service-description {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 15px;
@@ -231,12 +217,10 @@ const ServicesSection = () => {
           margin: 0;
         }
         
-        /* Action */
         .service-action {
           padding: 20px 24px 28px 24px;
         }
         
-        /* Button - Black outline, black fill on hover */
         .service-button {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-weight: 500;
@@ -267,9 +251,27 @@ const ServicesSection = () => {
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
-        /* =========== RESPONSIVE STYLES =========== */
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         
-        /* Large Desktop: 1600px+ */
+        .service-card {
+          animation: fadeInUp 0.6s ease forwards;
+          opacity: 0;
+        }
+        
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        
         @media (min-width: 1600px) {
           .services-section {
             padding: 35px 150px;
@@ -316,7 +318,6 @@ const ServicesSection = () => {
           }
         }
         
-        /* Desktop: 1400px */
         @media (max-width: 1400px) {
           .services-section {
             padding: 35px 80px;
@@ -340,7 +341,6 @@ const ServicesSection = () => {
           }
         }
         
-        /* Desktop: 1200px */
         @media (max-width: 1200px) {
           .services-section {
             padding: 35px 60px;
@@ -385,7 +385,6 @@ const ServicesSection = () => {
           }
         }
         
-        /* Tablet: 1024px - Switch to 2x2 grid */
         @media (max-width: 1024px) {
           .services-section {
             padding: 35px 40px;
@@ -432,7 +431,6 @@ const ServicesSection = () => {
           }
         }
         
-        /* Tablet Portrait: 768px - 2x2 grid */
         @media (max-width: 768px) {
           .services-section {
             padding: 35px 40px;
@@ -475,7 +473,6 @@ const ServicesSection = () => {
           }
         }
         
-        /* Mobile: 576px - Switch to 1 column */
         @media (max-width: 576px) {
           .services-section {
             padding: 35px 25px;
@@ -500,9 +497,6 @@ const ServicesSection = () => {
           .service-image {
             max-height: 240px;
             min-height: 200px;
-          }
-          
-          .service-image {
             border-radius: 20px 20px 0 0;
           }
           
@@ -530,7 +524,6 @@ const ServicesSection = () => {
           }
         }
         
-        /* Small Phones: 480px */
         @media (max-width: 480px) {
           .services-section {
             padding: 35px 20px;
@@ -569,7 +562,6 @@ const ServicesSection = () => {
           }
         }
         
-        /* Extra Small Phones: 360px */
         @media (max-width: 360px) {
           .services-section {
             padding: 35px 15px;
@@ -613,28 +605,6 @@ const ServicesSection = () => {
             padding: 8px 18px;
           }
         }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .service-card {
-          animation: fadeInUp 0.6s ease forwards;
-          opacity: 0;
-        }
-        
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
-        .service-card:nth-child(4) { animation-delay: 0.4s; }
       `}</style>
     </>
   );

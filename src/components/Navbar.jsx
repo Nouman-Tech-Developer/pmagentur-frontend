@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import WhiteLogo from '../assets/black-logo.png'; // White logo for transparent bg
-import BlackLogo from '../assets/white-logo.png';  // Black logo for white bg
+
+import BlackLogo from '../assets/white-logo.png';
+import WhiteLogo from '../assets/black-logo.png';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -17,6 +18,7 @@ const Navbar = () => {
   const megaMenuRef = useRef(null);
   const navItemRefs = useRef({});
 
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -25,35 +27,44 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Filtered nav links for BOTH desktop and mobile
+  // Close mobile menu on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const navLinks = [
-    { 
-      label: t('nav.solutions'), 
+    {
+      label: t('nav.solutions', 'Lösungen'),
       key: 'solutions',
-      hasDropdown: true, 
-      href: '#' 
+      hasDropdown: true,
+      href: '#'
     },
-    { 
-      label: t('nav.products'), 
+    {
+      label: t('nav.products', 'Produkte'),
       key: 'products',
-      hasDropdown: true, 
-      href: '#' 
+      hasDropdown: true,
+      href: '#'
     },
-    { 
-      label: t('nav.about'), 
+    {
+      label: t('nav.about', 'Über uns'),
       key: 'about',
-      hasDropdown: false, 
-      href: '/about' 
+      hasDropdown: false,
+      to: '/about'
     },
-    { 
-      label: t('nav.careers'), 
+    {
+      label: t('nav.careers', 'Karriere'),
       key: 'careers',
-      hasDropdown: false, 
-      to: '/career' 
+      hasDropdown: false,
+      to: '/career'
     },
   ];
 
-  // Mega Menu Data for Solutions
   const solutionsData = {
     categories: [
       { id: 1, title: 'KI & Daten' },
@@ -68,25 +79,25 @@ const Navbar = () => {
         {
           id: 1,
           title: 'AI Phone Assistant',
-          description: 'Automates calls, appointment scheduling, and customer inquiries – reliably, professionally, and available 24/7. Customizable for your brand.',
+          description: 'Automates calls, appointment scheduling, and customer inquiries – 24/7 availability.',
           link: '#'
         },
         {
           id: 2,
           title: 'Chatbots & Digital Assistants',
-          description: 'Intelligent chatbots for websites, social media, or internal processes. Automatically answer inquiries and relieve your team.',
+          description: 'Intelligent chatbots for websites, social media, and internal processes.',
           link: '#'
         },
         {
           id: 3,
           title: 'Email Automation',
-          description: 'Automate customer communication, appointment confirmations, and internal processes – fast, error-free, and efficient.',
+          description: 'Automate customer communication and internal processes efficiently.',
           link: '#'
         },
         {
           id: 4,
           title: 'Data Analysis AI',
-          description: 'Advanced AI for processing and analyzing large datasets to extract valuable business insights.',
+          description: 'Advanced AI for processing and analyzing large datasets.',
           link: '#'
         }
       ],
@@ -94,25 +105,25 @@ const Navbar = () => {
         {
           id: 5,
           title: 'E-Commerce Store Automation',
-          description: 'Automated product management, inventory control, and pricing optimization for online stores.',
+          description: 'Automated product management and inventory control for online stores.',
           link: '#'
         },
         {
           id: 6,
           title: 'Order Processing',
-          description: 'Streamlined order fulfillment, shipping coordination, and customer notification systems.',
+          description: 'Streamlined order fulfillment and customer notification systems.',
           link: '#'
         },
         {
           id: 7,
           title: 'Customer Service Automation',
-          description: 'AI-powered customer support for e-commerce platforms with instant query resolution.',
+          description: 'AI-powered customer support with instant query resolution.',
           link: '#'
         },
         {
           id: 8,
           title: 'Personalized Recommendations',
-          description: 'AI algorithms that provide personalized product suggestions based on user behavior.',
+          description: 'AI algorithms for personalized product suggestions.',
           link: '#'
         }
       ],
@@ -120,25 +131,25 @@ const Navbar = () => {
         {
           id: 9,
           title: 'Workflow Optimization',
-          description: 'Custom AI solutions for data processing and industry-specific tasks – tailored to your business.',
+          description: 'Custom AI solutions for data processing and industry-specific tasks.',
           link: '#'
         },
         {
           id: 10,
           title: 'Process Automation',
-          description: 'Automate repetitive business processes to increase efficiency and reduce errors.',
+          description: 'Automate repetitive business processes to increase efficiency.',
           link: '#'
         },
         {
           id: 11,
           title: 'System Integration',
-          description: 'Seamless integration of AI tools with existing software systems and platforms.',
+          description: 'Seamless integration of AI tools with existing systems.',
           link: '#'
         },
         {
           id: 12,
           title: 'Custom Development',
-          description: 'Tailor-made AI solutions developed specifically for your unique business requirements.',
+          description: 'Tailor-made AI solutions for unique business requirements.',
           link: '#'
         }
       ],
@@ -146,25 +157,25 @@ const Navbar = () => {
         {
           id: 13,
           title: 'Legal Document Processing',
-          description: 'AI-powered document review, contract analysis, and legal research automation.',
+          description: 'AI-powered document review and contract analysis.',
           link: '#'
         },
         {
           id: 14,
           title: 'Compliance Automation',
-          description: 'Automated compliance checks and regulatory reporting for legal requirements.',
+          description: 'Automated compliance checks and regulatory reporting.',
           link: '#'
         },
         {
           id: 15,
           title: 'Contract Management',
-          description: 'AI system for contract creation, review, and lifecycle management.',
+          description: 'AI system for contract lifecycle management.',
           link: '#'
         },
         {
           id: 16,
           title: 'Legal Research AI',
-          description: 'Advanced AI tools for legal research and precedent analysis.',
+          description: 'Advanced AI tools for legal research and analysis.',
           link: '#'
         }
       ],
@@ -172,25 +183,25 @@ const Navbar = () => {
         {
           id: 17,
           title: 'Marketing Campaign Automation',
-          description: 'Automate multi-channel marketing campaigns and customer engagement.',
+          description: 'Automate multi-channel marketing campaigns.',
           link: '#'
         },
         {
           id: 18,
           title: 'Social Media Management',
-          description: 'AI tools for social media scheduling, analytics, and content optimization.',
+          description: 'AI tools for social media scheduling and analytics.',
           link: '#'
         },
         {
           id: 19,
           title: 'Customer Segmentation',
-          description: 'AI-driven customer segmentation for targeted marketing campaigns.',
+          description: 'AI-driven customer segmentation for targeted marketing.',
           link: '#'
         },
         {
           id: 20,
           title: 'ROI Analytics',
-          description: 'Measure and optimize marketing campaign performance with AI analytics.',
+          description: 'Measure and optimize marketing campaign performance.',
           link: '#'
         }
       ],
@@ -198,32 +209,31 @@ const Navbar = () => {
         {
           id: 21,
           title: 'Financial Reporting',
-          description: 'Automated financial reporting, analysis, and compliance documentation.',
+          description: 'Automated financial reporting and analysis.',
           link: '#'
         },
         {
           id: 22,
           title: 'Invoice Processing',
-          description: 'AI-powered invoice processing, validation, and payment automation.',
+          description: 'AI-powered invoice processing and payment automation.',
           link: '#'
         },
         {
           id: 23,
           title: 'Fraud Detection',
-          description: 'Advanced AI algorithms for detecting fraudulent transactions and activities.',
+          description: 'Advanced AI algorithms for detecting fraud.',
           link: '#'
         },
         {
           id: 24,
           title: 'Investment Analysis',
-          description: 'AI tools for market analysis, investment recommendations, and portfolio management.',
+          description: 'AI tools for market analysis and portfolio management.',
           link: '#'
         }
       ]
     }
   };
 
-  // Mega Menu Data for Products
   const productsData = {
     categories: [
       { id: 1, title: 'AI Platform' },
@@ -235,27 +245,27 @@ const Navbar = () => {
       1: [
         {
           id: 1,
-          title: 'Tolero AI Suite',
-          description: 'Complete AI platform with voice, chat, and email automation in one integrated solution.',
+          title: 'Reinke AI Suite',
+          description: 'Complete AI platform with voice, chat, and email automation.',
           link: '#',
           badge: 'Popular'
         },
         {
           id: 2,
           title: 'Voice AI Pro',
-          description: 'Advanced voice recognition and natural conversation AI for call centers.',
+          description: 'Advanced voice recognition for call centers.',
           link: '#'
         },
         {
           id: 3,
           title: 'Enterprise AI Platform',
-          description: 'Scalable AI platform for large organizations with advanced features.',
+          description: 'Scalable AI platform for large organizations.',
           link: '#'
         },
         {
           id: 4,
           title: 'AI Studio',
-          description: 'Development environment for building and training custom AI models.',
+          description: 'Build and train custom AI models.',
           link: '#'
         }
       ],
@@ -263,25 +273,25 @@ const Navbar = () => {
         {
           id: 5,
           title: 'Automation Studio',
-          description: 'Drag-and-drop workflow builder for creating custom automation without coding.',
+          description: 'Drag-and-drop workflow builder for custom automation.',
           link: '#'
         },
         {
           id: 6,
           title: 'Chatbot Builder',
-          description: 'Create intelligent chatbots for websites, WhatsApp, and Telegram in minutes.',
+          description: 'Create intelligent chatbots for multiple platforms.',
           link: '#'
         },
         {
           id: 7,
           title: 'Workflow Automator',
-          description: 'Advanced automation tool for complex business workflows and processes.',
+          description: 'Advanced automation for complex business workflows.',
           link: '#'
         },
         {
           id: 8,
           title: 'Task Scheduler',
-          description: 'Intelligent scheduling and task automation for recurring business operations.',
+          description: 'Intelligent scheduling for recurring operations.',
           link: '#'
         }
       ],
@@ -289,25 +299,25 @@ const Navbar = () => {
         {
           id: 9,
           title: 'Analytics Dashboard',
-          description: 'Real-time insights and performance metrics for all your automated processes.',
+          description: 'Real-time insights for all automated processes.',
           link: '#'
         },
         {
           id: 10,
           title: 'Performance Monitor',
-          description: 'Comprehensive monitoring and reporting tools for AI system performance.',
+          description: 'Comprehensive AI system monitoring and reporting.',
           link: '#'
         },
         {
           id: 11,
           title: 'Business Intelligence',
-          description: 'AI-powered analytics for business decision making and strategy planning.',
+          description: 'AI-powered analytics for strategic planning.',
           link: '#'
         },
         {
           id: 12,
           title: 'Data Visualization',
-          description: 'Advanced tools for transforming complex data into actionable visual insights.',
+          description: 'Transform complex data into actionable insights.',
           link: '#'
         }
       ],
@@ -315,25 +325,25 @@ const Navbar = () => {
         {
           id: 13,
           title: 'API Gateway',
-          description: 'Seamless integration with 500+ business applications and custom systems.',
+          description: 'Seamless integration with 500+ applications.',
           link: '#'
         },
         {
           id: 14,
           title: 'System Connectors',
-          description: 'Pre-built connectors for popular business software and platforms.',
+          description: 'Pre-built connectors for popular business software.',
           link: '#'
         },
         {
           id: 15,
           title: 'Custom Integration',
-          description: 'Tools for creating custom integrations with proprietary systems.',
+          description: 'Tools for proprietary system integration.',
           link: '#'
         },
         {
           id: 16,
           title: 'Data Synchronization',
-          description: 'Real-time data sync across multiple platforms and databases.',
+          description: 'Real-time data sync across multiple platforms.',
           link: '#'
         }
       ]
@@ -346,17 +356,15 @@ const Navbar = () => {
   ];
 
   const getHeaderClass = () => {
-    if (isMenuOpen) return 'tolero-header__wrapper tolero-header--menu-open';
-    if (scrolled) return 'tolero-header__wrapper tolero-header--scrolled';
-    if (isNavHovered) return 'tolero-header__wrapper tolero-header--top tolero-header--hovered';
-    return 'tolero-header__wrapper tolero-header--top';
+    if (isMenuOpen) return 'reinke-header__wrapper reinke-header--menu-open';
+    if (scrolled) return 'reinke-header__wrapper reinke-header--scrolled';
+    if (isNavHovered) return 'reinke-header__wrapper reinke-header--top reinke-header--hovered';
+    return 'reinke-header__wrapper reinke-header--top';
   };
 
   const getLogo = () => {
-    if (isMenuOpen) return BlackLogo;     // Menu open - white bg, black logo
-    if (scrolled) return BlackLogo;        // Scrolled - white bg, black logo
-    if (isNavHovered) return BlackLogo;    // Hover - white bg, black logo
-    return WhiteLogo;                      // Default - transparent bg, white logo
+    if (isMenuOpen || scrolled || isNavHovered) return BlackLogo;
+    return WhiteLogo;
   };
 
   const handleLangSelect = (langCode) => {
@@ -376,11 +384,9 @@ const Navbar = () => {
     setIsNavHovered(false);
   };
 
-  const handleMegaMenuEnter = (menuKey, e) => {
-    if (e.type === 'mouseenter') {
-      setActiveMegaMenu(menuKey);
-      setActiveCategory(1);
-    }
+  const handleMegaMenuEnter = (menuKey) => {
+    setActiveMegaMenu(menuKey);
+    setActiveCategory(1);
   };
 
   const handleMegaMenuLeave = (e) => {
@@ -397,7 +403,8 @@ const Navbar = () => {
   const getCategoryItems = () => {
     if (activeMegaMenu === 'solutions') {
       return solutionsData.services[activeCategory] || [];
-    } else if (activeMegaMenu === 'products') {
+    }
+    if (activeMegaMenu === 'products') {
       return productsData.products[activeCategory] || [];
     }
     return [];
@@ -406,7 +413,8 @@ const Navbar = () => {
   const getCurrentCategories = () => {
     if (activeMegaMenu === 'solutions') {
       return solutionsData.categories;
-    } else if (activeMegaMenu === 'products') {
+    }
+    if (activeMegaMenu === 'products') {
       return productsData.categories;
     }
     return [];
@@ -428,69 +436,65 @@ const Navbar = () => {
 
   const handleItemClick = (link, e) => {
     e.preventDefault();
-    console.log(`Clicked on: ${link.title}`);
+    console.log(`Clicked: ${link.title}`);
     window.location.href = link.link;
   };
 
   return (
     <>
-      <div className="tolero-header">
-        <header 
+      <div className="reinke-header">
+        <header
           className={getHeaderClass()}
           onMouseEnter={handleNavMouseEnter}
           onMouseLeave={handleNavMouseLeave}
         >
-          <div className="tolero-header__bar" role="menubar" aria-label="Primary">
-            <div className="tolero-header__inner">
-              {/* Logo */}
-              <Link to="/" className="tolero-header__brand" aria-label="Home">
-                <img 
-                  src={getLogo()} 
-                  alt="Tolero AI Automation" 
-                  className="tolero-header__logo"
+          <div className="reinke-header__bar" role="menubar">
+            <div className="reinke-header__inner">
+              <Link to="/" className="reinke-header__brand" aria-label="Home">
+                <img
+                  src={getLogo()}
+                  alt="Reinke AI Automation"
+                  className="reinke-header__logo"
                 />
               </Link>
 
-              {/* Desktop Navigation */}
-              <nav className="tolero-header__nav" role="navigation" aria-label="Primary">
-                <ul className="tolero-header__nav-list">
+              <nav className="reinke-header__nav" role="navigation">
+                <ul className="reinke-header__nav-list">
                   {navLinks.map((link) => (
-                    <li 
+                    <li
                       key={link.key}
                       ref={el => navItemRefs.current[link.key] = el}
-                      className={`tolero-header__nav-item ${!link.hasDropdown ? 'tolero-header__nav-item--standalone' : ''} ${activeMegaMenu === link.key ? 'tolero-header__nav-item--active' : ''}`}
-                      onMouseEnter={(e) => link.hasDropdown && handleNavItemMouseEnter(link.key)}
+                      className={`reinke-header__nav-item ${!link.hasDropdown ? 'reinke-header__nav-item--standalone' : ''} ${activeMegaMenu === link.key ? 'reinke-header__nav-item--active' : ''}`}
+                      onMouseEnter={() => link.hasDropdown && handleNavItemMouseEnter(link.key)}
                       onMouseLeave={(e) => link.hasDropdown && handleNavItemMouseLeave(e)}
                     >
                       {link.to ? (
-                        <Link 
+                        <Link
                           to={link.to}
-                          className="tolero-header__nav-button" 
+                          className="reinke-header__nav-button"
                           role="button"
                           aria-haspopup={link.hasDropdown}
                           aria-expanded={activeMegaMenu === link.key}
-                          tabIndex="0"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {link.label}
                           {link.hasDropdown && (
-                            <span className="tolero-header__nav-arrow"></span>
+                            <span className="reinke-header__nav-arrow" />
                           )}
                         </Link>
                       ) : (
-                        <a 
-                          className="tolero-header__nav-button" 
+                        <a
+                          className="reinke-header__nav-button"
                           href={link.href}
                           role="button"
                           aria-haspopup={link.hasDropdown}
                           aria-expanded={activeMegaMenu === link.key}
-                          tabIndex="0"
                           target={link.href?.startsWith('http') ? '_blank' : undefined}
                           rel={link.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                         >
                           {link.label}
                           {link.hasDropdown && (
-                            <span className="tolero-header__nav-arrow"></span>
+                            <span className="reinke-header__nav-arrow" />
                           )}
                         </a>
                       )}
@@ -499,29 +503,26 @@ const Navbar = () => {
                 </ul>
               </nav>
 
-              {/* Right Side - Language Only */}
-              <div className="tolero-header__right-group">
-                <div className={`tolero-header__lang-switcher ${isLangOpen ? 'tolero-header__lang-switcher--active' : ''}`}>
-                  <button 
-                    className="tolero-header__lang-button" 
-                    aria-haspopup="true" 
+              <div className="reinke-header__right-group">
+                <div className={`reinke-header__lang-switcher ${isLangOpen ? 'reinke-header__lang-switcher--active' : ''}`}>
+                  <button
+                    className="reinke-header__lang-button"
+                    aria-haspopup="true"
                     aria-expanded={isLangOpen}
                     aria-label={t('nav.selectLanguage')}
                     onClick={() => setIsLangOpen(!isLangOpen)}
-                    tabIndex="0"
                   >
                     {selectedLang}
-                    <span className="tolero-header__lang-arrow"></span>
+                    <span className="reinke-header__lang-arrow" />
                   </button>
-                  
+
                   {isLangOpen && (
-                    <div className="tolero-header__lang-dropdown">
+                    <div className="reinke-header__lang-dropdown">
                       {languages.map((lang) => (
                         <button
                           key={lang.code}
-                          className={`tolero-header__lang-option ${selectedLang === lang.label ? 'tolero-header__lang-option--active' : ''}`}
+                          className={`reinke-header__lang-option ${selectedLang === lang.label ? 'reinke-header__lang-option--active' : ''}`}
                           onClick={() => handleLangSelect(lang.code)}
-                          tabIndex="0"
                         >
                           {lang.label}
                         </button>
@@ -531,66 +532,60 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Mobile Menu Button */}
-              <button 
-                className="tolero-header__burger" 
+              <button
+                className="reinke-header__burger"
                 aria-label={t('nav.openMenu')}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                tabIndex="0"
               >
-                <span className="tolero-header__burger-line"></span>
-                <span className="tolero-header__burger-line"></span>
-                <span className="tolero-header__burger-line"></span>
+                <span className="reinke-header__burger-line" />
+                <span className="reinke-header__burger-line" />
+                <span className="reinke-header__burger-line" />
               </button>
             </div>
           </div>
 
-          {/* Mega Menu for Solutions and Products */}
           {(activeMegaMenu === 'solutions' || activeMegaMenu === 'products') && (
-            <div 
+            <div
               ref={megaMenuRef}
-              className="tolero-mega-menu"
-              onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
+              className="reinke-mega-menu"
+              onMouseEnter={() => handleMegaMenuEnter(activeMegaMenu)}
               onMouseLeave={handleMegaMenuLeave}
             >
-              <div className="tolero-mega-menu__container">
-                <div className="tolero-mega-menu__grid">
-                  {/* Left Side - Categories with arrow */}
-                  <div className="tolero-mega-menu__categories">
-                    <ul className="tolero-mega-menu__categories-list">
+              <div className="reinke-mega-menu__container">
+                <div className="reinke-mega-menu__grid">
+                  <div className="reinke-mega-menu__categories">
+                    <ul className="reinke-mega-menu__categories-list">
                       {getCurrentCategories().map((category) => (
-                        <li key={category.id} className="tolero-mega-menu__category-item">
-                          <button 
-                            className={`tolero-mega-menu__category-button ${activeCategory === category.id ? 'tolero-mega-menu__category-button--active' : ''}`}
+                        <li key={category.id} className="reinke-mega-menu__category-item">
+                          <button
+                            className={`reinke-mega-menu__category-button ${activeCategory === category.id ? 'reinke-mega-menu__category-button--active' : ''}`}
                             onClick={() => handleCategorySelect(category.id)}
                             onMouseEnter={() => handleCategorySelect(category.id)}
                           >
                             {category.title}
-                            <span className="tolero-mega-menu__category-arrow"></span>
+                            <span className="reinke-mega-menu__category-arrow" />
                           </button>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Right Side - Items in 2x2 grid */}
-                  <div className="tolero-mega-menu__services">
-                    <div className="tolero-mega-menu__services-grid">
+                  <div className="reinke-mega-menu__services">
+                    <div className="reinke-mega-menu__services-grid">
                       {getCategoryItems().map((item) => (
-                        <div key={item.id} className="tolero-mega-menu__service-item">
-                          <a 
-                            href={item.link} 
-                            className="tolero-mega-menu__service-link-wrapper"
+                        <div key={item.id} className="reinke-mega-menu__service-item">
+                          <a
+                            href={item.link}
+                            className="reinke-mega-menu__service-link-wrapper"
                             onClick={(e) => handleItemClick(item, e)}
-                            tabIndex="0"
                           >
-                            <div className="tolero-mega-menu__service-header">
-                              <h4 className="tolero-mega-menu__service-title">{item.title}</h4>
+                            <div className="reinke-mega-menu__service-header">
+                              <h4 className="reinke-mega-menu__service-title">{item.title}</h4>
                               {item.badge && (
-                                <span className="tolero-mega-menu__service-badge">{item.badge}</span>
+                                <span className="reinke-mega-menu__service-badge">{item.badge}</span>
                               )}
                             </div>
-                            <p className="tolero-mega-menu__service-description">{item.description}</p>
+                            <p className="reinke-mega-menu__service-description">{item.description}</p>
                           </a>
                         </div>
                       ))}
@@ -602,42 +597,38 @@ const Navbar = () => {
           )}
         </header>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="tolero-header__mobile">
-            <div className="tolero-header__mobile-header">
-              <Link to="/" className="tolero-header__brand" aria-label="Home">
-                <img src={BlackLogo} alt="Tolero AI Automation" className="tolero-header__logo" />
+          <div className="reinke-header__mobile">
+            <div className="reinke-header__mobile-header">
+              <Link to="/" className="reinke-header__brand">
+                <img src={BlackLogo} alt="Reinke AI Automation" className="reinke-header__logo" />
               </Link>
-              <button 
-                className="tolero-header__mobile-close" 
+              <button
+                className="reinke-header__mobile-close"
                 aria-label={t('nav.closeMenu')}
                 onClick={() => setIsMenuOpen(false)}
-                tabIndex="0"
               >
-                <span className="tolero-header__mobile-close-icon"></span>
+                <span className="reinke-header__mobile-close-icon" />
               </button>
             </div>
-            
-            <div className="tolero-header__mobile-body">
-              <ul className="tolero-header__mobile-list">
+
+            <div className="reinke-header__mobile-body">
+              <ul className="reinke-header__mobile-list">
                 {navLinks.map((link) => (
-                  <li key={link.key} className="tolero-header__mobile-item">
+                  <li key={link.key} className="reinke-header__mobile-item">
                     {link.to ? (
-                      <Link 
+                      <Link
                         to={link.to}
-                        className="tolero-header__mobile-link" 
+                        className="reinke-header__mobile-link"
                         onClick={() => setIsMenuOpen(false)}
-                        tabIndex="0"
                       >
                         {link.label}
                       </Link>
                     ) : (
-                      <a 
-                        className="tolero-header__mobile-link" 
+                      <a
+                        className="reinke-header__mobile-link"
                         href={link.href}
                         onClick={() => setIsMenuOpen(false)}
-                        tabIndex="0"
                         target={link.href?.startsWith('http') ? '_blank' : undefined}
                         rel={link.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                       >
@@ -647,28 +638,23 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              
-              {/* Language selector inside mobile menu */}
-              <div className="tolero-header__mobile-lang-switcher">
-                <button 
-                  className="tolero-header__mobile-lang-button"
+
+              <div className="reinke-header__mobile-lang-switcher">
+                <button
+                  className="reinke-header__mobile-lang-button"
                   onClick={() => setIsLangOpen(!isLangOpen)}
-                  tabIndex="0"
                 >
                   {selectedLang}
-                  <span className="tolero-header__mobile-lang-arrow"></span>
+                  <span className="reinke-header__mobile-lang-arrow" />
                 </button>
-                
+
                 {isLangOpen && (
-                  <div className="tolero-header__mobile-lang-dropdown">
+                  <div className="reinke-header__mobile-lang-dropdown">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
-                        className={`tolero-header__mobile-lang-option ${selectedLang === lang.label ? 'tolero-header__mobile-lang-option--active' : ''}`}
-                        onClick={() => {
-                          handleLangSelect(lang.code);
-                        }}
-                        tabIndex="0"
+                        className={`reinke-header__mobile-lang-option ${selectedLang === lang.label ? 'reinke-header__mobile-lang-option--active' : ''}`}
+                        onClick={() => handleLangSelect(lang.code)}
                       >
                         {lang.label}
                       </button>
@@ -682,14 +668,12 @@ const Navbar = () => {
       </div>
 
       <style jsx="true">{`
-        /* Base Styles */
-        .tolero-header {
+        .reinke-header {
           display: block;
           width: 100%;
         }
 
-        /* Header Wrapper */
-        .tolero-header__wrapper {
+        .reinke-header__wrapper {
           position: fixed;
           top: 0;
           left: 0;
@@ -699,138 +683,130 @@ const Navbar = () => {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* 🎯 TOP STATE: Transparent with WHITE Text (DEFAULT) */
-        .tolero-header__wrapper.tolero-header--top {
-          background-color: transparent !important;
+        .reinke-header__wrapper.reinke-header--top {
+          background-color: transparent;
         }
 
-        .tolero-header__wrapper.tolero-header--top .tolero-header__nav-button,
-        .tolero-header__wrapper.tolero-header--top .tolero-header__lang-button {
-          color: #FFFFFF !important;
+        .reinke-header__wrapper.reinke-header--top .reinke-header__nav-button,
+        .reinke-header__wrapper.reinke-header--top .reinke-header__lang-button {
+          color: #FFFFFF;
         }
 
-        .tolero-header__wrapper.tolero-header--top .tolero-header__burger-line {
-          background-color: #FFFFFF !important;
+        .reinke-header__wrapper.reinke-header--top .reinke-header__burger-line {
+          background-color: #FFFFFF;
         }
 
-        /* 🎯 TOP STATE WITH HOVER: White Background when cursor enters */
-        .tolero-header__wrapper.tolero-header--top.tolero-header--hovered {
-          background-color: #FFFFFF !important;
+        .reinke-header__wrapper.reinke-header--top.reinke-header--hovered {
+          background-color: #FFFFFF;
           box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
           border-bottom: 1px solid #E5E5E7;
         }
 
-        .tolero-header__wrapper.tolero-header--top.tolero-header--hovered .tolero-header__nav-button,
-        .tolero-header__wrapper.tolero-header--top.tolero-header--hovered .tolero-header__lang-button {
-          color: #000000 !important;
+        .reinke-header__wrapper.reinke-header--top.reinke-header--hovered .reinke-header__nav-button,
+        .reinke-header__wrapper.reinke-header--top.reinke-header--hovered .reinke-header__lang-button {
+          color: #000000;
         }
 
-        .tolero-header__wrapper.tolero-header--top.tolero-header--hovered .tolero-header__burger-line {
-          background-color: #000000 !important;
+        .reinke-header__wrapper.reinke-header--top.reinke-header--hovered .reinke-header__burger-line {
+          background-color: #000000;
         }
 
-        /* 🎯 SCROLLED STATE: White Background with BLACK Text */
-        .tolero-header__wrapper.tolero-header--scrolled {
-          background-color: #FFFFFF !important;
+        .reinke-header__wrapper.reinke-header--scrolled {
+          background-color: #FFFFFF;
           box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
           border-bottom: 1px solid #E5E5E7;
         }
 
-        .tolero-header__wrapper.tolero-header--scrolled .tolero-header__nav-button,
-        .tolero-header__wrapper.tolero-header--scrolled .tolero-header__lang-button {
-          color: #000000 !important;
+        .reinke-header__wrapper.reinke-header--scrolled .reinke-header__nav-button,
+        .reinke-header__wrapper.reinke-header--scrolled .reinke-header__lang-button {
+          color: #000000;
         }
 
-        .tolero-header__wrapper.tolero-header--scrolled .tolero-header__burger-line {
-          background-color: #000000 !important;
+        .reinke-header__wrapper.reinke-header--scrolled .reinke-header__burger-line {
+          background-color: #000000;
         }
 
-        /* 🎯 MENU OPEN STATE: White Background with BLACK Text */
-        .tolero-header__wrapper.tolero-header--menu-open {
-          background-color: #FFFFFF !important;
+        .reinke-header__wrapper.reinke-header--menu-open {
+          background-color: #FFFFFF;
           box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .tolero-header__wrapper.tolero-header--menu-open .tolero-header__nav-button,
-        .tolero-header__wrapper.tolero-header--menu-open .tolero-header__lang-button {
-          color: #000000 !important;
+        .reinke-header__wrapper.reinke-header--menu-open .reinke-header__nav-button,
+        .reinke-header__wrapper.reinke-header--menu-open .reinke-header__lang-button {
+          color: #000000;
         }
 
-        .tolero-header__wrapper.tolero-header--menu-open .tolero-header__burger-line {
-          background-color: #000000 !important;
+        .reinke-header__wrapper.reinke-header--menu-open .reinke-header__burger-line {
+          background-color: #000000;
         }
 
-        /* Active nav item */
-        .tolero-header__nav-item--active .tolero-header__nav-button {
-          color: #000000 !important;
+        .reinke-header__nav-item--active .reinke-header__nav-button {
+          color: #000000;
         }
 
-        .tolero-header__nav-item--active .tolero-header__nav-button::after {
-          width: 100% !important;
+        .reinke-header__nav-item--active .reinke-header__nav-button::after {
+          width: 100%;
         }
 
-        /* Header Bar Layout */
-        .tolero-header__bar {
+        .reinke-header__bar {
           padding: 12px 120px;
         }
 
         @media only screen and (max-width: 1200px) {
-          .tolero-header__bar {
+          .reinke-header__bar {
             padding: 12px 60px;
           }
         }
 
         @media only screen and (max-width: 1024px) {
-          .tolero-header__bar {
+          .reinke-header__bar {
             padding: 12px 40px;
           }
         }
 
         @media only screen and (max-width: 768px) {
-          .tolero-header__bar {
+          .reinke-header__bar {
             padding: 12px 24px;
           }
         }
 
-        .tolero-header__inner {
+        .reinke-header__inner {
           display: flex;
           align-items: center;
           justify-content: space-between;
           width: 100%;
         }
 
-        /* Brand/Logo */
-        .tolero-header__brand {
+        .reinke-header__brand {
           display: inline-flex;
           align-items: center;
           text-decoration: none;
           z-index: 1001;
         }
 
-        .tolero-header__logo {
+        .reinke-header__logo {
           display: block;
           height: 3rem;
           width: auto;
           transition: transform 0.3s ease;
         }
 
-        .tolero-header__brand:hover .tolero-header__logo {
+        .reinke-header__brand:hover .reinke-header__logo {
           transform: scale(1.05);
         }
 
         @media only screen and (min-width: 768px) {
-          .tolero-header__logo {
+          .reinke-header__logo {
             height: 3rem;
           }
         }
 
-        /* Desktop Navigation */
-        .tolero-header__nav {
+        .reinke-header__nav {
           display: none;
         }
 
         @media only screen and (min-width: 1200px) {
-          .tolero-header__nav {
+          .reinke-header__nav {
             display: block;
             position: absolute;
             left: 50%;
@@ -839,12 +815,12 @@ const Navbar = () => {
         }
 
         @media only screen and (min-width: 1024px) and (max-width: 1200px) {
-          .tolero-header__nav {
+          .reinke-header__nav {
             display: none !important;
           }
         }
 
-        .tolero-header__nav-list {
+        .reinke-header__nav-list {
           list-style: none;
           display: flex;
           align-items: center;
@@ -853,11 +829,11 @@ const Navbar = () => {
           padding: 0;
         }
 
-        .tolero-header__nav-item {
+        .reinke-header__nav-item {
           position: relative;
         }
 
-        .tolero-header__nav-button {
+        .reinke-header__nav-button {
           text-decoration: none;
           background: transparent;
           border: 0;
@@ -872,16 +848,15 @@ const Navbar = () => {
           letter-spacing: 0.01em;
           position: relative;
           gap: 0.25rem;
-          outline: none;
         }
 
-        .tolero-header__nav-button:focus {
+        .reinke-header__nav-button:focus {
           outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
 
-        .tolero-header__nav-arrow {
+        .reinke-header__nav-arrow {
           display: inline-flex;
           width: 0.5rem;
           height: 0.5rem;
@@ -892,73 +867,54 @@ const Navbar = () => {
           transition: transform 0.2s ease;
         }
 
-        .tolero-header__nav-button:hover .tolero-header__nav-arrow {
+        .reinke-header__nav-button:hover .reinke-header__nav-arrow {
           transform: rotate(180deg);
         }
 
-        .tolero-header__nav-button::after {
+        .reinke-header__nav-button::after {
           content: '';
           position: absolute;
           bottom: 0;
           left: 0;
           width: 0;
           height: 2px;
-          background-color: #000000 !important;
+          background-color: #000000;
           transition: width 0.3s ease;
         }
 
-        .tolero-header__nav-button:hover::after {
+        .reinke-header__nav-button:hover::after {
           width: 100%;
         }
 
-        .tolero-header__nav-item--standalone .tolero-header__nav-arrow {
+        .reinke-header__nav-item--standalone .reinke-header__nav-arrow {
           display: none;
         }
 
-        /* Hover Colors */
-        .tolero-header--top .tolero-header__nav-button:hover {
-          color: #000000 !important;
-        }
-
-        .tolero-header--top.tolero-header--hovered .tolero-header__nav-button:hover {
-          color: #000000 !important;
-        }
-
-        .tolero-header--scrolled .tolero-header__nav-button:hover {
-          color: #000000 !important;
-        }
-
-        .tolero-header--menu-open .tolero-header__nav-button:hover {
-          color: #000000 !important;
-        }
-
-        /* Right Group */
-        .tolero-header__right-group {
+        .reinke-header__right-group {
           display: flex;
           align-items: center;
           gap: 1.5rem;
         }
 
-        /* Language Switcher */
-        .tolero-header__lang-switcher {
+        .reinke-header__lang-switcher {
           display: none;
           position: relative;
         }
 
         @media only screen and (min-width: 1200px) {
-          .tolero-header__lang-switcher {
+          .reinke-header__lang-switcher {
             display: inline-flex;
             align-items: center;
           }
         }
 
         @media only screen and (min-width: 1024px) and (max-width: 1200px) {
-          .tolero-header__lang-switcher {
+          .reinke-header__lang-switcher {
             display: none !important;
           }
         }
 
-        .tolero-header__lang-button {
+        .reinke-header__lang-button {
           background: transparent;
           border: none;
           padding: 8px 24px;
@@ -970,16 +926,15 @@ const Navbar = () => {
           display: flex;
           align-items: center;
           gap: 0.25rem;
-          outline: none;
         }
 
-        .tolero-header__lang-button:focus {
+        .reinke-header__lang-button:focus {
           outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
 
-        .tolero-header__lang-arrow {
+        .reinke-header__lang-arrow {
           display: inline-flex;
           width: 0.5rem;
           height: 0.5rem;
@@ -990,40 +945,11 @@ const Navbar = () => {
           transition: transform 0.2s ease;
         }
 
-        .tolero-header__lang-switcher--active .tolero-header__lang-arrow {
+        .reinke-header__lang-switcher--active .reinke-header__lang-arrow {
           transform: rotate(180deg);
         }
 
-        /* Language button colors */
-        .tolero-header--top .tolero-header__lang-button {
-          color: #FFFFFF !important;
-        }
-
-        .tolero-header--top.tolero-header--hovered .tolero-header__lang-button {
-          color: #000000 !important;
-        }
-
-        .tolero-header--top .tolero-header__lang-button:hover {
-          color: #000000 !important;
-        }
-
-        .tolero-header--scrolled .tolero-header__lang-button {
-          color: #000000 !important;
-        }
-
-        .tolero-header--scrolled .tolero-header__lang-button:hover {
-          color: #000000 !important;
-        }
-
-        .tolero-header--menu-open .tolero-header__lang-button {
-          color: #000000 !important;
-        }
-
-        .tolero-header--menu-open .tolero-header__lang-button:hover {
-          color: #000000 !important;
-        }
-
-        .tolero-header__lang-dropdown {
+        .reinke-header__lang-dropdown {
           position: absolute;
           top: calc(100% + 0.5rem);
           right: 0;
@@ -1039,7 +965,7 @@ const Navbar = () => {
           padding: 0.25rem;
         }
 
-        .tolero-header__lang-option {
+        .reinke-header__lang-option {
           padding: 0.5rem 0.75rem;
           background: transparent;
           border: 0;
@@ -1047,31 +973,29 @@ const Navbar = () => {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-size: 1rem;
           font-weight: 400;
-          color: #111827 !important;
+          color: #111827;
           transition: all 0.2s ease;
           text-align: left;
           border-radius: 4px;
-          outline: none;
         }
 
-        .tolero-header__lang-option:focus {
+        .reinke-header__lang-option:focus {
           outline: 2px solid #000000;
           outline-offset: 2px;
         }
 
-        .tolero-header__lang-option:hover {
+        .reinke-header__lang-option:hover {
           background: rgba(0, 0, 0, 0.1);
-          color: #000000 !important;
+          color: #000000;
         }
 
-        .tolero-header__lang-option--active {
+        .reinke-header__lang-option--active {
           font-weight: 500;
-          color: #000000 !important;
+          color: #000000;
           background: rgba(0, 0, 0, 0.1);
         }
 
-        /* Burger Button */
-        .tolero-header__burger {
+        .reinke-header__burger {
           display: inline-flex;
           flex-direction: column;
           align-items: center;
@@ -1084,48 +1008,46 @@ const Navbar = () => {
           padding: 0;
           gap: 4px;
           z-index: 1001;
-          outline: none;
         }
 
-        .tolero-header__burger:focus {
+        .reinke-header__burger:focus {
           outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
 
         @media only screen and (max-width: 1200px) {
-          .tolero-header__burger {
+          .reinke-header__burger {
             display: inline-flex;
           }
         }
 
         @media only screen and (min-width: 1200px) {
-          .tolero-header__burger {
+          .reinke-header__burger {
             display: none;
           }
         }
 
-        .tolero-header__burger-line {
+        .reinke-header__burger-line {
           width: 20px;
           height: 2px;
           transition: all 0.3s ease;
           transform-origin: center;
         }
 
-        .tolero-header--menu-open .tolero-header__burger-line:nth-child(1) {
+        .reinke-header--menu-open .reinke-header__burger-line:nth-child(1) {
           transform: rotate(45deg) translate(5px, 5px);
         }
 
-        .tolero-header--menu-open .tolero-header__burger-line:nth-child(2) {
+        .reinke-header--menu-open .reinke-header__burger-line:nth-child(2) {
           opacity: 0;
         }
 
-        .tolero-header--menu-open .tolero-header__burger-line:nth-child(3) {
+        .reinke-header--menu-open .reinke-header__burger-line:nth-child(3) {
           transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        /* MEGA MENU STYLES */
-        .tolero-mega-menu {
+        .reinke-mega-menu {
           position: absolute;
           top: 100%;
           left: 0;
@@ -1152,7 +1074,7 @@ const Navbar = () => {
           }
         }
 
-        .tolero-mega-menu__container {
+        .reinke-mega-menu__container {
           max-width: 1400px;
           margin: 0 auto;
           padding: 40px 120px;
@@ -1160,40 +1082,39 @@ const Navbar = () => {
         }
 
         @media only screen and (max-width: 1200px) {
-          .tolero-mega-menu__container {
+          .reinke-mega-menu__container {
             padding: 40px 60px;
             padding-top: 50px;
           }
         }
 
         @media only screen and (max-width: 768px) {
-          .tolero-mega-menu__container {
+          .reinke-mega-menu__container {
             padding: 40px 24px;
             padding-top: 50px;
           }
         }
 
-        .tolero-mega-menu__grid {
+        .reinke-mega-menu__grid {
           display: grid;
           grid-template-columns: 1fr 3fr;
           gap: 60px;
         }
 
         @media only screen and (max-width: 1024px) {
-          .tolero-mega-menu__grid {
+          .reinke-mega-menu__grid {
             grid-template-columns: 1fr;
             gap: 40px;
           }
         }
 
-        /* Categories (Left Side) */
-        .tolero-mega-menu__categories {
+        .reinke-mega-menu__categories {
           border-right: 1px solid #E5E5E7;
           padding-right: 40px;
         }
 
         @media only screen and (max-width: 1024px) {
-          .tolero-mega-menu__categories {
+          .reinke-mega-menu__categories {
             border-right: none;
             border-bottom: 1px solid #E5E5E7;
             padding-right: 0;
@@ -1201,7 +1122,7 @@ const Navbar = () => {
           }
         }
 
-        .tolero-mega-menu__categories-list {
+        .reinke-mega-menu__categories-list {
           list-style: none;
           margin: 0;
           padding: 0;
@@ -1210,11 +1131,11 @@ const Navbar = () => {
           gap: 8px;
         }
 
-        .tolero-mega-menu__category-item {
+        .reinke-mega-menu__category-item {
           width: 100%;
         }
 
-        .tolero-mega-menu__category-button {
+        .reinke-mega-menu__category-button {
           width: 100%;
           padding: 12px 24px;
           background: transparent;
@@ -1227,28 +1148,27 @@ const Navbar = () => {
           color: #374151;
           cursor: pointer;
           transition: all 0.2s ease;
-          outline: none;
           display: flex;
           align-items: center;
           justify-content: space-between;
         }
 
-        .tolero-mega-menu__category-button:focus {
+        .reinke-mega-menu__category-button:focus {
           outline: 2px solid #000000;
           outline-offset: 2px;
         }
 
-        .tolero-mega-menu__category-button:hover {
+        .reinke-mega-menu__category-button:hover {
           background: rgba(0, 0, 0, 0.1);
           color: #000000;
         }
 
-        .tolero-mega-menu__category-button--active {
+        .reinke-mega-menu__category-button--active {
           background: rgba(0, 0, 0, 0.1) !important;
           color: #000000 !important;
         }
 
-        .tolero-mega-menu__category-arrow {
+        .reinke-mega-menu__category-arrow {
           display: inline-flex;
           width: 0.5rem;
           height: 0.5rem;
@@ -1260,35 +1180,34 @@ const Navbar = () => {
           transform: rotate(-90deg);
         }
 
-        .tolero-mega-menu__category-button:hover .tolero-mega-menu__category-arrow,
-        .tolero-mega-menu__category-button--active .tolero-mega-menu__category-arrow {
+        .reinke-mega-menu__category-button:hover .reinke-mega-menu__category-arrow,
+        .reinke-mega-menu__category-button--active .reinke-mega-menu__category-arrow {
           transform: rotate(-90deg) scale(1.2);
         }
 
-        /* Services/Products (Right Side) */
-        .tolero-mega-menu__services {
+        .reinke-mega-menu__services {
           overflow: hidden;
         }
 
-        .tolero-mega-menu__services-grid {
+        .reinke-mega-menu__services-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 32px;
         }
 
         @media only screen and (max-width: 1200px) {
-          .tolero-mega-menu__services-grid {
+          .reinke-mega-menu__services-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
 
         @media only screen and (max-width: 768px) {
-          .tolero-mega-menu__services-grid {
+          .reinke-mega-menu__services-grid {
             grid-template-columns: 1fr;
           }
         }
 
-        .tolero-mega-menu__service-item {
+        .reinke-mega-menu__service-item {
           background: #FFFFFF;
           padding: 0;
           transition: all 0.3s ease;
@@ -1297,7 +1216,7 @@ const Navbar = () => {
           flex-direction: column;
         }
 
-        .tolero-mega-menu__service-link-wrapper {
+        .reinke-mega-menu__service-link-wrapper {
           text-decoration: none;
           color: inherit;
           display: block;
@@ -1305,24 +1224,23 @@ const Navbar = () => {
           border-radius: 8px;
           transition: all 0.3s ease;
           cursor: pointer;
-          outline: none;
           border: 1px solid transparent;
         }
 
-        .tolero-mega-menu__service-link-wrapper:focus {
+        .reinke-mega-menu__service-link-wrapper:focus {
           outline: 2px solid #000000;
           outline-offset: 2px;
           border-radius: 8px;
         }
 
-        .tolero-mega-menu__service-link-wrapper:hover {
+        .reinke-mega-menu__service-link-wrapper:hover {
           background: rgba(0, 0, 0, 0.05);
           border-color: rgba(0, 0, 0, 0.2);
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
 
-        .tolero-mega-menu__service-header {
+        .reinke-mega-menu__service-header {
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
@@ -1330,7 +1248,7 @@ const Navbar = () => {
           gap: 8px;
         }
 
-        .tolero-mega-menu__service-title {
+        .reinke-mega-menu__service-title {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-size: 1.125rem;
           font-weight: 600;
@@ -1340,11 +1258,11 @@ const Navbar = () => {
           transition: color 0.2s ease;
         }
 
-        .tolero-mega-menu__service-link-wrapper:hover .tolero-mega-menu__service-title {
+        .reinke-mega-menu__service-link-wrapper:hover .reinke-mega-menu__service-title {
           color: #000000;
         }
 
-        .tolero-mega-menu__service-badge {
+        .reinke-mega-menu__service-badge {
           background: rgba(0, 0, 0, 0.1);
           color: #000000;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1356,7 +1274,7 @@ const Navbar = () => {
           flex-shrink: 0;
         }
 
-        .tolero-mega-menu__service-description {
+        .reinke-mega-menu__service-description {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-size: 0.875rem;
           line-height: 1.5;
@@ -1365,12 +1283,11 @@ const Navbar = () => {
           transition: color 0.2s ease;
         }
 
-        .tolero-mega-menu__service-link-wrapper:hover .tolero-mega-menu__service-description {
+        .reinke-mega-menu__service-link-wrapper:hover .reinke-mega-menu__service-description {
           color: #4B5563;
         }
 
-        /* Mobile Menu */
-        .tolero-header__mobile {
+        .reinke-header__mobile {
           position: fixed;
           top: 0;
           right: 0;
@@ -1396,12 +1313,12 @@ const Navbar = () => {
         }
 
         @media only screen and (min-width: 1200px) {
-          .tolero-header__mobile {
+          .reinke-header__mobile {
             display: none;
           }
         }
 
-        .tolero-header__mobile-header {
+        .reinke-header__mobile-header {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -1410,12 +1327,12 @@ const Navbar = () => {
         }
 
         @media only screen and (min-width: 768px) {
-          .tolero-header__mobile-header {
+          .reinke-header__mobile-header {
             padding: 1.5rem 2rem;
           }
         }
 
-        .tolero-header__mobile-close {
+        .reinke-header__mobile-close {
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -1425,23 +1342,22 @@ const Navbar = () => {
           width: 40px;
           height: 40px;
           padding: 0;
-          outline: none;
         }
 
-        .tolero-header__mobile-close:focus {
+        .reinke-header__mobile-close:focus {
           outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
 
-        .tolero-header__mobile-close-icon {
+        .reinke-header__mobile-close-icon {
           position: relative;
           width: 20px;
           height: 20px;
         }
 
-        .tolero-header__mobile-close-icon::before,
-        .tolero-header__mobile-close-icon::after {
+        .reinke-header__mobile-close-icon::before,
+        .reinke-header__mobile-close-icon::after {
           content: '';
           position: absolute;
           top: 50%;
@@ -1451,27 +1367,27 @@ const Navbar = () => {
           background-color: #111827;
         }
 
-        .tolero-header__mobile-close-icon::before {
+        .reinke-header__mobile-close-icon::before {
           transform: rotate(45deg);
         }
 
-        .tolero-header__mobile-close-icon::after {
+        .reinke-header__mobile-close-icon::after {
           transform: rotate(-45deg);
         }
 
-        .tolero-header__mobile-body {
+        .reinke-header__mobile-body {
           flex: 1 1 auto;
           overflow: auto;
           padding: 2rem 1.5rem;
         }
 
         @media only screen and (min-width: 768px) {
-          .tolero-header__mobile-body {
+          .reinke-header__mobile-body {
             padding: 3rem 2rem;
           }
         }
 
-        .tolero-header__mobile-list {
+        .reinke-header__mobile-list {
           display: flex;
           flex-direction: column;
           gap: 0;
@@ -1480,15 +1396,15 @@ const Navbar = () => {
           list-style: none;
         }
 
-        .tolero-header__mobile-item {
+        .reinke-header__mobile-item {
           border-bottom: 1px solid #E5E5E7;
         }
 
-        .tolero-header__mobile-item:last-child {
+        .reinke-header__mobile-item:last-child {
           border-bottom: none;
         }
 
-        .tolero-header__mobile-link {
+        .reinke-header__mobile-link {
           display: block;
           padding: 8px 0;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -1497,27 +1413,25 @@ const Navbar = () => {
           color: #111827;
           text-decoration: none;
           transition: color 0.2s ease;
-          outline: none;
         }
 
-        .tolero-header__mobile-link:focus {
+        .reinke-header__mobile-link:focus {
           outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
 
-        .tolero-header__mobile-link:hover {
+        .reinke-header__mobile-link:hover {
           color: #000000;
         }
 
-        /* Mobile Language Switcher */
-        .tolero-header__mobile-lang-switcher {
+        .reinke-header__mobile-lang-switcher {
           margin-top: 2rem;
           padding-top: 2rem;
           border-top: 1px solid #E5E5E7;
         }
 
-        .tolero-header__mobile-lang-button {
+        .reinke-header__mobile-lang-button {
           width: 100%;
           padding: 8px 0;
           background: transparent;
@@ -1531,16 +1445,15 @@ const Navbar = () => {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          outline: none;
         }
 
-        .tolero-header__mobile-lang-button:focus {
+        .reinke-header__mobile-lang-button:focus {
           outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
         }
 
-        .tolero-header__mobile-lang-arrow {
+        .reinke-header__mobile-lang-arrow {
           display: inline-flex;
           width: 0.75rem;
           height: 0.75rem;
@@ -1551,7 +1464,7 @@ const Navbar = () => {
           transition: transform 0.2s ease;
         }
 
-        .tolero-header__mobile-lang-dropdown {
+        .reinke-header__mobile-lang-dropdown {
           margin-top: 0.5rem;
           background: #FFFFFF;
           border-radius: 8px;
@@ -1559,7 +1472,7 @@ const Navbar = () => {
           overflow: hidden;
         }
 
-        .tolero-header__mobile-lang-option {
+        .reinke-header__mobile-lang-option {
           padding: 8px 16px;
           background: transparent;
           border: 0;
@@ -1571,20 +1484,19 @@ const Navbar = () => {
           transition: all 0.2s ease;
           text-align: left;
           width: 100%;
-          outline: none;
         }
 
-        .tolero-header__mobile-lang-option:focus {
+        .reinke-header__mobile-lang-option:focus {
           outline: 2px solid #000000;
           outline-offset: 2px;
         }
 
-        .tolero-header__mobile-lang-option:hover {
+        .reinke-header__mobile-lang-option:hover {
           background: rgba(0, 0, 0, 0.1);
           color: #000000;
         }
 
-        .tolero-header__mobile-lang-option--active {
+        .reinke-header__mobile-lang-option--active {
           font-weight: 500;
           color: #000000;
           background: rgba(0, 0, 0, 0.1);

@@ -189,7 +189,7 @@ const CareerBody = () => {
                 className={`category-tab ${activeTab === category ? 'active' : ''}`}
                 onClick={() => {
                   setActiveTab(category);
-                  setExpandedJob(null); // Close expanded job when switching tabs
+                  setExpandedJob(null);
                 }}
               >
                 {category === 'all' ? 'Alle Stellen' : 
@@ -205,12 +205,11 @@ const CareerBody = () => {
             {filteredJobs.length > 0 ? (
               filteredJobs.map((job) => (
                 <div key={job.id} className="job-accordion-item">
-                  {/* Job Header - Always Visible - ARROW MOVED TO START */}
+                  {/* Job Header */}
                   <div 
                     className="job-accordion-header"
                     onClick={() => toggleJobExpansion(job.id)}
                   >
-                    {/* ARROW ON LEFT SIDE */}
                     <div className="job-arrow">
                       <FiChevronRight className={`arrow-icon ${expandedJob === job.id ? 'expanded' : ''}`} />
                     </div>
@@ -335,7 +334,7 @@ const CareerBody = () => {
             )}
           </div>
 
-          {/* Benefits Section - ICONS INSTEAD OF EMOJIS */}
+          {/* Benefits Section */}
           <div className="benefits-section">
             <h3 className="benefits-title">Warum bei TOLERO arbeiten?</h3>
             <div className="benefits-grid">
@@ -405,23 +404,29 @@ const CareerBody = () => {
       </section>
 
       <style jsx="true">{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
         /* Font Family - Same as HeroSection */
         .jobs-section {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
         
-        /* Jobs Detailed Section */
+        /* Jobs Detailed Section - White Background */
         .jobs-section {
-          width: 100%;
+          width: 100vw;
           padding: 80px 0;
-          background: #F9FAFB;
+          background: #FFFFFF;
+          margin: 0;
         }
 
         .jobs-container {
           max-width: 1400px;
           margin: 0 auto;
-          /* FOLLOWING 35 100 PADDING PATTERN */
-          padding: 0 100px; /* 100px on desktop */
+          padding: 0 100px;
         }
 
         .jobs-header {
@@ -429,25 +434,24 @@ const CareerBody = () => {
           margin-bottom: 60px;
         }
 
-        /* EXACT SAME COLORS AS HERO SECTION */
         .jobs-title {
           font-size: 42px;
           font-weight: 700;
-          color: #111827; /* Same as hero main-headline */
+          color: #111827;
           margin-bottom: 16px;
           font-family: inherit;
         }
 
         .jobs-subtitle {
           font-size: 18px;
-          color: #6B7280; /* Same as hero company-tag */
+          color: #6B7280;
           max-width: 600px;
           margin: 0 auto;
           line-height: 1.6;
           font-family: inherit;
         }
 
-        /* Job Categories */
+        /* Job Categories - Removed Blue */
         .job-categories {
           display: flex;
           justify-content: center;
@@ -458,25 +462,25 @@ const CareerBody = () => {
 
         .category-tab {
           padding: 12px 24px;
-          background: #FFFFFF;
+          background: #F3F4F6;
           border: 1px solid #E5E7EB;
           border-radius: 8px;
           font-size: 14px;
           font-weight: 500;
-          color: #6B7280; /* Same as hero company-tag */
+          color: #6B7280;
           cursor: pointer;
           transition: all 0.3s ease;
           font-family: inherit;
         }
 
         .category-tab:hover {
-          border-color: #0066FF; /* Same blue accent */
-          color: #0066FF;
+          border-color: #9CA3AF;
+          color: #111827;
         }
 
         .category-tab.active {
-          background: #0066FF; /* Same blue accent */
-          border-color: #0066FF;
+          background: #111827;
+          border-color: #111827;
           color: #FFFFFF;
         }
 
@@ -497,24 +501,23 @@ const CareerBody = () => {
         }
 
         .job-accordion-item:hover {
-          border-color: #0066FF; /* Same blue accent */
+          border-color: #9CA3AF;
         }
 
-        /* Job Header - ARROW MOVED TO START (LEFT SIDE) */
+        /* Job Header */
         .job-accordion-header {
           display: flex;
           align-items: center;
           padding: 32px;
           cursor: pointer;
           transition: background 0.3s ease;
-          gap: 20px; /* Space between arrow and content */
+          gap: 20px;
         }
 
         .job-accordion-header:hover {
           background: #F9FAFB;
         }
 
-        /* ARROW ON LEFT SIDE - MOVED TO START */
         .job-arrow {
           flex-shrink: 0;
           display: flex;
@@ -531,7 +534,7 @@ const CareerBody = () => {
 
         .arrow-icon.expanded {
           transform: rotate(90deg);
-          color: #0066FF; /* Same blue accent */
+          color: #111827;
         }
 
         .job-header-content {
@@ -551,7 +554,7 @@ const CareerBody = () => {
         .job-title {
           font-size: 24px;
           font-weight: 700;
-          color: #111827; /* Same as hero main-headline */
+          color: #111827;
           margin: 0;
           font-family: inherit;
         }
@@ -559,8 +562,8 @@ const CareerBody = () => {
         .job-department {
           display: inline-block;
           padding: 6px 12px;
-          background: #EFF6FF;
-          color: #0066FF; /* Same blue accent */
+          background: #F3F4F6;
+          color: #4B5563;
           border-radius: 6px;
           font-size: 14px;
           font-weight: 500;
@@ -578,7 +581,7 @@ const CareerBody = () => {
           align-items: center;
           gap: 8px;
           font-size: 14px;
-          color: #6B7280; /* Same as hero company-tag */
+          color: #6B7280;
           font-family: inherit;
         }
 
@@ -612,19 +615,18 @@ const CareerBody = () => {
           gap: 32px;
         }
 
-        /* EXACT SAME COLORS FOR HEADINGS */
         .job-details-left h4,
         .job-details-right h4 {
           font-size: 18px;
           font-weight: 700;
-          color: #111827; /* Same as hero main-headline */
+          color: #111827;
           margin-bottom: 16px;
           font-family: inherit;
         }
 
         .job-full-description {
           font-size: 16px;
-          color: #4B5563; /* Slightly lighter than #374151 */
+          color: #4B5563;
           line-height: 1.6;
           margin: 0;
           font-family: inherit;
@@ -641,7 +643,6 @@ const CareerBody = () => {
           gap: 12px;
         }
 
-        /* ARROW ICONS ON LEFT SIDE - OPPOSITE TO DEFAULT */
         .responsibilities-list li,
         .requirements-list li,
         .benefits-list li {
@@ -649,43 +650,23 @@ const CareerBody = () => {
           color: #4B5563;
           line-height: 1.6;
           position: relative;
-          padding-left: 32px; /* Space for arrow */
+          padding-left: 32px;
           display: flex;
           align-items: flex-start;
           gap: 12px;
           font-family: inherit;
         }
 
-        /* Arrow icons for bullet points */
+        /* Arrow icons - All black/gray now */
         .responsibility-arrow,
         .requirement-arrow,
         .benefit-arrow {
-          color: #0066FF; /* Same blue accent */
+          color: #6B7280;
           font-size: 16px;
           position: absolute;
           left: 0;
           top: 3px;
           flex-shrink: 0;
-        }
-
-        /* Different arrow colors for different sections */
-        .responsibility-arrow {
-          color: #0066FF; /* Blue for responsibilities */
-        }
-
-        .requirement-arrow {
-          color: #10B981; /* Green for requirements */
-        }
-
-        .benefit-arrow {
-          color: #F59E0B; /* Orange for benefits */
-        }
-
-        /* Remove default bullet styles */
-        .responsibilities-list li:before,
-        .requirements-list li:before,
-        .benefits-list li:before {
-          content: none;
         }
 
         /* Skills & Apply Section */
@@ -709,7 +690,7 @@ const CareerBody = () => {
         .apply-button {
           width: 100%;
           padding: 16px 32px;
-          background: #0066FF; /* Same blue accent */
+          background: #111827;
           color: #FFFFFF;
           border: none;
           border-radius: 8px;
@@ -722,12 +703,12 @@ const CareerBody = () => {
         }
 
         .apply-button:hover {
-          background: #0052CC;
+          background: #1F2937;
         }
 
         .apply-note {
           font-size: 14px;
-          color: #6B7280; /* Same as hero company-tag */
+          color: #6B7280;
           text-align: center;
           margin: 0;
           font-family: inherit;
@@ -750,7 +731,7 @@ const CareerBody = () => {
 
         .no-jobs p {
           font-size: 18px;
-          color: #6B7280; /* Same as hero company-tag */
+          color: #6B7280;
           margin-bottom: 8px;
           font-family: inherit;
         }
@@ -761,7 +742,7 @@ const CareerBody = () => {
           font-family: inherit;
         }
 
-        /* Benefits Section - UPDATED WITH ICONS */
+        /* Benefits Section - Removed Blue */
         .benefits-section {
           padding-top: 80px;
           border-top: 1px solid #E5E7EB;
@@ -771,7 +752,7 @@ const CareerBody = () => {
           text-align: center;
           font-size: 36px;
           font-weight: 700;
-          color: #111827; /* Same as hero main-headline */
+          color: #111827;
           margin-bottom: 50px;
           font-family: inherit;
         }
@@ -801,8 +782,8 @@ const CareerBody = () => {
 
         .benefit-card:hover {
           transform: translateY(-8px);
-          border-color: #0066FF;
-          box-shadow: 0 10px 25px rgba(0, 102, 255, 0.1);
+          border-color: #9CA3AF;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
 
         .benefit-icon {
@@ -811,15 +792,15 @@ const CareerBody = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #EFF6FF; /* Light blue background */
+          background: #F3F4F6;
           border-radius: 50%;
           margin-bottom: 24px;
-          color: #0066FF; /* Blue color for icons */
+          color: #4B5563;
           transition: all 0.3s ease;
         }
 
         .benefit-card:hover .benefit-icon {
-          background: #0066FF;
+          background: #111827;
           color: #FFFFFF;
           transform: scale(1.1);
         }
@@ -827,54 +808,44 @@ const CareerBody = () => {
         .benefit-card h4 {
           font-size: 20px;
           font-weight: 700;
-          color: #111827; /* Same as hero main-headline */
+          color: #111827;
           margin-bottom: 12px;
           font-family: inherit;
         }
 
         .benefit-card p {
           font-size: 16px;
-          color: #6B7280; /* Same as hero company-tag */
+          color: #6B7280;
           line-height: 1.6;
           font-family: inherit;
           margin: 0;
         }
 
-        /* ===== 35 100 PADDING RESPONSIVE PATTERN ===== */
-        
-        /* Large Desktop: 1700px+ */
+        /* Responsive */
         @media (max-width: 1700px) {
           .jobs-container {
-            max-width: 1600px;
             padding: 0 90px;
           }
         }
 
-        /* Large Desktop: 1600px+ */
         @media (max-width: 1600px) {
           .jobs-container {
-            max-width: 1500px;
             padding: 0 80px;
           }
         }
 
-        /* Large Desktop: 1440px+ */
         @media (max-width: 1440px) {
           .jobs-container {
-            max-width: 1300px;
             padding: 0 70px;
           }
         }
 
-        /* Desktop: 1366px */
         @media (max-width: 1366px) {
           .jobs-container {
-            max-width: 1200px;
             padding: 0 60px;
           }
         }
 
-        /* Desktop: 1200px */
         @media (max-width: 1200px) {
           .jobs-container {
             padding: 0 50px;
@@ -886,7 +857,6 @@ const CareerBody = () => {
           }
         }
 
-        /* Tablet Landscape: 1024px */
         @media (max-width: 1024px) {
           .jobs-container {
             padding: 0 40px;
@@ -895,16 +865,11 @@ const CareerBody = () => {
           .benefits-grid {
             grid-template-columns: repeat(2, 1fr);
           }
-          
-          .benefits-grid.secondary {
-            grid-template-columns: repeat(2, 1fr);
-          }
         }
 
-        /* Tablet Portrait: 992px */
         @media (max-width: 992px) {
           .jobs-container {
-            padding: 0 35px; /* 35px on tablet */
+            padding: 0 35px;
           }
           
           .job-header-content {
@@ -921,25 +886,13 @@ const CareerBody = () => {
           }
         }
 
-        /* Mobile Landscape: 768px */
         @media (max-width: 768px) {
           .jobs-title {
             font-size: 36px;
           }
           
-          .job-categories {
-            justify-content: flex-start;
-            overflow-x: auto;
-            padding-bottom: 10px;
-          }
-          
-          .category-tab {
-            white-space: nowrap;
-          }
-          
           .job-accordion-header {
             padding: 24px;
-            gap: 15px;
           }
           
           .job-title {
@@ -950,84 +903,32 @@ const CareerBody = () => {
             padding: 32px 24px;
           }
           
-          /* Adjust arrow position for mobile */
-          .responsibilities-list li,
-          .requirements-list li,
-          .benefits-list li {
-            padding-left: 28px;
-          }
-          
           .benefits-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .benefits-grid.secondary {
             grid-template-columns: 1fr;
           }
         }
 
-        /* Mobile Portrait: 576px */
         @media (max-width: 576px) {
           .jobs-container {
-            padding: 0 25px; /* Reduced from 35px */
+            padding: 0 25px;
           }
           
           .jobs-title {
             font-size: 32px;
           }
           
-          .job-accordion-header {
-            flex-direction: row; /* Keep arrow on left */
-            align-items: flex-start;
-            gap: 15px;
-          }
-          
-          .job-header-content {
-            flex-direction: column;
-            gap: 15px;
-          }
-          
           .job-meta {
             flex-direction: column;
             gap: 12px;
           }
-          
-          .arrow-icon {
-            margin-top: 5px; /* Align with title */
-          }
-          
-          .benefit-icon {
-            width: 70px;
-            height: 70px;
-          }
-          
-          .benefit-icon svg {
-            width: 30px;
-            height: 30px;
-          }
         }
 
-        /* Small Mobile: 480px */
         @media (max-width: 480px) {
           .jobs-container {
             padding: 0 20px;
           }
-          
-          .job-accordion-header {
-            flex-wrap: wrap;
-          }
-          
-          .job-arrow {
-            order: 1;
-          }
-          
-          .job-header-content {
-            order: 2;
-            width: 100%;
-          }
         }
 
-        /* Extra small devices: 360px */
         @media (max-width: 360px) {
           .jobs-container {
             padding: 0 15px;

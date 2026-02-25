@@ -6,7 +6,6 @@ const HeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check for mobile view
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 992);
@@ -21,26 +20,17 @@ const HeroSection = () => {
   return (
     <>
       <section className="split-hero">
-        {/* Black Background */}
-        <div className="hero-background"></div>
+        <div className="hero-background" />
         
-        {/* Container for split layout */}
         <div className="hero-container">
-          {/* Left Side - Image - HORIZONTAL RECTANGLE */}
           <div className="image-side">
             <div className="image-wrapper">
-              {/* Your Actual Image */}
               <img 
-                src="/images/hero.png" 
+                src="/images/Hero.jpg" 
                 alt="KI-Automatisierung für Unternehmen"
                 className={`hero-image ${imageLoaded ? 'loaded' : ''}`}
-                onLoad={() => {
-                  setImageLoaded(true);
-                  console.log('Hero image loaded successfully');
-                }}
+                onLoad={() => setImageLoaded(true)}
                 onError={(e) => {
-                  console.error('Image failed to load:', e);
-                  // Fallback to gradient background
                   e.target.style.display = 'none';
                   const wrapper = e.target.parentElement;
                   if (wrapper) {
@@ -55,15 +45,13 @@ const HeroSection = () => {
                 }}
               />
               
-              {/* Loading Overlay */}
               {!imageLoaded && (
                 <div className="image-loading">
-                  <div className="loading-spinner"></div>
+                  <div className="loading-spinner" />
                   <span className="loading-text">Lädt Visualisierung...</span>
                 </div>
               )}
               
-              {/* Tech Overlay */}
               <div className="tech-overlay">
                 <div className="tech-grid">
                   {Array.from({ length: 8 }).map((_, i) => (
@@ -77,15 +65,12 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Content - ONLY HEADLINE + SUBHEADLINE */}
           <div className="content-side">
             <div className="content-wrapper">
-              {/* Main Headline - White */}
               <h1 className="main-headline">
                 {t('hero.title')}
               </h1>
 
-              {/* Sub Headline - Light Gray */}
               <h2 className="sub-headline">
                 {t('hero.subtitle')} – {t('hero.description')}
               </h2>
@@ -95,7 +80,6 @@ const HeroSection = () => {
       </section>
 
       <style jsx="true">{`
-        /* Base Hero Section - BLACK BACKGROUND */
         .split-hero {
           width: 100%;
           min-height: 100vh;
@@ -105,10 +89,9 @@ const HeroSection = () => {
           align-items: center;
           overflow: hidden;
           padding: 0;
-          margin-top: 0; /* Changed from 80px to 0 for navbar overlay */
+          margin-top: 0;
         }
 
-        /* Black Background */
         .hero-background {
           position: absolute;
           top: 0;
@@ -119,7 +102,6 @@ const HeroSection = () => {
           z-index: 1;
         }
 
-        /* Container for split layout - UPDATED PADDING */
         .hero-container {
           position: relative;
           z-index: 2;
@@ -128,14 +110,13 @@ const HeroSection = () => {
           display: grid;
           grid-template-columns: 1.1fr 0.9fr;
           gap: 80px;
-          height: 100vh; /* Changed from calc(100vh - 80px) to 100vh */
-          padding: 0 100px; /* Updated from 0 100px to match navbar 12px 120px? Actually you want 35 left/right 100? Let me clarify */
+          height: 100vh;
+          padding: 0 100px;
           margin: 0 auto;
           align-items: center;
           box-sizing: border-box;
         }
 
-        /* Left Side - Image */
         .image-side {
           display: flex;
           align-items: center;
@@ -146,7 +127,6 @@ const HeroSection = () => {
           padding: 0;
         }
 
-        /* Image Container */
         .image-wrapper {
           width: 115%;
           height: 75%;
@@ -178,7 +158,6 @@ const HeroSection = () => {
           opacity: 1;
         }
 
-        /* Image Loading State */
         .image-loading {
           position: absolute;
           top: 50%;
@@ -208,7 +187,6 @@ const HeroSection = () => {
           font-weight: 500;
         }
 
-        /* Image Fallback */
         .image-fallback {
           position: absolute;
           top: 0;
@@ -241,7 +219,6 @@ const HeroSection = () => {
           text-align: center;
         }
 
-        /* Tech Overlay */
         .tech-overlay {
           position: absolute;
           top: 0;
@@ -261,7 +238,6 @@ const HeroSection = () => {
           opacity: 0.15;
         }
 
-        /* Grid Lines - White */
         .grid-line {
           position: absolute;
           background: #FFFFFF;
@@ -294,7 +270,6 @@ const HeroSection = () => {
         .grid-line.vertical:nth-child(13) { left: 75%; }
         .grid-line.vertical:nth-child(14) { left: 87.5%; }
 
-        /* Right Side - Content */
         .content-side {
           display: flex;
           align-items: center;
@@ -311,12 +286,11 @@ const HeroSection = () => {
           padding: 40px 0;
         }
 
-        /* Headlines - ONLY THESE TWO ELEMENTS */
         .main-headline {
           font-size: 52px;
           font-weight: 700;
           line-height: 1.1;
-          color: #FFFFFF; /* White */
+          color: #FFFFFF;
           margin: 0;
           letter-spacing: -0.02em;
         }
@@ -325,12 +299,11 @@ const HeroSection = () => {
           font-size: 22px;
           font-weight: 400;
           line-height: 1.6;
-          color: #9CA3AF; /* Light Gray */
+          color: #9CA3AF;
           margin: 0;
           letter-spacing: -0.01em;
         }
 
-        /* ===== ANIMATIONS ===== */
         @keyframes spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
@@ -341,7 +314,6 @@ const HeroSection = () => {
           50% { opacity: 0.2; }
         }
 
-        /* Content Animations */
         .content-wrapper > * {
           opacity: 0;
           transform: translateY(20px);
@@ -363,9 +335,6 @@ const HeroSection = () => {
           }
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
-        
-        /* Large Desktop: 1700px+ */
         @media (max-width: 1700px) {
           .hero-container {
             max-width: 1600px;
@@ -471,12 +440,11 @@ const HeroSection = () => {
           }
         }
 
-        /* Tablet Portrait: 992px - Single column layout */
         @media (max-width: 992px) {
           .split-hero {
             min-height: auto;
             height: auto;
-            padding: 100px 0 60px; /* Added top padding for navbar */
+            padding: 100px 0 60px;
             margin-top: 0;
           }
           

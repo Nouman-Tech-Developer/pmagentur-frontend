@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
@@ -11,15 +12,16 @@ const Footer = () => {
           
           {/* Logo - Left */}
           <div className="footer-logo-section">
-            <h3 className="footer-logo">TOLERO</h3>
+            <h3 className="footer-logo">REINKE</h3>
           </div>
           
           {/* Horizontal Menu - Center */}
           <div className="footer-menu">
-            <a href="#">{t('nav.solutions')}</a>
-            <a href="#">{t('nav.products')}</a>
-            <a href="#">{t('nav.about')}</a>
-            <a href="#">{t('nav.careers')}</a>
+            <Link to="/#solutions">{t('nav.solutions')}</Link>
+            <Link to="/#products">{t('nav.products')}</Link>
+            <Link to="/about">{t('nav.about')}</Link>
+            <Link to="/career">{t('nav.careers')}</Link>
+            <Link to="/calculator">Calculator</Link>
           </div>
           
           {/* Social Icons - Right */}
@@ -44,12 +46,12 @@ const Footer = () => {
           {/* Copyright - Full width bottom */}
           <div className="footer-bottom">
             <div className="footer-copyright">
-              © {new Date().getFullYear()} {t('footer.copyright')}
+              © {new Date().getFullYear()} Reinke AI Automation. {t('footer.copyright')}
             </div>
             <div className="footer-legal">
-              <a href="#">{t('footer.legal.privacy')}</a>
-              <a href="#">{t('footer.legal.notice')}</a>
-              <a href="#">{t('footer.legal.terms')}</a>
+              <Link to="/impressum">Impressum</Link>
+              <Link to="/DataProtection">Datenschutz</Link>
+              <Link to="/agb">AGB</Link>
             </div>
           </div>
           
@@ -57,7 +59,6 @@ const Footer = () => {
       </footer>
 
       <style jsx="true">{`
-        /* Footer - Clean like Navbar */
         .site-footer {
           width: 100%;
           background: #000000;
@@ -77,7 +78,6 @@ const Footer = () => {
           position: relative;
         }
         
-        /* Logo */
         .footer-logo-section {
           display: flex;
           align-items: center;
@@ -92,7 +92,6 @@ const Footer = () => {
           letter-spacing: 0.02em;
         }
         
-        /* Horizontal Menu - Center */
         .footer-menu {
           display: flex;
           align-items: center;
@@ -116,7 +115,6 @@ const Footer = () => {
           color: #9CA3AF;
         }
         
-        /* Social Icons - Right */
         .footer-social {
           display: flex;
           align-items: center;
@@ -146,7 +144,6 @@ const Footer = () => {
           height: 18px;
         }
         
-        /* Bottom Section - Full width */
         .footer-bottom {
           width: 100%;
           display: flex;
@@ -180,7 +177,6 @@ const Footer = () => {
           color: #FFFFFF;
         }
         
-        /* ===== RESPONSIVE ===== */
         @media only screen and (max-width: 1200px) {
           .site-footer {
             padding: 24px 60px;
@@ -191,7 +187,6 @@ const Footer = () => {
           .site-footer {
             padding: 24px 40px;
           }
-          
           .footer-menu {
             gap: 24px;
           }
@@ -202,19 +197,16 @@ const Footer = () => {
             flex-direction: column;
             gap: 20px;
           }
-          
           .footer-menu {
             position: static;
             transform: none;
             margin: 10px 0;
           }
-          
           .footer-bottom {
             flex-direction: column;
             gap: 16px;
             text-align: center;
           }
-          
           .footer-legal {
             justify-content: center;
           }
@@ -224,7 +216,6 @@ const Footer = () => {
           .site-footer {
             padding: 24px 40px;
           }
-          
           .footer-menu {
             flex-wrap: wrap;
             justify-content: center;
@@ -236,20 +227,16 @@ const Footer = () => {
           .site-footer {
             padding: 24px 25px;
           }
-          
           .footer-menu a {
             font-size: 14px;
           }
-          
           .footer-legal {
             gap: 16px;
             flex-wrap: wrap;
           }
-          
           .footer-legal a {
             font-size: 13px;
           }
-          
           .footer-copyright {
             font-size: 13px;
           }
@@ -259,11 +246,9 @@ const Footer = () => {
           .site-footer {
             padding: 20px 20px;
           }
-          
           .footer-menu {
             gap: 16px;
           }
-          
           .footer-menu a {
             font-size: 13px;
           }
