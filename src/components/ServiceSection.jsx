@@ -11,7 +11,7 @@ const ServicesSection = () => {
       description: t('services.aiPhone.description'),
       imageSrc: "/images/telephone.jpeg",
       buttonText: t('services.learnMore'),
-      buttonLink: "https://www.tolero.com/ai-phone-assistant"
+      buttonLink: "https://www.reinke.com/ai-phone-assistant"  // Changed from tolero to reinke
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const ServicesSection = () => {
       description: t('services.chatbots.description'),
       imageSrc: "/images/chatbot.jpeg",
       buttonText: t('services.learnMore'),
-      buttonLink: "https://www.tolero.com/chatbots"
+      buttonLink: "https://www.reinke.com/chatbots"  // Changed from tolero to reinke
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const ServicesSection = () => {
       description: t('services.emailAutomation.description'),
       imageSrc: "/images/mailbot.jpeg",
       buttonText: t('services.learnMore'),
-      buttonLink: "https://www.tolero.com/email-automation"
+      buttonLink: "https://www.reinke.com/email-automation"  // Changed from tolero to reinke
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ const ServicesSection = () => {
       description: t('services.workflow.description'),
       imageSrc: "/images/workflow.jpeg",
       buttonText: t('services.learnMore'),
-      buttonLink: "https://www.tolero.com/workflow-optimization"
+      buttonLink: "https://www.reinke.com/workflow-optimization"  // Changed from tolero to reinke
     }
   ];
 

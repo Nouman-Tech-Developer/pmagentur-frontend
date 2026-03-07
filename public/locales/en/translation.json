@@ -2,48 +2,107 @@
   "nav": {
     "solutions": "Solutions",
     "products": "Products",
-    "caseStudies": "Case Studies",
     "about": "About",
     "careers": "Careers",
-    "resources": "Resources",
-    "requestDemo": "Request Demo",
     "selectLanguage": "Select language",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
-  "hero": {
-  "title": "Tolero – AI Automation for Companies",
-  "subtitle": "We automate processes, telephony and communication with AI",
-  "description": "So your company works more efficiently, reduces costs and grows faster.",
-  "benefit1": "24/7 availability for customers",
-  "benefit2": "Relief for your team",
-  "benefit3": "Automatic appointment scheduling",
-  "benefit4": "Pre-qualification of leads",
-  "benefit5": "Scalable with high call volume",
-   "requestDemo": "Request Demo",
-  "viewReferences": "View References"
-},
 
-  "features": {
-    "heading": {
-      "line1": "Your partner for",
-      "line2": "AI-powered automation,",
-      "line3": "business transformation & digital innovation"
+  "nav-services": {
+    "aiPhone": {
+      "title": "AI Phone Assistant",
+      "description": "Intelligent phone assistant with natural language processing"
     },
-    "description": "Technology should drive real business impact. TOLERO combines AI expertise with strategic implementation to transform your operations and accelerate growth.",
-    "cooperation": {
-      "title": "Strategic Partnership",
-      "description": "We work alongside your team, not in isolation. Regular alignment ensures solutions are perfectly tailored to your business needs."
+    "chatbots": {
+      "title": "Smart Chatbots",
+      "description": "AI-powered chatbots for all channels"
     },
-    "processes": {
-      "title": "Scalable Solutions",
-      "description": "Our AI implementations are built for growth. Start small, scale fast, and always maintain control over your automation journey."
+    "emailAutomation": {
+      "title": "Email Automation",
+      "description": "Automatic email processing and campaigns"
     },
-    "impact": {
-      "title": "Measurable Impact",
-      "description": "Track real ROI from day one. Our solutions deliver tangible results that grow with your business over time."
+    "workflow": {
+      "title": "Workflow Optimization",
+      "description": "Automate complex workflows"
+    },
+    "customerSupport": "24/7 Customer Support",
+    "customerSupportDesc": "Round-the-clock customer support with AI-powered solutions",
+    "processAutomation": "Process Automation",
+    "processAutomationDesc": "Automate repetitive tasks",
+    "medical": "Medical AI Solutions",
+    "medicalDesc": "AI-powered solutions for medical practices, hospitals and healthcare facilities",
+    "industrySpecific": "Industry-Specific AI",
+    "industrySpecificDesc": "Tailored AI solutions for various industries"
+  },
+
+  "solutions": {
+    "categories": {
+      "aiAutomation": "AI & Automation",
+      "customerService": "Customer Service",
+      "internalProcesses": "Internal Processes",
+      "industrySolutions": "Industry Solutions"
     }
   },
+
+  "products": {
+    "categories": {
+      "communication": "Communication",
+      "automation": "Automation",
+      "integration": "Integration",
+      "enterprise": "Enterprise"
+    },
+    "badges": {
+      "popular": "Popular",
+      "new": "New",
+      "enterprise": "Enterprise"
+    },
+    "aiPhonePro": "AI Phone Assistant Pro",
+    "aiPhoneProDesc": "Professional AI phone assistant with natural language processing and 24/7 availability",
+    "chatbotSuite": "Smart Chatbot Suite",
+    "chatbotSuiteDesc": "Intelligent chatbots for all channels – website, WhatsApp, Facebook Messenger and more",
+    "emailAutomation": "Email Automation Tool",
+    "emailAutomationDesc": "Powerful email automation for marketing and communication",
+    "workflowAutomator": "Workflow Automator",
+    "workflowAutomatorDesc": "Automate complex workflows without programming knowledge",
+    "apiHub": "API Integration Hub",
+    "apiHubDesc": "Seamless integration with 500+ applications and services",
+    "crmConnector": "CRM Connector",
+    "crmConnectorDesc": "Direct integration with leading CRM systems like Salesforce, HubSpot and more",
+    "enterpriseSuite": "Enterprise AI Suite",
+    "enterpriseSuiteDesc": "Complete AI platform for large enterprises with advanced features",
+    "customAI": "Custom AI Solutions",
+    "customAIDesc": "Tailor-made AI solutions for specific business requirements"
+  },
+  "hero": {
+    "title": "Reinke – AI Automation for Companies",
+    "subtitle": "We automate processes, telephony and communication with AI",
+    "description": "So your company works more efficiently, reduces costs and grows faster",
+    "imageAlt": "Reinke AI Automation for Companies",
+    "loading": "Loading visualization...",
+    "fallbackText": "REINKE AI AUTOMATION"
+  },
+
+ "features": {
+  "heading": {
+    "line1": "Your partner for",
+    "line2": "AI-powered automation,",
+    "line3": "business transformation & digital innovation"
+  },
+  "description": "Technology should drive real business impact. REINKE combines AI expertise with strategic implementation to transform your operations and accelerate growth.",
+  "cooperation": {
+    "title": "Strategic Partnership",
+    "description": "We work alongside your team, not in isolation. Regular alignment ensures solutions are perfectly tailored to your business needs."
+  },
+  "processes": {
+    "title": "Scalable Solutions",
+    "description": "Our AI implementations are built for growth. Start small, scale fast, and always maintain control over your automation journey."
+  },
+  "impact": {
+    "title": "Measurable Impact",
+    "description": "Track real ROI from day one. Our solutions deliver tangible results that grow with your business over time."
+  }
+},
   
   "services": {
     "heading": "Our AI Solutions in Detail",
@@ -67,96 +126,58 @@
     }
   }
   ,
-  "testimonials": {
-    "title": "Customer Voices",
-    "subtitle": "What companies say about our AI automation",
-    "testimonial1": {
-      "quote": "With Tolero's AI phone assistant, we've relieved our customer hotline while increasing customer satisfaction. The solution works 24/7 and even understands complex inquiries.",
-      "author": "Markus Weber",
-      "role": "Managing Director",
-      "company": "TransLog Logistics"
+   "calculator": {
+    "title": {
+      "line1": "Calculate Your",
+      "line2": "Potential Savings"
     },
-    "testimonial2": {
-      "quote": "The chatbot integration has relieved our support team by 60%. Customers get immediate answers, while our team can focus on complex cases. A win-win situation.",
-      "author": "Dr. Sarah Klein",
-      "role": "CTO",
-      "company": "ShopPlus E-Commerce"
+    "subtitle": "Discover how much your practice can save with our AI phone assistant",
+    "labels": {
+      "employees": "Employees handling calls",
+      "hourlyRate": "Hourly rate (€)",
+      "dailyCalls": "Calls per day",
+      "avgDuration": "Average duration"
     },
-    "testimonial3": {
-      "quote": "Email automation has revolutionized our customer communication. What previously took hours now happens automatically. The integration was seamless.",
-      "author": "Thomas Richter",
-      "role": "Head of Operations",
-      "company": "ServicePro GmbH"
+    "units": {
+      "min": "min",
+      "hours": "hours"
     },
-    "testimonial4": {
-      "quote": "The workflow optimization has increased our productivity by 40%. Complex data processing that previously took days is now completed in hours.",
-      "author": "Anna Hoffmann",
-      "role": "CEO",
-      "company": "DataFlow Analytics"
-    }
+    "results": {
+      "title": "Your Savings Potential"
+    },
+    "metrics": {
+      "callTime": {
+        "label": "Call time per day"
+      },
+      "staffCost": {
+        "label": "Annual staff cost"
+      }
+    },
+    "savings": {
+      "label": "Annual savings with AI",
+      "vsManual": "vs. manual handling"
+    },
+    "cta": "Request consultation",
+    "disclaimer": "*Based on 240 working days per year and 80% automation rate. Individual savings may vary."
   },
   
-  "caseStudies": {
-    "heading": "Success Stories",
-    "subheading": "How companies optimize their processes with Tolero AI automation",
-    "viewCase": "View Case Study",
-    "viewAll": "View All Case Studies",
-    "case1": {
-      "title": "AI Phone Assistant for Logistics Company",
-      "description": "Automated customer hotline with 24/7 availability reduced wait times by 80% and increased customer satisfaction.",
-      "category": "AI Automation",
-      "result": "80% faster processing"
-    },
-    "case2": {
-      "title": "Chatbot Integration for E-Commerce",
-      "description": "Intelligent shop assistant automatically answers customer inquiries and increased conversion rate by 35%.",
-      "category": "AI Chatbots",
-      "result": "35% more conversions"
-    },
-    "case3": {
-      "title": "Email Automation for SaaS Provider",
-      "description": "Automated onboarding and support communication reduces manual effort by 60 hours per week.",
-      "category": "Workflow Optimization",
-      "result": "60h/week saved"
-    },
-    "case4": {
-      "title": "Complete AI Transformation for Mid-Sized Business",
-      "description": "Comprehensive automation of telephony, email and internal processes increased efficiency by 200%.",
-      "category": "AI Integration",
-      "result": "200% more efficient"
-    }
-  },
   
   "textHalfImage": {
-    "badge": "About Tolero",
-    "heading": "Technology is created by people",
-    "description": "Founded with a vision to transform business through intelligent automation, Tolero combines human expertise with cutting-edge AI technology. Our team of specialists develops customized solutions that streamline processes, reduce costs, and accelerate growth for companies across industries.",
-    "stats": {
-      "team": "AI Experts",
-      "projects": "Successful Projects",
-      "years": "Years Experience"
-    },
-    "button": "More about Tolero",
-    "buttonAria": "Learn more about Tolero company",
-    "imageAlt": "Tolero AI automation team working on innovative solutions"
-  },
-  
-  
+  "badge": "About Reinke",
+  "heading": "Technology is created by people",
+  "description": "Founded with a vision to transform business through intelligent automation, Reinke combines human expertise with cutting-edge AI technology. Our team of specialists develops customized solutions that streamline processes, reduce costs, and accelerate growth for companies across industries.",
   "stats": {
-    "why": "Why TOLERO?",
-    "headingLine1": "Success is created",
-    "headingLine2": "through partnership",
-    "description": "Success comes from close collaboration, clear communication and agile AI implementation. Together with our clients, we develop intelligent automation solutions that are technically robust, scalable, and deliver long-term value.",
-    "projects": "AI Projects",
-    "projectsDesc": "Automated solutions deployed",
-    "customers": "Satisfied Clients",
-    "customersDesc": "Successful partnerships",
-    "satisfaction": "Client Satisfaction",
-    "satisfactionDesc": "Based on customer feedback",
-    "support": "AI Support",
-    "supportDesc": "24/7 intelligent assistance"
-  }
-,
+    "team": "AI Experts",
+    "projects": "Successful Projects",
+    "years": "Years Experience"
+  },
+  "button": "More about Reinke",
+  "buttonAria": "Learn more about Reinke company",
+  "imageAlt": "Reinke AI automation team working on innovative solutions"
+},
+  
+  
+  
   "contact": {
     "title": "Free Consultation",
     "subtitle": "Get a free, no-obligation consultation and discover how AI automation can transform your business.",
@@ -172,6 +193,12 @@
       "label": "Location",
       "value": "Sample Street 123, 10115 Berlin"
     },
+    "privacy": {
+  "part1": "I agree to the",
+  "part2": "privacy policy",
+  "part3": "*",
+  "link": "/privacy"
+},
     "form": {
       "name": "Your Name *",
       "company": "Company",
@@ -188,31 +215,16 @@
   
   },
   
+ 
+  "nav": {
+    "solutions": "Solutions",
+    "products": "Products",
+    "about": "About",
+    "careers": "Careers",
+    "calculator": "Calculator"
+  },
   "footer": {
-    "tagline": "AI Automation for Companies",
-    "location": "Sample Street 123, 10115 Berlin",
-    "services": {
-      "title": "Services",
-      "aiPhone": "AI Phone Assistant",
-      "chatbots": "Chatbots & Assistants",
-      "emailAutomation": "Email Automation",
-      "workflow": "Workflow Optimization"
-    },
-    "company": {
-      "title": "Company",
-      "about": "About Tolero",
-      "careers": "Careers",
-      "references": "References",
-      "blog": "Blog"
-    },
-    "resources": {
-      "title": "Resources",
-      "caseStudies": "Case Studies",
-      "whitepapers": "Whitepapers",
-      "faq": "FAQ",
-      "support": "Support"
-    },
-    "copyright": "Tolero GmbH. All rights reserved.",
+    "copyright": "All rights reserved.",
     "legal": {
       "privacy": "Privacy",
       "notice": "Legal Notice",
@@ -220,40 +232,551 @@
     }
   },
   
-  "footer": {
-    "tagline": "AI Automation for Companies",
-    "location": "Sample Street 123, 10115 Berlin",
-    "services": {
-      "title": "Services",
-      "aiPhone": "AI Phone Assistant",
-      "chatbots": "Chatbots & Assistants",
-      "emailAutomation": "Email Automation",
-      "workflow": "Workflow Optimization"
+  "aboutHero": {
+    "title": "AI-powered automation for businesses",
+    "subtitle": "Intelligent process & communication automation with AI",
+    "features": {
+      "phoneAssistant": "AI phone assistant automatically handles calls, appointments and inquiries – 24/7, reliable and brand-compliant.",
+      "chatbots": "Intelligent chatbots & digital assistants answer customer inquiries on websites, social media and internal systems.",
+      "emailWorkflow": "Email & workflow automation reduces manual work, accelerates processes and minimizes errors.",
+      "flexible": "Flexibly deployable as cloud or on-premise solution – GDPR-compliant and scalable."
+    },
+    "imageAlt": "About Reinke AI Automation",
+    "fallbackText": "ABOUT REINKE"
+  },
+  
+  "aboutStory": {
+    "weAre": {
+      "title": "We are Reinke",
+      "paragraph1": "We are engineers at heart - analytical, curious, precise. Our team of computer scientists, designers, strategists and AI experts develops digital solutions with depth. We combine research with practice, teaching with entrepreneurship and precision with humanity. For us, technology is not an end in itself, but a tool. It should solve problems, simplify processes and create added value - for people who want to make a difference."
+    },
+    "howWeWork": {
+      "tagline": "Our way of working",
+      "title": "How we work",
+      "paragraph1": "We look at every project from two perspectives: from the depth of the technology and with an eye on the big picture. Our way of working is characterized by clarity, pragmatism and responsibility.",
+      "paragraph2": "We provide honest advice, make well-founded decisions and implement them - with a focus on what really helps the customer. Quick decisions, short paths and a consistently solution-oriented approach are part of our everyday work.",
+      "paragraph3": "We work with modern tools and agile methods and focus on collaboration, personal responsibility and clear results."
+    }
+  },
+   "values": {
+    "tagline": "What drives us",
+    "heading": "Our values",
+    "description": "Our values shape the way we think and act - as a team, in cooperation with our customers and in every project.",
+    "cards": {
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We work in partnership, support each other, celebrate successes and overcome challenges together."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We embrace change, constantly learn as a team, and actively shape the future with cutting-edge AI solutions."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We think in terms of solutions, pragmatically and with precision, delivering exceptional quality in every project."
+      },
+      "responsibility": {
+        "title": "Responsibility",
+        "description": "We act on our own responsibility, make clear decisions, and stand by our results with integrity."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "description": "We build trust through transparency and shared responsibility, within our team and with every customer."
+      },
+      "agility": {
+        "title": "Agility",
+        "description": "We work with modern tools and agile methods, focusing on collaboration, speed, and clear results."
+      }
+    }
+  },
+  "management": {
+    "title": "Management",
+    "description": {
+      "p1": "Behind Reinke are dedicated AI experts and software specialists who lead the company with trust, technical know-how and a shared understanding of responsibility and progress.",
+      "p2": "Our founding team started in 2020 with a clear vision: to use technology intelligently to transform businesses. Since then, we have continuously expanded our expertise and built a talented team in Hamburg.",
+      "p3Line1": "Today, we lead a growing team of AI specialists, software engineers and strategists – united by a clear vision:",
+      "p3Line2": "To establish Reinke as a leading partner for AI-powered automation solutions."
+    },
+    "team": {
+      "ceo": "CEO & Founder",
+      "cto": "CTO & Co-Founder",
+      "headOfAI": "Head of AI",
+      "headOfProduct": "Head of Product"
+    }
+  },
+  
+  "team": {
+    "tagline": "OUR TEAM",
+    "title": "Meet Our Experts",
+    "subtitle": "A diverse team of passionate professionals dedicated to delivering exceptional results.",
+    "footer": "Our team is constantly growing. Interested in joining us?",
+    "labels": {
+      "department": "Department",
+      "experience": "Experience"
+    },
+    "departments": {
+      "leadership": "Leadership",
+      "engineering": "Engineering",
+      "product": "Product",
+      "design": "Design",
+      "marketing": "Marketing",
+      "data": "Data"
+    },
+    "positions": {
+      "ceo": "CEO & Founder",
+      "cto": "CTO",
+      "leadDeveloper": "Lead Developer",
+      "productManager": "Product Manager",
+      "seniorDesigner": "Senior Designer",
+      "marketingDirector": "Marketing Director",
+      "devOps": "DevOps Engineer",
+      "uxResearcher": "UX Researcher",
+      "dataScientist": "Data Scientist",
+      "frontend": "Frontend Developer"
+    },
+    "experience": {
+      "3years": "3 years",
+      "4years": "4 years",
+      "5years": "5 years",
+      "6years": "6 years",
+      "7years": "7 years",
+      "8years": "8 years",
+      "9years": "9 years",
+      "10years": "10 years",
+      "12years": "12 years",
+      "15years": "15 years"
+    }
+  },
+  
+  "careerHero": {
+    "headline": {
+      "line1": "Shape the future",
+      "line2": "of AI with us"
+    },
+    "subheadline": "Become part of a team that develops innovative AI solutions and transforms companies worldwide.",
+    "imageAlt": "REINKE Team Career",
+    "loading": "Loading image...",
+    "scrollText": "Discover"
+  },
+  
+
+  "career": {
+    "title": "Open Positions",
+    "subtitle": "Discover exciting career opportunities in an innovative AI company",
+    
+    "categories": {
+      "all": "All Positions",
+      "tech": "Technology",
+      "marketing": "Marketing",
+      "operations": "Operations",
+      "design": "Design"
+    },
+    
+    "sections": {
+      "overview": "Overview",
+      "responsibilities": "Your Responsibilities",
+      "requirements": "Requirements",
+      "weOffer": "What We Offer"
+    },
+    
+    "benefits": {
+      "salary": "Attractive salary package",
+      "flexibleHours": "Flexible working hours",
+      "homeOffice": "Home office options",
+      "training": "Training budget",
+      "equipment": "Modern work equipment",
+      "events": "Team events & retreats"
+    },
+    
+    "skills": {
+      "ai": "AI",
+      "tech": "Technology",
+      "innovation": "Innovation",
+      "teamwork": "Teamwork"
+    },
+    
+    "applyButton": "Apply Now",
+    "applyNote": "Applications are reviewed continuously.",
+    
+    "noJobs": {
+      "title": "No open positions in this category.",
+      "subtitle": "Check back later!"
+    },
+    
+    "whyReinke": {
+      "title": "Why work at REINKE?",
+      
+      "modernTech": {
+        "title": "Modern Technology",
+        "description": "Work with the latest AI technologies and tools"
+      },
+      "flexibleWork": {
+        "title": "Flexible Work Models",
+        "description": "Remote, hybrid or on-site - you decide"
+      },
+      "growth": {
+        "title": "Career Growth",
+        "description": "Regular training and advancement opportunities"
+      },
+      "teamCulture": {
+        "title": "Team Culture",
+        "description": "Flat hierarchies and collegial collaboration"
+      },
+      "equipment": {
+        "title": "Modern Equipment",
+        "description": "High-quality hardware and software for optimal work"
+      },
+      "goals": {
+        "title": "Clear Goals",
+        "description": "Transparent targets and regular feedback"
+      },
+      "projects": {
+        "title": "Diverse Projects",
+        "description": "Exciting projects in various industries"
+      },
+      "development": {
+        "title": "Development",
+        "description": "Budget and time for personal development"
+      }
+    },
+    
+    "jobs": {
+      "seniorAI": {
+        "title": "Senior AI Engineer",
+        "department": "Tech",
+        "location": "Berlin, Germany",
+        "type": "Full-time",
+        "experience": "5+ years",
+        "description": "Join our core AI team to develop cutting-edge machine learning solutions.",
+        "responsibilities": {
+          "resp1": "Design and implement machine learning models",
+          "resp2": "Optimize AI algorithms for performance",
+          "resp3": "Collaborate with data scientists and engineers",
+          "resp4": "Stay updated with latest AI research"
+        },
+        "requirements": {
+          "req1": "Master's degree in Computer Science or related field",
+          "req2": "5+ years experience in AI/ML development",
+          "req3": "Expertise in Python, TensorFlow/PyTorch",
+          "req4": "Strong mathematical background"
+        }
+      },
+      "frontend": {
+        "title": "Frontend Developer",
+        "department": "Tech",
+        "location": "Remote",
+        "type": "Full-time",
+        "experience": "3+ years",
+        "description": "Build beautiful, responsive user interfaces with React and Next.js.",
+        "responsibilities": {
+          "resp1": "Develop responsive web applications",
+          "resp2": "Implement UI/UX designs",
+          "resp3": "Optimize frontend performance",
+          "resp4": "Collaborate with backend teams"
+        },
+        "requirements": {
+          "req1": "3+ years experience with React",
+          "req2": "Strong JavaScript/TypeScript skills",
+          "req3": "Experience with Next.js",
+          "req4": "Knowledge of modern CSS frameworks"
+        }
+      },
+      "productMarketing": {
+        "title": "Product Marketing Manager",
+        "department": "Marketing",
+        "location": "Munich, Germany",
+        "type": "Full-time",
+        "experience": "4+ years",
+        "description": "Drive product adoption and create compelling marketing campaigns.",
+        "responsibilities": {
+          "resp1": "Develop marketing strategies for AI products",
+          "resp2": "Create compelling product messaging",
+          "resp3": "Analyze market trends and competition",
+          "resp4": "Collaborate with sales and product teams"
+        },
+        "requirements": {
+          "req1": "4+ years in product marketing",
+          "req2": "Experience in tech/SaaS industry",
+          "req3": "Strong analytical skills",
+          "req4": "Excellent communication abilities"
+        }
+      },
+      "uxDesigner": {
+        "title": "UX/UI Designer",
+        "department": "Design",
+        "location": "Hamburg, Germany",
+        "type": "Full-time",
+        "experience": "3+ years",
+        "description": "Create intuitive and beautiful user experiences for our AI products.",
+        "responsibilities": {
+          "resp1": "Design user interfaces for AI applications",
+          "resp2": "Create wireframes and prototypes",
+          "resp3": "Conduct user research and testing",
+          "resp4": "Collaborate with development teams"
+        },
+        "requirements": {
+          "req1": "3+ years in UX/UI design",
+          "req2": "Portfolio showcasing design work",
+          "req3": "Proficiency in Figma/Sketch",
+          "req4": "Understanding of AI/ML concepts"
+        }
+      },
+      "operations": {
+        "title": "Operations Specialist",
+        "department": "Operations",
+        "location": "Berlin, Germany",
+        "type": "Full-time",
+        "experience": "2+ years",
+        "description": "Optimize internal processes and ensure smooth day-to-day operations.",
+        "responsibilities": {
+          "resp1": "Streamline operational processes",
+          "resp2": "Manage internal tools and systems",
+          "resp3": "Coordinate between departments",
+          "resp4": "Analyze operational efficiency"
+        },
+        "requirements": {
+          "req1": "2+ years in operations role",
+          "req2": "Strong organizational skills",
+          "req3": "Experience with process optimization",
+          "req4": "Tech-savvy with various software tools"
+        }
+      },
+      "backend": {
+        "title": "Backend Engineer",
+        "department": "Tech",
+        "location": "Remote",
+        "type": "Full-time",
+        "experience": "4+ years",
+        "description": "Build scalable backend systems and APIs for our AI platform.",
+        "responsibilities": {
+          "resp1": "Develop and maintain backend services",
+          "resp2": "Design RESTful APIs",
+          "resp3": "Implement data storage solutions",
+          "resp4": "Ensure system security and scalability"
+        },
+        "requirements": {
+          "req1": "4+ years backend development",
+          "req2": "Experience with Node.js/Python",
+          "req3": "Knowledge of databases (SQL/NoSQL)",
+          "req4": "Experience with cloud platforms (AWS/GCP)"
+        }
+      }
+    }
+  },
+    "impressum": {
+    "header": {
+      "tag": "Legal Notice",
+      "title": "Imprint",
+      "subtitle": "Information pursuant to § 5 TMG"
     },
     "company": {
-      "title": "Company",
-      "about": "About Tolero",
-      "careers": "Careers",
-      "references": "References",
-      "blog": "Blog"
+      "title": "Company Information",
+      "info": {
+        "title": "Company Details",
+        "name": "Reinke AI Automation GmbH",
+        "address": "Musterstraße 123<br />10115 Berlin<br />Germany"
+      },
+      "contact": {
+        "title": "Contact",
+        "phone": "Phone:",
+        "email": "Email:",
+        "web": "Web:",
+        "phoneValue": "+49 (0) 30 12345678",
+        "emailValue": "info@reinke-ai.de",
+        "webValue": "www.reinke-ai.de"
+      },
+      "ceo": {
+        "title": "Authorized Managing Director",
+        "name": "Max Mustermann"
+      },
+      "registration": {
+        "title": "Commercial Register",
+        "number": "Commercial Register No.:",
+        "numberValue": "HRB 123456",
+        "court": "Register Court:",
+        "courtValue": "Berlin-Charlottenburg District Court"
+      },
+      "vat": {
+        "title": "VAT ID",
+        "info": "Value Added Tax Identification Number according to §27a German VAT Act:",
+        "id": "DE123456789"
+      }
     },
-    "resources": {
-      "title": "Resources",
-      "caseStudies": "Case Studies",
-      "whitepapers": "Whitepapers",
-      "faq": "FAQ",
-      "support": "Support"
+    "responsible": {
+      "title": "Responsible Person",
+      "section": "Responsible for content according to § 55 Abs. 2 RStV",
+      "name": "Max Mustermann",
+      "address": "Musterstraße 123<br />10115 Berlin"
     },
-    "copyright": "Tolero GmbH. All rights reserved.",
-    "legal": {
-      "privacy": "Privacy",
-      "notice": "Legal Notice",
-      "terms": "Terms & Conditions"
+    "dispute": {
+      "title": "Dispute Resolution",
+      "eu": {
+        "title": "EU Dispute Resolution",
+        "text": "The European Commission provides a platform for online dispute resolution (ODR):",
+        "link": "ec.europa.eu/consumers/odr",
+        "note": "You can find our email address in the legal notice above."
+      },
+      "consumer": {
+        "title": "Consumer Dispute Resolution",
+        "text": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+      }
+    },
+    "liability": {
+      "title": "Liability and Copyright",
+      "content": {
+        "title": "Liability for Content",
+        "text1": "As a service provider, we are responsible for our own content on these pages according to § 7 para.1 TMG under general laws. According to §§ 8 to 10 TMG, we are not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+        "text2": "Obligations to remove or block the use of information under general laws remain unaffected. However, liability in this regard is only possible from the time of knowledge of a concrete infringement."
+      },
+      "links": {
+        "title": "Liability for Links",
+        "text1": "Our offer contains links to external third-party websites, over whose content we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages.",
+        "text2": "The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of a violation."
+      },
+      "copyright": {
+        "title": "Copyright",
+        "text1": "The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution, and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.",
+        "text2": "Downloads and copies of this page are only permitted for private, non-commercial use.",
+        "text3": "Insofar as the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such."
+      }
+    },
+    "footer": {
+      "back": "Back to Homepage",
+      "date": "As of: March 2024",
+      "print": "Print"
     }
+  },
+  "dataprotection": {
+  "header": {
+    "tag": "Data Protection",
+    "title": "Privacy Policy",
+    "subtitle": "Information according to GDPR"
+  },
+  "sections": {
+    "overview": {
+      "title": "1. Data Protection at a Glance",
+      "general": {
+        "title": "General Information",
+        "text": "The following information provides a simple overview of what happens to your personal data when you visit our website. Personal data is any data with which you can be personally identified. Detailed information on data protection can be found in our privacy policy listed below."
+      },
+      "collection": {
+        "title": "Data Collection on Our Website",
+        "q1": "Who is responsible for data collection on this website?",
+        "a1": "Data processing on this website is carried out by the website operator. You can find their contact details in the ",
+        "a1_2": " of this website.",
+        "q2": "How do we collect your data?",
+        "a2": "On the one hand, your data is collected when you provide it to us. This can be, for example, data that you enter in a contact form. Other data is collected automatically by our IT systems when you visit the website. This is primarily technical data (e.g., internet browser, operating system, or time of page access). This data is collected automatically as soon as you enter our website.",
+        "q3": "What do we use your data for?",
+        "a3": "Part of the data is collected to ensure error-free provision of the website. Other data may be used to analyze your user behavior.",
+        "q4": "What rights do you have regarding your data?",
+        "a4": "You have the right to receive information about the origin, recipient, and purpose of your stored personal data free of charge at any time. You also have the right to request the correction or deletion of this data. For this purpose, as well as for further questions about data protection, you can contact us at any time at the address given in the legal notice. Furthermore, you have the right to lodge a complaint with the competent supervisory authority."
+      }
+    },
+    "general": {
+      "title": "2. General Information and Mandatory Information",
+      "privacy": {
+        "title": "Data Protection",
+        "text1": "The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy.",
+        "text2": "When you use this website, various personal data is collected. Personal data is data with which you can be personally identified. This privacy policy explains what data we collect and what we use it for. It also explains how and for what purpose this happens.",
+        "note": "Please note that data transmission over the Internet (e.g., when communicating via email) may have security vulnerabilities. Complete protection of data against access by third parties is not possible."
+      },
+      "responsible": {
+        "title": "Note on the Responsible Party",
+        "text": "The responsible party for data processing on this website is:",
+        "note": "The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (e.g., names, email addresses, etc.)."
+      },
+      "withdrawal": {
+        "title": "Revocation of Your Consent to Data Processing",
+        "text": "Many data processing operations are only possible with your express consent. You can revoke consent you have already given at any time. For this purpose, an informal communication by email to us is sufficient. The legality of the data processing carried out until the revocation remains unaffected by the revocation."
+      },
+      "complaint": {
+        "title": "Right to Lodge a Complaint with the Competent Supervisory Authority",
+        "text": "In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority, in particular in the member state of their habitual residence, their place of work, or the place of the alleged violation. The right to lodge a complaint exists without prejudice to any other administrative or judicial remedies."
+      }
+    },
+    "dataCollection": {
+      "title": "3. Data Collection on Our Website",
+      "cookies": {
+        "title": "Cookies",
+        "text1": "Our internet pages use so-called \"cookies\". Cookies are small text files and do not cause any damage to your device. They are stored either temporarily for the duration of a session (session cookies) or permanently (permanent cookies) on your device.",
+        "text2": "Cookies have various functions. Many cookies are technically necessary because certain website functions would not work without them (e.g., the shopping cart function or the display of videos). Other cookies are used to analyze user behavior or display advertising.",
+        "highlight": "You can set your browser so that you are informed about the setting of cookies and allow cookies only in individual cases, exclude the acceptance of cookies for specific cases or in general, and activate the automatic deletion of cookies when closing the browser. If cookies are deactivated, the functionality of this website may be restricted.",
+        "session": {
+          "title": "Session Cookies",
+          "text": "Are automatically deleted after the end of your visit."
+        },
+        "permanent": {
+          "title": "Permanent Cookies",
+          "text": "Remain stored on your device until you delete them yourself."
+        },
+        "thirdParty": {
+          "title": "Third-Party Cookies",
+          "text": "From third-party companies that enable certain services."
+        }
+      },
+      "contactForm": {
+        "title": "Contact Form",
+        "text1": "If you send us inquiries via the contact form, your information from the inquiry form, including the contact details you provided there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We do not pass on this data without your consent.",
+        "text2": "The processing of the data entered in the contact form is therefore based exclusively on your consent (Art. 6 Para. 1 lit. a GDPR). You can revoke this consent at any time. An informal communication by email to us is sufficient for this purpose.",
+        "note": "The data you enter in the contact form will remain with us until you request us to delete it, revoke your consent to storage, or the purpose for data storage no longer applies (e.g., after your request has been processed). Mandatory legal provisions – in particular retention periods – remain unaffected."
+      },
+      "emailPhone": {
+        "title": "Inquiry by Email, Phone, or Fax",
+        "text1": "If you contact us by email, phone, or fax, your inquiry, including all resulting personal data (name, inquiry), will be stored and processed by us for the purpose of processing your request. We do not pass on this data without your consent.",
+        "text2": "The processing of this data is based on Art. 6 Para. 1 lit. b GDPR, if your request is related to the performance of a contract or is necessary for the implementation of pre-contractual measures. In all other cases, the processing is based on your consent (Art. 6 Para. 1 lit. a GDPR) and/or on our legitimate interests (Art. 6 Para. 1 lit. f GDPR).",
+        "note": "The data you send to us via contact requests will remain with us until you request us to delete it, revoke your consent to storage, or the purpose for data storage no longer applies (e.g., after your request has been processed). Mandatory legal provisions – in particular legal retention periods – remain unaffected."
+      }
+    },
+    "plugins": {
+      "title": "4. Plugins and Tools",
+      "googleFonts": {
+        "title": "Google Web Fonts",
+        "text1": "This site uses so-called web fonts provided by Google for the uniform display of fonts. When you call up a page, your browser loads the required web fonts into its browser cache to display texts and fonts correctly.",
+        "text2": "For this purpose, the browser you use must connect to Google's servers. This gives Google knowledge that our website was accessed via your IP address. The use of Google Web Fonts is in the interest of a uniform and appealing presentation of our online offerings.",
+        "moreInfo": "Further information can be found at:",
+        "faqLink": "Google Fonts FAQ",
+        "privacyLink": "Google Privacy Policy"
+      }
+    },
+    "changes": {
+      "title": "5. Changes to the Privacy Policy",
+      "text": "We reserve the right to adapt this privacy policy so that it always meets the current legal requirements or to implement changes to our services in the privacy policy, e.g., when introducing new services. The new privacy policy will then apply to your next visit."
+    },
+    "questions": {
+      "title": "6. Questions to the Data Protection Officer",
+      "text": "If you have questions about data protection, please write us an email or contact the person responsible for data protection in our company directly:",
+      "email": "datenschutz@reinke-ai.de"
+    }
+  },
+  "company": {
+    "name": "Reinke AI Automation GmbH",
+    "address": {
+      "street": "Musterstraße 123",
+      "city": "10115 Berlin"
+    },
+    "phone": "+49 (0) 30 12345678",
+    "email": "info@reinke-ai.de"
+  },
+  "contact": {
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "impressum": {
+    "link": "Imprint"
+  },
+  "footer": {
+    "back": "Back to Homepage",
+    "lastUpdated": "Last updated: March 2024",
+    "impressum": "Imprint"
   }
+}
+
 
 
 }
+
+
+
 
 
   

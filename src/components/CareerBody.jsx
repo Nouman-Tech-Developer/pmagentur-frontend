@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { 
   FiChevronRight, 
   FiMapPin, 
@@ -17,143 +18,144 @@ import {
 } from 'react-icons/fi';
 
 const CareerBody = () => {
+  const { t } = useTranslation();
   const [expandedJob, setExpandedJob] = useState(null);
   const [activeTab, setActiveTab] = useState('all');
 
-  // Mock job data
+  // Mock job data - with translation keys
   const jobCategories = ['all', 'tech', 'marketing', 'operations', 'design'];
   
   const jobs = [
     {
       id: 1,
-      title: "Senior AI Engineer",
-      department: "Tech",
-      location: "Berlin, Germany",
-      type: "Full-time",
-      experience: "5+ years",
-      description: "Join our core AI team to develop cutting-edge machine learning solutions.",
+      title: t('career.jobs.seniorAI.title'),
+      department: t('career.jobs.seniorAI.department'),
+      location: t('career.jobs.seniorAI.location'),
+      type: t('career.jobs.seniorAI.type'),
+      experience: t('career.jobs.seniorAI.experience'),
+      description: t('career.jobs.seniorAI.description'),
       category: "tech",
       responsibilities: [
-        "Design and implement machine learning models",
-        "Optimize AI algorithms for performance",
-        "Collaborate with data scientists and engineers",
-        "Stay updated with latest AI research"
+        t('career.jobs.seniorAI.responsibilities.resp1'),
+        t('career.jobs.seniorAI.responsibilities.resp2'),
+        t('career.jobs.seniorAI.responsibilities.resp3'),
+        t('career.jobs.seniorAI.responsibilities.resp4')
       ],
       requirements: [
-        "Master's degree in Computer Science or related field",
-        "5+ years experience in AI/ML development",
-        "Expertise in Python, TensorFlow/PyTorch",
-        "Strong mathematical background"
+        t('career.jobs.seniorAI.requirements.req1'),
+        t('career.jobs.seniorAI.requirements.req2'),
+        t('career.jobs.seniorAI.requirements.req3'),
+        t('career.jobs.seniorAI.requirements.req4')
       ]
     },
     {
       id: 2,
-      title: "Frontend Developer",
-      department: "Tech",
-      location: "Remote",
-      type: "Full-time",
-      experience: "3+ years",
-      description: "Build beautiful, responsive user interfaces with React and Next.js.",
+      title: t('career.jobs.frontend.title'),
+      department: t('career.jobs.frontend.department'),
+      location: t('career.jobs.frontend.location'),
+      type: t('career.jobs.frontend.type'),
+      experience: t('career.jobs.frontend.experience'),
+      description: t('career.jobs.frontend.description'),
       category: "tech",
       responsibilities: [
-        "Develop responsive web applications",
-        "Implement UI/UX designs",
-        "Optimize frontend performance",
-        "Collaborate with backend teams"
+        t('career.jobs.frontend.responsibilities.resp1'),
+        t('career.jobs.frontend.responsibilities.resp2'),
+        t('career.jobs.frontend.responsibilities.resp3'),
+        t('career.jobs.frontend.responsibilities.resp4')
       ],
       requirements: [
-        "3+ years experience with React",
-        "Strong JavaScript/TypeScript skills",
-        "Experience with Next.js",
-        "Knowledge of modern CSS frameworks"
+        t('career.jobs.frontend.requirements.req1'),
+        t('career.jobs.frontend.requirements.req2'),
+        t('career.jobs.frontend.requirements.req3'),
+        t('career.jobs.frontend.requirements.req4')
       ]
     },
     {
       id: 3,
-      title: "Product Marketing Manager",
-      department: "Marketing",
-      location: "Munich, Germany",
-      type: "Full-time",
-      experience: "4+ years",
-      description: "Drive product adoption and create compelling marketing campaigns.",
+      title: t('career.jobs.productMarketing.title'),
+      department: t('career.jobs.productMarketing.department'),
+      location: t('career.jobs.productMarketing.location'),
+      type: t('career.jobs.productMarketing.type'),
+      experience: t('career.jobs.productMarketing.experience'),
+      description: t('career.jobs.productMarketing.description'),
       category: "marketing",
       responsibilities: [
-        "Develop marketing strategies for AI products",
-        "Create compelling product messaging",
-        "Analyze market trends and competition",
-        "Collaborate with sales and product teams"
+        t('career.jobs.productMarketing.responsibilities.resp1'),
+        t('career.jobs.productMarketing.responsibilities.resp2'),
+        t('career.jobs.productMarketing.responsibilities.resp3'),
+        t('career.jobs.productMarketing.responsibilities.resp4')
       ],
       requirements: [
-        "4+ years in product marketing",
-        "Experience in tech/SaaS industry",
-        "Strong analytical skills",
-        "Excellent communication abilities"
+        t('career.jobs.productMarketing.requirements.req1'),
+        t('career.jobs.productMarketing.requirements.req2'),
+        t('career.jobs.productMarketing.requirements.req3'),
+        t('career.jobs.productMarketing.requirements.req4')
       ]
     },
     {
       id: 4,
-      title: "UX/UI Designer",
-      department: "Design",
-      location: "Hamburg, Germany",
-      type: "Full-time",
-      experience: "3+ years",
-      description: "Create intuitive and beautiful user experiences for our AI products.",
+      title: t('career.jobs.uxDesigner.title'),
+      department: t('career.jobs.uxDesigner.department'),
+      location: t('career.jobs.uxDesigner.location'),
+      type: t('career.jobs.uxDesigner.type'),
+      experience: t('career.jobs.uxDesigner.experience'),
+      description: t('career.jobs.uxDesigner.description'),
       category: "design",
       responsibilities: [
-        "Design user interfaces for AI applications",
-        "Create wireframes and prototypes",
-        "Conduct user research and testing",
-        "Collaborate with development teams"
+        t('career.jobs.uxDesigner.responsibilities.resp1'),
+        t('career.jobs.uxDesigner.responsibilities.resp2'),
+        t('career.jobs.uxDesigner.responsibilities.resp3'),
+        t('career.jobs.uxDesigner.responsibilities.resp4')
       ],
       requirements: [
-        "3+ years in UX/UI design",
-        "Portfolio showcasing design work",
-        "Proficiency in Figma/Sketch",
-        "Understanding of AI/ML concepts"
+        t('career.jobs.uxDesigner.requirements.req1'),
+        t('career.jobs.uxDesigner.requirements.req2'),
+        t('career.jobs.uxDesigner.requirements.req3'),
+        t('career.jobs.uxDesigner.requirements.req4')
       ]
     },
     {
       id: 5,
-      title: "Operations Specialist",
-      department: "Operations",
-      location: "Berlin, Germany",
-      type: "Full-time",
-      experience: "2+ years",
-      description: "Optimize internal processes and ensure smooth day-to-day operations.",
+      title: t('career.jobs.operations.title'),
+      department: t('career.jobs.operations.department'),
+      location: t('career.jobs.operations.location'),
+      type: t('career.jobs.operations.type'),
+      experience: t('career.jobs.operations.experience'),
+      description: t('career.jobs.operations.description'),
       category: "operations",
       responsibilities: [
-        "Streamline operational processes",
-        "Manage internal tools and systems",
-        "Coordinate between departments",
-        "Analyze operational efficiency"
+        t('career.jobs.operations.responsibilities.resp1'),
+        t('career.jobs.operations.responsibilities.resp2'),
+        t('career.jobs.operations.responsibilities.resp3'),
+        t('career.jobs.operations.responsibilities.resp4')
       ],
       requirements: [
-        "2+ years in operations role",
-        "Strong organizational skills",
-        "Experience with process optimization",
-        "Tech-savvy with various software tools"
+        t('career.jobs.operations.requirements.req1'),
+        t('career.jobs.operations.requirements.req2'),
+        t('career.jobs.operations.requirements.req3'),
+        t('career.jobs.operations.requirements.req4')
       ]
     },
     {
       id: 6,
-      title: "Backend Engineer",
-      department: "Tech",
-      location: "Remote",
-      type: "Full-time",
-      experience: "4+ years",
-      description: "Build scalable backend systems and APIs for our AI platform.",
+      title: t('career.jobs.backend.title'),
+      department: t('career.jobs.backend.department'),
+      location: t('career.jobs.backend.location'),
+      type: t('career.jobs.backend.type'),
+      experience: t('career.jobs.backend.experience'),
+      description: t('career.jobs.backend.description'),
       category: "tech",
       responsibilities: [
-        "Develop and maintain backend services",
-        "Design RESTful APIs",
-        "Implement data storage solutions",
-        "Ensure system security and scalability"
+        t('career.jobs.backend.responsibilities.resp1'),
+        t('career.jobs.backend.responsibilities.resp2'),
+        t('career.jobs.backend.responsibilities.resp3'),
+        t('career.jobs.backend.responsibilities.resp4')
       ],
       requirements: [
-        "4+ years backend development",
-        "Experience with Node.js/Python",
-        "Knowledge of databases (SQL/NoSQL)",
-        "Experience with cloud platforms (AWS/GCP)"
+        t('career.jobs.backend.requirements.req1'),
+        t('career.jobs.backend.requirements.req2'),
+        t('career.jobs.backend.requirements.req3'),
+        t('career.jobs.backend.requirements.req4')
       ]
     }
   ];
@@ -175,9 +177,9 @@ const CareerBody = () => {
       <section className="jobs-section">
         <div className="jobs-container">
           <div className="jobs-header">
-            <h2 className="jobs-title">Offene Stellen</h2>
+            <h2 className="jobs-title">{t('career.title')}</h2>
             <p className="jobs-subtitle">
-              Entdecke spannende Karrieremöglichkeiten in einem innovativen KI-Unternehmen
+              {t('career.subtitle')}
             </p>
           </div>
 
@@ -192,10 +194,10 @@ const CareerBody = () => {
                   setExpandedJob(null);
                 }}
               >
-                {category === 'all' ? 'Alle Stellen' : 
-                 category === 'tech' ? 'Technologie' :
-                 category === 'marketing' ? 'Marketing' :
-                 category === 'operations' ? 'Operations' : 'Design'}
+                {category === 'all' ? t('career.categories.all') : 
+                 category === 'tech' ? t('career.categories.tech') :
+                 category === 'marketing' ? t('career.categories.marketing') :
+                 category === 'operations' ? t('career.categories.operations') : t('career.categories.design')}
               </button>
             ))}
           </div>
@@ -243,12 +245,12 @@ const CareerBody = () => {
                       {/* Left Column - Overview & Requirements */}
                       <div className="job-details-left">
                         <div className="job-overview">
-                          <h4>Überblick</h4>
+                          <h4>{t('career.sections.overview')}</h4>
                           <p className="job-full-description">{job.description}</p>
                         </div>
                         
                         <div className="job-responsibilities">
-                          <h4>Deine Aufgaben</h4>
+                          <h4>{t('career.sections.responsibilities')}</h4>
                           <ul className="responsibilities-list">
                             {job.responsibilities.map((resp, index) => (
                               <li key={index}>
@@ -260,7 +262,7 @@ const CareerBody = () => {
                         </div>
                         
                         <div className="job-requirements">
-                          <h4>Anforderungen</h4>
+                          <h4>{t('career.sections.requirements')}</h4>
                           <ul className="requirements-list">
                             {job.requirements.map((req, index) => (
                               <li key={index}>
@@ -275,49 +277,49 @@ const CareerBody = () => {
                       {/* Right Column - Benefits & Apply */}
                       <div className="job-details-right">
                         <div className="job-benefits">
-                          <h4>Das bieten wir</h4>
+                          <h4>{t('career.sections.weOffer')}</h4>
                           <ul className="benefits-list">
                             <li>
                               <FiArrowRight className="benefit-arrow" />
-                              Attraktives Gehaltspaket
+                              {t('career.benefits.salary')}
                             </li>
                             <li>
                               <FiArrowRight className="benefit-arrow" />
-                              Flexible Arbeitszeiten
+                              {t('career.benefits.flexibleHours')}
                             </li>
                             <li>
                               <FiArrowRight className="benefit-arrow" />
-                              Home Office Möglichkeiten
+                              {t('career.benefits.homeOffice')}
                             </li>
                             <li>
                               <FiArrowRight className="benefit-arrow" />
-                              Weiterbildungsbudget
+                              {t('career.benefits.training')}
                             </li>
                             <li>
                               <FiArrowRight className="benefit-arrow" />
-                              Moderne Arbeitsausstattung
+                              {t('career.benefits.equipment')}
                             </li>
                             <li>
                               <FiArrowRight className="benefit-arrow" />
-                              Team Events & Retreats
+                              {t('career.benefits.events')}
                             </li>
                           </ul>
                         </div>
                         
                         <div className="job-apply-section">
                           <div className="job-skills">
-                            <span className="skill-tag">KI</span>
-                            <span className="skill-tag">Technologie</span>
-                            <span className="skill-tag">Innovation</span>
-                            <span className="skill-tag">Teamarbeit</span>
+                            <span className="skill-tag">{t('career.skills.ai')}</span>
+                            <span className="skill-tag">{t('career.skills.tech')}</span>
+                            <span className="skill-tag">{t('career.skills.innovation')}</span>
+                            <span className="skill-tag">{t('career.skills.teamwork')}</span>
                           </div>
                           
                           <button className="apply-button">
-                            Jetzt bewerben
+                            {t('career.applyButton')}
                           </button>
                           
                           <p className="apply-note">
-                            Bewerbungen werden laufend geprüft.
+                            {t('career.applyNote')}
                           </p>
                         </div>
                       </div>
@@ -328,43 +330,43 @@ const CareerBody = () => {
             ) : (
               <div className="no-jobs">
                 <FiAward className="no-jobs-icon" />
-                <p>Keine offenen Stellen in dieser Kategorie.</p>
-                <p className="no-jobs-sub">Schau später wieder vorbei!</p>
+                <p>{t('career.noJobs.title')}</p>
+                <p className="no-jobs-sub">{t('career.noJobs.subtitle')}</p>
               </div>
             )}
           </div>
 
           {/* Benefits Section */}
           <div className="benefits-section">
-            <h3 className="benefits-title">Warum bei TOLERO arbeiten?</h3>
+            <h3 className="benefits-title">{t('career.whyReinke.title')}</h3>
             <div className="benefits-grid">
               <div className="benefit-card">
                 <div className="benefit-icon">
                   <FiCode size={40} />
                 </div>
-                <h4>Moderne Technologie</h4>
-                <p>Arbeite mit den neuesten KI-Technologien und Tools</p>
+                <h4>{t('career.whyReinke.modernTech.title')}</h4>
+                <p>{t('career.whyReinke.modernTech.description')}</p>
               </div>
               <div className="benefit-card">
                 <div className="benefit-icon">
                   <FiGlobe size={40} />
                 </div>
-                <h4>Flexible Arbeitsmodelle</h4>
-                <p>Remote, Hybrid oder vor Ort - du entscheidest</p>
+                <h4>{t('career.whyReinke.flexibleWork.title')}</h4>
+                <p>{t('career.whyReinke.flexibleWork.description')}</p>
               </div>
               <div className="benefit-card">
                 <div className="benefit-icon">
                   <FiTrendingUp size={40} />
                 </div>
-                <h4>Karrierewachstum</h4>
-                <p>Regelmäßige Schulungen und Aufstiegsmöglichkeiten</p>
+                <h4>{t('career.whyReinke.growth.title')}</h4>
+                <p>{t('career.whyReinke.growth.description')}</p>
               </div>
               <div className="benefit-card">
                 <div className="benefit-icon">
                   <FiUsers size={40} />
                 </div>
-                <h4>Teamkultur</h4>
-                <p>Flache Hierarchien und kollegiales Miteinander</p>
+                <h4>{t('career.whyReinke.teamCulture.title')}</h4>
+                <p>{t('career.whyReinke.teamCulture.description')}</p>
               </div>
             </div>
             
@@ -374,29 +376,29 @@ const CareerBody = () => {
                 <div className="benefit-icon">
                   <FiMonitor size={40} />
                 </div>
-                <h4>Moderne Ausstattung</h4>
-                <p>Hochwertige Hardware und Software für optimale Arbeit</p>
+                <h4>{t('career.whyReinke.equipment.title')}</h4>
+                <p>{t('career.whyReinke.equipment.description')}</p>
               </div>
               <div className="benefit-card">
                 <div className="benefit-icon">
                   <FiTarget size={40} />
                 </div>
-                <h4>Klare Ziele</h4>
-                <p>Transparente Zielvorgaben und regelmäßiges Feedback</p>
+                <h4>{t('career.whyReinke.goals.title')}</h4>
+                <p>{t('career.whyReinke.goals.description')}</p>
               </div>
               <div className="benefit-card">
                 <div className="benefit-icon">
                   <FiLayers size={40} />
                 </div>
-                <h4>Vielfältige Projekte</h4>
-                <p>Spannende Projekte in verschiedenen Branchen</p>
+                <h4>{t('career.whyReinke.projects.title')}</h4>
+                <p>{t('career.whyReinke.projects.description')}</p>
               </div>
               <div className="benefit-card">
                 <div className="benefit-icon">
                   <FiTool size={40} />
                 </div>
-                <h4>Weiterbildung</h4>
-                <p>Budget und Zeit für persönliche Entwicklung</p>
+                <h4>{t('career.whyReinke.development.title')}</h4>
+                <p>{t('career.whyReinke.development.description')}</p>
               </div>
             </div>
           </div>

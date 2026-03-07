@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ValuesSection = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="values-section">
@@ -8,12 +11,10 @@ const ValuesSection = () => {
           
           {/* Section Header */}
           <div className="values-header">
-            <p className="values-tagline">What drives us</p>
-            <h1 className="values-heading">Our values</h1>
+            <p className="values-tagline">{t('values.tagline')}</p>
+            <h1 className="values-heading">{t('values.heading')}</h1>
             <div className="values-description">
-              <p>
-                Our values shape the way we think and act - as a team, in cooperation with our customers and in every project.
-              </p>
+              <p>{t('values.description')}</p>
             </div>
           </div>
           
@@ -35,10 +36,8 @@ const ValuesSection = () => {
                   <path d="M16 20V28" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="value-title">Collaboration</h3>
-              <p className="value-text">
-                We work in partnership, support each other, celebrate successes and overcome challenges together.
-              </p>
+              <h3 className="value-title">{t('values.cards.collaboration.title')}</h3>
+              <p className="value-text">{t('values.cards.collaboration.description')}</p>
             </div>
             
             {/* Innovation Value */}
@@ -57,10 +56,8 @@ const ValuesSection = () => {
                   <path d="M32 16L29 19" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="value-title">Innovation</h3>
-              <p className="value-text">
-                We embrace change, constantly learn as a team, and actively shape the future with cutting-edge AI solutions.
-              </p>
+              <h3 className="value-title">{t('values.cards.innovation.title')}</h3>
+              <p className="value-text">{t('values.cards.innovation.description')}</p>
             </div>
             
             {/* Excellence Value */}
@@ -71,10 +68,8 @@ const ValuesSection = () => {
                   <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="value-title">Excellence</h3>
-              <p className="value-text">
-                We think in terms of solutions, pragmatically and with precision, delivering exceptional quality in every project.
-              </p>
+              <h3 className="value-title">{t('values.cards.excellence.title')}</h3>
+              <p className="value-text">{t('values.cards.excellence.description')}</p>
             </div>
             
             {/* Responsibility Value */}
@@ -86,10 +81,8 @@ const ValuesSection = () => {
                   <path d="M24 16H24.02" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="value-title">Responsibility</h3>
-              <p className="value-text">
-                We act on our own responsibility, make clear decisions, and stand by our results with integrity.
-              </p>
+              <h3 className="value-title">{t('values.cards.responsibility.title')}</h3>
+              <p className="value-text">{t('values.cards.responsibility.description')}</p>
             </div>
             
             {/* Partnership Value */}
@@ -101,10 +94,8 @@ const ValuesSection = () => {
                   <path d="M17 26H31" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="value-title">Partnership</h3>
-              <p className="value-text">
-                We build trust through transparency and shared responsibility, within our team and with every customer.
-              </p>
+              <h3 className="value-title">{t('values.cards.partnership.title')}</h3>
+              <p className="value-text">{t('values.cards.partnership.description')}</p>
             </div>
             
             {/* Agility Value */}
@@ -117,10 +108,8 @@ const ValuesSection = () => {
                   <path d="M34 34L14 14" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3 className="value-title">Agility</h3>
-              <p className="value-text">
-                We work with modern tools and agile methods, focusing on collaboration, speed, and clear results.
-              </p>
+              <h3 className="value-title">{t('values.cards.agility.title')}</h3>
+              <p className="value-text">{t('values.cards.agility.description')}</p>
             </div>
             
           </div>

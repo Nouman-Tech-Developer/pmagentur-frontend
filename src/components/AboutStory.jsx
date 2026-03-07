@@ -1,26 +1,23 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const AboutStory = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="about-story-section">
         <div className="about-story-container">
           
-          {/* First part: We are Tolero */}
+          {/* First part: We are Reinke */}
           <div className="about-story-content">
             <div className="about-story-wrapper">
               <div className="about-story-top">
-                <h1 className="about-story-headline">We are Tolero</h1>
+                <h1 className="about-story-headline">{t('aboutStory.weAre.title')}</h1>
               </div>
               <div className="about-story-text">
                 <div className="about-story-paragraphs">
-                  <p>
-                    We are engineers at heart - analytical, curious, precise. Our team of computer scientists, 
-                    designers, strategists and AI experts develops digital solutions with depth. We combine 
-                    research with practice, teaching with entrepreneurship and precision with humanity. 
-                    For us, technology is not an end in itself, but a tool. It should solve problems, 
-                    simplify processes and create added value - for people who want to make a difference.
-                  </p>
+                  <p>{t('aboutStory.weAre.paragraph1')}</p>
                 </div>
               </div>
             </div>
@@ -30,25 +27,14 @@ const AboutStory = () => {
           <div className="about-story-content second-part">
             <div className="about-story-wrapper">
               <div className="about-story-top">
-                <p className="about-story-tagline">Our way of working</p>
-                <h2 className="about-story-headline">How we work</h2>
+                <p className="about-story-tagline">{t('aboutStory.howWeWork.tagline')}</p>
+                <h2 className="about-story-headline">{t('aboutStory.howWeWork.title')}</h2>
               </div>
               <div className="about-story-text">
                 <div className="about-story-paragraphs">
-                  <p>
-                    We look at every project from two perspectives: from the depth of the technology 
-                    and with an eye on the big picture. Our way of working is characterized by clarity, 
-                    pragmatism and responsibility.
-                  </p>
-                  <p>
-                    We provide honest advice, make well-founded decisions and implement them - 
-                    with a focus on what really helps the customer. Quick decisions, short paths 
-                    and a consistently solution-oriented approach are part of our everyday work.
-                  </p>
-                  <p>
-                    We work with modern tools and agile methods and focus on collaboration, 
-                    personal responsibility and clear results.
-                  </p>
+                  <p>{t('aboutStory.howWeWork.paragraph1')}</p>
+                  <p>{t('aboutStory.howWeWork.paragraph2')}</p>
+                  <p>{t('aboutStory.howWeWork.paragraph3')}</p>
                 </div>
               </div>
             </div>

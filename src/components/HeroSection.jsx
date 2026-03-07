@@ -27,7 +27,7 @@ const HeroSection = () => {
             <div className="image-wrapper">
               <img 
                 src="/images/Hero.jpg" 
-                alt="KI-Automatisierung für Unternehmen"
+                alt={t('hero.imageAlt', 'KI-Automatisierung für Unternehmen')}
                 className={`hero-image ${imageLoaded ? 'loaded' : ''}`}
                 onLoad={() => setImageLoaded(true)}
                 onError={(e) => {
@@ -37,7 +37,7 @@ const HeroSection = () => {
                     wrapper.innerHTML = `
                       <div class="image-fallback">
                         <div class="fallback-content">
-                          <span class="fallback-text">KI-AUTOMATISIERUNG</span>
+                          <span class="fallback-text">${t('hero.fallbackText', 'REINKE AI AUTOMATION')}</span>
                         </div>
                       </div>
                     `;
@@ -48,7 +48,7 @@ const HeroSection = () => {
               {!imageLoaded && (
                 <div className="image-loading">
                   <div className="loading-spinner" />
-                  <span className="loading-text">Lädt Visualisierung...</span>
+                  <span className="loading-text">{t('hero.loading', 'Lädt Visualisierung...')}</span>
                 </div>
               )}
               

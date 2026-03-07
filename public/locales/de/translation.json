@@ -2,48 +2,107 @@
   "nav": {
     "solutions": "Lösungen",
     "products": "Produkte",
-    "caseStudies": "Fallstudien",
     "about": "Über uns",
     "careers": "Karriere",
-    "resources": "Ressourcen",
-    "requestDemo": "Demo anfordern",
     "selectLanguage": "Sprache auswählen",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen"
   },
-  "hero": {
-  "title": "Tolero – KI-Automatisierung für Unternehmen",
-  "subtitle": "Wir automatisieren Prozesse, Telefonie und Kommunikation mit KI",
-  "description": "Damit Ihr Unternehmen effizienter arbeitet, Kosten senkt und schneller wächst.",
-  "benefit1": "24/7 Verfügbarkeit für Kunden",
-  "benefit2": "Entlastung für Ihr Team",
-  "benefit3": "Automatische Terminvereinbarung",
-  "benefit4": "Vorqualifizierung von Leads",
-  "benefit5": "Skalierbar bei hohem Anrufaufkommen",
-  "requestDemo": "Demo anfordern",
-  "viewReferences": "Referenzen ansehen"
-},
 
-  "features": {
-    "heading": {
-      "line1": "Ihr Partner für",
-      "line2": "KI-gestützte Automatisierung,",
-      "line3": "Business-Transformation & digitale Innovation"
+  "nav-services": {
+    "aiPhone": {
+      "title": "AI Phone Assistant",
+      "description": "Intelligenter Telefonassistent mit natürlicher Sprachverarbeitung"
     },
-    "description": "Technologie sollte echte Geschäftswirkung erzielen. TOLERO kombiniert KI-Expertise mit strategischer Implementierung, um Ihre Prozesse zu transformieren und Wachstum zu beschleunigen.",
-    "cooperation": {
-      "title": "Strategische Partnerschaft",
-      "description": "Wir arbeiten mit Ihrem Team zusammen, nicht isoliert. Regelmäßige Abstimmung sorgt für perfekt auf Ihre Geschäftsanforderungen zugeschnittene Lösungen."
+    "chatbots": {
+      "title": "Smart Chatbots",
+      "description": "KI-gestützte Chatbots für alle Kanäle"
     },
-    "processes": {
-      "title": "Skalierbare Lösungen",
-      "description": "Unsere KI-Implementierungen sind für Wachstum ausgelegt. Starten Sie klein, skalieren Sie schnell und behalten Sie stets die Kontrolle über Ihre Automatisierungsreise."
+    "emailAutomation": {
+      "title": "Email Automation",
+      "description": "Automatische E-Mail-Verarbeitung und Kampagnen"
     },
-    "impact": {
-      "title": "Messbare Wirkung",
-      "description": "Verfolgen Sie ab dem ersten Tag echte ROI. Unsere Lösungen liefern greifbare Ergebnisse, die mit Ihrem Unternehmen mitwachsen."
+    "workflow": {
+      "title": "Workflow Optimization",
+      "description": "Automatisieren Sie komplexe Arbeitsabläufe"
+    },
+    "customerSupport": "24/7 Kundenbetreuung",
+    "customerSupportDesc": "Rund-um-die-Uhr Kundenbetreuung mit KI-gestützten Lösungen",
+    "processAutomation": "Prozessautomatisierung",
+    "processAutomationDesc": "Automatisieren Sie wiederkehrende Aufgaben",
+    "medical": "Medizinische KI-Lösungen",
+    "medicalDesc": "KI-gestützte Lösungen für Arztpraxen, Krankenhäuser und medizinische Einrichtungen",
+    "industrySpecific": "Branchenspezifische KI",
+    "industrySpecificDesc": "Maßgeschneiderte KI-Lösungen für verschiedene Branchen"
+  },
+
+  "solutions": {
+    "categories": {
+      "aiAutomation": "KI & Automatisierung",
+      "customerService": "Kundenservice",
+      "internalProcesses": "Interne Prozesse",
+      "industrySolutions": "Branchenlösungen"
     }
-  
+  },
+
+  "products": {
+    "categories": {
+      "communication": "Kommunikation",
+      "automation": "Automatisierung",
+      "integration": "Integration",
+      "enterprise": "Enterprise"
+    },
+    "badges": {
+      "popular": "Beliebt",
+      "new": "Neu",
+      "enterprise": "Enterprise"
+    },
+    "aiPhonePro": "AI Phone Assistant Pro",
+    "aiPhoneProDesc": "Professioneller KI-Telefonassistent mit natürlicher Sprachverarbeitung und 24/7 Verfügbarkeit",
+    "chatbotSuite": "Smart Chatbot Suite",
+    "chatbotSuiteDesc": "Intelligente Chatbots für alle Kanäle – Website, WhatsApp, Facebook Messenger und mehr",
+    "emailAutomation": "Email Automation Tool",
+    "emailAutomationDesc": "Leistungsstarke E-Mail-Automatisierung für Marketing und Kommunikation",
+    "workflowAutomator": "Workflow Automator",
+    "workflowAutomatorDesc": "Automatisieren Sie komplexe Arbeitsabläufe ohne Programmierkenntnisse",
+    "apiHub": "API Integration Hub",
+    "apiHubDesc": "Nahtlose Integration mit über 500+ Anwendungen und Diensten",
+    "crmConnector": "CRM Connector",
+    "crmConnectorDesc": "Direkte Integration mit führenden CRM-Systemen wie Salesforce, HubSpot und mehr",
+    "enterpriseSuite": "Enterprise AI Suite",
+    "enterpriseSuiteDesc": "Komplette KI-Plattform für große Unternehmen mit erweiterten Funktionen",
+    "customAI": "Custom AI Solutions",
+    "customAIDesc": "Maßgeschneiderte KI-Lösungen für spezifische Geschäftsanforderungen"
+  }
+,
+  "hero": {
+    "title": "Reinke – KI-Automatisierung für Unternehmen",
+    "subtitle": "Wir automatisieren Prozesse, Telefonie und Kommunikation mit KI",
+    "description": "Damit Ihr Unternehmen effizienter arbeitet, Kosten senkt und schneller wächst",
+    "imageAlt": "Reinke KI-Automatisierung für Unternehmen",
+    "loading": "Lädt Visualisierung...",
+    "fallbackText": "REINKE AI AUTOMATION"
+  },
+
+ "features": {
+  "heading": {
+    "line1": "Ihr Partner für",
+    "line2": "KI-gestützte Automatisierung,",
+    "line3": "Business-Transformation & digitale Innovation"
+  },
+  "description": "Technologie sollte echte Geschäftswirkung erzielen. REINKE kombiniert KI-Expertise mit strategischer Implementierung, um Ihre Prozesse zu transformieren und Wachstum zu beschleunigen.",
+  "cooperation": {
+    "title": "Strategische Partnerschaft",
+    "description": "Wir arbeiten mit Ihrem Team zusammen, nicht isoliert. Regelmäßige Abstimmung sorgt für perfekt auf Ihre Geschäftsanforderungen zugeschnittene Lösungen."
+  },
+  "processes": {
+    "title": "Skalierbare Lösungen",
+    "description": "Unsere KI-Implementierungen sind für Wachstum ausgelegt. Starten Sie klein, skalieren Sie schnell und behalten Sie stets die Kontrolle über Ihre Automatisierungsreise."
+  },
+  "impact": {
+    "title": "Messbare Wirkung",
+    "description": "Verfolgen Sie ab dem ersten Tag echte ROI. Unsere Lösungen liefern greifbare Ergebnisse, die mit Ihrem Unternehmen mitwachsen."
+  }
 },
 
   "services": {
@@ -67,106 +126,60 @@
       "description": "Maßgeschneiderte KI-Lösungen für Datenverarbeitung und branchenspezifische Aufgaben – auf Ihr Unternehmen zugeschnitten."
     }
   },
-  
-  "testimonials": {
-    "title": "Kundenstimmen",
-    "subtitle": "Was Unternehmen über unsere KI-Automatisierung sagen",
-    "testimonial1": {
-      "quote": "Mit dem KI-Telefon-Assistenten von Tolero haben wir unsere Kundenhotline entlastet und gleichzeitig die Kundenzufriedenheit erhöht. Die Lösung arbeitet 24/7 und versteht selbst komplexe Anfragen.",
-      "author": "Markus Weber",
-      "role": "Geschäftsführer",
-      "company": "TransLog Logistics"
+  "calculator": {
+    "title": {
+      "line1": "Berechnen Sie Ihr",
+      "line2": "potenzielles Einsparpotenzial"
     },
-    "testimonial2": {
-      "quote": "Die Chatbot-Integration hat unser Support-Team um 60% entlastet. Kunden erhalten sofort Antworten, während sich unser Team auf komplexe Fälle konzentrieren kann. Eine Win-win-Situation.",
-      "author": "Dr. Sarah Klein",
-      "role": "CTO",
-      "company": "ShopPlus E-Commerce"
+    "subtitle": "Entdecken Sie, wie viel Ihre Praxis mit unserem KI-Telefonassistenten sparen kann",
+    "labels": {
+      "employees": "Mitarbeiter für Anrufe",
+      "hourlyRate": "Stundensatz (€)",
+      "dailyCalls": "Anrufe pro Tag",
+      "avgDuration": "Durchschnittliche Dauer"
     },
-    "testimonial3": {
-      "quote": "Die E-Mail-Automatisierung hat unsere Kundenkommunikation revolutioniert. Was früher Stunden dauerte, passiert jetzt automatisch. Die Integration war nahtlos.",
-      "author": "Thomas Richter",
-      "role": "Leiter Operations",
-      "company": "ServicePro GmbH"
+    "units": {
+      "min": "Min",
+      "hours": "Std"
     },
-    "testimonial4": {
-      "quote": "Die Workflow-Optimierung hat unsere Produktivität um 40% gesteigert. Komplexe Datenverarbeitung, die früher Tage dauerte, ist jetzt in Stunden erledigt.",
-      "author": "Anna Hoffmann",
-      "role": "CEO",
-      "company": "DataFlow Analytics"
-    }
+    "results": {
+      "title": "Ihr Einsparpotenzial"
+    },
+    "metrics": {
+      "callTime": {
+        "label": "Anrufzeit pro Tag"
+      },
+      "staffCost": {
+        "label": "Jährliche Personalkosten"
+      }
+    },
+    "savings": {
+      "label": "Jährliche Ersparnis mit KI",
+      "vsManual": "vs. manuelle Bearbeitung"
+    },
+    "cta": "Beratung anfordern",
+    "disclaimer": "*Basiert auf 240 Arbeitstagen pro Jahr und 80% Automatisierungsrate. Individuelle Ersparnisse können variieren."
   },
   
-  "caseStudies": {
-    "heading": "Erfolgsgeschichten",
-    "subheading": "Wie Unternehmen ihre Prozesse mit Tolero KI-Automatisierung optimieren",
-    "viewCase": "Fallstudie ansehen",
-    "viewAll": "Alle Fallstudien ansehen",
-    "case1": {
-      "title": "KI-Telefon-Assistent für Logistikunternehmen",
-      "description": "Automatisierte Kundenhotline mit 24/7-Verfügbarkeit reduzierte Wartezeiten um 80% und erhöhte die Kundenzufriedenheit.",
-      "category": "KI-Automatisierung",
-      "result": "80% schnellere Verarbeitung"
-    },
-    "case2": {
-      "title": "Chatbot-Integration für E-Commerce",
-      "description": "Intelligenter Shop-Assistent beantwortet automatisch Kundenanfragen und erhöhte die Conversion-Rate um 35%.",
-      "category": "KI-Chatbots",
-      "result": "35% mehr Conversions"
-    },
-    "case3": {
-      "title": "E-Mail-Automatisierung für SaaS-Anbieter",
-      "description": "Automatisiertes Onboarding und Support-Kommunikation reduziert manuellen Aufwand um 60 Stunden pro Woche.",
-      "category": "Workflow-Optimierung",
-      "result": "60h/Woche gespart"
-    },
-    "case4": {
-      "title": "Komplette KI-Transformation für mittelständisches Unternehmen",
-      "description": "Umfassende Automatisierung von Telefonie, E-Mail und internen Prozessen steigerte die Effizienz um 200%.",
-      "category": "KI-Integration",
-      "result": "200% effizienter"
-    }
-  },
 
 
   "textHalfImage": {
-    "badge": "Über Tolero",
-    "heading": "Technologie wird von Menschen geschaffen",
-    "description": "Gegründet mit der Vision, Unternehmen durch intelligente Automatisierung zu transformieren, kombiniert Tolero menschliche Expertise mit modernster KI-Technologie. Unser Team von Spezialisten entwickelt maßgeschneiderte Lösungen, die Prozesse optimieren, Kosten senken und Wachstum für Unternehmen aller Branchen beschleunigen.",
-    "stats": {
-      "team": "KI-Experten",
-      "projects": "Erfolgreiche Projekte",
-      "years": "Jahre Erfahrung"
-    },
-    "button": "Mehr über Tolero",
-    "buttonAria": "Mehr über das Unternehmen Tolero erfahren",
-    "imageAlt": "Tolero KI-Automatisierungsteam arbeitet an innovativen Lösungen"
-  },
-
-  
-    
-   
-    
-
-  
-  
+  "badge": "Über Reinke",
+  "heading": "Technologie wird von Menschen geschaffen",
+  "description": "Gegründet mit der Vision, Unternehmen durch intelligente Automatisierung zu transformieren, kombiniert Reinke menschliche Expertise mit modernster KI-Technologie. Unser Team von Spezialisten entwickelt maßgeschneiderte Lösungen, die Prozesse optimieren, Kosten senken und Wachstum für Unternehmen aller Branchen beschleunigen.",
   "stats": {
-    "why": "Warum TOLERO?",
-    "headingLine1": "Erfolg wird durch",
-    "headingLine2": "Partnerschaft geschaffen",
-    "description": "Erfolg entsteht durch enge Zusammenarbeit, klare Kommunikation und agile KI-Implementierung. Gemeinsam mit unseren Kunden entwickeln wir intelligente Automatisierungslösungen, die technisch robust, skalierbar und langfristig wertvoll sind.",
-    "projects": "KI-Projekte",
-    "projectsDesc": "Automatisierte Lösungen implementiert",
-    "customers": "Zufriedene Kunden",
-    "customersDesc": "Erfolgreiche Partnerschaften",
-    "satisfaction": "Kundenzufriedenheit",
-    "satisfactionDesc": "Basierend auf Kundenfeedback",
-    "support": "KI-Support",
-    "supportDesc": "24/7 intelligente Unterstützung"
-  }
+    "team": "KI-Experten",
+    "projects": "Erfolgreiche Projekte",
+    "years": "Jahre Erfahrung"
+  },
+  "button": "Mehr über Reinke",
+  "buttonAria": "Mehr über das Unternehmen Reinke erfahren",
+  "imageAlt": "Reinke KI-Automatisierungsteam arbeitet an innovativen Lösungen"
+},
 
-
-,
+  
+    
+  
   "contact": {
     "title": "Kostenlose Beratung",
     "subtitle": "Erhalten Sie eine kostenlose, unverbindliche Beratung und entdecken Sie, wie KI-Automatisierung Ihr Unternehmen transformieren kann.",
@@ -182,6 +195,12 @@
       "label": "Standort",
       "value": "Musterstraße 123, 10115 Berlin"
     },
+    "privacy": {
+  "part1": "Ich stimme der",
+  "part2": "Datenschutzerklärung",
+  "part3": "zu *",
+  "link": "/datenschutz"
+},
     "form": {
       "name": "Ihr Name *",
       "company": "Unternehmen",
@@ -196,68 +215,563 @@
       "submit": "Nachricht senden"
     }
   },
-
+  
+  "nav": {
+    "solutions": "Lösungen",
+    "products": "Produkte",
+    "about": "Über uns",
+    "careers": "Karriere",
+    "calculator": "Rechner"
+  },
   "footer": {
-    "tagline": "KI-Automatisierung für Unternehmen",
-    "location": "Musterstraße 123, 10115 Berlin",
-    "services": {
-      "title": "Services",
-      "aiPhone": "KI-Telefon-Assistent",
-      "chatbots": "Chatbots & Assistenten",
-      "emailAutomation": "E-Mail-Automatisierung",
-      "workflow": "Workflow-Optimierung"
-    },
-    "company": {
-      "title": "Unternehmen",
-      "about": "Über Tolero",
-      "careers": "Karriere",
-      "references": "Referenzen",
-      "blog": "Blog"
-    },
-    "resources": {
-      "title": "Ressourcen",
-      "caseStudies": "Fallstudien",
-      "whitepapers": "Whitepapers",
-      "faq": "FAQ",
-      "support": "Support"
-    },
-    "copyright": "Tolero GmbH. Alle Rechte vorbehalten.",
+    "copyright": "Alle Rechte vorbehalten.",
     "legal": {
       "privacy": "Datenschutz",
       "notice": "Impressum",
       "terms": "AGB"
     }
   },
+   "aboutHero": {
+    "title": "KI-gestützte Automatisierung für Unternehmen",
+    "subtitle": "Intelligente Prozess- & Kommunikationsautomatisierung mit KI",
+    "features": {
+      "phoneAssistant": "KI-Telefonassistent übernimmt Anrufe, Terminvereinbarungen und Anfragen automatisch – 24/7, zuverlässig und markenkonform.",
+      "chatbots": "Intelligente Chatbots & digitale Assistenten beantworten Kundenanfragen auf Website, Social Media und in internen Systemen.",
+      "emailWorkflow": "E-Mail- & Workflow-Automatisierung reduziert manuelle Arbeit, beschleunigt Prozesse und minimiert Fehler.",
+      "flexible": "Flexibel einsetzbar als Cloud- oder On-Premise-Lösung – DSGVO-konform und skalierbar."
+    },
+    "imageAlt": "Über Reinke KI-Automatisierung",
+    "fallbackText": "ÜBER REINKE"
+  },
   
-  "footer": {
-    "tagline": "KI-Automatisierung für Unternehmen",
-    "location": "Musterstraße 123, 10115 Berlin",
-    "services": {
-      "title": "Services",
-      "aiPhone": "KI-Telefon-Assistent",
-      "chatbots": "Chatbots & Assistenten",
-      "emailAutomation": "E-Mail-Automatisierung",
-      "workflow": "Workflow-Optimierung"
+  "aboutStory": {
+    "weAre": {
+      "title": "Wir sind Reinke",
+      "paragraph1": "Wir sind im Herzen Ingenieure – analytisch, neugierig, präzise. Unser Team aus Informatikern, Designern, Strategen und KI-Experten entwickelt digitale Lösungen mit Tiefgang. Wir verbinden Forschung mit Praxis, Lehre mit Unternehmertum und Präzision mit Menschlichkeit. Für uns ist Technologie kein Selbstzweck, sondern ein Werkzeug. Sie soll Probleme lösen, Prozesse vereinfachen und Mehrwert schaffen – für Menschen, die etwas bewegen wollen."
+    },
+    "howWeWork": {
+      "tagline": "Unsere Arbeitsweise",
+      "title": "Wie wir arbeiten",
+      "paragraph1": "Wir betrachten jedes Projekt aus zwei Perspektiven: aus der Tiefe der Technologie und mit Blick auf das große Ganze. Unsere Arbeitsweise ist geprägt von Klarheit, Pragmatismus und Verantwortung.",
+      "paragraph2": "Wir beraten ehrlich, treffen fundierte Entscheidungen und setzen sie um – mit Fokus auf das, was dem Kunden wirklich hilft. Schnelle Entscheidungen, kurze Wege und eine konsequent lösungsorientierte Herangehensweise gehören zu unserem Alltag.",
+      "paragraph3": "Wir arbeiten mit modernen Tools und agilen Methoden und setzen auf Zusammenarbeit, Eigenverantwortung und klare Ergebnisse."
+    }
+  },
+   "values": {
+    "tagline": "Was uns antreibt",
+    "heading": "Unsere Werte",
+    "description": "Unsere Werte prägen unser Denken und Handeln – als Team, in der Zusammenarbeit mit unseren Kunden und in jedem Projekt.",
+    "cards": {
+      "collaboration": {
+        "title": "Zusammenarbeit",
+        "description": "Wir arbeiten partnerschaftlich, unterstützen uns gegenseitig, feiern Erfolge und meistern Herausforderungen gemeinsam."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Wir begrüßen Veränderungen, lernen als Team ständig dazu und gestalten die Zukunft aktiv mit modernsten KI-Lösungen."
+      },
+      "excellence": {
+        "title": "Exzellenz",
+        "description": "Wir denken in Lösungen, pragmatisch und präzise, und liefern außergewöhnliche Qualität in jedem Projekt."
+      },
+      "responsibility": {
+        "title": "Verantwortung",
+        "description": "Wir handeln eigenverantwortlich, treffen klare Entscheidungen und stehen mit Integrität zu unseren Ergebnissen."
+      },
+      "partnership": {
+        "title": "Partnerschaft",
+        "description": "Wir bauen Vertrauen durch Transparenz und gemeinsame Verantwortung auf – im Team und mit jedem Kunden."
+      },
+      "agility": {
+        "title": "Agilität",
+        "description": "Wir arbeiten mit modernen Tools und agilen Methoden, mit Fokus auf Zusammenarbeit, Geschwindigkeit und klare Ergebnisse."
+      }
+    }
+  },
+  "management": {
+    "title": "Das Management",
+    "description": {
+      "p1": "Hinter Reinke stehen engagierte KI-Experten und Software-Spezialisten, die das Unternehmen mit Vertrauen, technischem Know-how und einem gemeinsamen Verständnis für Verantwortung und Fortschritt führen.",
+      "p2": "Unser Gründungsteam startete 2020 mit einer klaren Vision: Technologie sinnvoll einzusetzen, um Unternehmen zu transformieren. Seitdem haben wir kontinuierlich unsere Expertise erweitert und ein talentiertes Team in Hamburg aufgebaut.",
+      "p3Line1": "Heute führen wir ein wachsendes Team von KI-Spezialisten, Software Engineers und Strategen – vereint durch eine klare Vision:",
+      "p3Line2": "Reinke als führenden Partner für KI-gestützte Automatisierungslösungen zu etablieren."
+    },
+    "team": {
+      "ceo": "CEO & Gründer",
+      "cto": "CTO & Mitgründer",
+      "headOfAI": "Leiter KI",
+      "headOfProduct": "Leiter Produkt"
+    }
+  },
+  
+  "team": {
+    "tagline": "UNSER TEAM",
+    "title": "Lernen Sie unsere Experten kennen",
+    "subtitle": "Ein vielfältiges Team leidenschaftlicher Profis, die sich der Bereitstellung außergewöhnlicher Ergebnisse verschrieben haben.",
+    "footer": "Unser Team wächst ständig. Interessiert, uns zu verstärken?",
+    "labels": {
+      "department": "Abteilung",
+      "experience": "Erfahrung"
+    },
+    "departments": {
+      "leadership": "Führung",
+      "engineering": "Entwicklung",
+      "product": "Produkt",
+      "design": "Design",
+      "marketing": "Marketing",
+      "data": "Daten"
+    },
+    "positions": {
+      "ceo": "CEO & Gründer",
+      "cto": "CTO",
+      "leadDeveloper": "Leitender Entwickler",
+      "productManager": "Produktmanager",
+      "seniorDesigner": "Senior Designer",
+      "marketingDirector": "Marketingdirektor",
+      "devOps": "DevOps Engineer",
+      "uxResearcher": "UX Researcher",
+      "dataScientist": "Data Scientist",
+      "frontend": "Frontend Entwickler"
+    },
+    "experience": {
+      "3years": "3 Jahre",
+      "4years": "4 Jahre",
+      "5years": "5 Jahre",
+      "6years": "6 Jahre",
+      "7years": "7 Jahre",
+      "8years": "8 Jahre",
+      "9years": "9 Jahre",
+      "10years": "10 Jahre",
+      "12years": "12 Jahre",
+      "15years": "15 Jahre"
+    }
+  },
+  
+  "careerHero": {
+    "headline": {
+      "line1": "Gestalte die Zukunft",
+      "line2": "der KI mit uns"
+    },
+    "subheadline": "Werde Teil eines Teams, das innovative KI-Lösungen entwickelt und Unternehmen weltweit transformiert.",
+    "imageAlt": "REINKE Team Karriere",
+    "loading": "Lädt Bild...",
+    "scrollText": "Entdecken"
+  },
+  "career": {
+    "title": "Offene Stellen",
+    "subtitle": "Entdecke spannende Karrieremöglichkeiten in einem innovativen KI-Unternehmen",
+    
+    "categories": {
+      "all": "Alle Stellen",
+      "tech": "Technologie",
+      "marketing": "Marketing",
+      "operations": "Operations",
+      "design": "Design"
+    },
+    
+    "sections": {
+      "overview": "Überblick",
+      "responsibilities": "Deine Aufgaben",
+      "requirements": "Anforderungen",
+      "weOffer": "Das bieten wir"
+    },
+    
+    "benefits": {
+      "salary": "Attraktives Gehaltspaket",
+      "flexibleHours": "Flexible Arbeitszeiten",
+      "homeOffice": "Home Office Möglichkeiten",
+      "training": "Weiterbildungsbudget",
+      "equipment": "Moderne Arbeitsausstattung",
+      "events": "Team Events & Retreats"
+    },
+    
+    "skills": {
+      "ai": "KI",
+      "tech": "Technologie",
+      "innovation": "Innovation",
+      "teamwork": "Teamarbeit"
+    },
+    
+    "applyButton": "Jetzt bewerben",
+    "applyNote": "Bewerbungen werden laufend geprüft.",
+    
+    "noJobs": {
+      "title": "Keine offenen Stellen in dieser Kategorie.",
+      "subtitle": "Schau später wieder vorbei!"
+    },
+    
+    "whyReinke": {
+      "title": "Warum bei REINKE arbeiten?",
+      
+      "modernTech": {
+        "title": "Moderne Technologie",
+        "description": "Arbeite mit den neuesten KI-Technologien und Tools"
+      },
+      "flexibleWork": {
+        "title": "Flexible Arbeitsmodelle",
+        "description": "Remote, Hybrid oder vor Ort - du entscheidest"
+      },
+      "growth": {
+        "title": "Karrierewachstum",
+        "description": "Regelmäßige Schulungen und Aufstiegsmöglichkeiten"
+      },
+      "teamCulture": {
+        "title": "Teamkultur",
+        "description": "Flache Hierarchien und kollegiales Miteinander"
+      },
+      "equipment": {
+        "title": "Moderne Ausstattung",
+        "description": "Hochwertige Hardware und Software für optimale Arbeit"
+      },
+      "goals": {
+        "title": "Klare Ziele",
+        "description": "Transparente Zielvorgaben und regelmäßiges Feedback"
+      },
+      "projects": {
+        "title": "Vielfältige Projekte",
+        "description": "Spannende Projekte in verschiedenen Branchen"
+      },
+      "development": {
+        "title": "Weiterbildung",
+        "description": "Budget und Zeit für persönliche Entwicklung"
+      }
+    },
+    
+    "jobs": {
+      "seniorAI": {
+        "title": "Senior AI Engineer",
+        "department": "Tech",
+        "location": "Berlin, Deutschland",
+        "type": "Vollzeit",
+        "experience": "5+ Jahre",
+        "description": "Verstärke unser KI-Kernteam bei der Entwicklung modernster Machine-Learning-Lösungen.",
+        "responsibilities": {
+          "resp1": "Entwurf und Implementierung von Machine-Learning-Modellen",
+          "resp2": "Optimierung von KI-Algorithmen für die Leistung",
+          "resp3": "Zusammenarbeit mit Data Scientists und Ingenieuren",
+          "resp4": "Aktuell bleiben mit neuester KI-Forschung"
+        },
+        "requirements": {
+          "req1": "Master-Abschluss in Informatik oder einem verwandten Bereich",
+          "req2": "5+ Jahre Erfahrung in der KI/ML-Entwicklung",
+          "req3": "Expertise in Python, TensorFlow/PyTorch",
+          "req4": "Starker mathematischer Hintergrund"
+        }
+      },
+      "frontend": {
+        "title": "Frontend Entwickler",
+        "department": "Tech",
+        "location": "Remote",
+        "type": "Vollzeit",
+        "experience": "3+ Jahre",
+        "description": "Entwickle schöne, responsive Benutzeroberflächen mit React und Next.js.",
+        "responsibilities": {
+          "resp1": "Entwicklung responsiver Webanwendungen",
+          "resp2": "Umsetzung von UI/UX-Designs",
+          "resp3": "Optimierung der Frontend-Leistung",
+          "resp4": "Zusammenarbeit mit Backend-Teams"
+        },
+        "requirements": {
+          "req1": "3+ Jahre Erfahrung mit React",
+          "req2": "Starke JavaScript/TypeScript-Kenntnisse",
+          "req3": "Erfahrung mit Next.js",
+          "req4": "Kenntnisse moderner CSS-Frameworks"
+        }
+      },
+      "productMarketing": {
+        "title": "Product Marketing Manager",
+        "department": "Marketing",
+        "location": "München, Deutschland",
+        "type": "Vollzeit",
+        "experience": "4+ Jahre",
+        "description": "Treibe die Produktadoption voran und erstelle überzeugende Marketingkampagnen.",
+        "responsibilities": {
+          "resp1": "Entwicklung von Marketingstrategien für KI-Produkte",
+          "resp2": "Erstellung überzeugender Produktbotschaften",
+          "resp3": "Analyse von Markttrends und Wettbewerb",
+          "resp4": "Zusammenarbeit mit Vertriebs- und Produktteams"
+        },
+        "requirements": {
+          "req1": "4+ Jahre im Produktmarketing",
+          "req2": "Erfahrung in der Tech/SaaS-Branche",
+          "req3": "Starke analytische Fähigkeiten",
+          "req4": "Hervorragende Kommunikationsfähigkeiten"
+        }
+      },
+      "uxDesigner": {
+        "title": "UX/UI Designer",
+        "department": "Design",
+        "location": "Hamburg, Deutschland",
+        "type": "Vollzeit",
+        "experience": "3+ Jahre",
+        "description": "Gestalte intuitive und schöne Benutzererlebnisse für unsere KI-Produkte.",
+        "responsibilities": {
+          "resp1": "Gestaltung von Benutzeroberflächen für KI-Anwendungen",
+          "resp2": "Erstellung von Wireframes und Prototypen",
+          "resp3": "Durchführung von Nutzerforschung und -tests",
+          "resp4": "Zusammenarbeit mit Entwicklungsteams"
+        },
+        "requirements": {
+          "req1": "3+ Jahre in UX/UI-Design",
+          "req2": "Portfolio mit Design-Arbeiten",
+          "req3": "Kenntnisse in Figma/Sketch",
+          "req4": "Verständnis von KI/ML-Konzepten"
+        }
+      },
+      "operations": {
+        "title": "Operations Specialist",
+        "department": "Operations",
+        "location": "Berlin, Deutschland",
+        "type": "Vollzeit",
+        "experience": "2+ Jahre",
+        "description": "Optimiere interne Prozesse und sorge für reibungslose tägliche Abläufe.",
+        "responsibilities": {
+          "resp1": "Optimierung von Betriebsabläufen",
+          "resp2": "Verwaltung interner Tools und Systeme",
+          "resp3": "Koordination zwischen Abteilungen",
+          "resp4": "Analyse der Betriebseffizienz"
+        },
+        "requirements": {
+          "req1": "2+ Jahre in einer Operations-Rolle",
+          "req2": "Starke organisatorische Fähigkeiten",
+          "req3": "Erfahrung mit Prozessoptimierung",
+          "req4": "Technikaffin mit verschiedenen Software-Tools"
+        }
+      },
+      "backend": {
+        "title": "Backend Engineer",
+        "department": "Tech",
+        "location": "Remote",
+        "type": "Vollzeit",
+        "experience": "4+ Jahre",
+        "description": "Baue skalierbare Backend-Systeme und APIs für unsere KI-Plattform.",
+        "responsibilities": {
+          "resp1": "Entwicklung und Wartung von Backend-Diensten",
+          "resp2": "Design von RESTful-APIs",
+          "resp3": "Implementierung von Datenspeicherlösungen",
+          "resp4": "Gewährleistung von Systemsicherheit und Skalierbarkeit"
+        },
+        "requirements": {
+          "req1": "4+ Jahre Backend-Entwicklung",
+          "req2": "Erfahrung mit Node.js/Python",
+          "req3": "Kenntnisse von Datenbanken (SQL/NoSQL)",
+          "req4": "Erfahrung mit Cloud-Plattformen (AWS/GCP)"
+        }
+      }
+    }
+  },
+    "impressum": {
+    "header": {
+      "tag": "Rechtliches",
+      "title": "Impressum",
+      "subtitle": "Angaben gemäß § 5 TMG"
     },
     "company": {
-      "title": "Unternehmen",
-      "about": "Über Tolero",
-      "careers": "Karriere",
-      "references": "Referenzen",
-      "blog": "Blog"
+      "title": "Unternehmensinformationen",
+      "info": {
+        "title": "Unternehmensangaben",
+        "name": "Reinke AI Automation GmbH",
+        "address": "Musterstraße 123<br />10115 Berlin<br />Deutschland"
+      },
+      "contact": {
+        "title": "Kontakt",
+        "phone": "Telefon:",
+        "email": "E-Mail:",
+        "web": "Web:",
+        "phoneValue": "+49 (0) 30 12345678",
+        "emailValue": "info@reinke-ai.de",
+        "webValue": "www.reinke-ai.de"
+      },
+      "ceo": {
+        "title": "Vertretungsberechtigter Geschäftsführer",
+        "name": "Max Mustermann"
+      },
+      "registration": {
+        "title": "Registereintrag",
+        "number": "Handelsregister:",
+        "numberValue": "HRB 123456",
+        "court": "Registergericht:",
+        "courtValue": "Amtsgericht Berlin-Charlottenburg"
+      },
+      "vat": {
+        "title": "Umsatzsteuer-ID",
+        "info": "Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:",
+        "id": "DE123456789"
+      }
     },
-    "resources": {
-      "title": "Ressourcen",
-      "caseStudies": "Fallstudien",
-      "whitepapers": "Whitepapers",
-      "faq": "FAQ",
-      "support": "Support"
+    "responsible": {
+      "title": "Verantwortliche Person",
+      "section": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+      "name": "Max Mustermann",
+      "address": "Musterstraße 123<br />10115 Berlin"
     },
-    "copyright": "Tolero GmbH. Alle Rechte vorbehalten.",
-    "legal": {
-      "privacy": "Datenschutz",
-      "notice": "Impressum",
-      "terms": "AGB"
+    "dispute": {
+      "title": "Streitbeilegung",
+      "eu": {
+        "title": "EU-Streitschlichtung",
+        "text": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
+        "link": "ec.europa.eu/consumers/odr",
+        "note": "Unsere E-Mail-Adresse finden Sie oben im Impressum."
+      },
+      "consumer": {
+        "title": "Verbraucherstreitbeilegung",
+        "text": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+      }
+    },
+    "liability": {
+      "title": "Haftungs- und Urheberrecht",
+      "content": {
+        "title": "Haftung für Inhalte",
+        "text1": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+        "text2": "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich."
+      },
+      "links": {
+        "title": "Haftung für Links",
+        "text1": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
+        "text2": "Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar."
+      },
+      "copyright": {
+        "title": "Urheberrecht",
+        "text1": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.",
+        "text2": "Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
+        "text3": "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet."
+      }
+    },
+    "footer": {
+      "back": "Zurück zur Startseite",
+      "date": "Stand: März 2024",
+      "print": "Drucken"
     }
+  },
+  "dataprotection": {
+  "header": {
+    "tag": "Datenschutz",
+    "title": "Datenschutzerklärung",
+    "subtitle": "Informationen gemäß DSGVO"
+  },
+  "sections": {
+    "overview": {
+      "title": "1. Datenschutz auf einen Blick",
+      "general": {
+        "title": "Allgemeine Hinweise",
+        "text": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung."
+      },
+      "collection": {
+        "title": "Datenerfassung auf unserer Website",
+        "q1": "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
+        "a1": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem ",
+        "a1_2": " dieser Website entnehmen.",
+        "q2": "Wie erfassen wir Ihre Daten?",
+        "a2": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie unsere Website betreten.",
+        "q3": "Wofür nutzen wir Ihre Daten?",
+        "a3": "Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.",
+        "q4": "Welche Rechte haben Sie bezüglich Ihrer Daten?",
+        "a4": "Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu."
+      }
+    },
+    "general": {
+      "title": "2. Allgemeine Hinweise und Pflichtinformationen",
+      "privacy": {
+        "title": "Datenschutz",
+        "text1": "Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.",
+        "text2": "Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.",
+        "note": "Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich."
+      },
+      "responsible": {
+        "title": "Hinweis zur verantwortlichen Stelle",
+        "text": "Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:",
+        "note": "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet."
+      },
+      "withdrawal": {
+        "title": "Widerruf Ihrer Einwilligung zur Datenverarbeitung",
+        "text": "Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt."
+      },
+      "complaint": {
+        "title": "Beschwerderecht bei der zuständigen Aufsichtsbehörde",
+        "text": "Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe."
+      }
+    },
+    "dataCollection": {
+      "title": "3. Datenerfassung auf unserer Website",
+      "cookies": {
+        "title": "Cookies",
+        "text1": "Unsere Internetseiten verwenden sogenannte \"Cookies\". Cookies sind kleine Textdateien und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert.",
+        "text2": "Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Websitefunktionen ohne diese nicht funktionieren würden (z.B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies dienen dazu, das Nutzerverhalten auszuwerten oder Werbung anzuzeigen.",
+        "highlight": "Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.",
+        "session": {
+          "title": "Session-Cookies",
+          "text": "Werden nach Ende Ihres Besuchs automatisch gelöscht."
+        },
+        "permanent": {
+          "title": "Permanente Cookies",
+          "text": "Bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen."
+        },
+        "thirdParty": {
+          "title": "Third-Party-Cookies",
+          "text": "Von Drittunternehmen, die bestimmte Dienstleistungen ermöglichen."
+        }
+      },
+      "contactForm": {
+        "title": "Kontaktformular",
+        "text1": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+        "text2": "Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns.",
+        "note": "Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt."
+      },
+      "emailPhone": {
+        "title": "Anfrage per E-Mail, Telefon oder Telefax",
+        "text1": "Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+        "text2": "Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und/oder auf unseren berechtigten Interessen (Art. 6 Abs. 1 lit. f DSGVO).",
+        "note": "Die von Ihnen an uns gesendeten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt. Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt."
+      }
+    },
+    "plugins": {
+      "title": "4. Plugins und Tools",
+      "googleFonts": {
+        "title": "Google Web Fonts",
+        "text1": "Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten sogenannte Web Fonts, die von Google bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts in ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.",
+        "text2": "Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse unsere Website aufgerufen wurde. Die Nutzung von Google Web Fonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Online-Angebote.",
+        "moreInfo": "Weitere Informationen finden Sie unter:",
+        "faqLink": "Google Fonts FAQ",
+        "privacyLink": "Google Datenschutzerklärung"
+      }
+    },
+    "changes": {
+      "title": "5. Änderung der Datenschutzerklärung",
+      "text": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung."
+    },
+    "questions": {
+      "title": "6. Fragen an den Datenschutzbeauftragten",
+      "text": "Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserem Unternehmen:",
+      "email": "datenschutz@reinke-ai.de"
+    }
+  },
+  "company": {
+    "name": "Reinke AI Automation GmbH",
+    "address": {
+      "street": "Musterstraße 123",
+      "city": "10115 Berlin"
+    },
+    "phone": "+49 (0) 30 12345678",
+    "email": "info@reinke-ai.de"
+  },
+  "contact": {
+    "phone": "Telefon",
+    "email": "E-Mail"
+  },
+  "impressum": {
+    "link": "Impressum"
+  },
+  "footer": {
+    "back": "Zurück zur Startseite",
+    "lastUpdated": "Letzte Aktualisierung: März 2024",
+    "impressum": "Impressum"
   }
 }
+  
+
+
+
+}
+
+  
+

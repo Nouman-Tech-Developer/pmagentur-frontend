@@ -30,7 +30,7 @@ const SavingsCalculator = () => {
   const savings = calculateSavings();
   
   const formatCurrency = (value) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('de-DE', {
       style: 'currency',
       currency: 'EUR',
       minimumFractionDigits: 0,
@@ -44,11 +44,11 @@ const SavingsCalculator = () => {
         <div className="calculator-container">
           <div className="calculator-header">
             <h2 className="calculator-title">
-              <span className="title-line">Calculate Your</span>
-              <span className="title-line highlight">Potential Savings</span>
+              <span className="title-line">{t('calculator.title.line1')}</span>
+              <span className="title-line highlight">{t('calculator.title.line2')}</span>
             </h2>
             <p className="calculator-subtitle">
-              Discover how much your practice can save with our AI phone assistant
+              {t('calculator.subtitle')}
             </p>
           </div>
           
@@ -56,7 +56,7 @@ const SavingsCalculator = () => {
             <div className="calculator-inputs">
               <div className="input-group">
                 <div className="input-header">
-                  <label htmlFor="employees">Employees handling calls</label>
+                  <label htmlFor="employees">{t('calculator.labels.employees')}</label>
                   <span className="input-value">{employees}</span>
                 </div>
                 <input
@@ -79,7 +79,7 @@ const SavingsCalculator = () => {
               
               <div className="input-group">
                 <div className="input-header">
-                  <label htmlFor="hourlyRate">Hourly rate (€)</label>
+                  <label htmlFor="hourlyRate">{t('calculator.labels.hourlyRate')}</label>
                   <span className="input-value">{hourlyRate}€</span>
                 </div>
                 <input
@@ -103,7 +103,7 @@ const SavingsCalculator = () => {
               
               <div className="input-group">
                 <div className="input-header">
-                  <label htmlFor="dailyCalls">Calls per day</label>
+                  <label htmlFor="dailyCalls">{t('calculator.labels.dailyCalls')}</label>
                   <span className="input-value">{dailyCalls}</span>
                 </div>
                 <input
@@ -127,8 +127,8 @@ const SavingsCalculator = () => {
               
               <div className="input-group">
                 <div className="input-header">
-                  <label htmlFor="avgCallDuration">Average duration (min.)</label>
-                  <span className="input-value">{avgCallDuration} min</span>
+                  <label htmlFor="avgCallDuration">{t('calculator.labels.avgDuration')}</label>
+                  <span className="input-value">{avgCallDuration} {t('calculator.units.min')}</span>
                 </div>
                 <input
                   type="range"
@@ -152,20 +152,22 @@ const SavingsCalculator = () => {
             
             <div className="calculator-results">
               <div className="results-card">
-                <h3 className="results-title">Your Savings Potential</h3>
+                <h3 className="results-title">{t('calculator.results.title')}</h3>
                 
                 <div className="metrics-grid">
                   <div className="metric-item">
-                    <div className="metric-label">Call time per day</div>
+                    <div className="metric-label">{t('calculator.metrics.callTime.label')}</div>
                     <div className="metric-value">
                       <span className="metric-number">{savings.minutesPerDay}</span>
-                      <span className="metric-unit">min</span>
+                      <span className="metric-unit">{t('calculator.units.min')}</span>
                     </div>
-                    <div className="metric-detail">({savings.hoursPerDay} hours)</div>
+                    <div className="metric-detail">
+                      ({savings.hoursPerDay} {t('calculator.units.hours')})
+                    </div>
                   </div>
                   
                   <div className="metric-item">
-                    <div className="metric-label">Annual staff cost</div>
+                    <div className="metric-label">{t('calculator.metrics.staffCost.label')}</div>
                     <div className="metric-value">
                       <span className="metric-number">{formatCurrency(savings.annualEmployeeCost)}</span>
                     </div>
@@ -173,23 +175,23 @@ const SavingsCalculator = () => {
                 </div>
                 
                 <div className="savings-result">
-                  <div className="savings-label">Annual savings with AI</div>
+                  <div className="savings-label">{t('calculator.savings.label')}</div>
                   <div className="savings-amount">{formatCurrency(savings.annualSavings)}</div>
                   <div className="savings-percentage">
                     <span className="percentage-badge">-{savings.savingsPercentage}%</span>
-                    <span className="savings-note">vs. manual handling</span>
+                    <span className="savings-note">{t('calculator.savings.vsManual')}</span>
                   </div>
                 </div>
                 
                 <button className="calculator-cta">
-                  Request consultation
+                  {t('calculator.cta')}
                   <svg className="cta-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M5 15L15 5M15 5H8M15 5V12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
                 
                 <p className="calculator-disclaimer">
-                  *Based on 240 working days per year and 80% automation rate. Individual savings may vary.
+                  {t('calculator.disclaimer')}
                 </p>
               </div>
             </div>

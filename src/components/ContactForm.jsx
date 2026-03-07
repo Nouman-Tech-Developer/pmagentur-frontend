@@ -53,8 +53,8 @@ const ContactSection = () => {
                 <div className="contact-checkbox">
                   <input type="checkbox" id="privacy" className="contact-checkbox-input" />
                   <label htmlFor="privacy" className="contact-checkbox-label">
-                    {t('contact.form.privacy.part1')} <a href="#">{t('contact.form.privacy.part2')}</a> {t('contact.form.privacy.part3')}
-                  </label>
+  {t('contact.form.privacy.part1')} <a href={t('contact.form.privacy.link')}>{t('contact.form.privacy.part2')}</a> {t('contact.form.privacy.part3')}
+</label>
                 </div>
                 
                 <div className="submit-button-container">

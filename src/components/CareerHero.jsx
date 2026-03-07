@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CareerHero = () => {
+  const { t } = useTranslation();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -95,15 +97,14 @@ const CareerHero = () => {
             <div className="career-content-wrapper">
               {/* Main Headline */}
               <h1 className="career-main-headline">
-                <span className="headline-line">Gestalte die Zukunft</span>
-                <span className="headline-gradient">der KI mit uns</span>
+                <span className="headline-line">{t('careerHero.headline.line1')}</span>
+                <span className="headline-gradient">{t('careerHero.headline.line2')}</span>
               </h1>
 
               {/* Sub Headline */}
               <div className="career-description-wrapper">
                 <h2 className="career-sub-headline">
-                  Werde Teil eines Teams, das innovative KI-Lösungen entwickelt 
-                  und Unternehmen weltweit transformiert.
+                  {t('careerHero.subheadline')}
                 </h2>
               </div>
             </div>
@@ -119,7 +120,7 @@ const CareerHero = () => {
                 >
                   <img 
                     src="/images/Career.jpg" 
-                    alt="TOLERO Team Karriere"
+                    alt={t('careerHero.imageAlt')}
                     className={`career-hero-image ${imageLoaded ? 'loaded' : ''}`}
                   />
                 </div>
@@ -129,7 +130,7 @@ const CareerHero = () => {
               {!imageLoaded && (
                 <div className="career-image-loading">
                   <div className="career-loading-spinner"></div>
-                  <span className="career-loading-text">Lädt Bild...</span>
+                  <span className="career-loading-text">{t('careerHero.loading')}</span>
                 </div>
               )}
               
@@ -163,7 +164,7 @@ const CareerHero = () => {
 
         {/* Scroll Indicator */}
         <div className="career-scroll-indicator">
-          <span className="scroll-text">Entdecken</span>
+          <span className="scroll-text">{t('careerHero.scrollText')}</span>
           <div className="scroll-line">
             <div className="scroll-progress" style={{ width: `${scrollProgress * 100}%` }} />
           </div>

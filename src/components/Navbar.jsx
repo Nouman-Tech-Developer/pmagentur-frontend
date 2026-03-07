@@ -40,311 +40,165 @@ const Navbar = () => {
 
   const navLinks = [
     {
-      label: t('nav.solutions', 'Lösungen'),
+      label: t('nav.solutions'),
       key: 'solutions',
       hasDropdown: true,
       href: '#'
     },
     {
-      label: t('nav.products', 'Produkte'),
+      label: t('nav.products'),
       key: 'products',
       hasDropdown: true,
       href: '#'
     },
     {
-      label: t('nav.about', 'Über uns'),
+      label: t('nav.about'),
       key: 'about',
       hasDropdown: false,
       to: '/about'
     },
     {
-      label: t('nav.careers', 'Karriere'),
+      label: t('nav.careers'),
       key: 'careers',
       hasDropdown: false,
       to: '/career'
     },
   ];
 
+  // Solutions Data
   const solutionsData = {
     categories: [
-      { id: 1, title: 'KI & Daten' },
-      { id: 2, title: 'E-Commerce' },
-      { id: 3, title: 'Software' },
-      { id: 4, title: 'Legal' },
-      { id: 5, title: 'Marketing' },
-      { id: 6, title: 'Finance' },
+      { id: 1, title: t('solutions.categories.aiAutomation', 'KI & Automatisierung') },
+      { id: 2, title: t('solutions.categories.customerService', 'Kundenservice') },
+      { id: 3, title: t('solutions.categories.internalProcesses', 'Interne Prozesse') },
+      { id: 4, title: t('solutions.categories.industrySolutions', 'Branchenlösungen') },
     ],
     services: {
       1: [
         {
           id: 1,
-          title: 'AI Phone Assistant',
-          description: 'Automates calls, appointment scheduling, and customer inquiries – 24/7 availability.',
-          link: '#'
+          title: t('nav-services.aiPhone.title', 'AI Phone Assistant'),
+          description: t('nav-services.aiPhone.description', 'Intelligenter Telefonassistent mit natürlicher Sprachverarbeitung'),
+          link: '/solutions/ai-phone-assistant'
         },
         {
           id: 2,
-          title: 'Chatbots & Digital Assistants',
-          description: 'Intelligent chatbots for websites, social media, and internal processes.',
-          link: '#'
-        },
-        {
-          id: 3,
-          title: 'Email Automation',
-          description: 'Automate customer communication and internal processes efficiently.',
-          link: '#'
-        },
-        {
-          id: 4,
-          title: 'Data Analysis AI',
-          description: 'Advanced AI for processing and analyzing large datasets.',
-          link: '#'
+          title: t('nav-services.chatbots.title', 'Smart Chatbots'),
+          description: t('nav-services.chatbots.description', 'KI-gestützte Chatbots für alle Kanäle'),
+          link: '/solutions/chatbots'
         }
       ],
       2: [
         {
-          id: 5,
-          title: 'E-Commerce Store Automation',
-          description: 'Automated product management and inventory control for online stores.',
-          link: '#'
+          id: 3,
+          title: t('nav-services.emailAutomation.title', 'Email Automation'),
+          description: t('nav-services.emailAutomation.description', 'Automatische E-Mail-Verarbeitung und Kampagnen'),
+          link: '/solutions/email-automation'
         },
         {
-          id: 6,
-          title: 'Order Processing',
-          description: 'Streamlined order fulfillment and customer notification systems.',
-          link: '#'
-        },
-        {
-          id: 7,
-          title: 'Customer Service Automation',
-          description: 'AI-powered customer support with instant query resolution.',
-          link: '#'
-        },
-        {
-          id: 8,
-          title: 'Personalized Recommendations',
-          description: 'AI algorithms for personalized product suggestions.',
-          link: '#'
+          id: 4,
+          title: t('nav-services.customerSupport', '24/7 Kundenbetreuung'),
+          description: t('nav-services.customerSupportDesc', 'Rund-um-die-Uhr Kundenbetreuung mit KI-gestützten Lösungen'),
+          link: '/solutions/customer-support'
         }
       ],
       3: [
         {
-          id: 9,
-          title: 'Workflow Optimization',
-          description: 'Custom AI solutions for data processing and industry-specific tasks.',
-          link: '#'
+          id: 5,
+          title: t('nav-services.workflow.title', 'Workflow Optimization'),
+          description: t('nav-services.workflow.description', 'Automatisieren Sie komplexe Arbeitsabläufe'),
+          link: '/solutions/workflow-optimization'
         },
         {
-          id: 10,
-          title: 'Process Automation',
-          description: 'Automate repetitive business processes to increase efficiency.',
-          link: '#'
-        },
-        {
-          id: 11,
-          title: 'System Integration',
-          description: 'Seamless integration of AI tools with existing systems.',
-          link: '#'
-        },
-        {
-          id: 12,
-          title: 'Custom Development',
-          description: 'Tailor-made AI solutions for unique business requirements.',
-          link: '#'
+          id: 6,
+          title: t('nav-services.processAutomation', 'Prozessautomatisierung'),
+          description: t('nav-services.processAutomationDesc', 'Automatisieren Sie wiederkehrende Aufgaben'),
+          link: '/solutions/process-automation'
         }
       ],
       4: [
         {
-          id: 13,
-          title: 'Legal Document Processing',
-          description: 'AI-powered document review and contract analysis.',
-          link: '#'
+          id: 7,
+          title: t('nav-services.medical', 'Medizinische KI-Lösungen'),
+          description: t('nav-services.medicalDesc', 'KI-gestützte Lösungen für Arztpraxen, Krankenhäuser und medizinische Einrichtungen'),
+          link: '/solutions/medical'
         },
         {
-          id: 14,
-          title: 'Compliance Automation',
-          description: 'Automated compliance checks and regulatory reporting.',
-          link: '#'
-        },
-        {
-          id: 15,
-          title: 'Contract Management',
-          description: 'AI system for contract lifecycle management.',
-          link: '#'
-        },
-        {
-          id: 16,
-          title: 'Legal Research AI',
-          description: 'Advanced AI tools for legal research and analysis.',
-          link: '#'
-        }
-      ],
-      5: [
-        {
-          id: 17,
-          title: 'Marketing Campaign Automation',
-          description: 'Automate multi-channel marketing campaigns.',
-          link: '#'
-        },
-        {
-          id: 18,
-          title: 'Social Media Management',
-          description: 'AI tools for social media scheduling and analytics.',
-          link: '#'
-        },
-        {
-          id: 19,
-          title: 'Customer Segmentation',
-          description: 'AI-driven customer segmentation for targeted marketing.',
-          link: '#'
-        },
-        {
-          id: 20,
-          title: 'ROI Analytics',
-          description: 'Measure and optimize marketing campaign performance.',
-          link: '#'
-        }
-      ],
-      6: [
-        {
-          id: 21,
-          title: 'Financial Reporting',
-          description: 'Automated financial reporting and analysis.',
-          link: '#'
-        },
-        {
-          id: 22,
-          title: 'Invoice Processing',
-          description: 'AI-powered invoice processing and payment automation.',
-          link: '#'
-        },
-        {
-          id: 23,
-          title: 'Fraud Detection',
-          description: 'Advanced AI algorithms for detecting fraud.',
-          link: '#'
-        },
-        {
-          id: 24,
-          title: 'Investment Analysis',
-          description: 'AI tools for market analysis and portfolio management.',
-          link: '#'
+          id: 8,
+          title: t('nav-services.industrySpecific', 'Branchenspezifische KI'),
+          description: t('nav-services.industrySpecificDesc', 'Maßgeschneiderte KI-Lösungen für verschiedene Branchen'),
+          link: '/solutions/industry-specific'
         }
       ]
     }
   };
 
+  // Products Data
   const productsData = {
     categories: [
-      { id: 1, title: 'AI Platform' },
-      { id: 2, title: 'Automation Tools' },
-      { id: 3, title: 'Analytics' },
-      { id: 4, title: 'Integration' },
+      { id: 1, title: t('products.categories.communication', 'Kommunikation') },
+      { id: 2, title: t('products.categories.automation', 'Automatisierung') },
+      { id: 3, title: t('products.categories.integration', 'Integration') },
+      { id: 4, title: t('products.categories.enterprise', 'Enterprise') },
     ],
     products: {
       1: [
         {
           id: 1,
-          title: 'Reinke AI Suite',
-          description: 'Complete AI platform with voice, chat, and email automation.',
-          link: '#',
-          badge: 'Popular'
+          title: t('products.aiPhonePro', 'AI Phone Assistant Pro'),
+          description: t('products.aiPhoneProDesc', 'Professioneller KI-Telefonassistent mit 24/7 Verfügbarkeit'),
+          link: '/products/ai-phone-assistant-pro',
+          badge: t('products.badges.popular', 'Beliebt')
         },
         {
           id: 2,
-          title: 'Voice AI Pro',
-          description: 'Advanced voice recognition for call centers.',
-          link: '#'
-        },
-        {
-          id: 3,
-          title: 'Enterprise AI Platform',
-          description: 'Scalable AI platform for large organizations.',
-          link: '#'
-        },
-        {
-          id: 4,
-          title: 'AI Studio',
-          description: 'Build and train custom AI models.',
-          link: '#'
+          title: t('products.chatbotSuite', 'Smart Chatbot Suite'),
+          description: t('products.chatbotSuiteDesc', 'Intelligente Chatbots für Website, WhatsApp, Messenger'),
+          link: '/products/chatbot-suite',
         }
       ],
       2: [
         {
-          id: 5,
-          title: 'Automation Studio',
-          description: 'Drag-and-drop workflow builder for custom automation.',
-          link: '#'
+          id: 3,
+          title: t('products.emailAutomation', 'Email Automation Tool'),
+          description: t('products.emailAutomationDesc', 'Leistungsstarke E-Mail-Automatisierung für Marketing'),
+          link: '/products/email-automation-tool',
+          badge: t('products.badges.new', 'Neu')
         },
         {
-          id: 6,
-          title: 'Chatbot Builder',
-          description: 'Create intelligent chatbots for multiple platforms.',
-          link: '#'
-        },
-        {
-          id: 7,
-          title: 'Workflow Automator',
-          description: 'Advanced automation for complex business workflows.',
-          link: '#'
-        },
-        {
-          id: 8,
-          title: 'Task Scheduler',
-          description: 'Intelligent scheduling for recurring operations.',
-          link: '#'
+          id: 4,
+          title: t('products.workflowAutomator', 'Workflow Automator'),
+          description: t('products.workflowAutomatorDesc', 'Automatisieren Sie komplexe Arbeitsabläufe'),
+          link: '/products/workflow-automator',
         }
       ],
       3: [
         {
-          id: 9,
-          title: 'Analytics Dashboard',
-          description: 'Real-time insights for all automated processes.',
-          link: '#'
+          id: 5,
+          title: t('products.apiHub', 'API Integration Hub'),
+          description: t('products.apiHubDesc', 'Nahtlose Integration mit über 500+ Anwendungen'),
+          link: '/products/api-integration-hub',
         },
         {
-          id: 10,
-          title: 'Performance Monitor',
-          description: 'Comprehensive AI system monitoring and reporting.',
-          link: '#'
-        },
-        {
-          id: 11,
-          title: 'Business Intelligence',
-          description: 'AI-powered analytics for strategic planning.',
-          link: '#'
-        },
-        {
-          id: 12,
-          title: 'Data Visualization',
-          description: 'Transform complex data into actionable insights.',
-          link: '#'
+          id: 6,
+          title: t('products.crmConnector', 'CRM Connector'),
+          description: t('products.crmConnectorDesc', 'Direkte Integration mit Salesforce, HubSpot und mehr'),
+          link: '/products/crm-connector',
         }
       ],
       4: [
         {
-          id: 13,
-          title: 'API Gateway',
-          description: 'Seamless integration with 500+ applications.',
-          link: '#'
+          id: 7,
+          title: t('products.enterpriseSuite', 'Enterprise AI Suite'),
+          description: t('products.enterpriseSuiteDesc', 'Komplette KI-Plattform für große Unternehmen'),
+          link: '/products/enterprise-ai-suite',
+          badge: t('products.badges.enterprise', 'Enterprise')
         },
         {
-          id: 14,
-          title: 'System Connectors',
-          description: 'Pre-built connectors for popular business software.',
-          link: '#'
-        },
-        {
-          id: 15,
-          title: 'Custom Integration',
-          description: 'Tools for proprietary system integration.',
-          link: '#'
-        },
-        {
-          id: 16,
-          title: 'Data Synchronization',
-          description: 'Real-time data sync across multiple platforms.',
-          link: '#'
+          id: 8,
+          title: t('products.customAI', 'Custom AI Solutions'),
+          description: t('products.customAIDesc', 'Maßgeschneiderte KI-Lösungen'),
+          link: '/products/custom-ai-solutions',
         }
       ]
     }
@@ -436,7 +290,6 @@ const Navbar = () => {
 
   const handleItemClick = (link, e) => {
     e.preventDefault();
-    console.log(`Clicked: ${link.title}`);
     window.location.href = link.link;
   };
 
@@ -489,8 +342,6 @@ const Navbar = () => {
                           role="button"
                           aria-haspopup={link.hasDropdown}
                           aria-expanded={activeMegaMenu === link.key}
-                          target={link.href?.startsWith('http') ? '_blank' : undefined}
-                          rel={link.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                         >
                           {link.label}
                           {link.hasDropdown && (
@@ -629,8 +480,6 @@ const Navbar = () => {
                         className="reinke-header__mobile-link"
                         href={link.href}
                         onClick={() => setIsMenuOpen(false)}
-                        target={link.href?.startsWith('http') ? '_blank' : undefined}
-                        rel={link.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                       >
                         {link.label}
                       </a>

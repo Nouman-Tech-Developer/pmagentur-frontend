@@ -1,121 +1,11 @@
 // Impressum.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Impressum = () => {
-  // Group sections for better organization
-  const companyInfo = [
-    {
-      title: 'Unternehmensangaben',
-      content: (
-        <>
-          <p><strong>Reinke AI Automation GmbH</strong></p>
-          <p>Musterstraße 123<br />10115 Berlin<br />Deutschland</p>
-        </>
-      )
-    },
-    {
-      title: 'Kontakt',
-      content: (
-        <>
-          <p><span className="legal-contact-item">Telefon:</span> +49 (0) 30 12345678</p>
-          <p><span className="legal-contact-item">E-Mail:</span> <a href="mailto:info@reinke-ai.de">info@reinke-ai.de</a></p>
-          <p><span className="legal-contact-item">Web:</span> <a href="https://www.reinke-ai.de" target="_blank" rel="noopener noreferrer">www.reinke-ai.de</a></p>
-        </>
-      )
-    },
-    {
-      title: 'Vertretungsberechtigter Geschäftsführer',
-      content: <p>Max Mustermann</p>
-    },
-    {
-      title: 'Registereintrag',
-      content: (
-        <>
-          <p><span className="legal-register-item">Handelsregister:</span> HRB 123456</p>
-          <p><span className="legal-register-item">Registergericht:</span> Amtsgericht Berlin-Charlottenburg</p>
-        </>
-      )
-    },
-    {
-      title: 'Umsatzsteuer-ID',
-      content: (
-        <>
-          <p className="legal-small-text">Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:</p>
-          <p className="legal-id">DE123456789</p>
-        </>
-      )
-    }
-  ];
-
-  const responsibleInfo = [
-    {
-      title: 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV',
-      content: (
-        <>
-          <p>Max Mustermann</p>
-          <p>Musterstraße 123<br />10115 Berlin</p>
-        </>
-      )
-    }
-  ];
-
-  const legalInfo = [
-    {
-      title: 'EU-Streitschlichtung',
-      content: (
-        <>
-          <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:</p>
-          <p className="legal-link-wrapper">
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="legal-external-link">
-              ec.europa.eu/consumers/odr
-              <span className="legal-link-arrow">↗</span>
-            </a>
-          </p>
-          <p className="legal-small-text">Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
-        </>
-      )
-    },
-    {
-      title: 'Verbraucherstreitbeilegung',
-      content: (
-        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-      )
-    }
-  ];
-
-  const liabilityInfo = [
-    {
-      title: 'Haftung für Inhalte',
-      content: (
-        <>
-          <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-          <p className="legal-highlight">Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.</p>
-        </>
-      )
-    },
-    {
-      title: 'Haftung für Links',
-      content: (
-        <>
-          <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
-          <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.</p>
-        </>
-      )
-    },
-    {
-      title: 'Urheberrecht',
-      content: (
-        <>
-          <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
-          <p className="legal-highlight">Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
-          <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet.</p>
-        </>
-      )
-    }
-  ];
-
-  return (
+const { t } = useTranslation(); 
+ return (
     <>
       <section className="legal-page">
         <div className="legal-container">
@@ -123,28 +13,64 @@ const Impressum = () => {
           <div className="legal-header">
             <div className="legal-header-decoration">
               <span className="legal-header-line"></span>
-              <span className="legal-header-tag">Rechtliches</span>
+              <span className="legal-header-tag">{t('impressum.header.tag')}</span>
               <span className="legal-header-line"></span>
             </div>
-            <h1 className="legal-title">Impressum</h1>
-            <p className="legal-subtitle">Angaben gemäß § 5 TMG</p>
+            <h1 className="legal-title">{t('impressum.header.title')}</h1>
+            <p className="legal-subtitle">{t('impressum.header.subtitle')}</p>
           </div>
 
           {/* Company Information Card */}
           <div className="legal-card">
             <div className="legal-card-header">
-              <h2 className="legal-card-title">Unternehmensinformationen</h2>
+              <h2 className="legal-card-title">{t('impressum.company.title')}</h2>
             </div>
             <div className="legal-card-content">
               <div className="legal-grid">
-                {companyInfo.map((section, index) => (
-                  <div key={index} className="legal-grid-item">
-                    <h3 className="legal-grid-title">{section.title}</h3>
-                    <div className="legal-grid-content">
-                      {section.content}
-                    </div>
+                {/* Unternehmensangaben */}
+                <div className="legal-grid-item">
+                  <h3 className="legal-grid-title">{t('impressum.company.info.title')}</h3>
+                  <div className="legal-grid-content">
+                    <p><strong>{t('impressum.company.info.name')}</strong></p>
+                    <p dangerouslySetInnerHTML={{ __html: t('impressum.company.info.address') }} />
                   </div>
-                ))}
+                </div>
+
+                {/* Kontakt */}
+                <div className="legal-grid-item">
+                  <h3 className="legal-grid-title">{t('impressum.company.contact.title')}</h3>
+                  <div className="legal-grid-content">
+                    <p><span className="legal-contact-item">{t('impressum.company.contact.phone')}</span> {t('impressum.company.contact.phoneValue')}</p>
+                    <p><span className="legal-contact-item">{t('impressum.company.contact.email')}</span> <a href="mailto:info@reinke-ai.de">{t('impressum.company.contact.emailValue')}</a></p>
+                    <p><span className="legal-contact-item">{t('impressum.company.contact.web')}</span> <a href="https://www.reinke-ai.de" target="_blank" rel="noopener noreferrer">{t('impressum.company.contact.webValue')}</a></p>
+                  </div>
+                </div>
+
+                {/* Geschäftsführer */}
+                <div className="legal-grid-item">
+                  <h3 className="legal-grid-title">{t('impressum.company.ceo.title')}</h3>
+                  <div className="legal-grid-content">
+                    <p>{t('impressum.company.ceo.name')}</p>
+                  </div>
+                </div>
+
+                {/* Registereintrag */}
+                <div className="legal-grid-item">
+                  <h3 className="legal-grid-title">{t('impressum.company.registration.title')}</h3>
+                  <div className="legal-grid-content">
+                    <p><span className="legal-register-item">{t('impressum.company.registration.number')}</span> {t('impressum.company.registration.numberValue')}</p>
+                    <p><span className="legal-register-item">{t('impressum.company.registration.court')}</span> {t('impressum.company.registration.courtValue')}</p>
+                  </div>
+                </div>
+
+                {/* Umsatzsteuer-ID */}
+                <div className="legal-grid-item">
+                  <h3 className="legal-grid-title">{t('impressum.company.vat.title')}</h3>
+                  <div className="legal-grid-content">
+                    <p className="legal-small-text">{t('impressum.company.vat.info')}</p>
+                    <p className="legal-id">{t('impressum.company.vat.id')}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -152,35 +78,48 @@ const Impressum = () => {
           {/* Responsible Person Card */}
           <div className="legal-card">
             <div className="legal-card-header">
-              <h2 className="legal-card-title">Verantwortliche Person</h2>
+              <h2 className="legal-card-title">{t('impressum.responsible.title')}</h2>
             </div>
             <div className="legal-card-content">
-              {responsibleInfo.map((section, index) => (
-                <div key={index} className="legal-responsible">
-                  <h3 className="legal-section-title">{section.title}</h3>
-                  <div className="legal-section-content">
-                    {section.content}
-                  </div>
+              <div className="legal-responsible">
+                <h3 className="legal-section-title">{t('impressum.responsible.section')}</h3>
+                <div className="legal-section-content">
+                  <p>{t('impressum.responsible.name')}</p>
+                  <p dangerouslySetInnerHTML={{ __html: t('impressum.responsible.address') }} />
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
           {/* Dispute Resolution Card */}
           <div className="legal-card">
             <div className="legal-card-header">
-              <h2 className="legal-card-title">Streitbeilegung</h2>
+              <h2 className="legal-card-title">{t('impressum.dispute.title')}</h2>
             </div>
             <div className="legal-card-content">
               <div className="legal-split">
-                {legalInfo.map((section, index) => (
-                  <div key={index} className="legal-split-item">
-                    <h3 className="legal-section-title">{section.title}</h3>
-                    <div className="legal-section-content">
-                      {section.content}
-                    </div>
+                {/* EU Streitschlichtung */}
+                <div className="legal-split-item">
+                  <h3 className="legal-section-title">{t('impressum.dispute.eu.title')}</h3>
+                  <div className="legal-section-content">
+                    <p>{t('impressum.dispute.eu.text')}</p>
+                    <p className="legal-link-wrapper">
+                      <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="legal-external-link">
+                        {t('impressum.dispute.eu.link')}
+                        <span className="legal-link-arrow">↗</span>
+                      </a>
+                    </p>
+                    <p className="legal-small-text">{t('impressum.dispute.eu.note')}</p>
                   </div>
-                ))}
+                </div>
+
+                {/* Verbraucherstreitbeilegung */}
+                <div className="legal-split-item">
+                  <h3 className="legal-section-title">{t('impressum.dispute.consumer.title')}</h3>
+                  <div className="legal-section-content">
+                    <p>{t('impressum.dispute.consumer.text')}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -188,17 +127,36 @@ const Impressum = () => {
           {/* Liability Card */}
           <div className="legal-card">
             <div className="legal-card-header">
-              <h2 className="legal-card-title">Haftungs- und Urheberrecht</h2>
+              <h2 className="legal-card-title">{t('impressum.liability.title')}</h2>
             </div>
             <div className="legal-card-content">
-              {liabilityInfo.map((section, index) => (
-                <div key={index} className="legal-liability-item">
-                  <h3 className="legal-section-title">{section.title}</h3>
-                  <div className="legal-section-content">
-                    {section.content}
-                  </div>
+              {/* Haftung für Inhalte */}
+              <div className="legal-liability-item">
+                <h3 className="legal-section-title">{t('impressum.liability.content.title')}</h3>
+                <div className="legal-section-content">
+                  <p>{t('impressum.liability.content.text1')}</p>
+                  <p className="legal-highlight">{t('impressum.liability.content.text2')}</p>
                 </div>
-              ))}
+              </div>
+
+              {/* Haftung für Links */}
+              <div className="legal-liability-item">
+                <h3 className="legal-section-title">{t('impressum.liability.links.title')}</h3>
+                <div className="legal-section-content">
+                  <p>{t('impressum.liability.links.text1')}</p>
+                  <p>{t('impressum.liability.links.text2')}</p>
+                </div>
+              </div>
+
+              {/* Urheberrecht */}
+              <div className="legal-liability-item">
+                <h3 className="legal-section-title">{t('impressum.liability.copyright.title')}</h3>
+                <div className="legal-section-content">
+                  <p>{t('impressum.liability.copyright.text1')}</p>
+                  <p className="legal-highlight">{t('impressum.liability.copyright.text2')}</p>
+                  <p>{t('impressum.liability.copyright.text3')}</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -207,12 +165,12 @@ const Impressum = () => {
             <div className="legal-footer-content">
               <Link to="/" className="legal-back-link">
                 <span className="legal-back-arrow">←</span>
-                <span className="legal-back-text">Zurück zur Startseite</span>
+                <span className="legal-back-text">{t('impressum.footer.back', 'Zurück zur Startseite')}</span>
               </Link>
               <div className="legal-footer-info">
-                <span className="legal-footer-date">Stand: März 2024</span>
+                <span className="legal-footer-date">{t('impressum.footer.date', 'Stand: März 2024')}</span>
                 <span className="legal-footer-dot">•</span>
-                <span className="legal-footer-print" onClick={() => window.print()}>Drucken</span>
+                <span className="legal-footer-print" onClick={() => window.print()}>{t('impressum.footer.print', 'Drucken')}</span>
               </div>
             </div>
           </div>
@@ -230,7 +188,7 @@ const Impressum = () => {
           width: 100%;
           min-height: 100vh;
           padding: 140px 100px 60px;
-          background: #F9FAFB;
+          background: #000000;
         }
 
         .legal-container {
@@ -255,7 +213,7 @@ const Impressum = () => {
         .legal-header-line {
           width: 60px;
           height: 2px;
-          background: linear-gradient(90deg, transparent, #000000, transparent);
+          background: linear-gradient(90deg, transparent, #FFFFFF, transparent);
         }
 
         .legal-header-tag {
@@ -263,13 +221,13 @@ const Impressum = () => {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 3px;
-          color: #6B7280;
+          color: #9CA3AF;
         }
 
         .legal-title {
           font-size: 56px;
           font-weight: 700;
-          color: #000000;
+          color: #FFFFFF;
           margin: 0 0 15px 0;
           line-height: 1.1;
           letter-spacing: -0.02em;
@@ -277,36 +235,37 @@ const Impressum = () => {
 
         .legal-subtitle {
           font-size: 18px;
-          color: #6B7280;
+          color: #9CA3AF;
           margin: 0;
           font-weight: 400;
         }
 
         /* Card Styles */
         .legal-card {
-          background: #FFFFFF;
+          background: #111111;
           border-radius: 24px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
           margin-bottom: 40px;
           overflow: hidden;
-          border: 1px solid #E5E7EB;
+          border: 1px solid #333333;
           transition: all 0.3s ease;
         }
 
         .legal-card:hover {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+          border-color: #444444;
         }
 
         .legal-card-header {
           padding: 25px 30px;
-          background: #FFFFFF;
-          border-bottom: 1px solid #E5E7EB;
+          background: #111111;
+          border-bottom: 1px solid #333333;
         }
 
         .legal-card-title {
           font-size: 24px;
           font-weight: 600;
-          color: #000000;
+          color: #FFFFFF;
           margin: 0;
           letter-spacing: -0.01em;
         }
@@ -323,7 +282,7 @@ const Impressum = () => {
         }
 
         .legal-grid-item {
-          border-bottom: 1px solid #F3F4F6;
+          border-bottom: 1px solid #333333;
           padding-bottom: 20px;
         }
 
@@ -335,7 +294,7 @@ const Impressum = () => {
         .legal-grid-title {
           font-size: 16px;
           font-weight: 600;
-          color: #374151;
+          color: #FFFFFF;
           margin: 0 0 12px 0;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -344,21 +303,33 @@ const Impressum = () => {
         .legal-grid-content {
           font-size: 15px;
           line-height: 1.7;
-          color: #4B5563;
+          color: #9CA3AF;
+        }
+
+        .legal-grid-content a {
+          color: #FFFFFF;
+          text-decoration: none;
+          border-bottom: 1px solid #444444;
+          transition: all 0.2s ease;
+        }
+
+        .legal-grid-content a:hover {
+          color: #FFFFFF;
+          border-bottom-color: #FFFFFF;
         }
 
         /* Section Styles */
         .legal-section-title {
           font-size: 18px;
           font-weight: 600;
-          color: #000000;
+          color: #FFFFFF;
           margin: 0 0 15px 0;
         }
 
         .legal-section-content {
           font-size: 15px;
           line-height: 1.7;
-          color: #4B5563;
+          color: #9CA3AF;
         }
 
         .legal-section-content p {
@@ -381,14 +352,14 @@ const Impressum = () => {
         }
 
         .legal-split-item:first-child {
-          border-right: 1px solid #E5E7EB;
+          border-right: 1px solid #333333;
         }
 
         /* Liability Items */
         .legal-liability-item {
           margin-bottom: 30px;
           padding-bottom: 30px;
-          border-bottom: 1px solid #E5E7EB;
+          border-bottom: 1px solid #333333;
         }
 
         .legal-liability-item:last-child {
@@ -400,14 +371,14 @@ const Impressum = () => {
         /* Text Styles */
         .legal-contact-item {
           font-weight: 600;
-          color: #374151;
+          color: #FFFFFF;
           display: inline-block;
           width: 70px;
         }
 
         .legal-register-item {
           font-weight: 600;
-          color: #374151;
+          color: #FFFFFF;
           display: inline-block;
           width: 130px;
         }
@@ -421,16 +392,17 @@ const Impressum = () => {
         .legal-id {
           font-size: 20px;
           font-weight: 600;
-          color: #000000;
+          color: #FFFFFF;
           letter-spacing: 1px;
         }
 
         .legal-highlight {
-          background: #F9FAFB;
+          background: #1A1A1A;
           padding: 15px;
           border-radius: 8px;
-          border-left: 3px solid #000000;
+          border-left: 3px solid #FFFFFF;
           margin: 15px 0 !important;
+          color: #9CA3AF;
         }
 
         /* Links */
@@ -442,18 +414,20 @@ const Impressum = () => {
           display: inline-flex;
           align-items: center;
           gap: 5px;
-          color: #000000;
+          color: #FFFFFF;
           text-decoration: none;
           font-weight: 500;
           padding: 8px 16px;
-          background: #F3F4F6;
+          background: #1A1A1A;
           border-radius: 40px;
           transition: all 0.2s ease;
+          border: 1px solid #333333;
         }
 
         .legal-external-link:hover {
-          background: #E5E7EB;
+          background: #222222;
           transform: translateY(-1px);
+          border-color: #444444;
         }
 
         .legal-link-arrow {
@@ -461,21 +435,21 @@ const Impressum = () => {
         }
 
         .legal-text a {
-          color: #000000;
+          color: #FFFFFF;
           text-decoration: underline;
           text-underline-offset: 2px;
           transition: color 0.2s ease;
         }
 
         .legal-text a:hover {
-          color: #6B7280;
+          color: #9CA3AF;
         }
 
         /* Footer */
         .legal-footer {
           margin-top: 60px;
           padding-top: 30px;
-          border-top: 1px solid #E5E7EB;
+          border-top: 1px solid #333333;
         }
 
         .legal-footer-content {
@@ -489,18 +463,19 @@ const Impressum = () => {
           align-items: center;
           gap: 10px;
           text-decoration: none;
-          color: #000000;
+          color: #FFFFFF;
           font-weight: 500;
           transition: all 0.2s ease;
           padding: 10px 20px;
-          background: #FFFFFF;
+          background: #111111;
           border-radius: 40px;
-          border: 1px solid #E5E7EB;
+          border: 1px solid #333333;
         }
 
         .legal-back-link:hover {
-          background: #F9FAFB;
+          background: #1A1A1A;
           transform: translateX(-5px);
+          border-color: #444444;
         }
 
         .legal-back-arrow {
@@ -516,12 +491,12 @@ const Impressum = () => {
           display: flex;
           align-items: center;
           gap: 10px;
-          color: #9CA3AF;
+          color: #6B7280;
           font-size: 14px;
         }
 
         .legal-footer-dot {
-          color: #D1D5DB;
+          color: #333333;
         }
 
         .legal-footer-print {
@@ -530,7 +505,7 @@ const Impressum = () => {
         }
 
         .legal-footer-print:hover {
-          color: #000000;
+          color: #FFFFFF;
         }
 
         /* Responsive Design */

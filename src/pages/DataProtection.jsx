@@ -1,42 +1,43 @@
 // DataProtection.jsx (Datenschutz)
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const DataProtection = () => {
+  const { t } = useTranslation(); // ← No namespace here
+
   // Organize content into sections for better structure
   const sections = [
     {
       id: 1,
-      title: '1. Datenschutz auf einen Blick',
+      title: t('dataprotection.sections.overview.title'),
       subsections: [
         {
-          title: 'Allgemeine Hinweise',
-          content: (
-            <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
-          )
+          title: t('dataprotection.sections.overview.general.title'),
+          content: <p>{t('dataprotection.sections.overview.general.text')}</p>
         },
         {
-          title: 'Datenerfassung auf unserer Website',
+          title: t('dataprotection.sections.overview.collection.title'),
           content: (
             <>
               <div className="legal-qna">
-                <p className="legal-question"><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
-                <p className="legal-answer">Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem <Link to="/impressum">Impressum</Link> dieser Website entnehmen.</p>
+                <p className="legal-question"><strong>{t('dataprotection.sections.overview.collection.q1')}</strong></p>
+                <p className="legal-answer">{t('dataprotection.sections.overview.collection.a1')} <Link to="/impressum">{t('dataprotection.impressum.link')}</Link>{t('dataprotection.sections.overview.collection.a1_2')}</p>
               </div>
               
               <div className="legal-qna">
-                <p className="legal-question"><strong>Wie erfassen wir Ihre Daten?</strong></p>
-                <p className="legal-answer">Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie unsere Website betreten.</p>
+                <p className="legal-question"><strong>{t('dataprotection.sections.overview.collection.q2')}</strong></p>
+                <p className="legal-answer">{t('dataprotection.sections.overview.collection.a2')}</p>
               </div>
               
               <div className="legal-qna">
-                <p className="legal-question"><strong>Wofür nutzen wir Ihre Daten?</strong></p>
-                <p className="legal-answer">Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+                <p className="legal-question"><strong>{t('dataprotection.sections.overview.collection.q3')}</strong></p>
+                <p className="legal-answer">{t('dataprotection.sections.overview.collection.a3')}</p>
               </div>
               
               <div className="legal-qna">
-                <p className="legal-question"><strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong></p>
-                <p className="legal-answer">Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+                <p className="legal-question"><strong>{t('dataprotection.sections.overview.collection.q4')}</strong></p>
+                <p className="legal-answer">{t('dataprotection.sections.overview.collection.a4')}</p>
               </div>
             </>
           )
@@ -45,106 +46,102 @@ const DataProtection = () => {
     },
     {
       id: 2,
-      title: '2. Allgemeine Hinweise und Pflichtinformationen',
+      title: t('dataprotection.sections.general.title'),
       subsections: [
         {
-          title: 'Datenschutz',
+          title: t('dataprotection.sections.general.privacy.title'),
           content: (
             <>
-              <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
-              <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.</p>
+              <p>{t('dataprotection.sections.general.privacy.text1')}</p>
+              <p>{t('dataprotection.sections.general.privacy.text2')}</p>
               <div className="legal-notice">
-                <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+                <p>{t('dataprotection.sections.general.privacy.note')}</p>
               </div>
             </>
           )
         },
         {
-          title: 'Hinweis zur verantwortlichen Stelle',
+          title: t('dataprotection.sections.general.responsible.title'),
           content: (
             <>
-              <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+              <p>{t('dataprotection.sections.general.responsible.text')}</p>
               <div className="legal-address-block">
-                <p><strong>Reinke AI Automation GmbH</strong><br />
-                Musterstraße 123<br />
-                10115 Berlin</p>
+                <p><strong>{t('dataprotection.company.name')}</strong><br />
+                {t('dataprotection.company.address.street')}<br />
+                {t('dataprotection.company.address.city')}</p>
                 <p className="legal-contact-line">
-                  <span className="legal-contact-label">Telefon:</span> 
-                  <a href="tel:+493012345678">+49 (0) 30 12345678</a>
+                  <span className="legal-contact-label">{t('dataprotection.contact.phone')}:</span> 
+                  <a href="tel:+493012345678">{t('dataprotection.company.phone')}</a>
                 </p>
                 <p className="legal-contact-line">
-                  <span className="legal-contact-label">E-Mail:</span> 
-                  <a href="mailto:info@reinke-ai.de">info@reinke-ai.de</a>
+                  <span className="legal-contact-label">{t('dataprotection.contact.email')}:</span> 
+                  <a href="mailto:info@reinke-ai.de">{t('dataprotection.company.email')}</a>
                 </p>
               </div>
-              <p className="legal-small-text">Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
+              <p className="legal-small-text">{t('dataprotection.sections.general.responsible.note')}</p>
             </>
           )
         },
         {
-          title: 'Widerruf Ihrer Einwilligung zur Datenverarbeitung',
-          content: (
-            <p>Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
-          )
+          title: t('dataprotection.sections.general.withdrawal.title'),
+          content: <p>{t('dataprotection.sections.general.withdrawal.text')}</p>
         },
         {
-          title: 'Beschwerderecht bei der zuständigen Aufsichtsbehörde',
-          content: (
-            <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
-          )
+          title: t('dataprotection.sections.general.complaint.title'),
+          content: <p>{t('dataprotection.sections.general.complaint.text')}</p>
         }
       ]
     },
     {
       id: 3,
-      title: '3. Datenerfassung auf unserer Website',
+      title: t('dataprotection.sections.dataCollection.title'),
       subsections: [
         {
-          title: 'Cookies',
+          title: t('dataprotection.sections.dataCollection.cookies.title'),
           content: (
             <>
-              <p>Unsere Internetseiten verwenden sogenannte "Cookies". Cookies sind kleine Textdateien und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert.</p>
+              <p>{t('dataprotection.sections.dataCollection.cookies.text1')}</p>
               
               <div className="legal-cookie-types">
                 <div className="legal-cookie-type">
-                  <h4 className="legal-cookie-title">Session-Cookies</h4>
-                  <p>Werden nach Ende Ihres Besuchs automatisch gelöscht.</p>
+                  <h4 className="legal-cookie-title">{t('dataprotection.sections.dataCollection.cookies.session.title')}</h4>
+                  <p>{t('dataprotection.sections.dataCollection.cookies.session.text')}</p>
                 </div>
                 <div className="legal-cookie-type">
-                  <h4 className="legal-cookie-title">Permanente Cookies</h4>
-                  <p>Bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen.</p>
+                  <h4 className="legal-cookie-title">{t('dataprotection.sections.dataCollection.cookies.permanent.title')}</h4>
+                  <p>{t('dataprotection.sections.dataCollection.cookies.permanent.text')}</p>
                 </div>
                 <div className="legal-cookie-type">
-                  <h4 className="legal-cookie-title">Third-Party-Cookies</h4>
-                  <p>Von Drittunternehmen, die bestimmte Dienstleistungen ermöglichen.</p>
+                  <h4 className="legal-cookie-title">{t('dataprotection.sections.dataCollection.cookies.thirdParty.title')}</h4>
+                  <p>{t('dataprotection.sections.dataCollection.cookies.thirdParty.text')}</p>
                 </div>
               </div>
               
-              <p>Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Websitefunktionen ohne diese nicht funktionieren würden (z.B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies dienen dazu, das Nutzerverhalten auszuwerten oder Werbung anzuzeigen.</p>
+              <p>{t('dataprotection.sections.dataCollection.cookies.text2')}</p>
               
               <div className="legal-highlight">
-                <p>Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.</p>
+                <p>{t('dataprotection.sections.dataCollection.cookies.highlight')}</p>
               </div>
             </>
           )
         },
         {
-          title: 'Kontaktformular',
+          title: t('dataprotection.sections.dataCollection.contactForm.title'),
           content: (
             <>
-              <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-              <p>Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit widerrufen. Dazu reicht eine formlose Mitteilung per E-Mail an uns.</p>
-              <p className="legal-note">Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+              <p>{t('dataprotection.sections.dataCollection.contactForm.text1')}</p>
+              <p>{t('dataprotection.sections.dataCollection.contactForm.text2')}</p>
+              <p className="legal-note">{t('dataprotection.sections.dataCollection.contactForm.note')}</p>
             </>
           )
         },
         {
-          title: 'Anfrage per E-Mail, Telefon oder Telefax',
+          title: t('dataprotection.sections.dataCollection.emailPhone.title'),
           content: (
             <>
-              <p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-              <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und/oder auf unseren berechtigten Interessen (Art. 6 Abs. 1 lit. f DSGVO).</p>
-              <p className="legal-note">Die von Ihnen an uns gesendeten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt. Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.</p>
+              <p>{t('dataprotection.sections.dataCollection.emailPhone.text1')}</p>
+              <p>{t('dataprotection.sections.dataCollection.emailPhone.text2')}</p>
+              <p className="legal-note">{t('dataprotection.sections.dataCollection.emailPhone.note')}</p>
             </>
           )
         }
@@ -152,26 +149,26 @@ const DataProtection = () => {
     },
     {
       id: 4,
-      title: '4. Plugins und Tools',
+      title: t('dataprotection.sections.plugins.title'),
       subsections: [
         {
-          title: 'Google Web Fonts',
+          title: t('dataprotection.sections.plugins.googleFonts.title'),
           content: (
             <>
-              <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten sogenannte Web Fonts, die von Google bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts in ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.</p>
-              <p>Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse unsere Website aufgerufen wurde. Die Nutzung von Google Web Fonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Online-Angebote.</p>
+              <p>{t('dataprotection.sections.plugins.googleFonts.text1')}</p>
+              <p>{t('dataprotection.sections.plugins.googleFonts.text2')}</p>
               <div className="legal-links">
-                <p>Weitere Informationen finden Sie unter:</p>
+                <p>{t('dataprotection.sections.plugins.googleFonts.moreInfo')}</p>
                 <ul className="legal-link-list">
                   <li>
                     <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer" className="legal-external-link">
-                      Google Fonts FAQ
+                      {t('dataprotection.sections.plugins.googleFonts.faqLink')}
                       <span className="legal-link-arrow">↗</span>
                     </a>
                   </li>
                   <li>
                     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="legal-external-link">
-                      Google Datenschutzerklärung
+                      {t('dataprotection.sections.plugins.googleFonts.privacyLink')}
                       <span className="legal-link-arrow">↗</span>
                     </a>
                   </li>
@@ -184,21 +181,21 @@ const DataProtection = () => {
     },
     {
       id: 5,
-      title: '5. Änderung der Datenschutzerklärung',
+      title: t('dataprotection.sections.changes.title'),
       content: (
         <div className="legal-simple-section">
-          <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
+          <p>{t('dataprotection.sections.changes.text')}</p>
         </div>
       )
     },
     {
       id: 6,
-      title: '6. Fragen an den Datenschutzbeauftragten',
+      title: t('dataprotection.sections.questions.title'),
       content: (
         <div className="legal-simple-section">
-          <p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserem Unternehmen:</p>
+          <p>{t('dataprotection.sections.questions.text')}</p>
           <div className="legal-contact-block">
-            <a href="mailto:datenschutz@reinke-ai.de" className="legal-email-link">datenschutz@reinke-ai.de</a>
+            <a href="mailto:datenschutz@reinke-ai.de" className="legal-email-link">{t('dataprotection.sections.questions.email')}</a>
           </div>
         </div>
       )
@@ -213,11 +210,11 @@ const DataProtection = () => {
           <div className="legal-header">
             <div className="legal-header-decoration">
               <span className="legal-header-line"></span>
-              <span className="legal-header-tag">Datenschutz</span>
+              <span className="legal-header-tag">{t('dataprotection.header.tag')}</span>
               <span className="legal-header-line"></span>
             </div>
-            <h1 className="legal-title">Datenschutzerklärung</h1>
-            <p className="legal-subtitle">Informationen gemäß DSGVO</p>
+            <h1 className="legal-title">{t('dataprotection.header.title')}</h1>
+            <p className="legal-subtitle">{t('dataprotection.header.subtitle')}</p>
           </div>
 
           {/* Content Cards */}
@@ -254,12 +251,12 @@ const DataProtection = () => {
             <div className="legal-footer-content">
               <Link to="/" className="legal-back-link">
                 <span className="legal-back-arrow">←</span>
-                <span className="legal-back-text">Zurück zur Startseite</span>
+                <span className="legal-back-text">{t('dataprotection.footer.back')}</span>
               </Link>
               <div className="legal-footer-info">
-                <span className="legal-footer-date">Letzte Aktualisierung: März 2024</span>
+                <span className="legal-footer-date">{t('dataprotection.footer.lastUpdated')}</span>
                 <span className="legal-footer-dot">•</span>
-                <Link to="/impressum" className="legal-footer-link">Impressum</Link>
+                <Link to="/impressum" className="legal-footer-link">{t('dataprotection.footer.impressum')}</Link>
               </div>
             </div>
           </div>
@@ -267,11 +264,17 @@ const DataProtection = () => {
       </section>
 
       <style jsx="true">{`
+        /* Black Background Theme */
+        .legal-page,
+        .legal-page * {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
         .legal-page {
           width: 100%;
           min-height: 100vh;
           padding: 140px 100px 60px;
-          background: #F9FAFB;
+          background: #000000;
         }
 
         .legal-container {
@@ -296,7 +299,7 @@ const DataProtection = () => {
         .legal-header-line {
           width: 60px;
           height: 2px;
-          background: linear-gradient(90deg, transparent, #000000, transparent);
+          background: linear-gradient(90deg, transparent, #FFFFFF, transparent);
         }
 
         .legal-header-tag {
@@ -304,13 +307,13 @@ const DataProtection = () => {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 3px;
-          color: #6B7280;
+          color: #9CA3AF;
         }
 
         .legal-title {
           font-size: 56px;
           font-weight: 700;
-          color: #000000;
+          color: #FFFFFF;
           margin: 0 0 15px 0;
           line-height: 1.1;
           letter-spacing: -0.02em;
@@ -318,36 +321,37 @@ const DataProtection = () => {
 
         .legal-subtitle {
           font-size: 18px;
-          color: #6B7280;
+          color: #9CA3AF;
           margin: 0;
           font-weight: 400;
         }
 
         /* Card Styles */
         .legal-card {
-          background: #FFFFFF;
+          background: #111111;
           border-radius: 24px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
           margin-bottom: 30px;
           overflow: hidden;
-          border: 1px solid #E5E7EB;
+          border: 1px solid #333333;
           transition: all 0.3s ease;
         }
 
         .legal-card:hover {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+          border-color: #444444;
         }
 
         .legal-card-header {
           padding: 25px 30px;
-          background: #FFFFFF;
-          border-bottom: 1px solid #E5E7EB;
+          background: #111111;
+          border-bottom: 1px solid #333333;
         }
 
         .legal-card-title {
           font-size: 24px;
           font-weight: 600;
-          color: #000000;
+          color: #FFFFFF;
           margin: 0;
           letter-spacing: -0.01em;
         }
@@ -360,7 +364,7 @@ const DataProtection = () => {
         .legal-subsection {
           margin-bottom: 30px;
           padding-bottom: 30px;
-          border-bottom: 1px solid #F3F4F6;
+          border-bottom: 1px solid #333333;
         }
 
         .legal-subsection:last-child {
@@ -372,14 +376,14 @@ const DataProtection = () => {
         .legal-subsection-title {
           font-size: 20px;
           font-weight: 600;
-          color: #000000;
+          color: #FFFFFF;
           margin: 0 0 20px 0;
         }
 
         .legal-subsection-content {
           font-size: 15px;
           line-height: 1.7;
-          color: #4B5563;
+          color: #9CA3AF;
         }
 
         .legal-subsection-content p {
@@ -398,7 +402,7 @@ const DataProtection = () => {
         .legal-simple-content {
           font-size: 15px;
           line-height: 1.7;
-          color: #4B5563;
+          color: #9CA3AF;
         }
 
         /* Q&A Styles */
@@ -408,48 +412,64 @@ const DataProtection = () => {
 
         .legal-question {
           font-weight: 600;
-          color: #000000;
+          color: #FFFFFF;
           margin-bottom: 5px;
         }
 
         .legal-answer {
-          color: #4B5563;
+          color: #9CA3AF;
           padding-left: 20px;
-          border-left: 2px solid #E5E7EB;
+          border-left: 2px solid #333333;
+        }
+
+        .legal-answer a {
+          color: #FFFFFF;
+          text-decoration: none;
+          border-bottom: 1px solid #444444;
+        }
+
+        .legal-answer a:hover {
+          border-bottom-color: #FFFFFF;
         }
 
         /* Notice and Highlight Styles */
         .legal-notice {
-          background: #F9FAFB;
+          background: #1A1A1A;
           padding: 15px 20px;
           border-radius: 8px;
           margin: 15px 0;
-          border-left: 3px solid #000000;
+          border-left: 3px solid #FFFFFF;
+          color: #9CA3AF;
         }
 
         .legal-highlight {
-          background: #F9FAFB;
+          background: #1A1A1A;
           padding: 15px 20px;
           border-radius: 8px;
           margin: 20px 0;
-          border-left: 3px solid #000000;
+          border-left: 3px solid #FFFFFF;
+          color: #9CA3AF;
         }
 
         .legal-note {
-          background: #F9FAFB;
+          background: #1A1A1A;
           padding: 12px 15px;
           border-radius: 6px;
           font-size: 14px;
-          color: #6B7280;
+          color: #9CA3AF;
           margin-top: 15px !important;
         }
 
         /* Address Block */
         .legal-address-block {
-          background: #F9FAFB;
+          background: #1A1A1A;
           padding: 20px;
           border-radius: 12px;
           margin: 15px 0;
+        }
+
+        .legal-address-block strong {
+          color: #FFFFFF;
         }
 
         .legal-contact-line {
@@ -461,18 +481,18 @@ const DataProtection = () => {
 
         .legal-contact-label {
           font-weight: 600;
-          color: #374151;
+          color: #FFFFFF;
           min-width: 60px;
         }
 
         .legal-contact-line a {
-          color: #000000;
+          color: #FFFFFF;
           text-decoration: none;
           transition: color 0.2s ease;
         }
 
         .legal-contact-line a:hover {
-          color: #6B7280;
+          color: #9CA3AF;
         }
 
         /* Cookie Types */
@@ -484,22 +504,23 @@ const DataProtection = () => {
         }
 
         .legal-cookie-type {
-          background: #F9FAFB;
+          background: #1A1A1A;
           padding: 15px;
           border-radius: 8px;
+          border: 1px solid #333333;
         }
 
         .legal-cookie-title {
           font-size: 16px;
           font-weight: 600;
-          color: #000000;
+          color: #FFFFFF;
           margin: 0 0 8px 0;
         }
 
         .legal-cookie-type p {
           font-size: 14px;
           margin: 0;
-          color: #6B7280;
+          color: #9CA3AF;
         }
 
         /* Links */
@@ -521,18 +542,20 @@ const DataProtection = () => {
           display: inline-flex;
           align-items: center;
           gap: 5px;
-          color: #000000;
+          color: #FFFFFF;
           text-decoration: none;
           font-weight: 500;
           padding: 8px 16px;
-          background: #F3F4F6;
+          background: #1A1A1A;
           border-radius: 40px;
           transition: all 0.2s ease;
+          border: 1px solid #333333;
         }
 
         .legal-external-link:hover {
-          background: #E5E7EB;
+          background: #222222;
           transform: translateY(-1px);
+          border-color: #444444;
         }
 
         .legal-link-arrow {
@@ -548,24 +571,26 @@ const DataProtection = () => {
           display: inline-block;
           font-size: 18px;
           font-weight: 600;
-          color: #000000;
+          color: #FFFFFF;
           text-decoration: none;
           padding: 10px 20px;
-          background: #F3F4F6;
+          background: #1A1A1A;
           border-radius: 40px;
           transition: all 0.2s ease;
+          border: 1px solid #333333;
         }
 
         .legal-email-link:hover {
-          background: #E5E7EB;
+          background: #222222;
           transform: translateY(-1px);
+          border-color: #444444;
         }
 
         /* Footer */
         .legal-footer {
           margin-top: 60px;
           padding-top: 30px;
-          border-top: 1px solid #E5E7EB;
+          border-top: 1px solid #333333;
         }
 
         .legal-footer-content {
@@ -579,18 +604,19 @@ const DataProtection = () => {
           align-items: center;
           gap: 10px;
           text-decoration: none;
-          color: #000000;
+          color: #FFFFFF;
           font-weight: 500;
           transition: all 0.2s ease;
           padding: 10px 20px;
-          background: #FFFFFF;
+          background: #111111;
           border-radius: 40px;
-          border: 1px solid #E5E7EB;
+          border: 1px solid #333333;
         }
 
         .legal-back-link:hover {
-          background: #F9FAFB;
+          background: #1A1A1A;
           transform: translateX(-5px);
+          border-color: #444444;
         }
 
         .legal-back-arrow {
@@ -606,12 +632,12 @@ const DataProtection = () => {
           display: flex;
           align-items: center;
           gap: 10px;
-          color: #9CA3AF;
+          color: #6B7280;
           font-size: 14px;
         }
 
         .legal-footer-dot {
-          color: #D1D5DB;
+          color: #333333;
         }
 
         .legal-footer-link {
@@ -621,7 +647,7 @@ const DataProtection = () => {
         }
 
         .legal-footer-link:hover {
-          color: #000000;
+          color: #FFFFFF;
         }
 
         /* Small Text */

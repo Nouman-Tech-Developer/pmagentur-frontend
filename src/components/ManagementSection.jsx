@@ -1,29 +1,32 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ManagementSection = () => {
+  const { t } = useTranslation();
+
   const teamMembers = [
     {
       id: 1,
       name: 'Maximilian Weber',
-      position: 'CEO & Founder',
+      position: t('management.team.ceo'),
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
     },
     {
       id: 2,
       name: 'Sophia Müller',
-      position: 'CTO & Co-Founder',
+      position: t('management.team.cto'),
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
     },
     {
       id: 3,
       name: 'Alexander Schmidt',
-      position: 'Head of AI',
+      position: t('management.team.headOfAI'),
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
     },
     {
       id: 4,
       name: 'Emma Wagner',
-      position: 'Head of Product',
+      position: t('management.team.headOfProduct'),
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face',
     },
   ];
@@ -35,35 +38,21 @@ const ManagementSection = () => {
         <div className="management-background"></div>
         
         <div className="management-container">
-          {/* Content Section - SAME AS BEFORE */}
+          {/* Content Section */}
           <div className="content-section">
             <div className="text-content">
               <div className="text-left">
-                <h2 className="title">Das Management</h2>
+                <h2 className="title">{t('management.title')}</h2>
               </div>
               <div className="text-right">
                 <div className="description">
                   <div className="text-content-wrapper">
+                    <p>{t('management.description.p1')}</p>
+                    <p>{t('management.description.p2')}</p>
                     <p>
-                      Hinter Tolero stehen engagierte KI-Experten und Software-Spezialisten, 
-                      die das Unternehmen mit Vertrauen, technischem Know-how und einem gemeinsamen 
-                      Verständnis für Verantwortung und Fortschritt führen.
-                    </p>
-                    <p>
-                      Unser Gründungsteam startete 2020 mit einer klaren Vision: 
-                      Technologie sinnvoll einzusetzen, um Unternehmen zu transformieren. 
-                      Seitdem haben wir kontinuierlich unsere Expertise erweitert und ein 
-                      talentiertes Team in Hamburg aufgebaut.
-                    </p>
-                    <p>
-                      <span>
-                        Heute führen wir ein wachsendes Team von KI-Spezialisten, 
-                        Software Engineers und Strategen – vereint durch eine klare Vision:
-                      </span>
+                      <span>{t('management.description.p3Line1')}</span>
                       <br />
-                      <span>
-                        Tolero als führenden Partner für KI-gestützte Automatisierungslösungen zu etablieren.
-                      </span>
+                      <span>{t('management.description.p3Line2')}</span>
                     </p>
                   </div>
                 </div>
@@ -71,7 +60,7 @@ const ManagementSection = () => {
             </div>
           </div>
 
-          {/* NEW: 4 Person Cards Grid */}
+          {/* 4 Person Cards Grid */}
           <div className="team-cards-section">
             <div className="team-cards-grid">
               {teamMembers.map(member => (
@@ -131,7 +120,7 @@ const ManagementSection = () => {
           box-sizing: border-box;
         }
 
-        /* Content Section - SAME AS BEFORE */
+        /* Content Section */
         .content-section {
           width: 100%;
         }
@@ -188,7 +177,7 @@ const ManagementSection = () => {
           font-weight: 500;
         }
 
-        /* NEW: Team Cards Section */
+        /* Team Cards Section */
         .team-cards-section {
           width: 100%;
         }
@@ -300,7 +289,6 @@ const ManagementSection = () => {
 
         /* ===== RESPONSIVE DESIGN ===== */
         
-        /* Large Desktop: 1700px+ */
         @media (max-width: 1700px) {
           .management-container {
             max-width: 1600px;
@@ -308,7 +296,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Large Desktop: 1600px+ */
         @media (max-width: 1600px) {
           .management-container {
             max-width: 1500px;
@@ -325,7 +312,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Large Desktop: 1440px+ */
         @media (max-width: 1440px) {
           .management-container {
             max-width: 1300px;
@@ -345,7 +331,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Desktop: 1366px */
         @media (max-width: 1366px) {
           .management-container {
             max-width: 1200px;
@@ -362,7 +347,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Desktop: 1200px */
         @media (max-width: 1200px) {
           .management-container {
             padding: 0 50px;
@@ -382,7 +366,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Tablet Landscape: 1024px */
         @media (max-width: 1024px) {
           .management-container {
             padding: 0 40px;
@@ -402,7 +385,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Tablet Portrait: 992px - Single column layout */
         @media (max-width: 992px) {
           .management-section {
             padding: 60px 0;
@@ -427,7 +409,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Mobile Landscape: 768px */
         @media (max-width: 768px) {
           .management-section {
             padding: 50px 0;
@@ -453,7 +434,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Mobile Portrait: 576px */
         @media (max-width: 576px) {
           .management-section {
             padding: 40px 0;
@@ -483,7 +463,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Small Mobile: 480px */
         @media (max-width: 480px) {
           .management-section {
             padding: 35px 0;
@@ -503,7 +482,6 @@ const ManagementSection = () => {
           }
         }
 
-        /* Extra small devices: 360px */
         @media (max-width: 360px) {
           .management-section {
             padding: 30px 0;

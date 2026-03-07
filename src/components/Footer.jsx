@@ -21,7 +21,7 @@ const Footer = () => {
             <Link to="/#products">{t('nav.products')}</Link>
             <Link to="/about">{t('nav.about')}</Link>
             <Link to="/career">{t('nav.careers')}</Link>
-            <Link to="/calculator">Calculator</Link>
+            <Link to="/calculator">{t('nav.calculator', 'Calculator')}</Link>
           </div>
           
           {/* Social Icons - Right */}
@@ -49,9 +49,9 @@ const Footer = () => {
               © {new Date().getFullYear()} Reinke AI Automation. {t('footer.copyright')}
             </div>
             <div className="footer-legal">
-              <Link to="/impressum">Impressum</Link>
-              <Link to="/DataProtection">Datenschutz</Link>
-              <Link to="/agb">AGB</Link>
+              <Link to="/impressum">{t('footer.legal.notice')}</Link>
+              <Link to="/DataProtection">{t('footer.legal.privacy')}</Link>
+              <Link to="/agb">{t('footer.legal.terms')}</Link>
             </div>
           </div>
           

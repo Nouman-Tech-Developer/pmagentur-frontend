@@ -1,110 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const TeamGrid = () => {
-  const teamMembers = [
-    {
-      id: 1,
-      name: 'John Smith',
-      position: 'CEO & Founder',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
-      alt: 'John Smith - CEO & Founder',
-      department: 'Leadership',
-      experience: '15 years'
-    },
-    {
-      id: 2,
-      name: 'Sarah Johnson',
-      position: 'CTO',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-      alt: 'Sarah Johnson - CTO',
-      department: 'Engineering',
-      experience: '12 years'
-    },
-    {
-      id: 3,
-      name: 'Michael Chen',
-      position: 'Lead Developer',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-      alt: 'Michael Chen - Lead Developer',
-      department: 'Engineering',
-      experience: '8 years'
-    },
-    {
-      id: 4,
-      name: 'Emma Wilson',
-      position: 'Product Manager',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face',
-      alt: 'Emma Wilson - Product Manager',
-      department: 'Product',
-      experience: '6 years'
-    },
-    {
-      id: 5,
-      name: 'David Rodriguez',
-      position: 'Senior Designer',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
-      alt: 'David Rodriguez - Senior Designer',
-      department: 'Design',
-      experience: '7 years'
-    },
-    {
-      id: 6,
-      name: 'Lisa Park',
-      position: 'Marketing Director',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face',
-      alt: 'Lisa Park - Marketing Director',
-      department: 'Marketing',
-      experience: '9 years'
-    },
-    {
-      id: 7,
-      name: 'Alex Thompson',
-      position: 'DevOps Engineer',
-      image: 'https://images.unsplash.com/photo-1507591064344-4c6ce005-128?w=400&h=400&fit=crop&crop=face',
-      alt: 'Alex Thompson - DevOps Engineer',
-      department: 'Engineering',
-      experience: '5 years'
-    },
-    {
-      id: 8,
-      name: 'Maria Garcia',
-      position: 'UX Researcher',
-      image: 'https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?w=400&h=400&fit=crop&crop=face',
-      alt: 'Maria Garcia - UX Researcher',
-      department: 'Design',
-      experience: '4 years'
-    },
-    {
-      id: 9,
-      name: 'Robert Kim',
-      position: 'Data Scientist',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face',
-      alt: 'Robert Kim - Data Scientist',
-      department: 'Data',
-      experience: '6 years'
-    },
-    {
-      id: 10,
-      name: 'Sophie Williams',
-      position: 'Frontend Developer',
-      image: 'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=400&h=400&fit=crop&crop=face',
-      alt: 'Sophie Williams - Frontend Developer',
-      department: 'Engineering',
-      experience: '3 years'
-    }
-  ];
-
+  const { t } = useTranslation();
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [hoveredCard, setHoveredCard] = useState(null);
+
+  // Fetch team members from API/Admin
+  useEffect(() => {
+    fetchTeamMembers();
+  }, []);
+
+  const fetchTeamMembers = async () => {
+    try {
+      // API call to get team members from admin panel
+      // const response = await fetch('/api/team');
+      // const data = await response.json();
+      
+      // Mock data for demonstration
+      const mockData = [
+        {
+          id: 1,
+          name: 'John Smith',
+          position: 'CEO & Founder',
+          positionKey: 'team.positions.ceo', // Translation key
+          image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face',
+          department: 'Leadership',
+          departmentKey: 'team.departments.leadership',
+          experience: '15 years',
+          experienceKey: 'team.experience.15years',
+          alt: 'John Smith - CEO & Founder'
+        },
+        {
+          id: 2,
+          name: 'Sarah Johnson',
+          position: 'CTO',
+          positionKey: 'team.positions.cto',
+          image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
+          department: 'Engineering',
+          departmentKey: 'team.departments.engineering',
+          experience: '12 years',
+          experienceKey: 'team.experience.12years',
+          alt: 'Sarah Johnson - CTO'
+        },
+        // ... more members
+      ];
+      
+      setTeamMembers(mockData);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching team members:', error);
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="team-grid-container">
+        <div className="team-loading">Loading team members...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="team-grid-container">
-      {/* Header */}
+      {/* Header with Translation */}
       <header className="team-header">
-        <div className="team-tagline">OUR TEAM</div>
-        <h1 className="team-title">Meet Our Experts</h1>
-        <p className="team-subtitle">
-          A diverse team of passionate professionals dedicated to delivering exceptional results.
-        </p>
+        <div className="team-tagline">{t('team.tagline')}</div>
+        <h1 className="team-title">{t('team.title')}</h1>
+        <p className="team-subtitle">{t('team.subtitle')}</p>
       </header>
 
       {/* Team Grid */}
@@ -122,20 +87,23 @@ const TeamGrid = () => {
                 src={member.image}
                 alt={member.alt}
                 className={`team-image ${hoveredCard === member.id ? 'team-image-hovered' : ''}`}
+                loading="lazy"
               />
               
-              {/* Overlay on Hover */}
+              {/* Overlay on Hover - with Translations */}
               <div className={`team-overlay ${hoveredCard === member.id ? 'team-overlay-visible' : ''}`}>
                 <div className="team-overlay-content">
                   <h3 className="team-overlay-name">{member.name}</h3>
-                  <p className="team-overlay-position">{member.position}</p>
+                  <p className="team-overlay-position">
+                    {member.positionKey ? t(member.positionKey) : member.position}
+                  </p>
                   <div className="team-overlay-info">
-                    <span className="team-overlay-label">Department:</span>
-                    <span>{member.department}</span>
+                    <span className="team-overlay-label">{t('team.labels.department')}:</span>
+                    <span>{member.departmentKey ? t(member.departmentKey) : member.department}</span>
                   </div>
                   <div className="team-overlay-info">
-                    <span className="team-overlay-label">Experience:</span>
-                    <span>{member.experience}</span>
+                    <span className="team-overlay-label">{t('team.labels.experience')}:</span>
+                    <span>{member.experienceKey ? t(member.experienceKey) : member.experience}</span>
                   </div>
                 </div>
               </div>
@@ -144,15 +112,17 @@ const TeamGrid = () => {
             {/* Card Caption */}
             <div className="team-caption">
               <h3 className="team-name">{member.name}</h3>
-              <p className="team-position">{member.position}</p>
+              <p className="team-position">
+                {member.positionKey ? t(member.positionKey) : member.position}
+              </p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Footer Note */}
+      {/* Footer Note with Translation */}
       <div className="team-footer">
-        <p>Our team is constantly growing. Interested in joining us?</p>
+        <p>{t('team.footer')}</p>
       </div>
 
       <style jsx="true">{`
@@ -315,6 +285,13 @@ const TeamGrid = () => {
           margin-top: 50px;
           color: #6B7280;
           font-size: 14px;
+        }
+        
+        .team-loading {
+          text-align: center;
+          padding: 100px;
+          font-size: 18px;
+          color: #6B7280;
         }
         
         @media (max-width: 1440px) {

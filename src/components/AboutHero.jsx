@@ -27,7 +27,7 @@ const AboutHero = () => {
             <div className="about-image-wrapper">
               <img 
                 src="/images/AboutHero.png" 
-                alt="About Tolero AI Automation"
+                alt={t('aboutHero.imageAlt', 'About Reinke AI Automation')}
                 className={`about-hero-image ${imageLoaded ? 'loaded' : ''}`}
                 onLoad={() => setImageLoaded(true)}
                 onError={(e) => {
@@ -35,7 +35,7 @@ const AboutHero = () => {
                   e.target.parentElement.innerHTML = `
                     <div class="about-image-fallback">
                       <div class="about-fallback-content">
-                        <span class="about-fallback-text">ABOUT TOLERO</span>
+                        <span class="about-fallback-text">${t('aboutHero.fallbackText', 'ABOUT REINKE')}</span>
                       </div>
                     </div>
                   `;
@@ -64,19 +64,19 @@ const AboutHero = () => {
           <div className="about-content-side">
             <div className="about-content-wrapper">
               <h1 className="about-main-headline">
-                AI-gestützte Automatisierung für Unternehmen
+                {t('aboutHero.title')}
               </h1>
 
               <h2 className="about-sub-headline">
-                Intelligente Prozess & Kommunikationsautomatisierung mit KI
+                {t('aboutHero.subtitle')}
               </h2>
 
               <div className="about-features">
                 {[
-                  'KI-Telefonassistent übernimmt Anrufe, Terminvereinbarungen und Anfragen automatisch – 24/7, zuverlässig und markenkonform.',
-                  'Intelligente Chatbots & digitale Assistenten beantworten Kundenanfragen auf Website, Social Media und in internen Systemen.',
-                  'E-Mail- & Workflow-Automatisierung reduziert manuelle Arbeit, beschleunigt Prozesse und minimiert Fehler.',
-                  'Flexibel einsetzbar als Cloud- oder On-Premise-Lösung – DSGVO-konform und skalierbar.'
+                  t('aboutHero.features.phoneAssistant'),
+                  t('aboutHero.features.chatbots'),
+                  t('aboutHero.features.emailWorkflow'),
+                  t('aboutHero.features.flexible')
                 ].map((text, index) => (
                   <div key={index} className="feature-item">
                     <div className="feature-check">✓</div>
@@ -125,11 +125,11 @@ const AboutHero = () => {
           max-width: 1400px;
           width: 100%;
           margin: 0 auto;
-          padding: 0 100px; /* Only left/right padding, no top/bottom */
+          padding: 0 100px;
           display: grid;
           grid-template-columns: 1.1fr 0.9fr;
           gap: 60px;
-          align-items: center; /* Center vertically */
+          align-items: center;
           min-height: 100vh;
         }
 

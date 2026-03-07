@@ -10,15 +10,31 @@ const TextHalfImage = () => {
         <div className="text-image-container">
           <div className="text-image-content">
             <div className="text-side">
+              <span className="section-badge">{t('textHalfImage.badge')}</span>
               <h2 className="section-heading">{t('textHalfImage.heading')}</h2>
               <div className="section-description">
                 <p>{t('textHalfImage.description')}</p>
               </div>
               
+              <div className="stats-grid">
+                <div className="stat-item">
+                  <div className="stat-number">50+</div>
+                  <div className="stat-label">{t('textHalfImage.stats.team')}</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">200+</div>
+                  <div className="stat-label">{t('textHalfImage.stats.projects')}</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">10+</div>
+                  <div className="stat-label">{t('textHalfImage.stats.years')}</div>
+                </div>
+              </div>
+              
               <div className="text-image-action">
                 <a 
                   className="text-image-button" 
-                  href="https://www.tolero.com/about"
+                  href="https://www.reinke.com/about"
                   aria-label={t('textHalfImage.buttonAria')}
                 >
                   {t('textHalfImage.button')}
@@ -31,7 +47,7 @@ const TextHalfImage = () => {
                   <img 
                     src="/images/HalfText.png" 
                     alt={t('textHalfImage.imageAlt')}
-                    className="tolero-image"
+                    className="reinke-image"
                     loading="lazy"
                     onLoad={(e) => {
                       e.target.classList.add('loaded');
@@ -44,7 +60,7 @@ const TextHalfImage = () => {
                         <div class="image-fallback">
                           <div class="fallback-content">
                             <span class="fallback-icon">🤖</span>
-                            <span class="fallback-text">TOLERO</span>
+                            <span class="fallback-text">REINKE</span>
                           </div>
                         </div>
                       `;
@@ -148,7 +164,20 @@ const TextHalfImage = () => {
         @media only screen and (max-width: 1024px) {
           .text-side {
             text-align: center;
+            align-items: center;
           }
+        }
+        
+        /* Badge - New */
+        .section-badge {
+          display: inline-block;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: #6B7280;
+          margin-bottom: 16px;
         }
         
         /* Heading - Black */
@@ -243,6 +272,77 @@ const TextHalfImage = () => {
           }
         }
         
+        /* Stats Grid */
+        .stats-grid {
+          display: flex;
+          gap: 40px;
+          margin-bottom: 32px;
+        }
+        
+        @media only screen and (max-width: 1024px) {
+          .stats-grid {
+            justify-content: center;
+          }
+        }
+        
+        @media only screen and (max-width: 576px) {
+          .stats-grid {
+            gap: 30px;
+          }
+        }
+        
+        @media only screen and (max-width: 480px) {
+          .stats-grid {
+            gap: 25px;
+          }
+        }
+        
+        .stat-item {
+          text-align: left;
+        }
+        
+        @media only screen and (max-width: 1024px) {
+          .stat-item {
+            text-align: center;
+          }
+        }
+        
+        .stat-number {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+          font-size: 36px;
+          font-weight: 700;
+          color: #000000;
+          line-height: 1.2;
+          margin-bottom: 4px;
+        }
+        
+        @media only screen and (max-width: 768px) {
+          .stat-number {
+            font-size: 32px;
+          }
+        }
+        
+        @media only screen and (max-width: 576px) {
+          .stat-number {
+            font-size: 28px;
+          }
+        }
+        
+        .stat-label {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          color: #6B7280;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        
+        @media only screen and (max-width: 576px) {
+          .stat-label {
+            font-size: 12px;
+          }
+        }
+        
         /* Button - Black outline, black fill on hover */
         .text-image-button {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -329,7 +429,7 @@ const TextHalfImage = () => {
           overflow: hidden;
         }
         
-        .tolero-image {
+        .reinke-image {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -339,11 +439,11 @@ const TextHalfImage = () => {
           transition: opacity 0.5s ease, transform 0.6s ease;
         }
         
-        .tolero-image.loaded {
+        .reinke-image.loaded {
           opacity: 1;
         }
         
-        .image-frame:hover .tolero-image {
+        .image-frame:hover .reinke-image {
           transform: scale(1.05);
         }
         
