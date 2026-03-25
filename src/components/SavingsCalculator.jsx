@@ -1,22 +1,75 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { supabase } from '../lib/supabase';
 
 const SavingsCalculator = () => {
   const { t } = useTranslation();
   
+  const [settings, setSettings] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  // Calculator values
   const [employees, setEmployees] = useState(3);
   const [hourlyRate, setHourlyRate] = useState(25);
   const [dailyCalls, setDailyCalls] = useState(80);
   const [avgCallDuration, setAvgCallDuration] = useState(4);
   
+  // Fetch calculator settings from Supabase
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('calculator_settings')
+          .select('*')
+          .single();
+        
+        if (error) {
+          console.error('Error fetching calculator settings:', error);
+        } else if (data && data.is_enabled) {
+          setSettings(data);
+          // Set default values from admin settings
+          setEmployees(data.default_employees);
+          setHourlyRate(data.default_hourly_rate);
+          setDailyCalls(data.default_daily_calls);
+          setAvgCallDuration(data.default_avg_call_duration);
+        }
+      } catch (err) {
+        console.error('Error:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchSettings();
+  }, []);
+  
   const calculateSavings = () => {
-    const workingDaysPerYear = 240;
+    if (!settings) {
+      // Fallback calculation if settings not loaded
+      const workingDaysPerYear = 240;
+      const minutesPerDay = dailyCalls * avgCallDuration;
+      const hoursPerDay = minutesPerDay / 60;
+      const annualEmployeeCost = employees * hourlyRate * 8 * workingDaysPerYear;
+      const botCallPercentage = 0.8;
+      const botAnnualCost = 6000;
+      const annualSavings = (annualEmployeeCost * botCallPercentage) - botAnnualCost;
+      
+      return {
+        minutesPerDay: Math.round(minutesPerDay),
+        hoursPerDay: hoursPerDay.toFixed(1),
+        annualEmployeeCost: Math.round(annualEmployeeCost),
+        annualSavings: Math.round(annualSavings),
+        savingsPercentage: Math.round((annualSavings / annualEmployeeCost) * 100)
+      };
+    }
+    
+    // Use settings from admin
+    const workingDaysPerYear = settings.working_days_per_year;
     const minutesPerDay = dailyCalls * avgCallDuration;
     const hoursPerDay = minutesPerDay / 60;
-    const annualEmployeeCost = employees * hourlyRate * 8 * workingDaysPerYear;
-    const botCallPercentage = 0.8;
-    const botAnnualCost = 6000;
-    const annualSavings = (annualEmployeeCost * botCallPercentage) - botAnnualCost;
+    const annualEmployeeCost = employees * settings.hourly_work_hours * hourlyRate * workingDaysPerYear;
+    const botCallPercentageDecimal = settings.bot_call_percentage / 100;
+    const annualSavings = (annualEmployeeCost * botCallPercentageDecimal) - settings.bot_annual_cost;
     
     return {
       minutesPerDay: Math.round(minutesPerDay),
@@ -37,6 +90,44 @@ const SavingsCalculator = () => {
       maximumFractionDigits: 0
     }).format(value);
   };
+  
+  if (loading) {
+    return (
+      <section className="calculator-section">
+        <div className="calculator-container">
+          <div className="calculator-header">
+            <h2 className="calculator-title">
+              <span className="title-line">{t('calculator.title.line1')}</span>
+              <span className="title-line highlight">{t('calculator.title.line2')}</span>
+            </h2>
+            <p className="calculator-subtitle">{t('calculator.subtitle')}</p>
+          </div>
+          <div className="loading-wrapper">
+            <div className="loading-spinner"></div>
+            <p>Loading calculator...</p>
+          </div>
+        </div>
+        <style jsx="true">{`
+          .loading-wrapper {
+            text-align: center;
+            padding: 60px;
+          }
+          .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #E5E5E7;
+            border-top-color: #000000;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 20px;
+          }
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
+      </section>
+    );
+  }
   
   return (
     <>

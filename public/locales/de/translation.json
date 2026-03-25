@@ -766,8 +766,247 @@
     "lastUpdated": "Letzte Aktualisierung: März 2024",
     "impressum": "Impressum"
   }
-}
-  
+},
+
+ "solutions": {
+  "hero": {
+    "title": "KI-Lösungen für",
+    "highlight": "Ihre Arztpraxis",
+    "subtitle": "Reduzieren Sie den administrativen Aufwand und entlasten Sie Ihr Praxisteam mit intelligenten KI-Assistenten",
+    "imageAlt": "KI-Assistent für Arztpraxen",
+    "loading": "Lädt Visualisierung...",
+    "fallbackText": "KI PRAXIS ASSISTENT"
+  },
+  "grid": {
+    "title": "Unsere Lösungen im Überblick",
+    "subtitle": "Maßgeschneiderte KI-Assistenten für Ihre Arztpraxis",
+    "aiPhone": {
+      "title": "AI Phone Assistant für Arztpraxen",
+      "description": "Automatisiert eingehende Anrufe, Terminvereinbarungen und Patientenanfragen rund um die Uhr.",
+      "feature1": {
+        "point": "Automatische Terminvereinbarung",
+        "paragraph": "Patienten können Termine rund um die Uhr buchen, stornieren oder verschieben - ohne Warteschleife."
+      },
+      "feature2": {
+        "point": "Rezeptanfragen verarbeiten",
+        "paragraph": "Wiederholungsrezepte werden automatisch aufgenommen und an die Praxis weitergeleitet."
+      },
+      "feature3": {
+        "point": "Krankmeldungen erfassen",
+        "paragraph": "Patienten können sich telefonisch krankmelden, relevante Informationen werden strukturiert erfasst."
+      }
+    },
+    "chatbot": {
+      "title": "Patienten-Chatbot",
+      "description": "Intelligenter Chatbot für Website und WhatsApp zur Beantwortung von Patientenfragen.",
+      "feature1": {
+        "point": "24/7 Patientenanfragen",
+        "paragraph": "Beantwortet häufige Fragen zu Öffnungszeiten, Leistungen und Wegbeschreibungen automatisch."
+      },
+      "feature2": {
+        "point": "Symptom-Check Integration",
+        "paragraph": "Erste Einschätzung von Symptomen und Weiterleitung an den passenden Fachbereich."
+      },
+      "feature3": {
+        "point": "Nahtlose Übergabe",
+        "paragraph": "Bei komplexen Anliegen wird der Chat nahtlos an das Praxispersonal übergeben."
+      }
+    },
+    "email": {
+      "title": "E-Mail & Dokumenten-Automatisierung",
+      "description": "Automatisierte Verarbeitung von E-Mails, Überweisungen und Laborbefunden.",
+      "feature1": {
+        "point": "Automatische E-Mail-Klassifizierung",
+        "paragraph": "Eingehende E-Mails werden automatisch sortiert und priorisiert."
+      },
+      "feature2": {
+        "point": "Überweisungs-Management",
+        "paragraph": "Überweisungsanfragen werden strukturiert erfasst und an die zuständigen Stellen weitergeleitet."
+      },
+      "feature3": {
+        "point": "Laborbefund-Verarbeitung",
+        "paragraph": "Eingehende Laborbefunde werden automatisch in die Patientenakte eingepflegt."
+      }
+    },
+    "workflow": {
+      "title": "Praxis-Workflow Optimierung",
+      "description": "Optimierung interner Prozesse und Entlastung des Praxispersonals.",
+      "feature1": {
+        "point": "Patientenregistrierung",
+        "paragraph": "Neue Patienten können sich online registrieren, die Daten werden automatisch ins System übernommen."
+      },
+      "feature2": {
+        "point": "Aufgaben-Automatisierung",
+        "paragraph": "Wiederkehrende administrative Aufgaben werden automatisch erledigt."
+      },
+      "feature3": {
+        "point": "Berichtserstellung",
+        "paragraph": "Automatische Generierung von Praxisberichten und Statistiken."
+      }
+    }
+  }
+},
+  "products": {
+    "hero": {
+      "title": "Leistungsstarke KI-Produkte",
+      "highlight": "für Ihre Praxis",
+      "subtitle": "Entdecken Sie unsere innovativen KI-Lösungen, die speziell für Arztpraxen entwickelt wurden",
+      "feature1": "DSGVO-konform",
+      "feature2": "Praxissoftware-Integration",
+      "feature3": "24/7 Support",
+      "imageAlt": "KI-Produkte für Arztpraxen",
+      "loading": "Lädt Visualisierung...",
+      "fallbackText": "KI PRAXIS PRODUKTE"
+    },
+    "grid": {
+      "title": "Unsere Produkte im Detail",
+    "subtitle": "Wählen Sie die perfekte KI-Lösung für Ihre Praxis",
+    "demo": "Demo anfragen",
+      "aiPhonePro": {
+        "title": "AI Phone Assistant Pro",
+        "description": "Professioneller KI-Telefonassistent mit 24/7 Verfügbarkeit, natürlicher Gesprächsführung und Praxissoftware-Integration.",
+        "badge": "Popular",
+        "feature1": {
+          "point": "Praxissoftware-Integration",
+          "paragraph": "Nahtlose Integration mit allen gängigen Praxisverwaltungssystemen wie Medistar, Tomedo und mehr."
+        },
+        "feature2": {
+          "point": "Mehrsprachiger Support",
+          "paragraph": "Unterstützt Deutsch, Englisch, Türkisch und weitere Sprachen für Ihre Patienten."
+        },
+        "feature3": {
+          "point": "Anrufaufzeichnung & Transkription",
+          "paragraph": "Alle Gespräche werden automatisch transkribiert und in der Patientenakte gespeichert."
+        }
+      },
+      "chatbotSuite": {
+        "title": "Medical Chatbot Suite",
+        "description": "Intelligente Chatbots für Website, WhatsApp und Messenger mit medizinischer Wissensdatenbank.",
+        "feature1": {
+          "point": "Medizinische Terminologie",
+          "paragraph": "Versteht medizinische Fachbegriffe und kann präzise auf Patientenfragen antworten."
+        },
+        "feature2": {
+          "point": "Symptom-Check Integration",
+          "paragraph": "Erste Einschätzung von Symptomen und Weiterleitung an den passenden Fachbereich."
+        },
+        "feature3": {
+          "point": "Terminvereinbarung",
+          "paragraph": "Patienten können direkt über den Chatbot Termine buchen, stornieren oder verschieben."
+        }
+      },
+      "emailAutomation": {
+        "title": "Medical Email Automation",
+        "description": "Leistungsstarke E-Mail-Automatisierung für Arztpraxen mit Dokumentenverarbeitung.",
+        "badge": "Neu",
+        "feature1": {
+          "point": "DSGVO-konforme Verarbeitung",
+          "paragraph": "Alle Patientendaten werden gemäß DSGVO verschlüsselt und sicher verarbeitet."
+        },
+        "feature2": {
+          "point": "Dokumenten-OCR",
+          "paragraph": "Automatische Texterkennung und Verarbeitung von Überweisungen und Laborbefunden."
+        },
+        "feature3": {
+          "point": "Intelligente Antwortvorschläge",
+          "paragraph": "KI-generierte Antwortvorschläge für häufige Patientenanfragen."
+        }
+      },
+      "workflowAutomator": {
+        "title": "Practice Workflow Automator",
+        "description": "Automatisieren Sie komplexe Arbeitsabläufe und reduzieren Sie den Arbeitsaufwand des Teams um bis zu 70%.",
+        "feature1": {
+          "point": "Patientenregistrierung",
+          "paragraph": "Neue Patienten können sich online registrieren, alle Daten werden automatisch ins System übernommen."
+        },
+        "feature2": {
+          "point": "Versicherungsprüfung",
+          "paragraph": "Automatische Prüfung der Krankenversicherung und Einholung von Kostenzusagen."
+        },
+        "feature3": {
+          "point": "Abrechnungsautomatisierung",
+          "paragraph": "Automatische Generierung von Rechnungen und Abrechnungen mit den Krankenkassen."
+        }
+      },
+      "apiHub": {
+        "title": "Medical API Integration Hub",
+        "description": "Nahtlose Integration mit über 500+ medizinischen Anwendungen und Praxisverwaltungssystemen.",
+        "feature1": {
+          "point": "PMS-Integration",
+          "paragraph": "Anbindung an alle gängigen Praxisverwaltungssysteme wie Medistar, Tomedo, Altea und mehr."
+        },
+        "feature2": {
+          "point": "E-Rezept API",
+          "paragraph": "Direkte Anbindung an die Telematikinfrastruktur für elektronische Rezepte."
+        },
+        "feature3": {
+          "point": "Laborergebnisse",
+          "paragraph": "Automatischer Import von Laborbefunden direkt in die Patientenakte."
+        }
+      },
+      "enterpriseSuite": {
+        "title": "Enterprise Medical AI Suite",
+        "description": "Komplette KI-Plattform für große Arztpraxen und Klinikgruppen.",
+        "badge": "Enterprise",
+        "feature1": {
+          "point": "Multi-Praxis Support",
+          "paragraph": "Zentrale Verwaltung mehrerer Standorte mit einheitlichen Prozessen und zentralem Dashboard."
+        },
+        "feature2": {
+          "point": "Zentralisierte Analysen",
+          "paragraph": "Umfassende Berichte und Analysen über alle Praxen hinweg für optimierte Entscheidungen."
+        },
+        "feature3": {
+          "point": "Individuelle KI-Modelle",
+          "paragraph": "Trainierte KI-Modelle, die auf Ihre spezifischen Praxisabläufe zugeschnitten sind."
+        }
+      }
+    }
+  },
+  "appointment": {
+    "hero": {
+      "title": "Demo-Termin vereinbaren",
+      "subtitle": "Erleben Sie unsere KI-Lösungen live in einer persönlichen Demo"
+    },
+    "title": "Demo-Termin vereinbaren",
+    "subtitle": "Wählen Sie einen Termin für Ihre persönliche Demo unserer KI-Lösungen",
+    "form": {
+      "name": "Vollständiger Name *",
+      "namePlaceholder": "Dr. Max Mustermann",
+      "email": "E-Mail Adresse *",
+      "emailPlaceholder": "max@praxis.de",
+      "phone": "Telefonnummer *",
+      "phonePlaceholder": "+49 123 456789",
+      "practice": "Praxisname",
+      "practicePlaceholder": "Ihre Praxis",
+      "message": "Nachricht (optional)",
+      "messagePlaceholder": "Haben Sie spezielle Fragen oder Wünsche?"
+    },
+    "calendar": {
+      "title": "Termin auswählen",
+      "thisWeek": "Diese Woche",
+      "nextWeek": "Nächste Woche",
+      "showMore": "+ Weitere Termine anzeigen (nächste Woche)",
+      "showLess": "– Weniger anzeigen",
+      "availableTimes": "Verfügbare Uhrzeiten für {date}",
+      "timeSlot": "{time} Uhr",
+      "selected": "Ausgewählt: {date} um {time} Uhr",
+      "selectDateFirst": "Bitte wählen Sie zuerst ein Datum aus"
+    },
+    "buttons": {
+      "submit": "Termin verbindlich buchen",
+      "submitting": "Wird gesendet...",
+      "confirmed": "Termin bestätigt!"
+    },
+    "messages": {
+      "success": "Vielen Dank! Ihr Termin wurde erfolgreich gebucht. Wir senden Ihnen eine Bestätigung an {email}.",
+      "error": "Termin konnte nicht gebucht werden. Bitte versuchen Sie es später erneut.",
+      "fillAllFields": "Bitte füllen Sie alle Pflichtfelder aus",
+      "selectDateTime": "Bitte wählen Sie Datum und Uhrzeit aus",
+      "validEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "note": "* Pflichtfelder. Nach der Buchung erhalten Sie eine Bestätigungs-E-Mail."
+    }
+  }
 
 
 

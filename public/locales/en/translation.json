@@ -769,7 +769,252 @@
     "lastUpdated": "Last updated: March 2024",
     "impressum": "Imprint"
   }
-}
+},
+
+  
+  "solutions": {
+  "hero": {
+    "title": "AI Solutions for",
+    "highlight": "Your Medical Practice",
+    "subtitle": "Reduce administrative workload and relieve your practice team with intelligent AI assistants",
+    "imageAlt": "AI Assistant for Medical Practices",
+    "loading": "Loading visualization...",
+    "fallbackText": "AI PRACTICE ASSISTANT"
+  },
+  "grid": {
+    "title": "Our Solutions at a Glance",
+    "subtitle": "Tailored AI Assistants for Your Medical Practice",
+    "aiPhone": {
+      "title": "AI Phone Assistant for Medical Practices",
+      "description": "Automates incoming calls, appointment scheduling, and patient inquiries 24/7.",
+      "feature1": {
+        "point": "Automatic Appointment Scheduling",
+        "paragraph": "Patients can book, cancel or reschedule appointments around the clock - without waiting in line."
+      },
+      "feature2": {
+        "point": "Process Prescription Requests",
+        "paragraph": "Repeat prescriptions are automatically recorded and forwarded to the practice."
+      },
+      "feature3": {
+        "point": "Record Sick Leave",
+        "paragraph": "Patients can call in sick, relevant information is captured in a structured way."
+      }
+    },
+    "chatbot": {
+      "title": "Patient Chatbot",
+      "description": "Intelligent chatbot for website and WhatsApp to answer patient questions.",
+      "feature1": {
+        "point": "24/7 Patient Inquiries",
+        "paragraph": "Automatically answers common questions about opening hours, services and directions."
+      },
+      "feature2": {
+        "point": "Symptom Check Integration",
+        "paragraph": "Initial assessment of symptoms and referral to the appropriate department."
+      },
+      "feature3": {
+        "point": "Seamless Handover",
+        "paragraph": "For complex issues, the chat is seamlessly handed over to practice staff."
+      }
+    },
+    "email": {
+      "title": "Email & Document Automation",
+      "description": "Automated processing of emails, referrals and laboratory findings.",
+      "feature1": {
+        "point": "Automatic Email Classification",
+        "paragraph": "Incoming emails are automatically sorted and prioritized."
+      },
+      "feature2": {
+        "point": "Referral Management",
+        "paragraph": "Referral requests are captured in a structured way and forwarded to the responsible parties."
+      },
+      "feature3": {
+        "point": "Laboratory Findings Processing",
+        "paragraph": "Incoming laboratory findings are automatically entered into the patient record."
+      }
+    },
+    "workflow": {
+      "title": "Practice Workflow Optimization",
+      "description": "Optimization of internal processes and relief for practice staff.",
+      "feature1": {
+        "point": "Patient Registration",
+        "paragraph": "New patients can register online, data is automatically transferred to the system."
+      },
+      "feature2": {
+        "point": "Task Automation",
+        "paragraph": "Recurring administrative tasks are handled automatically."
+      },
+      "feature3": {
+        "point": "Report Generation",
+        "paragraph": "Automatic generation of practice reports and statistics."
+      }
+    }
+  }
+},
+  
+  "products": {
+    "hero": {
+      "title": "Powerful AI Products",
+      "highlight": "for Your Practice",
+      "subtitle": "Discover our innovative AI solutions specifically developed for medical practices",
+      "feature1": "GDPR compliant",
+      "feature2": "Practice software integration",
+      "feature3": "24/7 Support",
+      "imageAlt": "AI Products for Medical Practices",
+      "loading": "Loading visualization...",
+      "fallbackText": "AI PRACTICE PRODUCTS"
+    },
+    "grid": {
+      "title": "Our Products in Detail",
+    "subtitle": "Choose the perfect AI solution for your practice",
+    "demo": "Request Demo",
+      "aiPhonePro": {
+        "title": "AI Phone Assistant Pro",
+        "description": "Professional AI phone assistant with 24/7 availability, natural conversation flow, and practice software integration.",
+        "badge": "Popular",
+        "feature1": {
+          "point": "Practice Software Integration",
+          "paragraph": "Seamless integration with all common practice management systems like Medistar, Tomedo and more."
+        },
+        "feature2": {
+          "point": "Multilingual Support",
+          "paragraph": "Supports German, English, Turkish and other languages for your patients."
+        },
+        "feature3": {
+          "point": "Call Recording & Transcription",
+          "paragraph": "All conversations are automatically transcribed and stored in the patient record."
+        }
+      },
+      "chatbotSuite": {
+        "title": "Medical Chatbot Suite",
+        "description": "Intelligent chatbots for website, WhatsApp and messengers with medical knowledge database.",
+        "feature1": {
+          "point": "Medical Terminology",
+          "paragraph": "Understands medical terms and can answer patient questions precisely."
+        },
+        "feature2": {
+          "point": "Symptom Check Integration",
+          "paragraph": "Initial assessment of symptoms and referral to the appropriate department."
+        },
+        "feature3": {
+          "point": "Appointment Scheduling",
+          "paragraph": "Patients can book, cancel or reschedule appointments directly through the chatbot."
+        }
+      },
+      "emailAutomation": {
+        "title": "Medical Email Automation",
+        "description": "Powerful email automation for medical practices with document processing.",
+        "badge": "New",
+        "feature1": {
+          "point": "GDPR-compliant Processing",
+          "paragraph": "All patient data is encrypted and processed securely in accordance with GDPR."
+        },
+        "feature2": {
+          "point": "Document OCR",
+          "paragraph": "Automatic text recognition and processing of referrals and laboratory findings."
+        },
+        "feature3": {
+          "point": "Intelligent Response Suggestions",
+          "paragraph": "AI-generated response suggestions for common patient inquiries."
+        }
+      },
+      "workflowAutomator": {
+        "title": "Practice Workflow Automator",
+        "description": "Automate complex workflows and reduce team workload by up to 70%.",
+        "feature1": {
+          "point": "Patient Registration",
+          "paragraph": "New patients can register online, all data is automatically transferred to the system."
+        },
+        "feature2": {
+          "point": "Insurance Verification",
+          "paragraph": "Automatic verification of health insurance and obtaining cost approvals."
+        },
+        "feature3": {
+          "point": "Billing Automation",
+          "paragraph": "Automatic generation of invoices and billing with health insurance companies."
+        }
+      },
+      "apiHub": {
+        "title": "Medical API Integration Hub",
+        "description": "Seamless integration with over 500+ medical applications and practice management systems.",
+        "feature1": {
+          "point": "PMS Integration",
+          "paragraph": "Connection to all common practice management systems like Medistar, Tomedo, Altea and more."
+        },
+        "feature2": {
+          "point": "E-Prescription API",
+          "paragraph": "Direct connection to telematics infrastructure for electronic prescriptions."
+        },
+        "feature3": {
+          "point": "Laboratory Results",
+          "paragraph": "Automatic import of laboratory findings directly into the patient record."
+        }
+      },
+      "enterpriseSuite": {
+        "title": "Enterprise Medical AI Suite",
+        "description": "Complete AI platform for large medical practices and clinic groups.",
+        "badge": "Enterprise",
+        "feature1": {
+          "point": "Multi-Practice Support",
+          "paragraph": "Centralized management of multiple locations with unified processes and central dashboard."
+        },
+        "feature2": {
+          "point": "Centralized Analytics",
+          "paragraph": "Comprehensive reports and analytics across all practices for optimized decision-making."
+        },
+        "feature3": {
+          "point": "Custom AI Models",
+          "paragraph": "Trained AI models tailored to your specific practice workflows."
+        }
+      }
+    }
+  },
+  "appointment": {
+    "hero": {
+      "title": "Book a Demo",
+      "subtitle": "Experience our AI solutions live in a personal demo"
+    },
+    "title": "Book a Demo Appointment",
+    "subtitle": "Choose a time for your personal demo of our AI solutions",
+    "form": {
+      "name": "Full Name *",
+      "namePlaceholder": "Dr. Max Mustermann",
+      "email": "Email Address *",
+      "emailPlaceholder": "max@practice.com",
+      "phone": "Phone Number *",
+      "phonePlaceholder": "+49 123 456789",
+      "practice": "Practice Name",
+      "practicePlaceholder": "Your Practice",
+      "message": "Message (optional)",
+      "messagePlaceholder": "Do you have any specific questions or requests?"
+    },
+    "calendar": {
+      "title": "Select Appointment",
+      "thisWeek": "This Week",
+      "nextWeek": "Next Week",
+      "showMore": "+ Show more dates (next week)",
+      "showLess": "– Show less",
+      "availableTimes": "Available times for {date}",
+      "timeSlot": "{time}",
+      "selected": "Selected: {date} at {time}",
+      "selectDateFirst": "Please select a date first"
+    },
+    "buttons": {
+      "submit": "Book Appointment",
+      "submitting": "Sending...",
+      "confirmed": "Appointment Confirmed!"
+    },
+    "messages": {
+      "success": "Thank you! Your appointment has been successfully booked. We will send a confirmation to {email}.",
+      "error": "Unable to book appointment. Please try again later.",
+      "fillAllFields": "Please fill in all required fields",
+      "selectDateTime": "Please select date and time",
+      "validEmail": "Please enter a valid email address",
+      "note": "* Required fields. You will receive a confirmation email after booking."
+    }
+  }
+
+
+
 
 
 

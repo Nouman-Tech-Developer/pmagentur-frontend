@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -12,11 +12,6 @@ const Navbar = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isNavHovered, setIsNavHovered] = useState(false);
   const [selectedLang, setSelectedLang] = useState('DE');
-  const [activeMegaMenu, setActiveMegaMenu] = useState(null);
-  const [activeCategory, setActiveCategory] = useState(1);
-
-  const megaMenuRef = useRef(null);
-  const navItemRefs = useRef({});
 
   // Scroll effect
   useEffect(() => {
@@ -39,170 +34,37 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    {
-      label: t('nav.solutions'),
-      key: 'solutions',
-      hasDropdown: true,
-      href: '#'
-    },
-    {
-      label: t('nav.products'),
-      key: 'products',
-      hasDropdown: true,
-      href: '#'
-    },
-    {
-      label: t('nav.about'),
-      key: 'about',
-      hasDropdown: false,
-      to: '/about'
-    },
-    {
-      label: t('nav.careers'),
-      key: 'careers',
-      hasDropdown: false,
-      to: '/career'
-    },
-  ];
-
-  // Solutions Data
-  const solutionsData = {
-    categories: [
-      { id: 1, title: t('solutions.categories.aiAutomation', 'KI & Automatisierung') },
-      { id: 2, title: t('solutions.categories.customerService', 'Kundenservice') },
-      { id: 3, title: t('solutions.categories.internalProcesses', 'Interne Prozesse') },
-      { id: 4, title: t('solutions.categories.industrySolutions', 'Branchenlösungen') },
-    ],
-    services: {
-      1: [
-        {
-          id: 1,
-          title: t('nav-services.aiPhone.title', 'AI Phone Assistant'),
-          description: t('nav-services.aiPhone.description', 'Intelligenter Telefonassistent mit natürlicher Sprachverarbeitung'),
-          link: '/solutions/ai-phone-assistant'
-        },
-        {
-          id: 2,
-          title: t('nav-services.chatbots.title', 'Smart Chatbots'),
-          description: t('nav-services.chatbots.description', 'KI-gestützte Chatbots für alle Kanäle'),
-          link: '/solutions/chatbots'
-        }
-      ],
-      2: [
-        {
-          id: 3,
-          title: t('nav-services.emailAutomation.title', 'Email Automation'),
-          description: t('nav-services.emailAutomation.description', 'Automatische E-Mail-Verarbeitung und Kampagnen'),
-          link: '/solutions/email-automation'
-        },
-        {
-          id: 4,
-          title: t('nav-services.customerSupport', '24/7 Kundenbetreuung'),
-          description: t('nav-services.customerSupportDesc', 'Rund-um-die-Uhr Kundenbetreuung mit KI-gestützten Lösungen'),
-          link: '/solutions/customer-support'
-        }
-      ],
-      3: [
-        {
-          id: 5,
-          title: t('nav-services.workflow.title', 'Workflow Optimization'),
-          description: t('nav-services.workflow.description', 'Automatisieren Sie komplexe Arbeitsabläufe'),
-          link: '/solutions/workflow-optimization'
-        },
-        {
-          id: 6,
-          title: t('nav-services.processAutomation', 'Prozessautomatisierung'),
-          description: t('nav-services.processAutomationDesc', 'Automatisieren Sie wiederkehrende Aufgaben'),
-          link: '/solutions/process-automation'
-        }
-      ],
-      4: [
-        {
-          id: 7,
-          title: t('nav-services.medical', 'Medizinische KI-Lösungen'),
-          description: t('nav-services.medicalDesc', 'KI-gestützte Lösungen für Arztpraxen, Krankenhäuser und medizinische Einrichtungen'),
-          link: '/solutions/medical'
-        },
-        {
-          id: 8,
-          title: t('nav-services.industrySpecific', 'Branchenspezifische KI'),
-          description: t('nav-services.industrySpecificDesc', 'Maßgeschneiderte KI-Lösungen für verschiedene Branchen'),
-          link: '/solutions/industry-specific'
-        }
-      ]
-    }
-  };
-
-  // Products Data
-  const productsData = {
-    categories: [
-      { id: 1, title: t('products.categories.communication', 'Kommunikation') },
-      { id: 2, title: t('products.categories.automation', 'Automatisierung') },
-      { id: 3, title: t('products.categories.integration', 'Integration') },
-      { id: 4, title: t('products.categories.enterprise', 'Enterprise') },
-    ],
-    products: {
-      1: [
-        {
-          id: 1,
-          title: t('products.aiPhonePro', 'AI Phone Assistant Pro'),
-          description: t('products.aiPhoneProDesc', 'Professioneller KI-Telefonassistent mit 24/7 Verfügbarkeit'),
-          link: '/products/ai-phone-assistant-pro',
-          badge: t('products.badges.popular', 'Beliebt')
-        },
-        {
-          id: 2,
-          title: t('products.chatbotSuite', 'Smart Chatbot Suite'),
-          description: t('products.chatbotSuiteDesc', 'Intelligente Chatbots für Website, WhatsApp, Messenger'),
-          link: '/products/chatbot-suite',
-        }
-      ],
-      2: [
-        {
-          id: 3,
-          title: t('products.emailAutomation', 'Email Automation Tool'),
-          description: t('products.emailAutomationDesc', 'Leistungsstarke E-Mail-Automatisierung für Marketing'),
-          link: '/products/email-automation-tool',
-          badge: t('products.badges.new', 'Neu')
-        },
-        {
-          id: 4,
-          title: t('products.workflowAutomator', 'Workflow Automator'),
-          description: t('products.workflowAutomatorDesc', 'Automatisieren Sie komplexe Arbeitsabläufe'),
-          link: '/products/workflow-automator',
-        }
-      ],
-      3: [
-        {
-          id: 5,
-          title: t('products.apiHub', 'API Integration Hub'),
-          description: t('products.apiHubDesc', 'Nahtlose Integration mit über 500+ Anwendungen'),
-          link: '/products/api-integration-hub',
-        },
-        {
-          id: 6,
-          title: t('products.crmConnector', 'CRM Connector'),
-          description: t('products.crmConnectorDesc', 'Direkte Integration mit Salesforce, HubSpot und mehr'),
-          link: '/products/crm-connector',
-        }
-      ],
-      4: [
-        {
-          id: 7,
-          title: t('products.enterpriseSuite', 'Enterprise AI Suite'),
-          description: t('products.enterpriseSuiteDesc', 'Komplette KI-Plattform für große Unternehmen'),
-          link: '/products/enterprise-ai-suite',
-          badge: t('products.badges.enterprise', 'Enterprise')
-        },
-        {
-          id: 8,
-          title: t('products.customAI', 'Custom AI Solutions'),
-          description: t('products.customAIDesc', 'Maßgeschneiderte KI-Lösungen'),
-          link: '/products/custom-ai-solutions',
-        }
-      ]
-    }
-  };
+  {
+    label: t('nav.solutions'),
+    key: 'solutions',
+    hasDropdown: false,
+    to: '/solutions'
+  },
+  {
+    label: t('nav.products'),
+    key: 'products',
+    hasDropdown: false,
+    to: '/products'
+  },
+  {
+    label: t('nav.about'),
+    key: 'about',
+    hasDropdown: false,
+    to: '/about'
+  },
+  {
+    label: t('nav.careers'),
+    key: 'careers',
+    hasDropdown: false,
+    to: '/career'
+  },
+  {
+    label: t('nav.appointment', 'Demo buchen'),
+    key: 'appointment',
+    hasDropdown: false,
+    to: '/appointment'
+  }
+];
 
   const languages = [
     { code: 'de', label: 'DE' },
@@ -238,61 +100,6 @@ const Navbar = () => {
     setIsNavHovered(false);
   };
 
-  const handleMegaMenuEnter = (menuKey) => {
-    setActiveMegaMenu(menuKey);
-    setActiveCategory(1);
-  };
-
-  const handleMegaMenuLeave = (e) => {
-    if (megaMenuRef.current && !megaMenuRef.current.contains(e.relatedTarget)) {
-      setActiveMegaMenu(null);
-      setActiveCategory(1);
-    }
-  };
-
-  const handleCategorySelect = (categoryId) => {
-    setActiveCategory(categoryId);
-  };
-
-  const getCategoryItems = () => {
-    if (activeMegaMenu === 'solutions') {
-      return solutionsData.services[activeCategory] || [];
-    }
-    if (activeMegaMenu === 'products') {
-      return productsData.products[activeCategory] || [];
-    }
-    return [];
-  };
-
-  const getCurrentCategories = () => {
-    if (activeMegaMenu === 'solutions') {
-      return solutionsData.categories;
-    }
-    if (activeMegaMenu === 'products') {
-      return productsData.categories;
-    }
-    return [];
-  };
-
-  const handleNavItemMouseEnter = (linkKey) => {
-    if (linkKey === 'solutions' || linkKey === 'products') {
-      setActiveMegaMenu(linkKey);
-      setActiveCategory(1);
-    }
-  };
-
-  const handleNavItemMouseLeave = (e) => {
-    if (megaMenuRef.current && !megaMenuRef.current.contains(e.relatedTarget)) {
-      setActiveMegaMenu(null);
-      setActiveCategory(1);
-    }
-  };
-
-  const handleItemClick = (link, e) => {
-    e.preventDefault();
-    window.location.href = link.link;
-  };
-
   return (
     <>
       <div className="reinke-header">
@@ -316,39 +123,15 @@ const Navbar = () => {
                   {navLinks.map((link) => (
                     <li
                       key={link.key}
-                      ref={el => navItemRefs.current[link.key] = el}
-                      className={`reinke-header__nav-item ${!link.hasDropdown ? 'reinke-header__nav-item--standalone' : ''} ${activeMegaMenu === link.key ? 'reinke-header__nav-item--active' : ''}`}
-                      onMouseEnter={() => link.hasDropdown && handleNavItemMouseEnter(link.key)}
-                      onMouseLeave={(e) => link.hasDropdown && handleNavItemMouseLeave(e)}
+                      className="reinke-header__nav-item"
                     >
-                      {link.to ? (
-                        <Link
-                          to={link.to}
-                          className="reinke-header__nav-button"
-                          role="button"
-                          aria-haspopup={link.hasDropdown}
-                          aria-expanded={activeMegaMenu === link.key}
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {link.label}
-                          {link.hasDropdown && (
-                            <span className="reinke-header__nav-arrow" />
-                          )}
-                        </Link>
-                      ) : (
-                        <a
-                          className="reinke-header__nav-button"
-                          href={link.href}
-                          role="button"
-                          aria-haspopup={link.hasDropdown}
-                          aria-expanded={activeMegaMenu === link.key}
-                        >
-                          {link.label}
-                          {link.hasDropdown && (
-                            <span className="reinke-header__nav-arrow" />
-                          )}
-                        </a>
-                      )}
+                      <Link
+                        to={link.to}
+                        className="reinke-header__nav-button"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -394,58 +177,6 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-
-          {(activeMegaMenu === 'solutions' || activeMegaMenu === 'products') && (
-            <div
-              ref={megaMenuRef}
-              className="reinke-mega-menu"
-              onMouseEnter={() => handleMegaMenuEnter(activeMegaMenu)}
-              onMouseLeave={handleMegaMenuLeave}
-            >
-              <div className="reinke-mega-menu__container">
-                <div className="reinke-mega-menu__grid">
-                  <div className="reinke-mega-menu__categories">
-                    <ul className="reinke-mega-menu__categories-list">
-                      {getCurrentCategories().map((category) => (
-                        <li key={category.id} className="reinke-mega-menu__category-item">
-                          <button
-                            className={`reinke-mega-menu__category-button ${activeCategory === category.id ? 'reinke-mega-menu__category-button--active' : ''}`}
-                            onClick={() => handleCategorySelect(category.id)}
-                            onMouseEnter={() => handleCategorySelect(category.id)}
-                          >
-                            {category.title}
-                            <span className="reinke-mega-menu__category-arrow" />
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="reinke-mega-menu__services">
-                    <div className="reinke-mega-menu__services-grid">
-                      {getCategoryItems().map((item) => (
-                        <div key={item.id} className="reinke-mega-menu__service-item">
-                          <a
-                            href={item.link}
-                            className="reinke-mega-menu__service-link-wrapper"
-                            onClick={(e) => handleItemClick(item, e)}
-                          >
-                            <div className="reinke-mega-menu__service-header">
-                              <h4 className="reinke-mega-menu__service-title">{item.title}</h4>
-                              {item.badge && (
-                                <span className="reinke-mega-menu__service-badge">{item.badge}</span>
-                              )}
-                            </div>
-                            <p className="reinke-mega-menu__service-description">{item.description}</p>
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </header>
 
         {isMenuOpen && (
@@ -467,23 +198,13 @@ const Navbar = () => {
               <ul className="reinke-header__mobile-list">
                 {navLinks.map((link) => (
                   <li key={link.key} className="reinke-header__mobile-item">
-                    {link.to ? (
-                      <Link
-                        to={link.to}
-                        className="reinke-header__mobile-link"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <a
-                        className="reinke-header__mobile-link"
-                        href={link.href}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {link.label}
-                      </a>
-                    )}
+                    <Link
+                      to={link.to}
+                      className="reinke-header__mobile-link"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -589,14 +310,6 @@ const Navbar = () => {
           background-color: #000000;
         }
 
-        .reinke-header__nav-item--active .reinke-header__nav-button {
-          color: #000000;
-        }
-
-        .reinke-header__nav-item--active .reinke-header__nav-button::after {
-          width: 100%;
-        }
-
         .reinke-header__bar {
           padding: 12px 120px;
         }
@@ -654,18 +367,12 @@ const Navbar = () => {
           display: none;
         }
 
-        @media only screen and (min-width: 1200px) {
+        @media only screen and (min-width: 1024px) {
           .reinke-header__nav {
             display: block;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-          }
-        }
-
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
-          .reinke-header__nav {
-            display: none !important;
           }
         }
 
@@ -696,28 +403,12 @@ const Navbar = () => {
           transition: all 0.2s ease;
           letter-spacing: 0.01em;
           position: relative;
-          gap: 0.25rem;
         }
 
         .reinke-header__nav-button:focus {
           outline: 2px solid #000000;
           outline-offset: 4px;
           border-radius: 4px;
-        }
-
-        .reinke-header__nav-arrow {
-          display: inline-flex;
-          width: 0.5rem;
-          height: 0.5rem;
-          background-color: currentColor;
-          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
-          mask-size: contain;
-          mask-repeat: no-repeat;
-          transition: transform 0.2s ease;
-        }
-
-        .reinke-header__nav-button:hover .reinke-header__nav-arrow {
-          transform: rotate(180deg);
         }
 
         .reinke-header__nav-button::after {
@@ -735,10 +426,6 @@ const Navbar = () => {
           width: 100%;
         }
 
-        .reinke-header__nav-item--standalone .reinke-header__nav-arrow {
-          display: none;
-        }
-
         .reinke-header__right-group {
           display: flex;
           align-items: center;
@@ -750,16 +437,10 @@ const Navbar = () => {
           position: relative;
         }
 
-        @media only screen and (min-width: 1200px) {
+        @media only screen and (min-width: 1024px) {
           .reinke-header__lang-switcher {
             display: inline-flex;
             align-items: center;
-          }
-        }
-
-        @media only screen and (min-width: 1024px) and (max-width: 1200px) {
-          .reinke-header__lang-switcher {
-            display: none !important;
           }
         }
 
@@ -865,13 +546,13 @@ const Navbar = () => {
           border-radius: 4px;
         }
 
-        @media only screen and (max-width: 1200px) {
+        @media only screen and (max-width: 1024px) {
           .reinke-header__burger {
             display: inline-flex;
           }
         }
 
-        @media only screen and (min-width: 1200px) {
+        @media only screen and (min-width: 1024px) {
           .reinke-header__burger {
             display: none;
           }
@@ -894,246 +575,6 @@ const Navbar = () => {
 
         .reinke-header--menu-open .reinke-header__burger-line:nth-child(3) {
           transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        .reinke-mega-menu {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          background: #FFFFFF;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-          border-top: 1px solid #E5E5E7;
-          border-bottom: 1px solid #E5E5E7;
-          z-index: 999;
-          animation: fadeInDown 0.3s ease-out;
-          overflow: hidden;
-          padding-top: 10px;
-          margin-top: -10px;
-        }
-
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .reinke-mega-menu__container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 40px 120px;
-          padding-top: 50px;
-        }
-
-        @media only screen and (max-width: 1200px) {
-          .reinke-mega-menu__container {
-            padding: 40px 60px;
-            padding-top: 50px;
-          }
-        }
-
-        @media only screen and (max-width: 768px) {
-          .reinke-mega-menu__container {
-            padding: 40px 24px;
-            padding-top: 50px;
-          }
-        }
-
-        .reinke-mega-menu__grid {
-          display: grid;
-          grid-template-columns: 1fr 3fr;
-          gap: 60px;
-        }
-
-        @media only screen and (max-width: 1024px) {
-          .reinke-mega-menu__grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
-        }
-
-        .reinke-mega-menu__categories {
-          border-right: 1px solid #E5E5E7;
-          padding-right: 40px;
-        }
-
-        @media only screen and (max-width: 1024px) {
-          .reinke-mega-menu__categories {
-            border-right: none;
-            border-bottom: 1px solid #E5E5E7;
-            padding-right: 0;
-            padding-bottom: 40px;
-          }
-        }
-
-        .reinke-mega-menu__categories-list {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .reinke-mega-menu__category-item {
-          width: 100%;
-        }
-
-        .reinke-mega-menu__category-button {
-          width: 100%;
-          padding: 12px 24px;
-          background: transparent;
-          border: none;
-          border-radius: 8px;
-          text-align: left;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 1rem;
-          font-weight: 500;
-          color: #374151;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .reinke-mega-menu__category-button:focus {
-          outline: 2px solid #000000;
-          outline-offset: 2px;
-        }
-
-        .reinke-mega-menu__category-button:hover {
-          background: rgba(0, 0, 0, 0.1);
-          color: #000000;
-        }
-
-        .reinke-mega-menu__category-button--active {
-          background: rgba(0, 0, 0, 0.1) !important;
-          color: #000000 !important;
-        }
-
-        .reinke-mega-menu__category-arrow {
-          display: inline-flex;
-          width: 0.5rem;
-          height: 0.5rem;
-          background-color: currentColor;
-          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
-          mask-size: contain;
-          mask-repeat: no-repeat;
-          transition: transform 0.2s ease;
-          transform: rotate(-90deg);
-        }
-
-        .reinke-mega-menu__category-button:hover .reinke-mega-menu__category-arrow,
-        .reinke-mega-menu__category-button--active .reinke-mega-menu__category-arrow {
-          transform: rotate(-90deg) scale(1.2);
-        }
-
-        .reinke-mega-menu__services {
-          overflow: hidden;
-        }
-
-        .reinke-mega-menu__services-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 32px;
-        }
-
-        @media only screen and (max-width: 1200px) {
-          .reinke-mega-menu__services-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-
-        @media only screen and (max-width: 768px) {
-          .reinke-mega-menu__services-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        .reinke-mega-menu__service-item {
-          background: #FFFFFF;
-          padding: 0;
-          transition: all 0.3s ease;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .reinke-mega-menu__service-link-wrapper {
-          text-decoration: none;
-          color: inherit;
-          display: block;
-          padding: 16px;
-          border-radius: 8px;
-          transition: all 0.3s ease;
-          cursor: pointer;
-          border: 1px solid transparent;
-        }
-
-        .reinke-mega-menu__service-link-wrapper:focus {
-          outline: 2px solid #000000;
-          outline-offset: 2px;
-          border-radius: 8px;
-        }
-
-        .reinke-mega-menu__service-link-wrapper:hover {
-          background: rgba(0, 0, 0, 0.05);
-          border-color: rgba(0, 0, 0, 0.2);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        }
-
-        .reinke-mega-menu__service-header {
-          display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          margin-bottom: 12px;
-          gap: 8px;
-        }
-
-        .reinke-mega-menu__service-title {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: #111827;
-          margin: 0;
-          line-height: 1.3;
-          transition: color 0.2s ease;
-        }
-
-        .reinke-mega-menu__service-link-wrapper:hover .reinke-mega-menu__service-title {
-          color: #000000;
-        }
-
-        .reinke-mega-menu__service-badge {
-          background: rgba(0, 0, 0, 0.1);
-          color: #000000;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 0.75rem;
-          font-weight: 600;
-          padding: 2px 6px;
-          border-radius: 12px;
-          white-space: nowrap;
-          flex-shrink: 0;
-        }
-
-        .reinke-mega-menu__service-description {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 0.875rem;
-          line-height: 1.5;
-          color: #6B7280;
-          margin: 0;
-          transition: color 0.2s ease;
-        }
-
-        .reinke-mega-menu__service-link-wrapper:hover .reinke-mega-menu__service-description {
-          color: #4B5563;
         }
 
         .reinke-header__mobile {
@@ -1161,7 +602,7 @@ const Navbar = () => {
           }
         }
 
-        @media only screen and (min-width: 1200px) {
+        @media only screen and (min-width: 1024px) {
           .reinke-header__mobile {
             display: none;
           }
@@ -1255,9 +696,9 @@ const Navbar = () => {
 
         .reinke-header__mobile-link {
           display: block;
-          padding: 8px 0;
+          padding: 12px 0;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 1.25rem;
+          font-size: 1.125rem;
           font-weight: 500;
           color: #111827;
           text-decoration: none;
@@ -1282,12 +723,12 @@ const Navbar = () => {
 
         .reinke-header__mobile-lang-button {
           width: 100%;
-          padding: 8px 0;
+          padding: 12px 0;
           background: transparent;
           border: 0;
           cursor: pointer;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 1.25rem;
+          font-size: 1.125rem;
           font-weight: 500;
           color: #111827;
           text-align: left;
@@ -1322,12 +763,12 @@ const Navbar = () => {
         }
 
         .reinke-header__mobile-lang-option {
-          padding: 8px 16px;
+          padding: 10px 16px;
           background: transparent;
           border: 0;
           cursor: pointer;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 1.125rem;
+          font-size: 1rem;
           font-weight: 400;
           color: #111827;
           transition: all 0.2s ease;

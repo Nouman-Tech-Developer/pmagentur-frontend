@@ -1,166 +1,452 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { supabase } from '../lib/supabase';
 
-const ContactSection = () => {
+const ContactForm = () => {
   const { t } = useTranslation();
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+  const [adminEmail, setAdminEmail] = useState('');
 
-  return (
-    <>
-      <section className="contact-section">
-        <div className="contact-container">
-          <div className="contact-content">
-            <div className="contact-header">
-              <h2 className="contact-title">{t('contact.title')}</h2>
-              <p className="contact-subtitle">
-                {t('contact.subtitle')}
-              </p>
+  // Fetch admin email from settings on component mount
+  useEffect(() => {
+    fetchAdminEmail();
+  }, []);
+
+  const fetchAdminEmail = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('site_settings')
+        .select('setting_value')
+        .eq('setting_key', 'admin_email')
+        .single();
+
+      if (!error && data) {
+        setAdminEmail(data.setting_value);
+        console.log('Admin email loaded:', data.setting_value);
+      } else {
+        setAdminEmail('admin@reinke-ai.de');
+      }
+    } catch (err) {
+      console.error('Error fetching admin email:', err);
+      setAdminEmail('admin@reinke-ai.de');
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const sendEmailNotification = async (contactId, contactData) => {
+    try {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      
+      const emailHtml = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: #000; color: #fff; padding: 20px; text-align: center; }
+            .content { padding: 30px; background: #f9f9f9; }
+            .info-box { background: #fff; padding: 20px; margin: 20px 0; border-left: 4px solid #000; }
+            .field { margin-bottom: 15px; }
+            .field-label { font-weight: bold; color: #000; margin-bottom: 5px; }
+            .field-value { color: #666; }
+            .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; border-top: 1px solid #eee; }
+            .button { display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h1>Neue Kontaktanfrage</h1>
             </div>
-            
-            <div className="contact-form">
-              <div className="contact-form-fields">
-                <div className="contact-field-row">
-                  <input 
-                    type="text" 
-                    placeholder={t('contact.form.name')}
-                    className="contact-input"
-                  />
-                  <input 
-                    type="text" 
-                    placeholder={t('contact.form.company')}
-                    className="contact-input"
-                  />
+            <div class="content">
+              <p>Eine neue Kontaktanfrage wurde über das Kontaktformular eingereicht.</p>
+              
+              <div class="info-box">
+                <div class="field">
+                  <div class="field-label">Name:</div>
+                  <div class="field-value">${contactData.name}</div>
                 </div>
-                
-                <div className="contact-field-row">
-                  <input 
-                    type="email" 
-                    placeholder={t('contact.form.email')}
-                    className="contact-input"
-                  />
-                  <input 
-                    type="tel" 
-                    placeholder={t('contact.form.phone')}
-                    className="contact-input"
-                  />
+                <div class="field">
+                  <div class="field-label">E-Mail:</div>
+                  <div class="field-value">${contactData.email}</div>
                 </div>
-                
-                <textarea 
-                  placeholder={t('contact.form.message')}
-                  rows="4" 
-                  className="contact-textarea"
-                ></textarea>
-                
-                <div className="contact-checkbox">
-                  <input type="checkbox" id="privacy" className="contact-checkbox-input" />
-                  <label htmlFor="privacy" className="contact-checkbox-label">
-  {t('contact.form.privacy.part1')} <a href={t('contact.form.privacy.link')}>{t('contact.form.privacy.part2')}</a> {t('contact.form.privacy.part3')}
-</label>
+                ${contactData.phone ? `
+                <div class="field">
+                  <div class="field-label">Telefon:</div>
+                  <div class="field-value">${contactData.phone}</div>
                 </div>
-                
-                <div className="submit-button-container">
-                  <button type="submit" className="contact-submit-button">
-                    {t('contact.form.submit')}
-                  </button>
+                ` : ''}
+                ${contactData.company ? `
+                <div class="field">
+                  <div class="field-label">Unternehmen:</div>
+                  <div class="field-value">${contactData.company}</div>
+                </div>
+                ` : ''}
+                <div class="field">
+                  <div class="field-label">Nachricht:</div>
+                  <div class="field-value">${contactData.message.replace(/\n/g, '<br>')}</div>
                 </div>
               </div>
+              
+              <a href="${window.location.origin}/admin/contacts" class="button">Im Admin-Panel anzeigen</a>
+            </div>
+            <div class="footer">
+              <p>Diese E-Mail wurde automatisch vom Kontaktformular gesendet.</p>
+              <p>© ${new Date().getFullYear()} Reinke AI Automation. Alle Rechte vorbehalten.</p>
             </div>
           </div>
+        </body>
+        </html>
+      `;
+
+      // FIXED: Use resend-email instead of send-email
+      const response = await fetch(`${supabaseUrl}/functions/v1/resend-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({
+          to: adminEmail,
+          type: 'contact',
+          recordId: contactId,
+          subject: `Neue Kontaktanfrage von ${contactData.name}`,
+          html: emailHtml
+        })
+      });
+
+      const result = await response.json();
+      
+      if (response.ok && result.success) {
+        console.log('✅ Email sent to:', adminEmail);
+        return true;
+      } else {
+        console.error('❌ Email failed:', result.error);
+        return false;
+      }
+    } catch (emailError) {
+      console.error('❌ Error sending email notification:', emailError);
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess(false);
+
+    // Validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setError('Bitte füllen Sie alle Pflichtfelder aus');
+      setLoading(false);
+      return;
+    }
+
+    if (!privacyAccepted) {
+      setError('Bitte akzeptieren Sie die Datenschutzerklärung');
+      setLoading(false);
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError('Bitte geben Sie eine gültige E-Mail-Adresse ein');
+      setLoading(false);
+      return;
+    }
+
+    // Prepare data
+    const contactData = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || null,
+      message: formData.message,
+      status: 'unread'
+    };
+    
+    if (formData.company) {
+      contactData.company = formData.company;
+    }
+
+    try {
+      // Step 1: Save to database
+      const { data, error: supabaseError } = await supabase
+        .from('contacts')
+        .insert([contactData])
+        .select();
+
+      if (supabaseError) {
+        console.error('Supabase Error:', supabaseError);
+        throw supabaseError;
+      }
+
+      console.log('✅ Contact saved to database:', data);
+
+      // Step 2: Send email notification to admin
+      if (data && data[0] && adminEmail) {
+        await sendEmailNotification(data[0].id, contactData);
+      }
+
+      // Step 3: Show success message
+      setSuccess(true);
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      setPrivacyAccepted(false);
+      
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => setSuccess(false), 5000);
+      
+    } catch (err) {
+      console.error('Error:', err);
+      setError('Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <section className="contact-section">
+      <div className="contact-container">
+        <div className="contact-content">
+          <div className="contact-header">
+            <h2 className="contact-title">
+              <span>{t('contact.title')}</span>
+            </h2>
+            <p className="contact-subtitle">
+              {t('contact.subtitle')}
+            </p>
+          </div>
+          
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="contact-form-fields">
+              {success && (
+                <div className="success-message">
+                  <svg className="success-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns bald bei Ihnen.</span>
+                </div>
+              )}
+
+              {error && (
+                <div className="error-message">
+                  <svg className="error-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{error}</span>
+                </div>
+              )}
+
+              <div className="contact-field-row">
+                <input 
+                  type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder={t('contact.form.name')}
+                  className="contact-input"
+                  required
+                />
+                <input 
+                  type="text" 
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder={t('contact.form.company')}
+                  className="contact-input"
+                />
+              </div>
+              
+              <div className="contact-field-row">
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder={t('contact.form.email')}
+                  className="contact-input"
+                  required
+                />
+                <input 
+                  type="tel" 
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder={t('contact.form.phone')}
+                  className="contact-input"
+                />
+              </div>
+              
+              <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder={t('contact.form.message')}
+                rows="5" 
+                className="contact-textarea"
+                required
+              ></textarea>
+              
+              <div className="contact-checkbox">
+                <input 
+                  type="checkbox" 
+                  id="privacy" 
+                  checked={privacyAccepted}
+                  onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                  className="contact-checkbox-input" 
+                  required
+                />
+                <label htmlFor="privacy" className="contact-checkbox-label">
+                  {t('contact.form.privacy.part1')} 
+                  <a href={t('contact.form.privacy.link')}>{t('contact.form.privacy.part2')}</a> 
+                  {t('contact.form.privacy.part3')}
+                </label>
+              </div>
+              
+              <div className="submit-button-container">
+                <button 
+                  type="submit" 
+                  className="contact-submit-button"
+                  disabled={loading}
+                >
+                  {loading ? 'Wird gesendet...' : t('contact.form.submit')}
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-      </section>
+      </div>
 
       <style jsx="true">{`
-        /* Contact Section - Full width with consistent padding */
         .contact-section {
           width: 100%;
-          padding: 35px 100px;
+          padding: 60px 100px;
           background: #FFFFFF;
-          box-sizing: border-box;
           position: relative;
-          overflow: hidden;
         }
         
         .contact-container {
-          width: 100%;
-          max-width: 1400px;
+          max-width: 1200px;
           margin: 0 auto;
-          position: relative;
-          z-index: 2;
         }
         
         .contact-content {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 60px;
-          align-items: start;
-          width: 100%;
+          max-width: 900px;
+          margin: 0 auto;
         }
         
-        /* Header */
         .contact-header {
           text-align: center;
-          margin-bottom: 20px;
-          width: 100%;
+          margin-bottom: 48px;
         }
         
-        /* Title - Black */
         .contact-title {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-          font-size: 52px;
+          font-size: 48px;
           font-weight: 700;
-          line-height: 1.1;
           color: #000000;
-          margin: 0 0 24px 0;
+          margin: 0 0 16px 0;
           letter-spacing: -0.02em;
         }
         
-        /* Subtitle - Light Gray */
         .contact-subtitle {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 18px;
-          line-height: 1.8;
-          font-weight: 400;
+          line-height: 1.6;
           color: #6B7280;
           margin: 0;
-          max-width: 700px;
-          margin: 0 auto;
         }
         
-        /* Form - Full width */
-        .contact-form {
-          width: 100%;
-          margin: 0 auto;
+        .success-message, .error-message {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 16px 20px;
+          border-radius: 12px;
+          margin-bottom: 24px;
+          animation: slideIn 0.3s ease;
+        }
+        
+        .success-message {
+          background: #D1FAE5;
+          border: 1px solid #A7F3D0;
+          color: #065F46;
+        }
+        
+        .error-message {
+          background: #FEE2E2;
+          border: 1px solid #FECACA;
+          color: #991B1B;
+        }
+        
+        .success-icon, .error-icon {
+          width: 20px;
+          height: 20px;
+          flex-shrink: 0;
+        }
+        
+        .success-message span, .error-message span {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+        
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
         
         .contact-form-fields {
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
           background: #FFFFFF;
           padding: 40px;
-          border-radius: 20px;
+          border-radius: 24px;
           border: 1px solid #E5E7EB;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-          width: 100%;
-          box-sizing: border-box;
         }
         
-        /* Field Row - Full width with 2 columns */
         .contact-field-row {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 24px;
-          width: 100%;
+          margin-bottom: 24px;
         }
         
-        /* Input Styles - Full width */
         .contact-input,
         .contact-textarea {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
           font-size: 16px;
-          line-height: 1.5;
-          font-weight: 400;
-          color: #000000;
-          padding: 16px 20px;
+          padding: 14px 18px;
           border: 1px solid #E5E7EB;
           border-radius: 12px;
           background: #FFFFFF;
@@ -174,213 +460,95 @@ const ContactSection = () => {
         .contact-textarea:focus {
           border-color: #000000;
           box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-          transform: translateY(-2px);
         }
         
         .contact-input::placeholder,
         .contact-textarea::placeholder {
           color: #9CA3AF;
-          opacity: 1;
         }
         
-        /* Textarea */
         .contact-textarea {
           resize: vertical;
-          min-height: 140px;
-          width: 100%;
+          min-height: 120px;
+          margin-bottom: 24px;
         }
         
-        /* Checkbox */
         .contact-checkbox {
           display: flex;
           align-items: flex-start;
           gap: 12px;
-          margin-top: 8px;
-          width: 100%;
+          margin-bottom: 32px;
         }
         
         .contact-checkbox-input {
-          width: 20px;
-          height: 20px;
+          width: 18px;
+          height: 18px;
           margin-top: 2px;
           accent-color: #000000;
-          border-radius: 4px;
           cursor: pointer;
           flex-shrink: 0;
-          border: 1px solid #E5E7EB;
         }
         
         .contact-checkbox-label {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           line-height: 1.5;
-          font-weight: 400;
           color: #6B7280;
-          flex: 1;
           cursor: pointer;
         }
         
         .contact-checkbox-label a {
           color: #000000;
           text-decoration: none;
-          font-weight: 600;
-          transition: color 0.3s ease;
+          font-weight: 500;
           border-bottom: 1px solid transparent;
+          transition: border-color 0.2s ease;
         }
         
         .contact-checkbox-label a:hover {
-          color: #374151;
-          border-bottom-color: #374151;
+          border-bottom-color: #000000;
         }
         
-        /* Submit Button Container */
         .submit-button-container {
           display: flex;
           justify-content: flex-end;
-          width: 100%;
-          margin-top: 16px;
         }
         
-        /* Send Button - Black */
         .contact-submit-button {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+          font-size: 16px;
           font-weight: 500;
-          font-size: 15px;
-          padding: 10px 30px;
-          border-radius: 25px;
-          cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          height: 42px;
-          width: auto;
-          min-width: 140px;
-          border: none;
-          white-space: nowrap;
-          letter-spacing: 0.01em;
-          box-sizing: border-box;
-          text-align: center;
-          background-color: #000000;
+          padding: 12px 32px;
+          background: #000000;
           color: #FFFFFF;
+          border: none;
+          border-radius: 30px;
+          cursor: pointer;
+          transition: all 0.3s ease;
         }
         
-        .contact-submit-button:hover {
-          background-color: #374151;
+        .contact-submit-button:hover:not(:disabled) {
+          background: #1F2937;
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         
-        /* Animation */
-        .contact-form {
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 0.6s ease forwards;
-          animation-delay: 0.2s;
+        .contact-submit-button:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
         }
         
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        /* =========== RESPONSIVE DESIGN =========== */
-        
-        /* Large Desktop: 1440px+ */
-        @media (max-width: 1440px) {
-          .contact-section {
-            padding: 35px 80px;
-          }
-        }
-        
-        /* Desktop: 1200px */
-        @media (max-width: 1200px) {
-          .contact-section {
-            padding: 35px 60px;
-          }
-          
-          .contact-title {
-            font-size: 44px;
-          }
-          
-          .contact-content {
-            gap: 50px;
-          }
-        }
-        
-        /* Tablet Landscape: 1024px */
-        @media (max-width: 1024px) {
-          .contact-section {
-            padding: 35px 40px;
-          }
-          
-          .contact-title {
-            font-size: 38px;
-          }
-          
-          .contact-subtitle {
-            font-size: 17px;
-          }
-          
-          .contact-form-fields {
-            padding: 35px 30px;
-            gap: 20px;
-          }
-          
-          .contact-field-row {
-            gap: 20px;
-          }
-          
-          .contact-content {
-            gap: 45px;
-          }
-        }
-        
-        /* Medium Tablets: 900px */
-        @media (max-width: 900px) {
-          .contact-section {
-            padding: 35px 50px;
-          }
-          
-          .contact-title {
-            font-size: 34px;
-          }
-          
-          .contact-subtitle {
-            font-size: 16px;
-          }
-          
-          .contact-form-fields {
-            padding: 30px 25px;
-            gap: 18px;
-          }
-          
-          .contact-field-row {
-            gap: 18px;
-          }
-          
-          .contact-input,
-          .contact-textarea {
-            padding: 14px 18px;
-            font-size: 15px;
-          }
-          
-          .contact-content {
-            gap: 40px;
-          }
-        }
-        
-        /* Tablet Portrait: 768px - Switch to 1 column */
         @media (max-width: 768px) {
           .contact-section {
-            padding: 35px 40px;
+            padding: 40px 24px;
           }
           
           .contact-title {
             font-size: 32px;
+          }
+          
+          .contact-subtitle {
+            font-size: 16px;
           }
           
           .contact-field-row {
@@ -389,37 +557,19 @@ const ContactSection = () => {
           }
           
           .contact-form-fields {
-            padding: 25px 22px;
-            gap: 16px;
-            border-radius: 18px;
+            padding: 24px;
           }
           
+          .contact-input,
           .contact-textarea {
-            min-height: 120px;
-          }
-          
-          .contact-checkbox {
-            gap: 10px;
-          }
-          
-          .contact-checkbox-input {
-            width: 18px;
-            height: 18px;
-          }
-          
-          .contact-checkbox-label {
-            font-size: 13px;
-          }
-          
-          .contact-content {
-            gap: 35px;
+            font-size: 15px;
+            padding: 12px 16px;
           }
         }
         
-        /* Large Phones: 650px */
-        @media (max-width: 650px) {
+        @media (max-width: 480px) {
           .contact-section {
-            padding: 35px 30px;
+            padding: 30px 16px;
           }
           
           .contact-title {
@@ -427,237 +577,16 @@ const ContactSection = () => {
           }
           
           .contact-form-fields {
-            padding: 22px 20px;
-            gap: 14px;
-          }
-          
-          .contact-field-row {
-            gap: 14px;
-          }
-          
-          .contact-input,
-          .contact-textarea {
-            padding: 12px 16px;
-            font-size: 14px;
-            border-radius: 10px;
+            padding: 20px;
           }
           
           .contact-submit-button {
-            font-size: 14px;
-            padding: 9px 24px;
-            height: 40px;
-            min-width: 130px;
-          }
-          
-          .contact-content {
-            gap: 30px;
-          }
-        }
-        
-        /* Medium Phones: 576px */
-        @media (max-width: 576px) {
-          .contact-section {
-            padding: 35px 25px;
-          }
-          
-          .contact-title {
-            font-size: 26px;
-          }
-          
-          .contact-subtitle {
-            font-size: 15px;
-            max-width: 480px;
-          }
-          
-          .contact-form-fields {
-            padding: 20px 18px;
-            gap: 12px;
-            border-radius: 16px;
-          }
-          
-          .contact-field-row {
-            gap: 12px;
-          }
-          
-          .contact-textarea {
-            min-height: 100px;
-          }
-          
-          .contact-checkbox-input {
-            width: 16px;
-            height: 16px;
-          }
-          
-          .contact-checkbox-label {
-            font-size: 12px;
-            line-height: 1.4;
-          }
-        }
-        
-        /* Small Phones: 480px */
-        @media (max-width: 480px) {
-          .contact-section {
-            padding: 35px 20px;
-          }
-          
-          .contact-title {
-            font-size: 24px;
-          }
-          
-          .contact-subtitle {
-            font-size: 14px;
-            max-width: 100%;
-          }
-          
-          .contact-form-fields {
-            padding: 18px 16px;
-            gap: 10px;
-          }
-          
-          .contact-field-row {
-            gap: 10px;
-          }
-          
-          .contact-input,
-          .contact-textarea {
-            padding: 10px 14px;
-            font-size: 13px;
-            border-radius: 8px;
-          }
-          
-          .contact-textarea {
-            min-height: 90px;
-          }
-          
-          .contact-submit-button {
-            font-size: 13px;
-            padding: 8px 20px;
-            height: 38px;
-            min-width: 120px;
-          }
-          
-          .contact-checkbox-label {
-            font-size: 11px;
-          }
-          
-          .contact-content {
-            gap: 25px;
-          }
-        }
-        
-        /* Very Small Phones: 400px */
-        @media (max-width: 400px) {
-          .contact-section {
-            padding: 35px 15px;
-          }
-          
-          .contact-title {
-            font-size: 22px;
-          }
-          
-          .contact-form-fields {
-            padding: 16px 14px;
-          }
-          
-          .contact-checkbox {
-            gap: 8px;
-          }
-          
-          .contact-checkbox-input {
-            width: 14px;
-            height: 14px;
-          }
-          
-          .contact-checkbox-label {
-            font-size: 10px;
-          }
-          
-          .contact-submit-button {
-            font-size: 12px;
-            padding: 7px 18px;
-            height: 36px;
-            min-width: 110px;
-          }
-        }
-        
-        /* Extra Small Phones: 360px */
-        @media (max-width: 360px) {
-          .contact-section {
-            padding: 35px 12px;
-          }
-          
-          .contact-title {
-            font-size: 20px;
-          }
-          
-          .contact-subtitle {
-            font-size: 13px;
-          }
-          
-          .contact-input,
-          .contact-textarea {
-            font-size: 12px;
-            padding: 9px 12px;
-          }
-          
-          .contact-checkbox-label {
-            font-size: 9px;
-          }
-        }
-        
-        /* Wide Screens: 1600px+ */
-        @media (min-width: 1600px) {
-          .contact-section {
-            padding: 35px 150px;
-          }
-          
-          .contact-title {
-            font-size: 56px;
-          }
-          
-          .contact-subtitle {
-            font-size: 20px;
-            max-width: 800px;
-          }
-          
-          .contact-form-fields {
-            padding: 50px 45px;
-            gap: 28px;
-          }
-          
-          .contact-field-row {
-            gap: 28px;
-          }
-          
-          .contact-input,
-          .contact-textarea {
-            padding: 18px 24px;
-            font-size: 17px;
-            border-radius: 14px;
-          }
-          
-          .contact-textarea {
-            min-height: 160px;
-          }
-          
-          .contact-checkbox-label {
-            font-size: 15px;
-          }
-          
-          .contact-submit-button {
-            font-size: 16px;
-            padding: 12px 36px;
-            height: 46px;
-            min-width: 160px;
-          }
-          
-          .contact-content {
-            gap: 70px;
+            width: 100%;
           }
         }
       `}</style>
-    </>
+    </section>
   );
 };
 
-export default ContactSection;
+export default ContactForm;
