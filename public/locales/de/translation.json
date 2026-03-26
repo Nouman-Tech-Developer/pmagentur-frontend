@@ -218,13 +218,7 @@
     }
   },
   
-  "nav": {
-    "solutions": "Lösungen",
-    "products": "Produkte",
-    "about": "Über uns",
-    "careers": "Karriere",
-    "calculator": "Rechner"
-  },
+  
   "footer": {
     "copyright": "Alle Rechte vorbehalten.",
     "legal": {
