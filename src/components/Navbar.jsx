@@ -35,6 +35,12 @@ const Navbar = () => {
 
   const navLinks = [
   {
+    label: t('nav.home', 'Home'),
+    key: 'home',
+    hasDropdown: false,
+    to: '/'
+  },
+  {
     label: t('nav.solutions'),
     key: 'solutions',
     hasDropdown: false,
@@ -52,14 +58,14 @@ const Navbar = () => {
     hasDropdown: false,
     to: '/about'
   },
+  // {
+  //   label: t('nav.careers'),
+  //   key: 'careers',
+  //   hasDropdown: false,
+  //   to: '/career'
+  // },
   {
-    label: t('nav.careers'),
-    key: 'careers',
-    hasDropdown: false,
-    to: '/career'
-  },
-  {
-    label: t('nav.appointment', 'Demo buchen'),
+    label: t('nav.appointment', 'Book a Demo'), // Translation applied with fallback
     key: 'appointment',
     hasDropdown: false,
     to: '/appointment'

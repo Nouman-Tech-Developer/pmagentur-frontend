@@ -11,7 +11,7 @@ const ProductsPage = () => {
       id: 1,
       title: t('products.grid.aiPhonePro.title', 'AI Phone Assistant Pro'),
       description: t('products.grid.aiPhonePro.description', 'Professioneller KI-Telefonassistent mit 24/7 Verfügbarkeit, natürlicher Gesprächsführung und Praxissoftware-Integration.'),
-      image: 'products/ai-phone-pro.jpg',
+      image: 'products/ai-phone-pro.png',
       badge: t('products.grid.aiPhonePro.badge', 'Popular'),
       features: [
         {
@@ -33,7 +33,7 @@ const ProductsPage = () => {
       id: 2,
       title: t('products.grid.chatbotSuite.title', 'Medical Chatbot Suite'),
       description: t('products.grid.chatbotSuite.description', 'Intelligente Chatbots für Website, WhatsApp und Messenger mit medizinischer Wissensdatenbank.'),
-      image: 'products/chatbot-suite.jpg',
+      image: 'products/chatbot-suite.png',
       features: [
         {
           point: t('products.grid.chatbotSuite.feature1.point', 'Medizinische Terminologie'),
@@ -54,7 +54,7 @@ const ProductsPage = () => {
       id: 3,
       title: t('products.grid.emailAutomation.title', 'Medical Email Automation'),
       description: t('products.grid.emailAutomation.description', 'Leistungsstarke E-Mail-Automatisierung für Arztpraxen mit Dokumentenverarbeitung.'),
-      image: 'products/email-tool.jpg',
+      image: 'products/email-tool.png',
       badge: t('products.grid.emailAutomation.badge', 'New'),
       features: [
         {
@@ -76,7 +76,7 @@ const ProductsPage = () => {
       id: 4,
       title: t('products.grid.workflowAutomator.title', 'Practice Workflow Automator'),
       description: t('products.grid.workflowAutomator.description', 'Automatisieren Sie komplexe Arbeitsabläufe und reduzieren Sie den Arbeitsaufwand des Teams um bis zu 70%.'),
-      image: 'products/workflow-automator.jpg',
+      image: 'products/workflow-automator.png',
       features: [
         {
           point: t('products.grid.workflowAutomator.feature1.point', 'Patientenregistrierung'),
@@ -97,7 +97,7 @@ const ProductsPage = () => {
       id: 5,
       title: t('products.grid.apiHub.title', 'Medical API Integration Hub'),
       description: t('products.grid.apiHub.description', 'Nahtlose Integration mit über 500+ medizinischen Anwendungen und Praxisverwaltungssystemen.'),
-      image: 'products/api-hub.jpg',
+      image: 'products/api-hub.png',
       features: [
         {
           point: t('products.grid.apiHub.feature1.point', 'PMS-Integration'),
@@ -118,7 +118,7 @@ const ProductsPage = () => {
       id: 6,
       title: t('products.grid.enterpriseSuite.title', 'Enterprise Medical AI Suite'),
       description: t('products.grid.enterpriseSuite.description', 'Komplette KI-Plattform für große Arztpraxen und Klinikgruppen.'),
-      image: 'products/enterprise-suite.jpg',
+      image: 'products/enterprise-suite.png',
       badge: t('products.grid.enterpriseSuite.badge', 'Enterprise'),
       features: [
         {

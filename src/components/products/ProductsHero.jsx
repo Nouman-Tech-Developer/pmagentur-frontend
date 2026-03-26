@@ -60,7 +60,7 @@ const ProductsHero = () => {
           <div className="products-image-side">
             <div className="products-image-wrapper">
               <img 
-                src="/images/products/hero-products.jpg" 
+                src="/images/products/hero-products.png" 
                 alt={t('products.hero.imageAlt')}
                 className={`products-hero-image ${imageLoaded ? 'loaded' : ''}`}
                 onLoad={() => setImageLoaded(true)}

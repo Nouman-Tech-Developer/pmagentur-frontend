@@ -8,13 +8,36 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    // Default language set to German
+    lng: 'de',
+    
+    // Fallback language
     fallbackLng: 'de',
+    
+    // Available languages
+    supportedLngs: ['de', 'en'],
+    
+    // Debug mode (set to false in production)
     debug: true,
+    
     interpolation: {
       escapeValue: false,
     },
+    
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+    
+    // Language detection options
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+      checkWhitelist: true,
+    },
+    
+    // React options
+    react: {
+      useSuspense: false,
     },
   });
 

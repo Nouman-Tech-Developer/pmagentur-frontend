@@ -39,7 +39,7 @@ const SolutionsHero = () => {
           <div className="solutions-image-side">
             <div className="solutions-image-wrapper">
               <img 
-                src="/images/solutions/hero-doctor.jpg" 
+                src="/images/solutions/hero-doctor.png" 
                 alt={t('solutions.hero.imageAlt')}
                 className={`solutions-hero-image ${imageLoaded ? 'loaded' : ''}`}
                 onLoad={() => setImageLoaded(true)}

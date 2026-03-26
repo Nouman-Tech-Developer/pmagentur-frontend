@@ -1,9 +1,11 @@
 {
   "nav": {
+    "home": "Startseite",
     "solutions": "Lösungen",
     "products": "Produkte",
     "about": "Über uns",
     "careers": "Karriere",
+    "appointment": "Demo buchen",
     "selectLanguage": "Sprache auswählen",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen"

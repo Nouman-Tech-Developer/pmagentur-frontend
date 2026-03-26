@@ -14,7 +14,7 @@ const SolutionsPage = () => {
       title: t('solutions.grid.aiPhone.title', 'AI Phone Assistant für Arztpraxen'),
       description: t('solutions.grid.aiPhone.description', 'Automatisiert eingehende Anrufe, Terminvereinbarungen und Patientenanfragen rund um die Uhr.'),
       icon: '🏥',
-      image: 'solutions/ai-phone-assistant.jpg',
+      image: '/solutions/ai-phone-assistant.png',
       features: [
         {
           point: t('solutions.grid.aiPhone.feature1.point', 'Automatische Terminvereinbarung'),
@@ -36,7 +36,7 @@ const SolutionsPage = () => {
       title: t('solutions.grid.chatbot.title', 'Patienten-Chatbot'),
       description: t('solutions.grid.chatbot.description', 'Intelligenter Chatbot für Website und WhatsApp zur Beantwortung von Patientenfragen.'),
       icon: '💬',
-      image: 'solutions/patient-chatbot.jpg',
+      image: 'solutions/patient-chatbot.png',
       features: [
         {
           point: t('solutions.grid.chatbot.feature1.point', '24/7 Patientenanfragen'),
@@ -58,7 +58,7 @@ const SolutionsPage = () => {
       title: t('solutions.grid.email.title', 'E-Mail & Dokumenten-Automatisierung'),
       description: t('solutions.grid.email.description', 'Automatisierte Verarbeitung von E-Mails, Überweisungen und Laborbefunden.'),
       icon: '📧',
-      image: 'solutions/email-automation.jpg',
+      image: 'solutions/email-automation.png',
       features: [
         {
           point: t('solutions.grid.email.feature1.point', 'Automatische E-Mail-Klassifizierung'),
@@ -80,7 +80,7 @@ const SolutionsPage = () => {
       title: t('solutions.grid.workflow.title', 'Praxis-Workflow Optimierung'),
       description: t('solutions.grid.workflow.description', 'Optimierung interner Prozesse und Entlastung des Praxispersonals.'),
       icon: '⚙️',
-      image: 'solutions/workflow-automation.jpg',
+      image: 'solutions/workflow-automation.png',
       features: [
         {
           point: t('solutions.grid.workflow.feature1.point', 'Patientenregistrierung'),

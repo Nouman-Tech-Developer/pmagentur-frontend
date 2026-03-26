@@ -26,7 +26,7 @@ const HeroSection = () => {
           <div className="image-side">
             <div className="image-wrapper">
               <img 
-                src="/images/Hero.jpg" 
+                src="/images/Hero.png" 
                 alt={t('hero.imageAlt', 'KI-Automatisierung für Unternehmen')}
                 className={`hero-image ${imageLoaded ? 'loaded' : ''}`}
                 onLoad={() => setImageLoaded(true)}

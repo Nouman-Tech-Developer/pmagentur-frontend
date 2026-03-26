@@ -1,9 +1,11 @@
 {
   "nav": {
+    "home": "Home",
     "solutions": "Solutions",
     "products": "Products",
     "about": "About",
     "careers": "Careers",
+    "appointment": "Book a Demo",
     "selectLanguage": "Select language",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
