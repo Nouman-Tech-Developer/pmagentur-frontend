@@ -219,32 +219,6 @@ const AdminCalculator = () => {
         )}
 
         <div className="settings-grid">
-          {/* Enable/Disable Card */}
-          <div className="settings-card">
-            <div className="card-header">
-              <h2 className="card-title">Calculator Status</h2>
-              <p className="card-description">Enable or disable the calculator on the frontend</p>
-            </div>
-            <div className="card-body">
-              <div className="toggle-switch">
-                <label className="toggle-label">
-                  <input
-                    type="checkbox"
-                    checked={settings.isEnabled}
-                    onChange={(e) => handleChange('isEnabled', e.target.checked)}
-                  />
-                  <span className="toggle-slider"></span>
-                  <span className="toggle-text">
-                    {settings.isEnabled ? '✓ Calculator Enabled' : '✗ Calculator Disabled'}
-                  </span>
-                </label>
-              </div>
-              {!settings.isEnabled && (
-                <p className="warning-text">When disabled, the calculator will not be visible to users.</p>
-              )}
-            </div>
-          </div>
-
           {/* Default Values Card */}
           <div className="settings-card">
             <div className="card-header">
@@ -253,8 +227,8 @@ const AdminCalculator = () => {
             </div>
             <div className="card-body">
               <div className="input-group">
-                <label>Default Number of Employees</label>
-                <div className="input-with-controls">
+                <label>Number of Employees</label>
+                <div className="input-wrapper">
                   <input
                     type="number"
                     value={settings.defaultEmployees}
@@ -263,16 +237,16 @@ const AdminCalculator = () => {
                     max="50"
                   />
                   <div className="input-buttons">
-                    <button onClick={() => handleChange('defaultEmployees', Math.max(1, settings.defaultEmployees - 1))}>-</button>
+                    <button onClick={() => handleChange('defaultEmployees', Math.max(1, settings.defaultEmployees - 1))}>−</button>
                     <button onClick={() => handleChange('defaultEmployees', Math.min(50, settings.defaultEmployees + 1))}>+</button>
                   </div>
                 </div>
-                <span className="input-hint">Number of employees (1-50)</span>
+                <span className="input-hint">Range: 1-50 employees</span>
               </div>
 
               <div className="input-group">
-                <label>Default Hourly Rate (€)</label>
-                <div className="input-with-controls">
+                <label>Hourly Rate (€)</label>
+                <div className="input-wrapper">
                   <input
                     type="number"
                     value={settings.defaultHourlyRate}
@@ -282,16 +256,16 @@ const AdminCalculator = () => {
                     step="5"
                   />
                   <div className="input-buttons">
-                    <button onClick={() => handleChange('defaultHourlyRate', Math.max(10, settings.defaultHourlyRate - 5))}>-</button>
+                    <button onClick={() => handleChange('defaultHourlyRate', Math.max(10, settings.defaultHourlyRate - 5))}>−</button>
                     <button onClick={() => handleChange('defaultHourlyRate', Math.min(100, settings.defaultHourlyRate + 5))}>+</button>
                   </div>
                 </div>
-                <span className="input-hint">Hourly rate in Euros (€10-€100)</span>
+                <span className="input-hint">Range: €10-€100</span>
               </div>
 
               <div className="input-group">
-                <label>Default Daily Calls</label>
-                <div className="input-with-controls">
+                <label>Daily Calls</label>
+                <div className="input-wrapper">
                   <input
                     type="number"
                     value={settings.defaultDailyCalls}
@@ -301,16 +275,16 @@ const AdminCalculator = () => {
                     step="10"
                   />
                   <div className="input-buttons">
-                    <button onClick={() => handleChange('defaultDailyCalls', Math.max(10, settings.defaultDailyCalls - 10))}>-</button>
+                    <button onClick={() => handleChange('defaultDailyCalls', Math.max(10, settings.defaultDailyCalls - 10))}>−</button>
                     <button onClick={() => handleChange('defaultDailyCalls', Math.min(500, settings.defaultDailyCalls + 10))}>+</button>
                   </div>
                 </div>
-                <span className="input-hint">Number of calls per day (10-500)</span>
+                <span className="input-hint">Range: 10-500 calls/day</span>
               </div>
 
               <div className="input-group">
-                <label>Default Avg Call Duration (minutes)</label>
-                <div className="input-with-controls">
+                <label>Avg Call Duration (min)</label>
+                <div className="input-wrapper">
                   <input
                     type="number"
                     value={settings.defaultAvgCallDuration}
@@ -320,11 +294,11 @@ const AdminCalculator = () => {
                     step="0.5"
                   />
                   <div className="input-buttons">
-                    <button onClick={() => handleChange('defaultAvgCallDuration', Math.max(1, settings.defaultAvgCallDuration - 0.5))}>-</button>
+                    <button onClick={() => handleChange('defaultAvgCallDuration', Math.max(1, settings.defaultAvgCallDuration - 0.5))}>−</button>
                     <button onClick={() => handleChange('defaultAvgCallDuration', Math.min(20, settings.defaultAvgCallDuration + 0.5))}>+</button>
                   </div>
                 </div>
-                <span className="input-hint">Average call duration in minutes (1-20 min)</span>
+                <span className="input-hint">Range: 1-20 minutes</span>
               </div>
             </div>
           </div>
@@ -338,7 +312,7 @@ const AdminCalculator = () => {
             <div className="card-body">
               <div className="input-group">
                 <label>Bot Call Percentage (%)</label>
-                <div className="input-with-controls">
+                <div className="input-wrapper">
                   <input
                     type="number"
                     value={settings.botCallPercentage}
@@ -347,16 +321,16 @@ const AdminCalculator = () => {
                     max="100"
                   />
                   <div className="input-buttons">
-                    <button onClick={() => handleChange('botCallPercentage', Math.max(0, settings.botCallPercentage - 5))}>-</button>
+                    <button onClick={() => handleChange('botCallPercentage', Math.max(0, settings.botCallPercentage - 5))}>−</button>
                     <button onClick={() => handleChange('botCallPercentage', Math.min(100, settings.botCallPercentage + 5))}>+</button>
                   </div>
                 </div>
-                <span className="input-hint">Percentage of calls that can be handled by AI (0-100%)</span>
+                <span className="input-hint">Percentage of calls handled by AI</span>
               </div>
 
               <div className="input-group">
                 <label>Bot Annual Cost (€)</label>
-                <div className="input-with-controls">
+                <div className="input-wrapper">
                   <input
                     type="number"
                     value={settings.botAnnualCost}
@@ -366,16 +340,16 @@ const AdminCalculator = () => {
                     step="500"
                   />
                   <div className="input-buttons">
-                    <button onClick={() => handleChange('botAnnualCost', Math.max(0, settings.botAnnualCost - 500))}>-</button>
+                    <button onClick={() => handleChange('botAnnualCost', Math.max(0, settings.botAnnualCost - 500))}>−</button>
                     <button onClick={() => handleChange('botAnnualCost', Math.min(50000, settings.botAnnualCost + 500))}>+</button>
                   </div>
                 </div>
-                <span className="input-hint">Annual cost of AI solution in Euros</span>
+                <span className="input-hint">Annual AI solution cost</span>
               </div>
 
               <div className="input-group">
-                <label>Working Days Per Year</label>
-                <div className="input-with-controls">
+                <label>Working Days/Year</label>
+                <div className="input-wrapper">
                   <input
                     type="number"
                     value={settings.workingDaysPerYear}
@@ -384,16 +358,16 @@ const AdminCalculator = () => {
                     max="260"
                   />
                   <div className="input-buttons">
-                    <button onClick={() => handleChange('workingDaysPerYear', Math.max(200, settings.workingDaysPerYear - 5))}>-</button>
+                    <button onClick={() => handleChange('workingDaysPerYear', Math.max(200, settings.workingDaysPerYear - 5))}>−</button>
                     <button onClick={() => handleChange('workingDaysPerYear', Math.min(260, settings.workingDaysPerYear + 5))}>+</button>
                   </div>
                 </div>
-                <span className="input-hint">Number of working days per year (200-260)</span>
+                <span className="input-hint">Range: 200-260 days</span>
               </div>
 
               <div className="input-group">
-                <label>Working Hours Per Day</label>
-                <div className="input-with-controls">
+                <label>Working Hours/Day</label>
+                <div className="input-wrapper">
                   <input
                     type="number"
                     value={settings.hourlyWorkHours}
@@ -402,11 +376,11 @@ const AdminCalculator = () => {
                     max="12"
                   />
                   <div className="input-buttons">
-                    <button onClick={() => handleChange('hourlyWorkHours', Math.max(4, settings.hourlyWorkHours - 1))}>-</button>
+                    <button onClick={() => handleChange('hourlyWorkHours', Math.max(4, settings.hourlyWorkHours - 1))}>−</button>
                     <button onClick={() => handleChange('hourlyWorkHours', Math.min(12, settings.hourlyWorkHours + 1))}>+</button>
                   </div>
                 </div>
-                <span className="input-hint">Working hours per day (4-12 hours)</span>
+                <span className="input-hint">Range: 4-12 hours</span>
               </div>
             </div>
           </div>
@@ -452,36 +426,36 @@ const AdminCalculator = () => {
 
       <style jsx="true">{`
         .calculator-admin {
-          padding: 32px;
+          padding: 24px;
           max-width: 1400px;
           margin: 0 auto;
         }
 
         .page-header {
-          margin-bottom: 32px;
+          margin-bottom: 28px;
         }
 
         .page-title {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 32px;
+          font-size: 28px;
           font-weight: 700;
           color: #111827;
-          margin: 0 0 8px 0;
+          margin: 0 0 6px 0;
         }
 
         .page-subtitle {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 16px;
+          font-size: 14px;
           color: #6B7280;
           margin: 0;
         }
 
         .message {
-          padding: 12px 20px;
-          border-radius: 12px;
-          margin-bottom: 24px;
+          padding: 10px 16px;
+          border-radius: 10px;
+          margin-bottom: 20px;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           animation: slideIn 0.3s ease;
         }
 
@@ -516,32 +490,32 @@ const AdminCalculator = () => {
 
         .settings-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-          gap: 24px;
-          margin-bottom: 32px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          margin-bottom: 28px;
         }
 
         .settings-card {
           background: #FFFFFF;
-          border-radius: 20px;
+          border-radius: 16px;
           border: 1px solid #E5E5E7;
           overflow: hidden;
           transition: all 0.3s ease;
         }
 
         .settings-card:hover {
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .card-header {
-          padding: 20px 24px;
+          padding: 16px 20px;
           border-bottom: 1px solid #E5E5E7;
           background: #F9FAFB;
         }
 
         .card-title {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 600;
           color: #111827;
           margin: 0 0 4px 0;
@@ -549,48 +523,49 @@ const AdminCalculator = () => {
 
         .card-description {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 13px;
+          font-size: 12px;
           color: #6B7280;
           margin: 0;
         }
 
         .card-body {
-          padding: 24px;
+          padding: 20px;
         }
 
         .input-group {
-          margin-bottom: 24px;
+          margin-bottom: 20px;
         }
 
         .input-group label {
           display: block;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 500;
           color: #374151;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
         }
 
-        .input-with-controls {
+        .input-wrapper {
           display: flex;
           gap: 8px;
           align-items: center;
         }
 
-        .input-with-controls input {
+        .input-wrapper input {
           flex: 1;
-          padding: 10px 12px;
+          padding: 8px 12px;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           border: 1px solid #E5E5E7;
-          border-radius: 10px;
+          border-radius: 8px;
           transition: all 0.2s ease;
+          background: #FFFFFF;
         }
 
-        .input-with-controls input:focus {
+        .input-wrapper input:focus {
           outline: none;
           border-color: #000000;
-          box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
         }
 
         .input-buttons {
@@ -599,16 +574,19 @@ const AdminCalculator = () => {
         }
 
         .input-buttons button {
-          width: 32px;
-          height: 32px;
+          width: 28px;
+          height: 28px;
           background: #F3F4F6;
           border: 1px solid #E5E5E7;
-          border-radius: 8px;
+          border-radius: 6px;
           cursor: pointer;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 600;
           color: #374151;
           transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .input-buttons button:hover {
@@ -620,75 +598,7 @@ const AdminCalculator = () => {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           font-size: 11px;
           color: #9CA3AF;
-          margin-top: 6px;
-        }
-
-        .warning-text {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 12px;
-          color: #EF4444;
-          margin-top: 12px;
-          padding: 8px;
-          background: #FEF2F2;
-          border-radius: 8px;
-        }
-
-        /* Toggle Switch */
-        .toggle-switch {
-          display: flex;
-          align-items: center;
-        }
-
-        .toggle-label {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          cursor: pointer;
-        }
-
-        .toggle-label input {
-          opacity: 0;
-          width: 0;
-          height: 0;
-          position: absolute;
-        }
-
-        .toggle-slider {
-          position: relative;
-          display: inline-block;
-          width: 50px;
-          height: 26px;
-          background-color: #E5E5E7;
-          border-radius: 26px;
-          transition: 0.3s;
-          margin-right: 12px;
-        }
-
-        .toggle-slider:before {
-          position: absolute;
-          content: "";
-          height: 22px;
-          width: 22px;
-          left: 2px;
-          bottom: 2px;
-          background-color: white;
-          border-radius: 50%;
-          transition: 0.3s;
-        }
-
-        .toggle-label input:checked + .toggle-slider {
-          background-color: #000000;
-        }
-
-        .toggle-label input:checked + .toggle-slider:before {
-          transform: translateX(24px);
-        }
-
-        .toggle-text {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 14px;
-          font-weight: 500;
-          color: #374151;
+          margin-top: 4px;
         }
 
         /* Preview Card */
@@ -709,16 +619,16 @@ const AdminCalculator = () => {
         .preview-stats {
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 10px;
         }
 
         .preview-item {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 12px 16px;
+          padding: 10px 14px;
           background: rgba(255, 255, 255, 0.05);
-          border-radius: 10px;
+          border-radius: 8px;
           transition: all 0.2s ease;
         }
 
@@ -729,37 +639,37 @@ const AdminCalculator = () => {
 
         .preview-label {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 13px;
+          font-size: 12px;
           color: #9CA3AF;
         }
 
         .preview-value {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 600;
           color: #FFFFFF;
         }
 
         .preview-item.highlight .preview-value {
           color: #10B981;
-          font-size: 16px;
+          font-size: 14px;
         }
 
         /* Action Buttons */
         .action-buttons {
           display: flex;
           justify-content: flex-end;
-          gap: 16px;
-          padding-top: 24px;
+          gap: 12px;
+          padding-top: 20px;
           border-top: 1px solid #E5E5E7;
         }
 
         .btn-primary, .btn-secondary {
-          padding: 12px 28px;
+          padding: 10px 24px;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 500;
-          border-radius: 10px;
+          border-radius: 8px;
           cursor: pointer;
           transition: all 0.2s ease;
         }
@@ -798,29 +708,38 @@ const AdminCalculator = () => {
         /* Responsive */
         @media (max-width: 1024px) {
           .calculator-admin {
-            padding: 24px;
+            padding: 20px;
           }
 
           .settings-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
           }
         }
 
         @media (max-width: 768px) {
           .calculator-admin {
-            padding: 20px;
+            padding: 16px;
           }
 
           .page-title {
-            font-size: 28px;
+            font-size: 24px;
+          }
+
+          .page-subtitle {
+            font-size: 13px;
+          }
+
+          .settings-grid {
+            grid-template-columns: 1fr;
           }
 
           .card-header {
-            padding: 16px 20px;
+            padding: 14px 16px;
           }
 
           .card-body {
-            padding: 20px;
+            padding: 16px;
           }
 
           .action-buttons {
@@ -834,19 +753,19 @@ const AdminCalculator = () => {
 
         @media (max-width: 480px) {
           .calculator-admin {
-            padding: 16px;
+            padding: 12px;
           }
 
           .page-title {
-            font-size: 24px;
+            font-size: 22px;
           }
 
-          .input-with-controls {
+          .input-wrapper {
             flex-direction: column;
+            align-items: stretch;
           }
 
           .input-buttons {
-            width: 100%;
             justify-content: center;
           }
         }

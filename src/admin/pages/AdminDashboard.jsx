@@ -135,7 +135,7 @@ const AdminDashboard = () => {
           </div>
         )}
 
-        {/* Stats Cards */}
+        {/* Stats Cards - 4 in one line */}
         <div className="stats-grid">
           <StatsCard 
             title="Total Contacts"
@@ -343,10 +343,10 @@ const AdminDashboard = () => {
           margin: 0;
         }
 
-        /* Stats Grid */
+        /* Stats Grid - 4 cards in one line */
         .stats-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          grid-template-columns: repeat(4, 1fr);
           gap: 24px;
           margin-bottom: 40px;
         }

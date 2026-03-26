@@ -121,14 +121,7 @@ const AdminLogin = () => {
             </button>
           </form>
 
-          <div className="login-demo">
-            <p className="demo-text">Demo Credentials</p>
-            <div className="demo-credentials">
-              <span className="demo-code">admin@pmagentur.com</span>
-              <span className="demo-separator">/</span>
-              <span className="demo-code">admin123</span>
-            </div>
-          </div>
+          
         </div>
       </div>
 
