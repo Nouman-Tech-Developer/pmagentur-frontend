@@ -35,7 +35,7 @@ const Navbar = () => {
 
   const navLinks = [
   {
-    label: t('nav.home', 'Home'),
+    label: t('nav.home'),
     key: 'home',
     hasDropdown: false,
     to: '/'
@@ -65,7 +65,7 @@ const Navbar = () => {
   //   to: '/career'
   // },
   {
-    label: t('nav.appointment', 'Book a Demo'), // Translation applied with fallback
+    label: t('nav.appointment'), // Translation applied with fallback
     key: 'appointment',
     hasDropdown: false,
     to: '/appointment'
