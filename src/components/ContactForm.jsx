@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 
 const ContactForm = () => {
@@ -117,7 +118,6 @@ const ContactForm = () => {
         </html>
       `;
 
-      // FIXED: Use resend-email instead of send-email
       const response = await fetch(`${supabaseUrl}/functions/v1/resend-email`, {
         method: 'POST',
         headers: {
@@ -323,7 +323,9 @@ const ContactForm = () => {
                 />
                 <label htmlFor="privacy" className="contact-checkbox-label">
                   {t('contact.form.privacy.part1')} 
-                  <a href={t('contact.form.privacy.link')}>{t('contact.form.privacy.part2')}</a> 
+                  <Link to="/DataProtection" target="_blank" className="privacy-link">
+                    {t('contact.form.privacy.part2')}
+                  </Link> 
                   {t('contact.form.privacy.part3')}
                 </label>
               </div>
@@ -497,7 +499,7 @@ const ContactForm = () => {
           cursor: pointer;
         }
         
-        .contact-checkbox-label a {
+        .privacy-link {
           color: #000000;
           text-decoration: none;
           font-weight: 500;
@@ -505,7 +507,7 @@ const ContactForm = () => {
           transition: border-color 0.2s ease;
         }
         
-        .contact-checkbox-label a:hover {
+        .privacy-link:hover {
           border-bottom-color: #000000;
         }
         

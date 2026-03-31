@@ -198,8 +198,7 @@
     "privacy": {
   "part1": "I agree to the",
   "part2": "privacy policy",
-  "part3": "*",
-  "link": "/privacy"
+  "part3": "*"
 },
     "form": {
       "name": "Your Name *",

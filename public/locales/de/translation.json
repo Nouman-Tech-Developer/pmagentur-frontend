@@ -200,8 +200,7 @@
     "privacy": {
   "part1": "Ich stimme der",
   "part2": "Datenschutzerklärung",
-  "part3": "zu *",
-  "link": "/datenschutz"
+  "part3": "zu *"
 },
     "form": {
       "name": "Ihr Name *",
