@@ -1,11 +1,94 @@
-// Impressum.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { supabase } from '../lib/supabase';
 
 const Impressum = () => {
-const { t } = useTranslation(); 
- return (
+  const { t } = useTranslation();
+  const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadImpressum();
+  }, []);
+
+  const loadImpressum = async () => {
+    try {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('impressum')
+        .select('content')
+        .order('id', { ascending: false })
+        .limit(1)
+        .single();
+
+      if (error && error.code !== 'PGRST116') {
+        throw error;
+      }
+
+      if (data) {
+        setContent(data.content);
+      }
+    } catch (err) {
+      console.error('Error loading impressum:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Use content from database if available, otherwise use translations as fallback
+  const companyName = content?.company?.name || t('impressum.company.info.name');
+  const companyAddress = content?.company?.address 
+    ? `${content.company.address.street}<br />${content.company.address.city}`
+    : t('impressum.company.info.address');
+  
+  const contactPhone = content?.company?.phone || t('impressum.company.contact.phoneValue');
+  const contactEmail = content?.company?.email || t('impressum.company.contact.emailValue');
+  const contactWebsite = content?.company?.website || t('impressum.company.contact.webValue');
+  
+  const ceoName = content?.company?.ceo || t('impressum.company.ceo.name');
+  
+  const registrationNumber = content?.company?.registration?.number || t('impressum.company.registration.numberValue');
+  const registrationCourt = content?.company?.registration?.court || t('impressum.company.registration.courtValue');
+  
+  const vatId = content?.company?.vat || t('impressum.company.vat.id');
+  
+  const responsibleName = content?.responsible?.name || t('impressum.responsible.name');
+  const responsibleAddress = content?.responsible?.address 
+    ? `${content.responsible.address.street}<br />${content.responsible.address.city}`
+    : t('impressum.responsible.address');
+  
+  const disputeEuText = content?.dispute?.eu?.text || t('impressum.dispute.eu.text');
+  const disputeEuLink = content?.dispute?.eu?.link || 'https://ec.europa.eu/consumers/odr/';
+  const disputeConsumerText = content?.dispute?.consumer?.text || t('impressum.dispute.consumer.text');
+  
+  const liabilityContentText1 = content?.liability?.content?.text1 || t('impressum.liability.content.text1');
+  const liabilityContentText2 = content?.liability?.content?.text2 || t('impressum.liability.content.text2');
+  const liabilityLinksText1 = content?.liability?.links?.text1 || t('impressum.liability.links.text1');
+  const liabilityLinksText2 = content?.liability?.links?.text2 || t('impressum.liability.links.text2');
+  const liabilityCopyrightText1 = content?.liability?.copyright?.text1 || t('impressum.liability.copyright.text1');
+  const liabilityCopyrightText2 = content?.liability?.copyright?.text2 || t('impressum.liability.copyright.text2');
+  const liabilityCopyrightText3 = content?.liability?.copyright?.text3 || t('impressum.liability.copyright.text3');
+
+  if (loading) {
+    return (
+      <section className="legal-page">
+        <div className="legal-container">
+          <div className="loading-spinner" style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '400px',
+            color: '#FFFFFF'
+          }}>
+            Loading...
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
     <>
       <section className="legal-page">
         <div className="legal-container">
@@ -31,8 +114,8 @@ const { t } = useTranslation();
                 <div className="legal-grid-item">
                   <h3 className="legal-grid-title">{t('impressum.company.info.title')}</h3>
                   <div className="legal-grid-content">
-                    <p><strong>{t('impressum.company.info.name')}</strong></p>
-                    <p dangerouslySetInnerHTML={{ __html: t('impressum.company.info.address') }} />
+                    <p><strong>{companyName}</strong></p>
+                    <p dangerouslySetInnerHTML={{ __html: companyAddress }} />
                   </div>
                 </div>
 
@@ -40,9 +123,9 @@ const { t } = useTranslation();
                 <div className="legal-grid-item">
                   <h3 className="legal-grid-title">{t('impressum.company.contact.title')}</h3>
                   <div className="legal-grid-content">
-                    <p><span className="legal-contact-item">{t('impressum.company.contact.phone')}</span> {t('impressum.company.contact.phoneValue')}</p>
-                    <p><span className="legal-contact-item">{t('impressum.company.contact.email')}</span> <a href="mailto:info@reinke-ai.de">{t('impressum.company.contact.emailValue')}</a></p>
-                    <p><span className="legal-contact-item">{t('impressum.company.contact.web')}</span> <a href="https://www.reinke-ai.de" target="_blank" rel="noopener noreferrer">{t('impressum.company.contact.webValue')}</a></p>
+                    <p><span className="legal-contact-item">{t('impressum.company.contact.phone')}</span> {contactPhone}</p>
+                    <p><span className="legal-contact-item">{t('impressum.company.contact.email')}</span> <a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+                    <p><span className="legal-contact-item">{t('impressum.company.contact.web')}</span> <a href={contactWebsite} target="_blank" rel="noopener noreferrer">{contactWebsite}</a></p>
                   </div>
                 </div>
 
@@ -50,7 +133,7 @@ const { t } = useTranslation();
                 <div className="legal-grid-item">
                   <h3 className="legal-grid-title">{t('impressum.company.ceo.title')}</h3>
                   <div className="legal-grid-content">
-                    <p>{t('impressum.company.ceo.name')}</p>
+                    <p>{ceoName}</p>
                   </div>
                 </div>
 
@@ -58,8 +141,8 @@ const { t } = useTranslation();
                 <div className="legal-grid-item">
                   <h3 className="legal-grid-title">{t('impressum.company.registration.title')}</h3>
                   <div className="legal-grid-content">
-                    <p><span className="legal-register-item">{t('impressum.company.registration.number')}</span> {t('impressum.company.registration.numberValue')}</p>
-                    <p><span className="legal-register-item">{t('impressum.company.registration.court')}</span> {t('impressum.company.registration.courtValue')}</p>
+                    <p><span className="legal-register-item">{t('impressum.company.registration.number')}</span> {registrationNumber}</p>
+                    <p><span className="legal-register-item">{t('impressum.company.registration.court')}</span> {registrationCourt}</p>
                   </div>
                 </div>
 
@@ -68,7 +151,7 @@ const { t } = useTranslation();
                   <h3 className="legal-grid-title">{t('impressum.company.vat.title')}</h3>
                   <div className="legal-grid-content">
                     <p className="legal-small-text">{t('impressum.company.vat.info')}</p>
-                    <p className="legal-id">{t('impressum.company.vat.id')}</p>
+                    <p className="legal-id">{vatId}</p>
                   </div>
                 </div>
               </div>
@@ -84,8 +167,8 @@ const { t } = useTranslation();
               <div className="legal-responsible">
                 <h3 className="legal-section-title">{t('impressum.responsible.section')}</h3>
                 <div className="legal-section-content">
-                  <p>{t('impressum.responsible.name')}</p>
-                  <p dangerouslySetInnerHTML={{ __html: t('impressum.responsible.address') }} />
+                  <p>{responsibleName}</p>
+                  <p dangerouslySetInnerHTML={{ __html: responsibleAddress }} />
                 </div>
               </div>
             </div>
@@ -102,9 +185,9 @@ const { t } = useTranslation();
                 <div className="legal-split-item">
                   <h3 className="legal-section-title">{t('impressum.dispute.eu.title')}</h3>
                   <div className="legal-section-content">
-                    <p>{t('impressum.dispute.eu.text')}</p>
+                    <p>{disputeEuText}</p>
                     <p className="legal-link-wrapper">
-                      <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="legal-external-link">
+                      <a href={disputeEuLink} target="_blank" rel="noopener noreferrer" className="legal-external-link">
                         {t('impressum.dispute.eu.link')}
                         <span className="legal-link-arrow">↗</span>
                       </a>
@@ -117,7 +200,7 @@ const { t } = useTranslation();
                 <div className="legal-split-item">
                   <h3 className="legal-section-title">{t('impressum.dispute.consumer.title')}</h3>
                   <div className="legal-section-content">
-                    <p>{t('impressum.dispute.consumer.text')}</p>
+                    <p>{disputeConsumerText}</p>
                   </div>
                 </div>
               </div>
@@ -134,8 +217,8 @@ const { t } = useTranslation();
               <div className="legal-liability-item">
                 <h3 className="legal-section-title">{t('impressum.liability.content.title')}</h3>
                 <div className="legal-section-content">
-                  <p>{t('impressum.liability.content.text1')}</p>
-                  <p className="legal-highlight">{t('impressum.liability.content.text2')}</p>
+                  <p>{liabilityContentText1}</p>
+                  <p className="legal-highlight">{liabilityContentText2}</p>
                 </div>
               </div>
 
@@ -143,8 +226,8 @@ const { t } = useTranslation();
               <div className="legal-liability-item">
                 <h3 className="legal-section-title">{t('impressum.liability.links.title')}</h3>
                 <div className="legal-section-content">
-                  <p>{t('impressum.liability.links.text1')}</p>
-                  <p>{t('impressum.liability.links.text2')}</p>
+                  <p>{liabilityLinksText1}</p>
+                  <p>{liabilityLinksText2}</p>
                 </div>
               </div>
 
@@ -152,9 +235,9 @@ const { t } = useTranslation();
               <div className="legal-liability-item">
                 <h3 className="legal-section-title">{t('impressum.liability.copyright.title')}</h3>
                 <div className="legal-section-content">
-                  <p>{t('impressum.liability.copyright.text1')}</p>
-                  <p className="legal-highlight">{t('impressum.liability.copyright.text2')}</p>
-                  <p>{t('impressum.liability.copyright.text3')}</p>
+                  <p>{liabilityCopyrightText1}</p>
+                  <p className="legal-highlight">{liabilityCopyrightText2}</p>
+                  <p>{liabilityCopyrightText3}</p>
                 </div>
               </div>
             </div>
@@ -178,7 +261,7 @@ const { t } = useTranslation();
       </section>
 
       <style jsx="true">{`
-        /* Font from FeatureSection - Applied to everything */
+        /* Keep all your existing styles here */
         .legal-page,
         .legal-page * {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
@@ -434,17 +517,6 @@ const { t } = useTranslation();
           font-size: 14px;
         }
 
-        .legal-text a {
-          color: #FFFFFF;
-          text-decoration: underline;
-          text-underline-offset: 2px;
-          transition: color 0.2s ease;
-        }
-
-        .legal-text a:hover {
-          color: #9CA3AF;
-        }
-
         /* Footer */
         .legal-footer {
           margin-top: 60px;
@@ -513,7 +585,6 @@ const { t } = useTranslation();
           .legal-page {
             padding: 120px 60px 50px;
           }
-          
           .legal-title {
             font-size: 48px;
           }
@@ -523,11 +594,9 @@ const { t } = useTranslation();
           .legal-page {
             padding: 100px 40px 40px;
           }
-          
           .legal-title {
             font-size: 44px;
           }
-          
           .legal-grid {
             gap: 20px;
           }
@@ -538,12 +607,10 @@ const { t } = useTranslation();
             grid-template-columns: 1fr;
             gap: 25px;
           }
-          
           .legal-split {
             grid-template-columns: 1fr;
             gap: 25px;
           }
-          
           .legal-split-item:first-child {
             border-right: none;
             padding-right: 0;
@@ -554,27 +621,21 @@ const { t } = useTranslation();
           .legal-page {
             padding: 90px 30px 30px;
           }
-          
           .legal-title {
             font-size: 40px;
           }
-          
           .legal-header-decoration {
             gap: 15px;
           }
-          
           .legal-header-line {
             width: 40px;
           }
-          
           .legal-card-header {
             padding: 20px 25px;
           }
-          
           .legal-card-content {
             padding: 25px;
           }
-          
           .legal-footer-content {
             flex-direction: column;
             gap: 15px;
@@ -586,31 +647,24 @@ const { t } = useTranslation();
           .legal-page {
             padding: 80px 20px 25px;
           }
-          
           .legal-title {
             font-size: 36px;
           }
-          
           .legal-subtitle {
             font-size: 16px;
           }
-          
           .legal-card-title {
             font-size: 22px;
           }
-          
           .legal-section-title {
             font-size: 17px;
           }
-          
           .legal-grid-title {
             font-size: 15px;
           }
-          
           .legal-grid-content {
             font-size: 14px;
           }
-          
           .legal-footer-info {
             flex-wrap: wrap;
           }
@@ -620,27 +674,21 @@ const { t } = useTranslation();
           .legal-page {
             padding: 70px 15px 20px;
           }
-          
           .legal-title {
             font-size: 32px;
           }
-          
           .legal-header-tag {
             font-size: 11px;
           }
-          
           .legal-card-header {
             padding: 18px 20px;
           }
-          
           .legal-card-content {
             padding: 20px;
           }
-          
           .legal-contact-item {
             width: 60px;
           }
-          
           .legal-register-item {
             width: 110px;
           }
@@ -650,17 +698,14 @@ const { t } = useTranslation();
           .legal-title {
             font-size: 28px;
           }
-          
           .legal-card-title {
             font-size: 20px;
           }
-          
           .legal-contact-item {
             display: block;
             width: auto;
             margin-bottom: 5px;
           }
-          
           .legal-register-item {
             display: block;
             width: auto;
@@ -674,12 +719,10 @@ const { t } = useTranslation();
             padding: 20px;
             background: white;
           }
-          
           .legal-card {
             box-shadow: none;
             border: 1px solid #ddd;
           }
-          
           .legal-footer {
             display: none;
           }

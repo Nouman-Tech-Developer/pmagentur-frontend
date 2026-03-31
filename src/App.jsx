@@ -17,7 +17,10 @@ import AdminDashboard from './admin/pages/AdminDashboard';
 import AdminContacts from './admin/pages/AdminContacts';
 import AdminAppointments from './admin/pages/AdminAppointments';
 import AdminCalculator from './admin/pages/AdminCalculator';
-import AdminSettings from './admin/pages/AdminSettings'; // ADD THIS IMPORT
+import AdminSettings from './admin/pages/AdminSettings';
+// IMPORT NEW ADMIN PAGES
+import AdminImpressum from './admin/pages/AdminImpressum';
+import AdminDataProtection from './admin/pages/AdminDataProtection';
 
 import PrivateRoute from './admin/components/PrivateRoute';
 
@@ -62,10 +65,20 @@ function App() {
               <AdminCalculator />
             </PrivateRoute>
           } />
-          {/* ADD ADMIN SETTINGS ROUTE */}
           <Route path="/admin/settings" element={
             <PrivateRoute>
               <AdminSettings />
+            </PrivateRoute>
+          } />
+          {/* NEW ADMIN ROUTES */}
+          <Route path="/admin/impressum" element={
+            <PrivateRoute>
+              <AdminImpressum />
+            </PrivateRoute>
+          } />
+          <Route path="/admin/dataprotection" element={
+            <PrivateRoute>
+              <AdminDataProtection />
             </PrivateRoute>
           } />
           

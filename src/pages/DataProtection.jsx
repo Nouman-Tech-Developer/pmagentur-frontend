@@ -1,206 +1,128 @@
-// DataProtection.jsx (Datenschutz)
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { supabase } from '../lib/supabase';
 
 const DataProtection = () => {
-  const { t } = useTranslation(); // ← No namespace here
+  const { t } = useTranslation();
+  const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Organize content into sections for better structure
-  const sections = [
-    {
-      id: 1,
-      title: t('dataprotection.sections.overview.title'),
-      subsections: [
-        {
-          title: t('dataprotection.sections.overview.general.title'),
-          content: <p>{t('dataprotection.sections.overview.general.text')}</p>
-        },
-        {
-          title: t('dataprotection.sections.overview.collection.title'),
-          content: (
-            <>
-              <div className="legal-qna">
-                <p className="legal-question"><strong>{t('dataprotection.sections.overview.collection.q1')}</strong></p>
-                <p className="legal-answer">{t('dataprotection.sections.overview.collection.a1')} <Link to="/impressum">{t('dataprotection.impressum.link')}</Link>{t('dataprotection.sections.overview.collection.a1_2')}</p>
-              </div>
-              
-              <div className="legal-qna">
-                <p className="legal-question"><strong>{t('dataprotection.sections.overview.collection.q2')}</strong></p>
-                <p className="legal-answer">{t('dataprotection.sections.overview.collection.a2')}</p>
-              </div>
-              
-              <div className="legal-qna">
-                <p className="legal-question"><strong>{t('dataprotection.sections.overview.collection.q3')}</strong></p>
-                <p className="legal-answer">{t('dataprotection.sections.overview.collection.a3')}</p>
-              </div>
-              
-              <div className="legal-qna">
-                <p className="legal-question"><strong>{t('dataprotection.sections.overview.collection.q4')}</strong></p>
-                <p className="legal-answer">{t('dataprotection.sections.overview.collection.a4')}</p>
-              </div>
-            </>
-          )
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: t('dataprotection.sections.general.title'),
-      subsections: [
-        {
-          title: t('dataprotection.sections.general.privacy.title'),
-          content: (
-            <>
-              <p>{t('dataprotection.sections.general.privacy.text1')}</p>
-              <p>{t('dataprotection.sections.general.privacy.text2')}</p>
-              <div className="legal-notice">
-                <p>{t('dataprotection.sections.general.privacy.note')}</p>
-              </div>
-            </>
-          )
-        },
-        {
-          title: t('dataprotection.sections.general.responsible.title'),
-          content: (
-            <>
-              <p>{t('dataprotection.sections.general.responsible.text')}</p>
-              <div className="legal-address-block">
-                <p><strong>{t('dataprotection.company.name')}</strong><br />
-                {t('dataprotection.company.address.street')}<br />
-                {t('dataprotection.company.address.city')}</p>
-                <p className="legal-contact-line">
-                  <span className="legal-contact-label">{t('dataprotection.contact.phone')}:</span> 
-                  <a href="tel:+493012345678">{t('dataprotection.company.phone')}</a>
-                </p>
-                <p className="legal-contact-line">
-                  <span className="legal-contact-label">{t('dataprotection.contact.email')}:</span> 
-                  <a href="mailto:info@reinke-ai.de">{t('dataprotection.company.email')}</a>
-                </p>
-              </div>
-              <p className="legal-small-text">{t('dataprotection.sections.general.responsible.note')}</p>
-            </>
-          )
-        },
-        {
-          title: t('dataprotection.sections.general.withdrawal.title'),
-          content: <p>{t('dataprotection.sections.general.withdrawal.text')}</p>
-        },
-        {
-          title: t('dataprotection.sections.general.complaint.title'),
-          content: <p>{t('dataprotection.sections.general.complaint.text')}</p>
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: t('dataprotection.sections.dataCollection.title'),
-      subsections: [
-        {
-          title: t('dataprotection.sections.dataCollection.cookies.title'),
-          content: (
-            <>
-              <p>{t('dataprotection.sections.dataCollection.cookies.text1')}</p>
-              
-              <div className="legal-cookie-types">
-                <div className="legal-cookie-type">
-                  <h4 className="legal-cookie-title">{t('dataprotection.sections.dataCollection.cookies.session.title')}</h4>
-                  <p>{t('dataprotection.sections.dataCollection.cookies.session.text')}</p>
-                </div>
-                <div className="legal-cookie-type">
-                  <h4 className="legal-cookie-title">{t('dataprotection.sections.dataCollection.cookies.permanent.title')}</h4>
-                  <p>{t('dataprotection.sections.dataCollection.cookies.permanent.text')}</p>
-                </div>
-                <div className="legal-cookie-type">
-                  <h4 className="legal-cookie-title">{t('dataprotection.sections.dataCollection.cookies.thirdParty.title')}</h4>
-                  <p>{t('dataprotection.sections.dataCollection.cookies.thirdParty.text')}</p>
-                </div>
-              </div>
-              
-              <p>{t('dataprotection.sections.dataCollection.cookies.text2')}</p>
-              
-              <div className="legal-highlight">
-                <p>{t('dataprotection.sections.dataCollection.cookies.highlight')}</p>
-              </div>
-            </>
-          )
-        },
-        {
-          title: t('dataprotection.sections.dataCollection.contactForm.title'),
-          content: (
-            <>
-              <p>{t('dataprotection.sections.dataCollection.contactForm.text1')}</p>
-              <p>{t('dataprotection.sections.dataCollection.contactForm.text2')}</p>
-              <p className="legal-note">{t('dataprotection.sections.dataCollection.contactForm.note')}</p>
-            </>
-          )
-        },
-        {
-          title: t('dataprotection.sections.dataCollection.emailPhone.title'),
-          content: (
-            <>
-              <p>{t('dataprotection.sections.dataCollection.emailPhone.text1')}</p>
-              <p>{t('dataprotection.sections.dataCollection.emailPhone.text2')}</p>
-              <p className="legal-note">{t('dataprotection.sections.dataCollection.emailPhone.note')}</p>
-            </>
-          )
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: t('dataprotection.sections.plugins.title'),
-      subsections: [
-        {
-          title: t('dataprotection.sections.plugins.googleFonts.title'),
-          content: (
-            <>
-              <p>{t('dataprotection.sections.plugins.googleFonts.text1')}</p>
-              <p>{t('dataprotection.sections.plugins.googleFonts.text2')}</p>
-              <div className="legal-links">
-                <p>{t('dataprotection.sections.plugins.googleFonts.moreInfo')}</p>
-                <ul className="legal-link-list">
-                  <li>
-                    <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer" className="legal-external-link">
-                      {t('dataprotection.sections.plugins.googleFonts.faqLink')}
-                      <span className="legal-link-arrow">↗</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="legal-external-link">
-                      {t('dataprotection.sections.plugins.googleFonts.privacyLink')}
-                      <span className="legal-link-arrow">↗</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </>
-          )
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: t('dataprotection.sections.changes.title'),
-      content: (
-        <div className="legal-simple-section">
-          <p>{t('dataprotection.sections.changes.text')}</p>
-        </div>
-      )
-    },
-    {
-      id: 6,
-      title: t('dataprotection.sections.questions.title'),
-      content: (
-        <div className="legal-simple-section">
-          <p>{t('dataprotection.sections.questions.text')}</p>
-          <div className="legal-contact-block">
-            <a href="mailto:datenschutz@reinke-ai.de" className="legal-email-link">{t('dataprotection.sections.questions.email')}</a>
+  useEffect(() => {
+    loadDataProtection();
+  }, []);
+
+  const loadDataProtection = async () => {
+    try {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('dataprotection')
+        .select('content')
+        .order('id', { ascending: false })
+        .limit(1)
+        .single();
+
+      if (error && error.code !== 'PGRST116') {
+        throw error;
+      }
+
+      if (data) {
+        setContent(data.content);
+      }
+    } catch (err) {
+      console.error('Error loading data protection:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Helper function to get content from database or fallback to translation
+  const getContent = (path, fallback) => {
+    if (!content) return fallback;
+    const keys = path.split('.');
+    let value = content;
+    for (const key of keys) {
+      if (value && typeof value === 'object') {
+        value = value[key];
+      } else {
+        return fallback;
+      }
+    }
+    return value || fallback;
+  };
+
+  if (loading) {
+    return (
+      <section className="legal-page">
+        <div className="legal-container">
+          <div className="loading-spinner" style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '400px',
+            color: '#FFFFFF'
+          }}>
+            Loading...
           </div>
         </div>
-      )
-    }
-  ];
+      </section>
+    );
+  }
+
+  // Get dynamic content from database or fallback to translations
+  const overviewGeneralText = getContent('overview.general.text', t('dataprotection.sections.overview.general.text'));
+  
+  const q1 = getContent('overview.collection.q1', t('dataprotection.sections.overview.collection.q1'));
+  const a1 = getContent('overview.collection.a1', t('dataprotection.sections.overview.collection.a1'));
+  const q2 = getContent('overview.collection.q2', t('dataprotection.sections.overview.collection.q2'));
+  const a2 = getContent('overview.collection.a2', t('dataprotection.sections.overview.collection.a2'));
+  const q3 = getContent('overview.collection.q3', t('dataprotection.sections.overview.collection.q3'));
+  const a3 = getContent('overview.collection.a3', t('dataprotection.sections.overview.collection.a3'));
+  const q4 = getContent('overview.collection.q4', t('dataprotection.sections.overview.collection.q4'));
+  const a4 = getContent('overview.collection.a4', t('dataprotection.sections.overview.collection.a4'));
+  
+  const privacyText1 = getContent('general.privacy.text1', t('dataprotection.sections.general.privacy.text1'));
+  const privacyText2 = getContent('general.privacy.text2', t('dataprotection.sections.general.privacy.text2'));
+  const privacyNote = getContent('general.privacy.note', t('dataprotection.sections.general.privacy.note'));
+  
+  const responsibleText = getContent('general.responsible.text', t('dataprotection.sections.general.responsible.text'));
+  const companyName = getContent('general.responsible.name', t('dataprotection.company.name'));
+  const companyStreet = getContent('general.responsible.address.street', t('dataprotection.company.address.street'));
+  const companyCity = getContent('general.responsible.address.city', t('dataprotection.company.address.city'));
+  const companyPhone = getContent('general.responsible.phone', t('dataprotection.company.phone'));
+  const companyEmail = getContent('general.responsible.email', t('dataprotection.company.email'));
+  const responsibleNote = getContent('general.responsible.note', t('dataprotection.sections.general.responsible.note'));
+  
+  const withdrawalText = getContent('general.withdrawal.text', t('dataprotection.sections.general.withdrawal.text'));
+  const complaintText = getContent('general.complaint.text', t('dataprotection.sections.general.complaint.text'));
+  
+  const cookiesText1 = getContent('dataCollection.cookies.text1', t('dataprotection.sections.dataCollection.cookies.text1'));
+  const cookiesSessionTitle = getContent('dataCollection.cookies.session.title', t('dataprotection.sections.dataCollection.cookies.session.title'));
+  const cookiesSessionText = getContent('dataCollection.cookies.session.text', t('dataprotection.sections.dataCollection.cookies.session.text'));
+  const cookiesPermanentTitle = getContent('dataCollection.cookies.permanent.title', t('dataprotection.sections.dataCollection.cookies.permanent.title'));
+  const cookiesPermanentText = getContent('dataCollection.cookies.permanent.text', t('dataprotection.sections.dataCollection.cookies.permanent.text'));
+  const cookiesThirdPartyTitle = getContent('dataCollection.cookies.thirdParty.title', t('dataprotection.sections.dataCollection.cookies.thirdParty.title'));
+  const cookiesThirdPartyText = getContent('dataCollection.cookies.thirdParty.text', t('dataprotection.sections.dataCollection.cookies.thirdParty.text'));
+  const cookiesText2 = getContent('dataCollection.cookies.text2', t('dataprotection.sections.dataCollection.cookies.text2'));
+  const cookiesHighlight = getContent('dataCollection.cookies.highlight', t('dataprotection.sections.dataCollection.cookies.highlight'));
+  
+  const contactFormText1 = getContent('dataCollection.contactForm.text1', t('dataprotection.sections.dataCollection.contactForm.text1'));
+  const contactFormText2 = getContent('dataCollection.contactForm.text2', t('dataprotection.sections.dataCollection.contactForm.text2'));
+  const contactFormNote = getContent('dataCollection.contactForm.note', t('dataprotection.sections.dataCollection.contactForm.note'));
+  
+  const emailPhoneText1 = getContent('dataCollection.emailPhone.text1', t('dataprotection.sections.dataCollection.emailPhone.text1'));
+  const emailPhoneText2 = getContent('dataCollection.emailPhone.text2', t('dataprotection.sections.dataCollection.emailPhone.text2'));
+  const emailPhoneNote = getContent('dataCollection.emailPhone.note', t('dataprotection.sections.dataCollection.emailPhone.note'));
+  
+  const googleFontsText1 = getContent('plugins.googleFonts.text1', t('dataprotection.sections.plugins.googleFonts.text1'));
+  const googleFontsText2 = getContent('plugins.googleFonts.text2', t('dataprotection.sections.plugins.googleFonts.text2'));
+  const googleFontsMoreInfo = getContent('plugins.googleFonts.moreInfo', t('dataprotection.sections.plugins.googleFonts.moreInfo'));
+  const googleFontsFaqLink = getContent('plugins.googleFonts.faqLink', t('dataprotection.sections.plugins.googleFonts.faqLink'));
+  const googleFontsPrivacyLink = getContent('plugins.googleFonts.privacyLink', t('dataprotection.sections.plugins.googleFonts.privacyLink'));
+  
+  const changesText = getContent('changes.text', t('dataprotection.sections.changes.text'));
+  const questionsText = getContent('questions.text', t('dataprotection.sections.questions.text'));
+  const questionsEmail = getContent('questions.email', t('dataprotection.sections.questions.email'));
 
   return (
     <>
@@ -219,31 +141,201 @@ const DataProtection = () => {
 
           {/* Content Cards */}
           <div className="legal-content">
-            {sections.map((section) => (
-              <div key={section.id} className="legal-card">
-                <div className="legal-card-header">
-                  <h2 className="legal-card-title">{section.title}</h2>
+            {/* Overview Section */}
+            <div className="legal-card">
+              <div className="legal-card-header">
+                <h2 className="legal-card-title">{t('dataprotection.sections.overview.title')}</h2>
+              </div>
+              <div className="legal-card-content">
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.overview.general.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{overviewGeneralText}</p>
+                  </div>
                 </div>
-                <div className="legal-card-content">
-                  {section.subsections ? (
-                    // Sections with subsections
-                    section.subsections.map((subsection, index) => (
-                      <div key={index} className="legal-subsection">
-                        <h3 className="legal-subsection-title">{subsection.title}</h3>
-                        <div className="legal-subsection-content">
-                          {subsection.content}
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    // Simple sections without subsections
-                    <div className="legal-simple-content">
-                      {section.content}
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.overview.collection.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <div className="legal-qna">
+                      <p className="legal-question"><strong>{q1}</strong></p>
+                      <p className="legal-answer">{a1} <Link to="/impressum">{t('dataprotection.impressum.link')}</Link>{t('dataprotection.sections.overview.collection.a1_2')}</p>
                     </div>
-                  )}
+                    <div className="legal-qna">
+                      <p className="legal-question"><strong>{q2}</strong></p>
+                      <p className="legal-answer">{a2}</p>
+                    </div>
+                    <div className="legal-qna">
+                      <p className="legal-question"><strong>{q3}</strong></p>
+                      <p className="legal-answer">{a3}</p>
+                    </div>
+                    <div className="legal-qna">
+                      <p className="legal-question"><strong>{q4}</strong></p>
+                      <p className="legal-answer">{a4}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* General Section */}
+            <div className="legal-card">
+              <div className="legal-card-header">
+                <h2 className="legal-card-title">{t('dataprotection.sections.general.title')}</h2>
+              </div>
+              <div className="legal-card-content">
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.general.privacy.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{privacyText1}</p>
+                    <p>{privacyText2}</p>
+                    <div className="legal-notice">
+                      <p>{privacyNote}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.general.responsible.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{responsibleText}</p>
+                    <div className="legal-address-block">
+                      <p><strong>{companyName}</strong><br />
+                      {companyStreet}<br />
+                      {companyCity}</p>
+                      <p className="legal-contact-line">
+                        <span className="legal-contact-label">{t('dataprotection.contact.phone')}:</span> 
+                        <a href={`tel:${companyPhone}`}>{companyPhone}</a>
+                      </p>
+                      <p className="legal-contact-line">
+                        <span className="legal-contact-label">{t('dataprotection.contact.email')}:</span> 
+                        <a href={`mailto:${companyEmail}`}>{companyEmail}</a>
+                      </p>
+                    </div>
+                    <p className="legal-small-text">{responsibleNote}</p>
+                  </div>
+                </div>
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.general.withdrawal.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{withdrawalText}</p>
+                  </div>
+                </div>
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.general.complaint.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{complaintText}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Data Collection Section */}
+            <div className="legal-card">
+              <div className="legal-card-header">
+                <h2 className="legal-card-title">{t('dataprotection.sections.dataCollection.title')}</h2>
+              </div>
+              <div className="legal-card-content">
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.dataCollection.cookies.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{cookiesText1}</p>
+                    <div className="legal-cookie-types">
+                      <div className="legal-cookie-type">
+                        <h4 className="legal-cookie-title">{cookiesSessionTitle}</h4>
+                        <p>{cookiesSessionText}</p>
+                      </div>
+                      <div className="legal-cookie-type">
+                        <h4 className="legal-cookie-title">{cookiesPermanentTitle}</h4>
+                        <p>{cookiesPermanentText}</p>
+                      </div>
+                      <div className="legal-cookie-type">
+                        <h4 className="legal-cookie-title">{cookiesThirdPartyTitle}</h4>
+                        <p>{cookiesThirdPartyText}</p>
+                      </div>
+                    </div>
+                    <p>{cookiesText2}</p>
+                    <div className="legal-highlight">
+                      <p>{cookiesHighlight}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.dataCollection.contactForm.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{contactFormText1}</p>
+                    <p>{contactFormText2}</p>
+                    <p className="legal-note">{contactFormNote}</p>
+                  </div>
+                </div>
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.dataCollection.emailPhone.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{emailPhoneText1}</p>
+                    <p>{emailPhoneText2}</p>
+                    <p className="legal-note">{emailPhoneNote}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Plugins Section */}
+            <div className="legal-card">
+              <div className="legal-card-header">
+                <h2 className="legal-card-title">{t('dataprotection.sections.plugins.title')}</h2>
+              </div>
+              <div className="legal-card-content">
+                <div className="legal-subsection">
+                  <h3 className="legal-subsection-title">{t('dataprotection.sections.plugins.googleFonts.title')}</h3>
+                  <div className="legal-subsection-content">
+                    <p>{googleFontsText1}</p>
+                    <p>{googleFontsText2}</p>
+                    <div className="legal-links">
+                      <p>{googleFontsMoreInfo}</p>
+                      <ul className="legal-link-list">
+                        <li>
+                          <a href={googleFontsFaqLink} target="_blank" rel="noopener noreferrer" className="legal-external-link">
+                            {t('dataprotection.sections.plugins.googleFonts.faqLink')}
+                            <span className="legal-link-arrow">↗</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href={googleFontsPrivacyLink} target="_blank" rel="noopener noreferrer" className="legal-external-link">
+                            {t('dataprotection.sections.plugins.googleFonts.privacyLink')}
+                            <span className="legal-link-arrow">↗</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Changes Section */}
+            <div className="legal-card">
+              <div className="legal-card-header">
+                <h2 className="legal-card-title">{t('dataprotection.sections.changes.title')}</h2>
+              </div>
+              <div className="legal-card-content">
+                <div className="legal-simple-section">
+                  <p>{changesText}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Questions Section */}
+            <div className="legal-card">
+              <div className="legal-card-header">
+                <h2 className="legal-card-title">{t('dataprotection.sections.questions.title')}</h2>
+              </div>
+              <div className="legal-card-content">
+                <div className="legal-simple-section">
+                  <p>{questionsText}</p>
+                  <div className="legal-contact-block">
+                    <a href={`mailto:${questionsEmail}`} className="legal-email-link">{questionsEmail}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Footer with back link and last updated */}
@@ -264,7 +356,7 @@ const DataProtection = () => {
       </section>
 
       <style jsx="true">{`
-        /* Black Background Theme */
+        /* Base styles - Force white text on dark background */
         .legal-page,
         .legal-page * {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
@@ -275,6 +367,7 @@ const DataProtection = () => {
           min-height: 100vh;
           padding: 140px 100px 60px;
           background: #000000;
+          color: #FFFFFF;
         }
 
         .legal-container {
@@ -388,6 +481,7 @@ const DataProtection = () => {
 
         .legal-subsection-content p {
           margin: 0 0 15px 0;
+          color: #9CA3AF;
         }
 
         .legal-subsection-content p:last-child {
@@ -439,7 +533,11 @@ const DataProtection = () => {
           border-radius: 8px;
           margin: 15px 0;
           border-left: 3px solid #FFFFFF;
+        }
+
+        .legal-notice p {
           color: #9CA3AF;
+          margin: 0;
         }
 
         .legal-highlight {
@@ -448,7 +546,11 @@ const DataProtection = () => {
           border-radius: 8px;
           margin: 20px 0;
           border-left: 3px solid #FFFFFF;
+        }
+
+        .legal-highlight p {
           color: #9CA3AF;
+          margin: 0;
         }
 
         .legal-note {
@@ -456,8 +558,12 @@ const DataProtection = () => {
           padding: 12px 15px;
           border-radius: 6px;
           font-size: 14px;
-          color: #9CA3AF;
           margin-top: 15px !important;
+        }
+
+        .legal-note p {
+          color: #9CA3AF;
+          margin: 0;
         }
 
         /* Address Block */
@@ -470,6 +576,11 @@ const DataProtection = () => {
 
         .legal-address-block strong {
           color: #FFFFFF;
+        }
+
+        .legal-address-block p {
+          color: #9CA3AF;
+          margin: 5px 0;
         }
 
         .legal-contact-line {
@@ -528,6 +639,10 @@ const DataProtection = () => {
           margin-top: 20px;
         }
 
+        .legal-links p {
+          color: #9CA3AF;
+        }
+
         .legal-link-list {
           list-style: none;
           padding: 0;
@@ -556,10 +671,12 @@ const DataProtection = () => {
           background: #222222;
           transform: translateY(-1px);
           border-color: #444444;
+          color: #FFFFFF;
         }
 
         .legal-link-arrow {
           font-size: 14px;
+          color: #FFFFFF;
         }
 
         /* Contact Block */
@@ -584,6 +701,7 @@ const DataProtection = () => {
           background: #222222;
           transform: translateY(-1px);
           border-color: #444444;
+          color: #FFFFFF;
         }
 
         /* Footer */
@@ -617,23 +735,29 @@ const DataProtection = () => {
           background: #1A1A1A;
           transform: translateX(-5px);
           border-color: #444444;
+          color: #FFFFFF;
         }
 
         .legal-back-arrow {
           font-size: 20px;
           line-height: 1;
+          color: #FFFFFF;
         }
 
         .legal-back-text {
           font-size: 15px;
+          color: #FFFFFF;
         }
 
         .legal-footer-info {
           display: flex;
           align-items: center;
           gap: 10px;
-          color: #6B7280;
           font-size: 14px;
+        }
+
+        .legal-footer-date {
+          color: #6B7280;
         }
 
         .legal-footer-dot {
@@ -661,7 +785,6 @@ const DataProtection = () => {
           .legal-page {
             padding: 120px 60px 50px;
           }
-          
           .legal-title {
             font-size: 48px;
           }
@@ -671,11 +794,9 @@ const DataProtection = () => {
           .legal-page {
             padding: 100px 40px 40px;
           }
-          
           .legal-title {
             font-size: 44px;
           }
-          
           .legal-cookie-types {
             grid-template-columns: repeat(2, 1fr);
           }
@@ -693,35 +814,27 @@ const DataProtection = () => {
           .legal-page {
             padding: 90px 30px 30px;
           }
-          
           .legal-title {
             font-size: 40px;
           }
-          
           .legal-header-decoration {
             gap: 15px;
           }
-          
           .legal-header-line {
             width: 40px;
           }
-          
           .legal-card-header {
             padding: 20px 25px;
           }
-          
           .legal-card-content {
             padding: 25px;
           }
-          
           .legal-card-title {
             font-size: 22px;
           }
-          
           .legal-subsection-title {
             font-size: 18px;
           }
-          
           .legal-cookie-types {
             grid-template-columns: 1fr;
             gap: 15px;
@@ -732,27 +845,21 @@ const DataProtection = () => {
           .legal-page {
             padding: 80px 20px 25px;
           }
-          
           .legal-title {
             font-size: 36px;
           }
-          
           .legal-subtitle {
             font-size: 16px;
           }
-          
           .legal-card-header {
             padding: 18px 20px;
           }
-          
           .legal-card-content {
             padding: 20px;
           }
-          
           .legal-card-title {
             font-size: 20px;
           }
-          
           .legal-answer {
             padding-left: 15px;
           }
@@ -762,15 +869,12 @@ const DataProtection = () => {
           .legal-page {
             padding: 70px 15px 20px;
           }
-          
           .legal-title {
             font-size: 32px;
           }
-          
           .legal-header-tag {
             font-size: 11px;
           }
-          
           .legal-contact-line {
             flex-direction: column;
             gap: 5px;
@@ -782,14 +886,13 @@ const DataProtection = () => {
           .legal-page {
             padding: 20px;
             background: white;
+            color: black;
           }
-          
           .legal-card {
             box-shadow: none;
             border: 1px solid #ddd;
             break-inside: avoid;
           }
-          
           .legal-footer {
             display: none;
           }
